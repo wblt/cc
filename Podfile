@@ -10,5 +10,9 @@ pod 'Masonry'
 pod 'SDWebImage', '~> 4.0'
 pod 'IQKeyboardManager'
 pod 'SVProgressHUD'
-  
+
+pod 'Bugly'
+pod 'Pgyer'
+pod 'PgyUpdate'
+
 end

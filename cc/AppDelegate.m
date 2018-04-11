@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <Bugly/Bugly.h>
+#import <PgySDK/PgyManager.h>
+#import <PgyUpdate/PgyUpdateManager.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +20,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
+	
+	// 还未去Bugly 注册appId
+	//[Bugly startWithAppId:@"此处替换为你的AppId"];
+	
+	//还未去 蒲公英注册appid
+	
+	//启动基本SDK
+	//[[PgyManager sharedPgyManager] startManagerWithAppId:@"PGY_APP_ID"];
+	//启动更新检查SDK
+	//[[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"PGY_APP_ID"];
+	
+	
 	return YES;
 }
 
