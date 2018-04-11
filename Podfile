@@ -10,6 +10,7 @@ pod 'Masonry'
 pod 'SDWebImage', '~> 4.0'
 pod 'IQKeyboardManager'
 pod 'SVProgressHUD'
+pod 'LKDBHelper'
 
 pod 'Bugly'
 pod 'Pgyer'

@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "MainTabBarController.h"
+#import "BaseNavViewController.h"
+#import <IQKeyboardManager/IQKeyboardManager.h>
 #import <Bugly/Bugly.h>
 #import <PgySDK/PgyManager.h>
 #import <PgyUpdate/PgyUpdateManager.h>
@@ -21,16 +24,30 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
 	
+	self.window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
+	self.window.backgroundColor = [UIColor clearColor];
+	[self.window makeKeyAndVisible];
+	
+	// 初始化本地话文件目录
+	IQKeyboardManager *keyboardManager = [IQKeyboardManager sharedManager]; // 获取类库的单例变量
+	keyboardManager.enable = YES; // 控制整个功能是否启用
+	keyboardManager.shouldResignOnTouchOutside = YES; // 控制点击背景是否收起键盘
+	keyboardManager.keyboardDistanceFromTextField = 10.0f; // 输入框距离键盘的距离
+	
 	// 还未去Bugly 注册appId
 	//[Bugly startWithAppId:@"此处替换为你的AppId"];
 	
 	//还未去 蒲公英注册appid
-	
 	//启动基本SDK
 	//[[PgyManager sharedPgyManager] startManagerWithAppId:@"PGY_APP_ID"];
 	//启动更新检查SDK
 	//[[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"PGY_APP_ID"];
 	
+	
+	// 进入主控制器，需要判断是否登录
+	MainTabBarController *mainTabbar = [[MainTabBarController alloc] init];
+	mainTabbar.selectIndex = 0;
+	self.window.rootViewController = mainTabbar;
 	
 	return YES;
 }
