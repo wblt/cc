@@ -52,6 +52,11 @@
 		F8ED3971207DB31A006F4D2A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F8ED3970207DB31A006F4D2A /* README.md */; };
 		F8ED3976207DB3E0006F4D2A /* MainTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F8ED3972207DB3DF006F4D2A /* MainTabBarItem.m */; };
 		F8ED3977207DB3E0006F4D2A /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8ED3973207DB3DF006F4D2A /* MainTabBarController.m */; };
+		F8ED397A207DB81B006F4D2A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F8ED3979207DB81A006F4D2A /* README.md */; };
+		F8ED397F207DB877006F4D2A /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F8ED397D207DB877006F4D2A /* LoginVC.m */; };
+		F8ED3980207DB877006F4D2A /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8ED397E207DB877006F4D2A /* LoginVC.xib */; };
+		F8ED3988207DB8B0006F4D2A /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8ED3986207DB8B0006F4D2A /* RegistViewController.m */; };
+		F8ED3989207DB8B0006F4D2A /* RegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8ED3987207DB8B0006F4D2A /* RegistViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +135,13 @@
 		F8ED3973207DB3DF006F4D2A /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		F8ED3974207DB3E0006F4D2A /* MainTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarItem.h; sourceTree = "<group>"; };
 		F8ED3975207DB3E0006F4D2A /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		F8ED3979207DB81A006F4D2A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F8ED397C207DB877006F4D2A /* LoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		F8ED397D207DB877006F4D2A /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		F8ED397E207DB877006F4D2A /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		F8ED3985207DB8B0006F4D2A /* RegistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
+		F8ED3986207DB8B0006F4D2A /* RegistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
+		F8ED3987207DB8B0006F4D2A /* RegistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +194,7 @@
 		F84E5B57207D961200949AF1 /* cc */ = {
 			isa = PBXGroup;
 			children = (
+				F8ED3978207DB81A006F4D2A /* Modules */,
 				F8ED396F207DB31A006F4D2A /* ThridParty */,
 				F8ED3966207DB310006F4D2A /* Base */,
 				F8ED395F207DACF4006F4D2A /* Define */,
@@ -361,6 +374,36 @@
 			path = ThridParty;
 			sourceTree = "<group>";
 		};
+		F8ED3978207DB81A006F4D2A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F8ED397B207DB83D006F4D2A /* LoginAndRegist */,
+				F8ED3979207DB81A006F4D2A /* README.md */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F8ED397B207DB83D006F4D2A /* LoginAndRegist */ = {
+			isa = PBXGroup;
+			children = (
+				F8ED3981207DB880006F4D2A /* VC */,
+			);
+			path = LoginAndRegist;
+			sourceTree = "<group>";
+		};
+		F8ED3981207DB880006F4D2A /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				F8ED397C207DB877006F4D2A /* LoginVC.h */,
+				F8ED397D207DB877006F4D2A /* LoginVC.m */,
+				F8ED397E207DB877006F4D2A /* LoginVC.xib */,
+				F8ED3985207DB8B0006F4D2A /* RegistViewController.h */,
+				F8ED3986207DB8B0006F4D2A /* RegistViewController.m */,
+				F8ED3987207DB8B0006F4D2A /* RegistViewController.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -428,10 +471,13 @@
 				F8ED396E207DB311006F4D2A /* README.md in Resources */,
 				F8ED3951207DACDB006F4D2A /* README.md in Resources */,
 				F8ED3953207DACDB006F4D2A /* back_icon@2x.png in Resources */,
+				F8ED3980207DB877006F4D2A /* LoginVC.xib in Resources */,
 				F8ED3958207DACDB006F4D2A /* sure_placeholder_error@2x.png in Resources */,
 				F8ED3955207DACDB006F4D2A /* close_icon@2x.png in Resources */,
+				F8ED397A207DB81B006F4D2A /* README.md in Resources */,
 				F8ED395B207DACDB006F4D2A /* README.md in Resources */,
 				F84E5B62207D961200949AF1 /* Assets.xcassets in Resources */,
+				F8ED3989207DB8B0006F4D2A /* RegistViewController.xib in Resources */,
 				F8ED394D207DACDB006F4D2A /* README.md in Resources */,
 				F8ED3959207DACDB006F4D2A /* sure_placeholder_error@3x.png in Resources */,
 				F8ED3944207DACDB006F4D2A /* README.md in Resources */,
@@ -516,6 +562,7 @@
 				F8ED395C207DACDB006F4D2A /* SYCacheManager.m in Sources */,
 				F8ED394C207DACDB006F4D2A /* NSString+MD5.m in Sources */,
 				F8ED394B207DACDB006F4D2A /* GTMBase64.m in Sources */,
+				F8ED3988207DB8B0006F4D2A /* RegistViewController.m in Sources */,
 				F8ED390F207DACC7006F4D2A /* RequestParams.m in Sources */,
 				F8ED3949207DACDB006F4D2A /* UIView+Extend.m in Sources */,
 				F8ED3977207DB3E0006F4D2A /* MainTabBarController.m in Sources */,
@@ -523,6 +570,7 @@
 				F8ED394A207DACDB006F4D2A /* UIViewController+AlertViewAndActionSheet.m in Sources */,
 				F8ED395A207DACDB006F4D2A /* SureWebViewController.m in Sources */,
 				F84E5B5A207D961200949AF1 /* AppDelegate.m in Sources */,
+				F8ED397F207DB877006F4D2A /* LoginVC.m in Sources */,
 				F8ED395E207DACDB006F4D2A /* Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
