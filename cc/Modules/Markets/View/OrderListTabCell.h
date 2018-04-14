@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface OrderListTabCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIButton *matchBtn;
 
 @end

@@ -17,6 +17,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.edgesForExtendedLayout = UIRectEdgeTop;
+    [self addNavView];
+    
+}
+
+-(void)addNavView {
+    
+    UIImageView *imgView  = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    imgView.image = [UIImage imageNamed:@"head"];
+    UIBarButtonItem *imgItm = [[UIBarButtonItem alloc] initWithCustomView:imgView];
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 120, 30);
+    [btn setTitle:@"点击查看我的朋友" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    btn.titleLabel.font = Font_13;
+    UIBarButtonItem *anotherButton2 = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    
+    [self.navigationItem setLeftBarButtonItems:[NSArray arrayWithObjects: imgItm,anotherButton2,nil]];
+    
+    UIImageView *newsImgView  = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    newsImgView.image = [UIImage imageNamed:@"xinfeng"];
+    UIBarButtonItem *rightAnotherButton = [[UIBarButtonItem alloc] initWithCustomView:newsImgView];
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: rightAnotherButton,nil]];
+}
+
+- (void)lookClick{
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,6 +10,9 @@
 #import "BaseNavViewController.h"
 #import "MainTabBarItem.h"
 #import "BaseViewController.h"
+#import "ReleaseViewController.h"
+#import "MarketsViewController.h"
+#import "MineViewController.h"
 
 @interface MainTabBarController ()
 {
@@ -22,7 +25,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
     [self addViewControllers];
 }
 
@@ -42,13 +44,11 @@
 
 #pragma mark Private Method
 -(void)addViewControllers {/**<添加二级控制器*/
-
-#warning 开发时替换下列控制器
-    BaseViewController *homeVC = [[BaseViewController alloc] init];
-    BaseViewController *shopCarVC = [[BaseViewController alloc] init];
-	BaseViewController *mineVC = [[BaseViewController alloc] init];
+    ReleaseViewController *releaseVC = [[ReleaseViewController alloc] initWithNibName:@"ReleaseViewController" bundle:nil];
+    MarketsViewController *marketsVC = [[MarketsViewController alloc] initWithNibName:@"MarketsViewController" bundle:nil];
+	MineViewController *mineVC = [[MineViewController alloc] initWithNibName:@"MineViewController" bundle:nil];
 	
-    NSArray *vcArray = @[homeVC,shopCarVC, mineVC];
+    NSArray *vcArray = @[releaseVC,marketsVC, mineVC];
     NSMutableArray *viewControllers = [[NSMutableArray alloc] initWithCapacity:vcArray.count];
     for (int i = 0; i < vcArray.count; i++) {
          BaseNavViewController*navigationVC = [[BaseNavViewController alloc] initWithRootViewController:vcArray[i]];
@@ -60,15 +60,14 @@
 
 - (void)createTabbar {
 	
-    self.tabBar.backgroundColor = [UIColor clearColor];
-#warning 开发时替换图片 及文字、文字颜色
+    self.tabBar.backgroundColor = [UIColor darkGrayColor]; //UIColorFromHex(0x303030);
     // 按钮的非循环中状态图片数组
-    NSArray *normalImgArray = @[@"", @"", @"",@""];
-    NSArray *selectedImgArray = @[@"", @"", @"",@""];
+    NSArray *normalImgArray = @[@"deliver_icon", @"market_icon", @"mine_icon"];
+    NSArray *selectedImgArray = @[@"deliver_icon_selector", @"market_icon_selector", @"mine_icon_selector"];
     // 按钮的标题数组
-    NSArray *titleArray = @[@"释放", @"释放", @"市场",@"我的"];
+    NSArray *titleArray = @[@"释放", @"市场",@"我的"];
     UIColor *normalTitleColor = UIColorFromHex(0x808080);
-    UIColor *selectedTitleColor = UIColorFromHex(0x6ac04c);
+    UIColor *selectedTitleColor = UI_ColorWithRGBA(204, 177, 126, 1.0); //UIColorFromHex(0xCCB17E);
     
     // 按钮的宽、高
     CGFloat itemWidth = KScreenWidth / (float)normalImgArray.count;
@@ -83,7 +82,7 @@
                                                      normalFontColor:normalTitleColor
                                                    selectedFontColor:selectedTitleColor
                                                                title:titleArray[i]];
-        item.backgroundColor = [UIColor whiteColor];
+        item.backgroundColor = [UIColor darkGrayColor];
         item.tag = i;
         item.isSelected = NO;
         if (i == self.selectedIndex) {
