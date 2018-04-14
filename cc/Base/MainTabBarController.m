@@ -45,11 +45,10 @@
 
 #warning 开发时替换下列控制器
     BaseViewController *homeVC = [[BaseViewController alloc] init];
-    BaseViewController *findVC = [[BaseViewController alloc] init];
     BaseViewController *shopCarVC = [[BaseViewController alloc] init];
 	BaseViewController *mineVC = [[BaseViewController alloc] init];
 	
-    NSArray *vcArray = @[homeVC, findVC,shopCarVC, mineVC];
+    NSArray *vcArray = @[homeVC,shopCarVC, mineVC];
     NSMutableArray *viewControllers = [[NSMutableArray alloc] initWithCapacity:vcArray.count];
     for (int i = 0; i < vcArray.count; i++) {
          BaseNavViewController*navigationVC = [[BaseNavViewController alloc] initWithRootViewController:vcArray[i]];

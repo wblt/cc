@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		712C2F0D8AD11A4ACF3382D4 /* libPods-cc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52AB57A49FC5F3A48FAEDE1E /* libPods-cc.a */; };
+		CF71651A2081ECA30092692F /* ReleaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7165182081ECA30092692F /* ReleaseViewController.m */; };
+		CF71651B2081ECA30092692F /* ReleaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF7165192081ECA30092692F /* ReleaseViewController.xib */; };
+		CF71651F2081ECC30092692F /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71651D2081ECC30092692F /* MineViewController.m */; };
+		CF7165202081ECC30092692F /* MineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF71651E2081ECC30092692F /* MineViewController.xib */; };
+		CF7165272081ED4E0092692F /* MarketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7165252081ED4E0092692F /* MarketsViewController.m */; };
+		CF7165282081ED4E0092692F /* MarketsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF7165262081ED4E0092692F /* MarketsViewController.xib */; };
+		CF71652A2081F6530092692F /* kxian.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF7165292081F6530092692F /* kxian.jpg */; };
+		CF71652E2082249E0092692F /* OrderListTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71652C2082249E0092692F /* OrderListTabCell.m */; };
+		CF71652F2082249E0092692F /* OrderListTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF71652D2082249E0092692F /* OrderListTabCell.xib */; };
 		F84E5B5A207D961200949AF1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F84E5B59207D961200949AF1 /* AppDelegate.m */; };
 		F84E5B5D207D961200949AF1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F84E5B5C207D961200949AF1 /* ViewController.m */; };
 		F84E5B60207D961200949AF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F84E5B5E207D961200949AF1 /* Main.storyboard */; };
@@ -62,6 +71,19 @@
 /* Begin PBXFileReference section */
 		52AB57A49FC5F3A48FAEDE1E /* libPods-cc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E310A8802745272B1EE1D7 /* Pods-cc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cc.release.xcconfig"; path = "Pods/Target Support Files/Pods-cc/Pods-cc.release.xcconfig"; sourceTree = "<group>"; };
+		CF7165172081ECA30092692F /* ReleaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReleaseViewController.h; sourceTree = "<group>"; };
+		CF7165182081ECA30092692F /* ReleaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReleaseViewController.m; sourceTree = "<group>"; };
+		CF7165192081ECA30092692F /* ReleaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReleaseViewController.xib; sourceTree = "<group>"; };
+		CF71651C2081ECC30092692F /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		CF71651D2081ECC30092692F /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		CF71651E2081ECC30092692F /* MineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineViewController.xib; sourceTree = "<group>"; };
+		CF7165242081ED4E0092692F /* MarketsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketsViewController.h; sourceTree = "<group>"; };
+		CF7165252081ED4E0092692F /* MarketsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketsViewController.m; sourceTree = "<group>"; };
+		CF7165262081ED4E0092692F /* MarketsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarketsViewController.xib; sourceTree = "<group>"; };
+		CF7165292081F6530092692F /* kxian.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kxian.jpg; sourceTree = "<group>"; };
+		CF71652B2082249E0092692F /* OrderListTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderListTabCell.h; sourceTree = "<group>"; };
+		CF71652C2082249E0092692F /* OrderListTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderListTabCell.m; sourceTree = "<group>"; };
+		CF71652D2082249E0092692F /* OrderListTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderListTabCell.xib; sourceTree = "<group>"; };
 		DDF4D9A80B4C9B8D6DB5BDF5 /* Pods-cc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cc/Pods-cc.debug.xcconfig"; sourceTree = "<group>"; };
 		F84E5B55207D961200949AF1 /* cc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F84E5B58207D961200949AF1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -164,6 +186,111 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CF71650B2081EC880092692F /* Markets */ = {
+			isa = PBXGroup;
+			children = (
+				CF71650C2081EC880092692F /* VC */,
+				CF71650D2081EC880092692F /* Model */,
+				CF71650E2081EC880092692F /* View */,
+			);
+			path = Markets;
+			sourceTree = "<group>";
+		};
+		CF71650C2081EC880092692F /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				CF7165242081ED4E0092692F /* MarketsViewController.h */,
+				CF7165252081ED4E0092692F /* MarketsViewController.m */,
+				CF7165262081ED4E0092692F /* MarketsViewController.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		CF71650D2081EC880092692F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CF71650E2081EC880092692F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CF71652B2082249E0092692F /* OrderListTabCell.h */,
+				CF71652C2082249E0092692F /* OrderListTabCell.m */,
+				CF71652D2082249E0092692F /* OrderListTabCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CF71650F2081EC880092692F /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				CF7165102081EC880092692F /* VC */,
+				CF7165112081EC880092692F /* Model */,
+				CF7165122081EC880092692F /* View */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		CF7165102081EC880092692F /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				CF71651C2081ECC30092692F /* MineViewController.h */,
+				CF71651D2081ECC30092692F /* MineViewController.m */,
+				CF71651E2081ECC30092692F /* MineViewController.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		CF7165112081EC880092692F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CF7165122081EC880092692F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CF7165132081EC890092692F /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				CF7165142081EC890092692F /* VC */,
+				CF7165152081EC890092692F /* Model */,
+				CF7165162081EC890092692F /* View */,
+			);
+			path = Release;
+			sourceTree = "<group>";
+		};
+		CF7165142081EC890092692F /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				CF7165172081ECA30092692F /* ReleaseViewController.h */,
+				CF7165182081ECA30092692F /* ReleaseViewController.m */,
+				CF7165192081ECA30092692F /* ReleaseViewController.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		CF7165152081EC890092692F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CF7165162081EC890092692F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E4E04DAFB40C17D2FBC6488A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +331,7 @@
 				F84E5B59207D961200949AF1 /* AppDelegate.m */,
 				F84E5B5B207D961200949AF1 /* ViewController.h */,
 				F84E5B5C207D961200949AF1 /* ViewController.m */,
+				CF7165292081F6530092692F /* kxian.jpg */,
 				F84E5B5E207D961200949AF1 /* Main.storyboard */,
 				F84E5B61207D961200949AF1 /* Assets.xcassets */,
 				F84E5B63207D961200949AF1 /* LaunchScreen.storyboard */,
@@ -377,6 +505,9 @@
 		F8ED3978207DB81A006F4D2A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CF71650B2081EC880092692F /* Markets */,
+				CF71650F2081EC880092692F /* Mine */,
+				CF7165132081EC890092692F /* Release */,
 				F8ED397B207DB83D006F4D2A /* LoginAndRegist */,
 				F8ED3979207DB81A006F4D2A /* README.md */,
 			);
@@ -467,9 +598,11 @@
 			files = (
 				F8ED3945207DACDB006F4D2A /* README.md in Resources */,
 				F84E5B65207D961200949AF1 /* LaunchScreen.storyboard in Resources */,
+				CF71651B2081ECA30092692F /* ReleaseViewController.xib in Resources */,
 				F8ED3965207DACF4006F4D2A /* README.md in Resources */,
 				F8ED396E207DB311006F4D2A /* README.md in Resources */,
 				F8ED3951207DACDB006F4D2A /* README.md in Resources */,
+				CF71652F2082249E0092692F /* OrderListTabCell.xib in Resources */,
 				F8ED3953207DACDB006F4D2A /* back_icon@2x.png in Resources */,
 				F8ED3980207DB877006F4D2A /* LoginVC.xib in Resources */,
 				F8ED3958207DACDB006F4D2A /* sure_placeholder_error@2x.png in Resources */,
@@ -478,12 +611,15 @@
 				F8ED395B207DACDB006F4D2A /* README.md in Resources */,
 				F84E5B62207D961200949AF1 /* Assets.xcassets in Resources */,
 				F8ED3989207DB8B0006F4D2A /* RegistViewController.xib in Resources */,
+				CF71652A2081F6530092692F /* kxian.jpg in Resources */,
 				F8ED394D207DACDB006F4D2A /* README.md in Resources */,
 				F8ED3959207DACDB006F4D2A /* sure_placeholder_error@3x.png in Resources */,
 				F8ED3944207DACDB006F4D2A /* README.md in Resources */,
 				F8ED390E207DACC7006F4D2A /* README.md in Resources */,
 				F8ED394F207DACDB006F4D2A /* README.md in Resources */,
 				F8ED395D207DACDB006F4D2A /* README.md in Resources */,
+				CF7165282081ED4E0092692F /* MarketsViewController.xib in Resources */,
+				CF7165202081ECC30092692F /* MineViewController.xib in Resources */,
 				F8ED394E207DACDB006F4D2A /* README.md in Resources */,
 				F84E5B60207D961200949AF1 /* Main.storyboard in Resources */,
 				F8ED3957207DACDB006F4D2A /* README.md in Resources */,
@@ -508,7 +644,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E2183B97011C2D7154C4294C /* [CP] Embed Pods Frameworks */ = {
@@ -552,9 +688,11 @@
 				F8ED396D207DB311006F4D2A /* BaseViewController.m in Sources */,
 				F84E5B68207D961200949AF1 /* main.m in Sources */,
 				F8ED390D207DACC7006F4D2A /* NetworkSingleton.m in Sources */,
+				CF71652E2082249E0092692F /* OrderListTabCell.m in Sources */,
 				F8ED3943207DACDB006F4D2A /* BeanManager.m in Sources */,
 				F8ED3948207DACDB006F4D2A /* UIColor+Extend.m in Sources */,
 				F8ED3952207DACDB006F4D2A /* SPUtil.m in Sources */,
+				CF7165272081ED4E0092692F /* MarketsViewController.m in Sources */,
 				F8ED3950207DACDB006F4D2A /* SandBoxHelper.m in Sources */,
 				F8ED3947207DACDB006F4D2A /* UICollectionView+IndexPath.m in Sources */,
 				F8ED396C207DB311006F4D2A /* BaseNavViewController.m in Sources */,
@@ -563,6 +701,7 @@
 				F8ED394C207DACDB006F4D2A /* NSString+MD5.m in Sources */,
 				F8ED394B207DACDB006F4D2A /* GTMBase64.m in Sources */,
 				F8ED3988207DB8B0006F4D2A /* RegistViewController.m in Sources */,
+				CF71651F2081ECC30092692F /* MineViewController.m in Sources */,
 				F8ED390F207DACC7006F4D2A /* RequestParams.m in Sources */,
 				F8ED3949207DACDB006F4D2A /* UIView+Extend.m in Sources */,
 				F8ED3977207DB3E0006F4D2A /* MainTabBarController.m in Sources */,
@@ -571,6 +710,7 @@
 				F8ED395A207DACDB006F4D2A /* SureWebViewController.m in Sources */,
 				F84E5B5A207D961200949AF1 /* AppDelegate.m in Sources */,
 				F8ED397F207DB877006F4D2A /* LoginVC.m in Sources */,
+				CF71651A2081ECA30092692F /* ReleaseViewController.m in Sources */,
 				F8ED395E207DACDB006F4D2A /* Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

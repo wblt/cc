@@ -11,6 +11,7 @@ pod 'SDWebImage', '~> 4.0'
 pod 'IQKeyboardManager'
 pod 'SVProgressHUD'
 pod 'LKDBHelper'
+pod 'FDStackView'
 
 pod 'Bugly'
 pod 'Pgyer'
