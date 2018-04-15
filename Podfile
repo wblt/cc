@@ -12,6 +12,7 @@ pod 'IQKeyboardManager'
 pod 'SVProgressHUD'
 pod 'LKDBHelper'
 pod 'FDStackView'
+pod 'MSWeakTimer'
 
 pod 'Bugly'
 pod 'Pgyer'

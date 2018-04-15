@@ -7,6 +7,7 @@
 //
 
 #import "MineViewController.h"
+#import "SettingViewController.h"
 
 @interface MineViewController ()
 
@@ -18,6 +19,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"我的";
+    [self setup];
+}
+
+- (void)setup {
+    UIImageView *newsImgView  = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    newsImgView.userInteractionEnabled = YES;
+    newsImgView.image = [UIImage imageNamed:@"setting_icon"];
+    UIBarButtonItem *rightAnotherButton = [[UIBarButtonItem alloc] initWithCustomView:newsImgView];
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: rightAnotherButton,nil]];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(settingAction:)];
+    [newsImgView addGestureRecognizer:tap];
+}
+
+- (void)settingAction:(UITapGestureRecognizer *)tap {
+    SettingViewController *vc = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:nil];
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

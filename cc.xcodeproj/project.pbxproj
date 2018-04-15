@@ -17,6 +17,12 @@
 		CF71652A2081F6530092692F /* kxian.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF7165292081F6530092692F /* kxian.jpg */; };
 		CF71652E2082249E0092692F /* OrderListTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71652C2082249E0092692F /* OrderListTabCell.m */; };
 		CF71652F2082249E0092692F /* OrderListTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF71652D2082249E0092692F /* OrderListTabCell.xib */; };
+		CF716533208394E80092692F /* MQVerCodeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF716531208394E80092692F /* MQVerCodeImageView.m */; };
+		CF716537208399C60092692F /* ForgetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF716535208399C60092692F /* ForgetPwdViewController.m */; };
+		CF716538208399C60092692F /* ForgetPwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF716536208399C60092692F /* ForgetPwdViewController.xib */; };
+		CF71653C20839EA10092692F /* CQCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71653A20839EA00092692F /* CQCountDownButton.m */; };
+		CF7165442083ADC30092692F /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7165422083ADC30092692F /* SettingViewController.m */; };
+		CF7165452083ADC30092692F /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF7165432083ADC30092692F /* SettingViewController.xib */; };
 		F84E5B5A207D961200949AF1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F84E5B59207D961200949AF1 /* AppDelegate.m */; };
 		F84E5B5D207D961200949AF1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F84E5B5C207D961200949AF1 /* ViewController.m */; };
 		F84E5B60207D961200949AF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F84E5B5E207D961200949AF1 /* Main.storyboard */; };
@@ -84,6 +90,16 @@
 		CF71652B2082249E0092692F /* OrderListTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderListTabCell.h; sourceTree = "<group>"; };
 		CF71652C2082249E0092692F /* OrderListTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderListTabCell.m; sourceTree = "<group>"; };
 		CF71652D2082249E0092692F /* OrderListTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderListTabCell.xib; sourceTree = "<group>"; };
+		CF716531208394E80092692F /* MQVerCodeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQVerCodeImageView.m; sourceTree = "<group>"; };
+		CF716532208394E80092692F /* MQVerCodeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQVerCodeImageView.h; sourceTree = "<group>"; };
+		CF716534208399C60092692F /* ForgetPwdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPwdViewController.h; sourceTree = "<group>"; };
+		CF716535208399C60092692F /* ForgetPwdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetPwdViewController.m; sourceTree = "<group>"; };
+		CF716536208399C60092692F /* ForgetPwdViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPwdViewController.xib; sourceTree = "<group>"; };
+		CF71653A20839EA00092692F /* CQCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQCountDownButton.m; sourceTree = "<group>"; };
+		CF71653B20839EA00092692F /* CQCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQCountDownButton.h; sourceTree = "<group>"; };
+		CF7165412083ADC30092692F /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		CF7165422083ADC30092692F /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		CF7165432083ADC30092692F /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		DDF4D9A80B4C9B8D6DB5BDF5 /* Pods-cc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cc/Pods-cc.debug.xcconfig"; sourceTree = "<group>"; };
 		F84E5B55207D961200949AF1 /* cc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F84E5B58207D961200949AF1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -285,6 +301,58 @@
 			sourceTree = "<group>";
 		};
 		CF7165162081EC890092692F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CF716530208394E80092692F /* MQVerCodeImageView */ = {
+			isa = PBXGroup;
+			children = (
+				CF716531208394E80092692F /* MQVerCodeImageView.m */,
+				CF716532208394E80092692F /* MQVerCodeImageView.h */,
+			);
+			path = MQVerCodeImageView;
+			sourceTree = "<group>";
+		};
+		CF71653920839EA00092692F /* CQCountDownButton */ = {
+			isa = PBXGroup;
+			children = (
+				CF71653A20839EA00092692F /* CQCountDownButton.m */,
+				CF71653B20839EA00092692F /* CQCountDownButton.h */,
+			);
+			path = CQCountDownButton;
+			sourceTree = "<group>";
+		};
+		CF71653D2083ADAE0092692F /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				CF71653E2083ADAE0092692F /* VC */,
+				CF71653F2083ADAE0092692F /* Model */,
+				CF7165402083ADAE0092692F /* View */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		CF71653E2083ADAE0092692F /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				CF7165412083ADC30092692F /* SettingViewController.h */,
+				CF7165422083ADC30092692F /* SettingViewController.m */,
+				CF7165432083ADC30092692F /* SettingViewController.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		CF71653F2083ADAE0092692F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CF7165402083ADAE0092692F /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -497,6 +565,8 @@
 		F8ED396F207DB31A006F4D2A /* ThridParty */ = {
 			isa = PBXGroup;
 			children = (
+				CF71653920839EA00092692F /* CQCountDownButton */,
+				CF716530208394E80092692F /* MQVerCodeImageView */,
 				F8ED3970207DB31A006F4D2A /* README.md */,
 			);
 			path = ThridParty;
@@ -505,6 +575,7 @@
 		F8ED3978207DB81A006F4D2A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CF71653D2083ADAE0092692F /* Setting */,
 				CF71650B2081EC880092692F /* Markets */,
 				CF71650F2081EC880092692F /* Mine */,
 				CF7165132081EC890092692F /* Release */,
@@ -531,6 +602,9 @@
 				F8ED3985207DB8B0006F4D2A /* RegistViewController.h */,
 				F8ED3986207DB8B0006F4D2A /* RegistViewController.m */,
 				F8ED3987207DB8B0006F4D2A /* RegistViewController.xib */,
+				CF716534208399C60092692F /* ForgetPwdViewController.h */,
+				CF716535208399C60092692F /* ForgetPwdViewController.m */,
+				CF716536208399C60092692F /* ForgetPwdViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -603,6 +677,7 @@
 				F8ED396E207DB311006F4D2A /* README.md in Resources */,
 				F8ED3951207DACDB006F4D2A /* README.md in Resources */,
 				CF71652F2082249E0092692F /* OrderListTabCell.xib in Resources */,
+				CF7165452083ADC30092692F /* SettingViewController.xib in Resources */,
 				F8ED3953207DACDB006F4D2A /* back_icon@2x.png in Resources */,
 				F8ED3980207DB877006F4D2A /* LoginVC.xib in Resources */,
 				F8ED3958207DACDB006F4D2A /* sure_placeholder_error@2x.png in Resources */,
@@ -617,6 +692,7 @@
 				F8ED3944207DACDB006F4D2A /* README.md in Resources */,
 				F8ED390E207DACC7006F4D2A /* README.md in Resources */,
 				F8ED394F207DACDB006F4D2A /* README.md in Resources */,
+				CF716538208399C60092692F /* ForgetPwdViewController.xib in Resources */,
 				F8ED395D207DACDB006F4D2A /* README.md in Resources */,
 				CF7165282081ED4E0092692F /* MarketsViewController.xib in Resources */,
 				CF7165202081ECC30092692F /* MineViewController.xib in Resources */,
@@ -687,6 +763,7 @@
 				F84E5B5D207D961200949AF1 /* ViewController.m in Sources */,
 				F8ED396D207DB311006F4D2A /* BaseViewController.m in Sources */,
 				F84E5B68207D961200949AF1 /* main.m in Sources */,
+				CF71653C20839EA10092692F /* CQCountDownButton.m in Sources */,
 				F8ED390D207DACC7006F4D2A /* NetworkSingleton.m in Sources */,
 				CF71652E2082249E0092692F /* OrderListTabCell.m in Sources */,
 				F8ED3943207DACDB006F4D2A /* BeanManager.m in Sources */,
@@ -698,12 +775,15 @@
 				F8ED396C207DB311006F4D2A /* BaseNavViewController.m in Sources */,
 				F8ED3946207DACDB006F4D2A /* UIButton+XYButton.m in Sources */,
 				F8ED395C207DACDB006F4D2A /* SYCacheManager.m in Sources */,
+				CF7165442083ADC30092692F /* SettingViewController.m in Sources */,
 				F8ED394C207DACDB006F4D2A /* NSString+MD5.m in Sources */,
 				F8ED394B207DACDB006F4D2A /* GTMBase64.m in Sources */,
 				F8ED3988207DB8B0006F4D2A /* RegistViewController.m in Sources */,
 				CF71651F2081ECC30092692F /* MineViewController.m in Sources */,
 				F8ED390F207DACC7006F4D2A /* RequestParams.m in Sources */,
+				CF716533208394E80092692F /* MQVerCodeImageView.m in Sources */,
 				F8ED3949207DACDB006F4D2A /* UIView+Extend.m in Sources */,
+				CF716537208399C60092692F /* ForgetPwdViewController.m in Sources */,
 				F8ED3977207DB3E0006F4D2A /* MainTabBarController.m in Sources */,
 				F8ED3976207DB3E0006F4D2A /* MainTabBarItem.m in Sources */,
 				F8ED394A207DACDB006F4D2A /* UIViewController+AlertViewAndActionSheet.m in Sources */,

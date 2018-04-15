@@ -1,38 +1,38 @@
 //
-//  RegistViewController.m
+//  ForgetPwdViewController.m
 //  cc
 //
-//  Created by yanghuan on 2018/4/11.
+//  Created by wy on 2018/4/15.
 //  Copyright © 2018年 wyChirs. All rights reserved.
 //
 
-#import "RegistViewController.h"
+#import "ForgetPwdViewController.h"
 #import "CQCountDownButton.h"
 
-@interface RegistViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *phonetextField;
-@property (weak, nonatomic) IBOutlet UITextField *pwdTextField;
-@property (weak, nonatomic) IBOutlet UITextField *surePwdTextField;
-@property (weak, nonatomic) IBOutlet UITextField *codeTextField;
+@interface ForgetPwdViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
+@property (weak, nonatomic) IBOutlet UITextField *codeTextFiedl;
 @property (weak, nonatomic) IBOutlet UIView *codeBgView;
-@property (weak, nonatomic) IBOutlet UIButton *readBtn;
-@property (weak, nonatomic) IBOutlet UIButton *registBtn;
-
+@property (weak, nonatomic) IBOutlet UITextField *pwdTextField;
+@property (weak, nonatomic) IBOutlet UITextField *surePwdtextField;
+@property (weak, nonatomic) IBOutlet UIButton *editBtn;
 @property(nonatomic,strong)CQCountDownButton *countDownButton;
+
 
 @end
 
-@implementation RegistViewController
+@implementation ForgetPwdViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"注册";
+    self.navigationItem.title = @"忘记密码";
     [self setup];
+    
 }
 
 - (void)setup {
-    ViewBorderRadius(_registBtn, 8, 0.6, UIColorFromHex(0xCCB17E));
+    ViewBorderRadius(_editBtn, 8, 0.6, UIColorFromHex(0xCCB17E));
     
     __weak __typeof__(self) weakSelf = self;
     
@@ -73,38 +73,26 @@
     self.countDownButton.backgroundColor = UIColorFromHex(0x484848);
     [self.countDownButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.countDownButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
-    
 }
 
-- (IBAction)readAction:(UIButton *)sender {
-    sender.selected = !sender.selected;
-}
-- (IBAction)protocolAction:(UIButton *)sender {
-    //跳转到协议界面
-    
-}
-- (IBAction)registAction:(UIButton *)sender {
-    
-    if (_phonetextField.text.length <= 0 || _pwdTextField.text.length <=0 || _codeTextField.text.length <=0 || _surePwdTextField.text.length <=0 ) {
+- (IBAction)EditAction:(id)sender {
+    if (_phoneTextField.text.length <= 0 || _pwdTextField.text.length <=0 || _codeTextFiedl.text.length <=0 || _surePwdtextField.text.length <=0 ) {
         [SVProgressHUD showInfoWithStatus:@"请将信息填写完整"];
         return;
     }
     
-    if (![_pwdTextField.text isEqualToString:_surePwdTextField.text]) {
+    if (![_pwdTextField.text isEqualToString:_surePwdtextField.text]) {
         [SVProgressHUD showErrorWithStatus:@"两次密码不一致"];
     }
     
-    if (![Util valiMobile:_phonetextField.text]) {
+    if (![Util valiMobile:_phoneTextField.text]) {
         [SVProgressHUD showErrorWithStatus:@"请输入正确的手机号"];
         return;
     }
-    
-    if (!_readBtn.selected) {
-         [SVProgressHUD showInfoWithStatus:@"请阅读并同意注册协议"];
-        return;
-    }
+
     // 回到登录界面、 或者直接进入
     [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -13,7 +13,7 @@
 #import <Bugly/Bugly.h>
 #import <PgySDK/PgyManager.h>
 #import <PgyUpdate/PgyUpdateManager.h>
-
+#import "LoginVC.h"
 @interface AppDelegate ()
 
 @end
@@ -43,11 +43,21 @@
 	//启动更新检查SDK
 	//[[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"PGY_APP_ID"];
 	
-	
+    BOOL flag = [SPUtil boolForKey:k_app_login];;
+    
+    if (flag) {
+        MainTabBarController *mainTabbar = [[MainTabBarController alloc] init];
+        mainTabbar.selectIndex = 0;
+        self.window.rootViewController = mainTabbar;
+    }else {
+        LoginVC *vc = [[LoginVC alloc] initWithNibName:@"LoginVC" bundle:nil];
+        
+        BaseNavViewController *nav = [[BaseNavViewController alloc] initWithRootViewController:vc];
+        self.window.rootViewController = nav;
+    }
+    
 	// 进入主控制器，需要判断是否登录
-	MainTabBarController *mainTabbar = [[MainTabBarController alloc] init];
-	mainTabbar.selectIndex = 0;
-	self.window.rootViewController = mainTabbar;
+	
 	
 	return YES;
 }
