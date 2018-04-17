@@ -23,6 +23,19 @@
 		CF71653C20839EA10092692F /* CQCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71653A20839EA00092692F /* CQCountDownButton.m */; };
 		CF7165442083ADC30092692F /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7165422083ADC30092692F /* SettingViewController.m */; };
 		CF7165452083ADC30092692F /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF7165432083ADC30092692F /* SettingViewController.xib */; };
+		CF82FDDF20862CDD006EF9B6 /* HashrateShifToWalletVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CF82FDDD20862CDD006EF9B6 /* HashrateShifToWalletVC.m */; };
+		CF82FDE020862CDD006EF9B6 /* HashrateShifToWalletVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF82FDDE20862CDD006EF9B6 /* HashrateShifToWalletVC.xib */; };
+		CF82FDE420863E2D006EF9B6 /* NewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CF82FDE220863E2D006EF9B6 /* NewsVC.m */; };
+		CF82FDE520863E2D006EF9B6 /* NewsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF82FDE320863E2D006EF9B6 /* NewsVC.xib */; };
+		CF82FDE920863EBA006EF9B6 /* NewsTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF82FDE720863EBA006EF9B6 /* NewsTabCell.m */; };
+		CF82FDEA20863EBA006EF9B6 /* NewsTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF82FDE820863EBA006EF9B6 /* NewsTabCell.xib */; };
+		CF82FDEE20864339006EF9B6 /* ZoreWalletVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CF82FDEC20864339006EF9B6 /* ZoreWalletVC.m */; };
+		CF82FDEF20864339006EF9B6 /* ZoreWalletVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF82FDED20864339006EF9B6 /* ZoreWalletVC.xib */; };
+		CF82FDF320864DE3006EF9B6 /* InvitionFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CF82FDF120864DE3006EF9B6 /* InvitionFriendVC.m */; };
+		CF82FDF420864DE3006EF9B6 /* InvitionFriendVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF82FDF220864DE3006EF9B6 /* InvitionFriendVC.xib */; };
+		CF82FDFA208662BA006EF9B6 /* xxx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF82FDF6208662BA006EF9B6 /* xxx@2x.png */; };
+		CF82FDFB208662BA006EF9B6 /* passwordIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF82FDF7208662BA006EF9B6 /* passwordIcon.png */; };
+		CF82FDFC208662BA006EF9B6 /* PasswordAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF82FDF9208662BA006EF9B6 /* PasswordAlertView.m */; };
 		F84E5B5A207D961200949AF1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F84E5B59207D961200949AF1 /* AppDelegate.m */; };
 		F84E5B5D207D961200949AF1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F84E5B5C207D961200949AF1 /* ViewController.m */; };
 		F84E5B60207D961200949AF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F84E5B5E207D961200949AF1 /* Main.storyboard */; };
@@ -100,6 +113,25 @@
 		CF7165412083ADC30092692F /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		CF7165422083ADC30092692F /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		CF7165432083ADC30092692F /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		CF82FDDC20862CDD006EF9B6 /* HashrateShifToWalletVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashrateShifToWalletVC.h; sourceTree = "<group>"; };
+		CF82FDDD20862CDD006EF9B6 /* HashrateShifToWalletVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HashrateShifToWalletVC.m; sourceTree = "<group>"; };
+		CF82FDDE20862CDD006EF9B6 /* HashrateShifToWalletVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HashrateShifToWalletVC.xib; sourceTree = "<group>"; };
+		CF82FDE120863E2D006EF9B6 /* NewsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsVC.h; sourceTree = "<group>"; };
+		CF82FDE220863E2D006EF9B6 /* NewsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsVC.m; sourceTree = "<group>"; };
+		CF82FDE320863E2D006EF9B6 /* NewsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsVC.xib; sourceTree = "<group>"; };
+		CF82FDE620863EBA006EF9B6 /* NewsTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsTabCell.h; sourceTree = "<group>"; };
+		CF82FDE720863EBA006EF9B6 /* NewsTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsTabCell.m; sourceTree = "<group>"; };
+		CF82FDE820863EBA006EF9B6 /* NewsTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTabCell.xib; sourceTree = "<group>"; };
+		CF82FDEB20864339006EF9B6 /* ZoreWalletVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZoreWalletVC.h; sourceTree = "<group>"; };
+		CF82FDEC20864339006EF9B6 /* ZoreWalletVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZoreWalletVC.m; sourceTree = "<group>"; };
+		CF82FDED20864339006EF9B6 /* ZoreWalletVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZoreWalletVC.xib; sourceTree = "<group>"; };
+		CF82FDF020864DE3006EF9B6 /* InvitionFriendVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InvitionFriendVC.h; sourceTree = "<group>"; };
+		CF82FDF120864DE3006EF9B6 /* InvitionFriendVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InvitionFriendVC.m; sourceTree = "<group>"; };
+		CF82FDF220864DE3006EF9B6 /* InvitionFriendVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvitionFriendVC.xib; sourceTree = "<group>"; };
+		CF82FDF6208662BA006EF9B6 /* xxx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xxx@2x.png"; sourceTree = "<group>"; };
+		CF82FDF7208662BA006EF9B6 /* passwordIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = passwordIcon.png; sourceTree = "<group>"; };
+		CF82FDF8208662BA006EF9B6 /* PasswordAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordAlertView.h; sourceTree = "<group>"; };
+		CF82FDF9208662BA006EF9B6 /* PasswordAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordAlertView.m; sourceTree = "<group>"; };
 		DDF4D9A80B4C9B8D6DB5BDF5 /* Pods-cc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cc/Pods-cc.debug.xcconfig"; sourceTree = "<group>"; };
 		F84E5B55207D961200949AF1 /* cc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F84E5B58207D961200949AF1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -289,6 +321,12 @@
 				CF7165172081ECA30092692F /* ReleaseViewController.h */,
 				CF7165182081ECA30092692F /* ReleaseViewController.m */,
 				CF7165192081ECA30092692F /* ReleaseViewController.xib */,
+				CF82FDE120863E2D006EF9B6 /* NewsVC.h */,
+				CF82FDE220863E2D006EF9B6 /* NewsVC.m */,
+				CF82FDE320863E2D006EF9B6 /* NewsVC.xib */,
+				CF82FDF020864DE3006EF9B6 /* InvitionFriendVC.h */,
+				CF82FDF120864DE3006EF9B6 /* InvitionFriendVC.m */,
+				CF82FDF220864DE3006EF9B6 /* InvitionFriendVC.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -303,6 +341,9 @@
 		CF7165162081EC890092692F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CF82FDE620863EBA006EF9B6 /* NewsTabCell.h */,
+				CF82FDE720863EBA006EF9B6 /* NewsTabCell.m */,
+				CF82FDE820863EBA006EF9B6 /* NewsTabCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -357,6 +398,54 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CF82FDD820862C94006EF9B6 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				CF82FDD920862C94006EF9B6 /* VC */,
+				CF82FDDA20862C94006EF9B6 /* Model */,
+				CF82FDDB20862C94006EF9B6 /* View */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		CF82FDD920862C94006EF9B6 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				CF82FDDC20862CDD006EF9B6 /* HashrateShifToWalletVC.h */,
+				CF82FDDD20862CDD006EF9B6 /* HashrateShifToWalletVC.m */,
+				CF82FDDE20862CDD006EF9B6 /* HashrateShifToWalletVC.xib */,
+				CF82FDEB20864339006EF9B6 /* ZoreWalletVC.h */,
+				CF82FDEC20864339006EF9B6 /* ZoreWalletVC.m */,
+				CF82FDED20864339006EF9B6 /* ZoreWalletVC.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		CF82FDDA20862C94006EF9B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CF82FDDB20862C94006EF9B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CF82FDF5208662BA006EF9B6 /* PasswordAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				CF82FDF6208662BA006EF9B6 /* xxx@2x.png */,
+				CF82FDF7208662BA006EF9B6 /* passwordIcon.png */,
+				CF82FDF8208662BA006EF9B6 /* PasswordAlertView.h */,
+				CF82FDF9208662BA006EF9B6 /* PasswordAlertView.m */,
+			);
+			path = PasswordAlertView;
 			sourceTree = "<group>";
 		};
 		E4E04DAFB40C17D2FBC6488A /* Pods */ = {
@@ -565,6 +654,7 @@
 		F8ED396F207DB31A006F4D2A /* ThridParty */ = {
 			isa = PBXGroup;
 			children = (
+				CF82FDF5208662BA006EF9B6 /* PasswordAlertView */,
 				CF71653920839EA00092692F /* CQCountDownButton */,
 				CF716530208394E80092692F /* MQVerCodeImageView */,
 				F8ED3970207DB31A006F4D2A /* README.md */,
@@ -575,6 +665,7 @@
 		F8ED3978207DB81A006F4D2A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CF82FDD820862C94006EF9B6 /* Wallet */,
 				CF71653D2083ADAE0092692F /* Setting */,
 				CF71650B2081EC880092692F /* Markets */,
 				CF71650F2081EC880092692F /* Mine */,
@@ -673,7 +764,9 @@
 				F8ED3945207DACDB006F4D2A /* README.md in Resources */,
 				F84E5B65207D961200949AF1 /* LaunchScreen.storyboard in Resources */,
 				CF71651B2081ECA30092692F /* ReleaseViewController.xib in Resources */,
+				CF82FDEA20863EBA006EF9B6 /* NewsTabCell.xib in Resources */,
 				F8ED3965207DACF4006F4D2A /* README.md in Resources */,
+				CF82FDFA208662BA006EF9B6 /* xxx@2x.png in Resources */,
 				F8ED396E207DB311006F4D2A /* README.md in Resources */,
 				F8ED3951207DACDB006F4D2A /* README.md in Resources */,
 				CF71652F2082249E0092692F /* OrderListTabCell.xib in Resources */,
@@ -684,22 +777,27 @@
 				F8ED3955207DACDB006F4D2A /* close_icon@2x.png in Resources */,
 				F8ED397A207DB81B006F4D2A /* README.md in Resources */,
 				F8ED395B207DACDB006F4D2A /* README.md in Resources */,
+				CF82FDEF20864339006EF9B6 /* ZoreWalletVC.xib in Resources */,
 				F84E5B62207D961200949AF1 /* Assets.xcassets in Resources */,
 				F8ED3989207DB8B0006F4D2A /* RegistViewController.xib in Resources */,
 				CF71652A2081F6530092692F /* kxian.jpg in Resources */,
 				F8ED394D207DACDB006F4D2A /* README.md in Resources */,
 				F8ED3959207DACDB006F4D2A /* sure_placeholder_error@3x.png in Resources */,
 				F8ED3944207DACDB006F4D2A /* README.md in Resources */,
+				CF82FDF420864DE3006EF9B6 /* InvitionFriendVC.xib in Resources */,
 				F8ED390E207DACC7006F4D2A /* README.md in Resources */,
 				F8ED394F207DACDB006F4D2A /* README.md in Resources */,
 				CF716538208399C60092692F /* ForgetPwdViewController.xib in Resources */,
 				F8ED395D207DACDB006F4D2A /* README.md in Resources */,
+				CF82FDE020862CDD006EF9B6 /* HashrateShifToWalletVC.xib in Resources */,
 				CF7165282081ED4E0092692F /* MarketsViewController.xib in Resources */,
 				CF7165202081ECC30092692F /* MineViewController.xib in Resources */,
+				CF82FDFB208662BA006EF9B6 /* passwordIcon.png in Resources */,
 				F8ED394E207DACDB006F4D2A /* README.md in Resources */,
 				F84E5B60207D961200949AF1 /* Main.storyboard in Resources */,
 				F8ED3957207DACDB006F4D2A /* README.md in Resources */,
 				F8ED3954207DACDB006F4D2A /* back_icon@3x.png in Resources */,
+				CF82FDE520863E2D006EF9B6 /* NewsVC.xib in Resources */,
 				F8ED3971207DB31A006F4D2A /* README.md in Resources */,
 				F8ED3956207DACDB006F4D2A /* close_icon@3x.png in Resources */,
 			);
@@ -766,6 +864,7 @@
 				CF71653C20839EA10092692F /* CQCountDownButton.m in Sources */,
 				F8ED390D207DACC7006F4D2A /* NetworkSingleton.m in Sources */,
 				CF71652E2082249E0092692F /* OrderListTabCell.m in Sources */,
+				CF82FDDF20862CDD006EF9B6 /* HashrateShifToWalletVC.m in Sources */,
 				F8ED3943207DACDB006F4D2A /* BeanManager.m in Sources */,
 				F8ED3948207DACDB006F4D2A /* UIColor+Extend.m in Sources */,
 				F8ED3952207DACDB006F4D2A /* SPUtil.m in Sources */,
@@ -773,7 +872,11 @@
 				F8ED3950207DACDB006F4D2A /* SandBoxHelper.m in Sources */,
 				F8ED3947207DACDB006F4D2A /* UICollectionView+IndexPath.m in Sources */,
 				F8ED396C207DB311006F4D2A /* BaseNavViewController.m in Sources */,
+				CF82FDFC208662BA006EF9B6 /* PasswordAlertView.m in Sources */,
 				F8ED3946207DACDB006F4D2A /* UIButton+XYButton.m in Sources */,
+				CF82FDEE20864339006EF9B6 /* ZoreWalletVC.m in Sources */,
+				CF82FDE420863E2D006EF9B6 /* NewsVC.m in Sources */,
+				CF82FDE920863EBA006EF9B6 /* NewsTabCell.m in Sources */,
 				F8ED395C207DACDB006F4D2A /* SYCacheManager.m in Sources */,
 				CF7165442083ADC30092692F /* SettingViewController.m in Sources */,
 				F8ED394C207DACDB006F4D2A /* NSString+MD5.m in Sources */,
@@ -782,6 +885,7 @@
 				CF71651F2081ECC30092692F /* MineViewController.m in Sources */,
 				F8ED390F207DACC7006F4D2A /* RequestParams.m in Sources */,
 				CF716533208394E80092692F /* MQVerCodeImageView.m in Sources */,
+				CF82FDF320864DE3006EF9B6 /* InvitionFriendVC.m in Sources */,
 				F8ED3949207DACDB006F4D2A /* UIView+Extend.m in Sources */,
 				CF716537208399C60092692F /* ForgetPwdViewController.m in Sources */,
 				F8ED3977207DB3E0006F4D2A /* MainTabBarController.m in Sources */,

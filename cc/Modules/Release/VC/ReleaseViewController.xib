@@ -11,6 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReleaseViewController">
             <connections>
+                <outlet property="ZeroView" destination="LO6-VB-s5g" id="bcA-QG-xXr"/>
+                <outlet property="hashrateView" destination="6C8-Sm-ArX" id="brP-Tf-Jne"/>
+                <outlet property="inviteBtn" destination="oXL-G8-QvI" id="6ZI-6J-Yfi"/>
+                <outlet property="shiftToHashrateBtn" destination="r0w-bS-tEN" id="lht-l4-DBy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,6 +38,9 @@
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="6"/>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="shiftToWalletAction:" destination="-1" eventType="touchUpInside" id="SPI-wm-18O"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXL-G8-QvI">
                             <rect key="frame" x="192.5" y="15.5" width="162.5" height="40"/>
@@ -44,6 +51,9 @@
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="6"/>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="inviteFriendsAction:" destination="-1" eventType="touchUpInside" id="GoF-Gf-ZlZ"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
