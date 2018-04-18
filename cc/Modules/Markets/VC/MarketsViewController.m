@@ -104,13 +104,15 @@ static NSString *Identifier = @"cell";
 
 - (void)OrderListTabCellMacth:(NSInteger)index {
 	
-	BOOL flag = [SPUtil boolForKey:k_app_security];
-	if (flag) {
-		DLog(@"匹配第几个%ld",index);
-		[SVProgressHUD showSuccessWithStatus:@"匹配一下~"];
-	}else {
-		[_alertView show];
-	}
+	[_alertView show];
+	
+//	BOOL flag = [SPUtil boolForKey:k_app_security];
+//	if (flag) {
+//		DLog(@"匹配第几个%ld",index);
+//		[SVProgressHUD showSuccessWithStatus:@"匹配一下~"];
+//	}else {
+//		[_alertView show];
+//	}
 	
 }
 -(void)PasswordAlertViewCompleteInputWith:(NSString*)password{
