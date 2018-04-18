@@ -10,6 +10,7 @@
 #import "OrderListTabCell.h"
 #import "PasswordAlertView.h"
 #import <IQKeyboardManager.h>
+#import "DealViewController.h"
 static NSString *Identifier = @"cell";
 
 @interface MarketsViewController ()<UITableViewDelegate,UITableViewDataSource,PasswordAlertViewDelegate,OrderListTabCellDelegate>
@@ -35,13 +36,33 @@ static NSString *Identifier = @"cell";
 	 [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES; // 控制点击背景是否收起键盘
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"市场";
     self.edgesForExtendedLayout = UIRectEdgeTop;
+	[self addNavBtn];
     [self setup];
+	
+}
+
+- (void)addNavBtn {
+	UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+	btn.frame = CGRectMake(0, 0, 120, 30);
+	[btn setTitle:@"挂单" forState:UIControlStateNormal];
+	[btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+	btn.titleLabel.font = Font_13;
+	
+	[btn addTapBlock:^(UIButton *btn) {
+		// 去挂单
+		DealViewController *vc =[[DealViewController alloc] initWithNibName:@"DealViewController" bundle:nil];
+		[self.navigationController pushViewController:vc animated:YES];
+		
+	}];
+	
+	UIBarButtonItem *anotherButton2 = [[UIBarButtonItem alloc] initWithCustomView:btn];
+	[self.navigationItem setRightBarButtonItem:anotherButton2];
+	
 }
 
 - (void)setup {

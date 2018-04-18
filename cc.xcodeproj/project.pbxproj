@@ -43,6 +43,10 @@
 		F84E5B65207D961200949AF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F84E5B63207D961200949AF1 /* LaunchScreen.storyboard */; };
 		F84E5B68207D961200949AF1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F84E5B67207D961200949AF1 /* main.m */; };
 		F8CE3BDA2086E95600C6994B /* QLCycleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CE3BD92086E95600C6994B /* QLCycleProgressView.m */; };
+		F8CE3BE22087424100C6994B /* HGBStepMoel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CE3BDE2087424100C6994B /* HGBStepMoel.m */; };
+		F8CE3BE32087424100C6994B /* HGBStepTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CE3BE12087424100C6994B /* HGBStepTool.m */; };
+		F8CE3BEC208746AB00C6994B /* DealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CE3BEA208746AB00C6994B /* DealViewController.m */; };
+		F8CE3BED208746AB00C6994B /* DealViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8CE3BEB208746AB00C6994B /* DealViewController.xib */; };
 		F8ED390D207DACC7006F4D2A /* NetworkSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8ED3909207DACC7006F4D2A /* NetworkSingleton.m */; };
 		F8ED390E207DACC7006F4D2A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F8ED390A207DACC7006F4D2A /* README.md */; };
 		F8ED390F207DACC7006F4D2A /* RequestParams.m in Sources */ = {isa = PBXBuildFile; fileRef = F8ED390C207DACC7006F4D2A /* RequestParams.m */; };
@@ -146,6 +150,14 @@
 		F84E5B67207D961200949AF1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F8CE3BD82086E95600C6994B /* QLCycleProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLCycleProgressView.h; sourceTree = "<group>"; };
 		F8CE3BD92086E95600C6994B /* QLCycleProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLCycleProgressView.m; sourceTree = "<group>"; };
+		F8CE3BDD2087424100C6994B /* HGBStepMoel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGBStepMoel.h; sourceTree = "<group>"; };
+		F8CE3BDE2087424100C6994B /* HGBStepMoel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGBStepMoel.m; sourceTree = "<group>"; };
+		F8CE3BE02087424100C6994B /* HGBStepTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGBStepTool.h; sourceTree = "<group>"; };
+		F8CE3BE12087424100C6994B /* HGBStepTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGBStepTool.m; sourceTree = "<group>"; };
+		F8CE3BE4208743D500C6994B /* cc.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cc.entitlements; sourceTree = "<group>"; };
+		F8CE3BE9208746AB00C6994B /* DealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DealViewController.h; sourceTree = "<group>"; };
+		F8CE3BEA208746AB00C6994B /* DealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DealViewController.m; sourceTree = "<group>"; };
+		F8CE3BEB208746AB00C6994B /* DealViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DealViewController.xib; sourceTree = "<group>"; };
 		F8ED3906207D9B6D006F4D2A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		F8ED3908207DACC7006F4D2A /* NetworkSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkSingleton.h; sourceTree = "<group>"; };
 		F8ED3909207DACC7006F4D2A /* NetworkSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkSingleton.m; sourceTree = "<group>"; };
@@ -253,6 +265,9 @@
 				CF7165242081ED4E0092692F /* MarketsViewController.h */,
 				CF7165252081ED4E0092692F /* MarketsViewController.m */,
 				CF7165262081ED4E0092692F /* MarketsViewController.xib */,
+				F8CE3BE9208746AB00C6994B /* DealViewController.h */,
+				F8CE3BEA208746AB00C6994B /* DealViewController.m */,
+				F8CE3BEB208746AB00C6994B /* DealViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -483,6 +498,7 @@
 		F84E5B57207D961200949AF1 /* cc */ = {
 			isa = PBXGroup;
 			children = (
+				F8CE3BE4208743D500C6994B /* cc.entitlements */,
 				F8ED3978207DB81A006F4D2A /* Modules */,
 				F8ED396F207DB31A006F4D2A /* ThridParty */,
 				F8ED3966207DB310006F4D2A /* Base */,
@@ -501,6 +517,33 @@
 				F84E5B67207D961200949AF1 /* main.m */,
 			);
 			path = cc;
+			sourceTree = "<group>";
+		};
+		F8CE3BDB2087424100C6994B /* Step */ = {
+			isa = PBXGroup;
+			children = (
+				F8CE3BDC2087424100C6994B /* Model */,
+				F8CE3BDF2087424100C6994B /* Tool */,
+			);
+			path = Step;
+			sourceTree = "<group>";
+		};
+		F8CE3BDC2087424100C6994B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F8CE3BDD2087424100C6994B /* HGBStepMoel.h */,
+				F8CE3BDE2087424100C6994B /* HGBStepMoel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F8CE3BDF2087424100C6994B /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				F8CE3BE02087424100C6994B /* HGBStepTool.h */,
+				F8CE3BE12087424100C6994B /* HGBStepTool.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		F8ED3907207DACC7006F4D2A /* Net */ = {
@@ -659,6 +702,7 @@
 		F8ED396F207DB31A006F4D2A /* ThridParty */ = {
 			isa = PBXGroup;
 			children = (
+				F8CE3BDB2087424100C6994B /* Step */,
 				CF82FDF5208662BA006EF9B6 /* PasswordAlertView */,
 				CF71653920839EA00092692F /* CQCountDownButton */,
 				CF716530208394E80092692F /* MQVerCodeImageView */,
@@ -740,6 +784,11 @@
 					F84E5B54207D961200949AF1 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -802,6 +851,7 @@
 				F84E5B60207D961200949AF1 /* Main.storyboard in Resources */,
 				F8ED3957207DACDB006F4D2A /* README.md in Resources */,
 				F8ED3954207DACDB006F4D2A /* back_icon@3x.png in Resources */,
+				F8CE3BED208746AB00C6994B /* DealViewController.xib in Resources */,
 				CF82FDE520863E2D006EF9B6 /* NewsVC.xib in Resources */,
 				F8ED3971207DB31A006F4D2A /* README.md in Resources */,
 				F8ED3956207DACDB006F4D2A /* close_icon@3x.png in Resources */,
@@ -867,6 +917,7 @@
 				F8ED396D207DB311006F4D2A /* BaseViewController.m in Sources */,
 				F84E5B68207D961200949AF1 /* main.m in Sources */,
 				CF71653C20839EA10092692F /* CQCountDownButton.m in Sources */,
+				F8CE3BE32087424100C6994B /* HGBStepTool.m in Sources */,
 				F8ED390D207DACC7006F4D2A /* NetworkSingleton.m in Sources */,
 				CF71652E2082249E0092692F /* OrderListTabCell.m in Sources */,
 				CF82FDDF20862CDD006EF9B6 /* HashrateShifToWalletVC.m in Sources */,
@@ -876,11 +927,13 @@
 				F8ED3952207DACDB006F4D2A /* SPUtil.m in Sources */,
 				CF7165272081ED4E0092692F /* MarketsViewController.m in Sources */,
 				F8ED3950207DACDB006F4D2A /* SandBoxHelper.m in Sources */,
+				F8CE3BEC208746AB00C6994B /* DealViewController.m in Sources */,
 				F8ED3947207DACDB006F4D2A /* UICollectionView+IndexPath.m in Sources */,
 				F8ED396C207DB311006F4D2A /* BaseNavViewController.m in Sources */,
 				CF82FDFC208662BA006EF9B6 /* PasswordAlertView.m in Sources */,
 				F8ED3946207DACDB006F4D2A /* UIButton+XYButton.m in Sources */,
 				CF82FDEE20864339006EF9B6 /* ZoreWalletVC.m in Sources */,
+				F8CE3BE22087424100C6994B /* HGBStepMoel.m in Sources */,
 				CF82FDE420863E2D006EF9B6 /* NewsVC.m in Sources */,
 				CF82FDE920863EBA006EF9B6 /* NewsTabCell.m in Sources */,
 				F8ED395C207DACDB006F4D2A /* SYCacheManager.m in Sources */,

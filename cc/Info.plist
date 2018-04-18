@@ -43,5 +43,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>some string value stating the reason</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>some string value stating the reason</string>
 </dict>
 </plist>
