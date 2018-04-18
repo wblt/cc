@@ -9,15 +9,32 @@
 #import "MarketsViewController.h"
 #import "OrderListTabCell.h"
 #import "PasswordAlertView.h"
-
+#import <IQKeyboardManager.h>
 static NSString *Identifier = @"cell";
 
-@interface MarketsViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface MarketsViewController ()<UITableViewDelegate,UITableViewDataSource,PasswordAlertViewDelegate,OrderListTabCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) PasswordAlertView *alertView;
 @end
 
 @implementation MarketsViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	
+	//TODO: 页面appear 禁用
+	[[IQKeyboardManager sharedManager] setEnable:NO];
+	[IQKeyboardManager sharedManager].shouldResignOnTouchOutside = NO; // 控制点击背景是否收起键盘
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+	
+	//TODO: 页面Disappear 启用
+	 [[IQKeyboardManager sharedManager] setEnable:YES];
+	 [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES; // 控制点击背景是否收起键盘
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,10 +50,11 @@ static NSString *Identifier = @"cell";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"OrderListTabCell" bundle:nil] forCellReuseIdentifier:Identifier];
     
-    _alertView =[[PasswordAlertView alloc]initWithType:PasswordAlertViewType_sheet];
-    _alertView.delegate = self;
-    _alertView.titleLable.text = @"请输入安全密码";
-    _alertView.tipsLalbe.text = @"您输入的密码不正确！";
+	_alertView = [[PasswordAlertView alloc]initWithType:PasswordAlertViewType_sheet];
+	_alertView.delegate = self;
+	_alertView.titleLable.text = @"请输入安全密码";
+	_alertView.tipsLalbe.text = @"您输入的密码不正确！";
+	
 }
 
 # pragma mark tableView delegate dataSourse
@@ -71,17 +89,30 @@ static NSString *Identifier = @"cell";
     OrderListTabCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     ViewBorderRadius(cell.matchBtn, 6, 0.6,UIColorFromHex(0xCCB17E));
-    
+	cell.index = indexPath.row;
+	cell.delegate = self;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-     [_alertView show];
+	
+	
+	
     
 }
 
+- (void)OrderListTabCellMacth:(NSInteger)index {
+	
+	BOOL flag = [SPUtil boolForKey:k_app_security];
+	if (flag) {
+		DLog(@"匹配第几个%ld",index);
+		[SVProgressHUD showSuccessWithStatus:@"匹配一下~"];
+	}else {
+		[_alertView show];
+	}
+	
+}
 -(void)PasswordAlertViewCompleteInputWith:(NSString*)password{
     NSLog(@"完成了密码输入,密码为：%@",password);
     if ([password isEqualToString:@"111111"]) {
@@ -90,6 +121,9 @@ static NSString *Identifier = @"cell";
         //这里必须延迟一下  不然看不到最后一个黑点显示整个视图就消失了
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [_alertView passwordCorrect];
+			
+			[SPUtil setBool:YES forKey:k_app_security];// 设置输入了安全密码
+			
         });
         
     }else{
@@ -98,7 +132,6 @@ static NSString *Identifier = @"cell";
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [_alertView passwordError];
         });
-        
     }
 }
 

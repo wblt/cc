@@ -42,6 +42,7 @@
 		F84E5B62207D961200949AF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F84E5B61207D961200949AF1 /* Assets.xcassets */; };
 		F84E5B65207D961200949AF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F84E5B63207D961200949AF1 /* LaunchScreen.storyboard */; };
 		F84E5B68207D961200949AF1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F84E5B67207D961200949AF1 /* main.m */; };
+		F8CE3BDA2086E95600C6994B /* QLCycleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CE3BD92086E95600C6994B /* QLCycleProgressView.m */; };
 		F8ED390D207DACC7006F4D2A /* NetworkSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8ED3909207DACC7006F4D2A /* NetworkSingleton.m */; };
 		F8ED390E207DACC7006F4D2A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F8ED390A207DACC7006F4D2A /* README.md */; };
 		F8ED390F207DACC7006F4D2A /* RequestParams.m in Sources */ = {isa = PBXBuildFile; fileRef = F8ED390C207DACC7006F4D2A /* RequestParams.m */; };
@@ -143,6 +144,8 @@
 		F84E5B64207D961200949AF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F84E5B66207D961200949AF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F84E5B67207D961200949AF1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F8CE3BD82086E95600C6994B /* QLCycleProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLCycleProgressView.h; sourceTree = "<group>"; };
+		F8CE3BD92086E95600C6994B /* QLCycleProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLCycleProgressView.m; sourceTree = "<group>"; };
 		F8ED3906207D9B6D006F4D2A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		F8ED3908207DACC7006F4D2A /* NetworkSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkSingleton.h; sourceTree = "<group>"; };
 		F8ED3909207DACC7006F4D2A /* NetworkSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkSingleton.m; sourceTree = "<group>"; };
@@ -341,6 +344,8 @@
 		CF7165162081EC890092692F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F8CE3BD82086E95600C6994B /* QLCycleProgressView.h */,
+				F8CE3BD92086E95600C6994B /* QLCycleProgressView.m */,
 				CF82FDE620863EBA006EF9B6 /* NewsTabCell.h */,
 				CF82FDE720863EBA006EF9B6 /* NewsTabCell.m */,
 				CF82FDE820863EBA006EF9B6 /* NewsTabCell.xib */,
@@ -818,7 +823,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E2183B97011C2D7154C4294C /* [CP] Embed Pods Frameworks */ = {
@@ -867,6 +872,7 @@
 				CF82FDDF20862CDD006EF9B6 /* HashrateShifToWalletVC.m in Sources */,
 				F8ED3943207DACDB006F4D2A /* BeanManager.m in Sources */,
 				F8ED3948207DACDB006F4D2A /* UIColor+Extend.m in Sources */,
+				F8CE3BDA2086E95600C6994B /* QLCycleProgressView.m in Sources */,
 				F8ED3952207DACDB006F4D2A /* SPUtil.m in Sources */,
 				CF7165272081ED4E0092692F /* MarketsViewController.m in Sources */,
 				F8ED3950207DACDB006F4D2A /* SandBoxHelper.m in Sources */,

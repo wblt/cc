@@ -8,7 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol OrderListTabCellDelegate <NSObject>
+
+-(void)OrderListTabCellMacth:(NSInteger )index;
+////点击了确定按钮  或者是完成了6位密码的输入
+//-(void)PasswordAlertViewCompleteInputWith:(NSString*)password;
+////点击了取消按钮
+//-(void)PasswordAlertViewDidClickCancleButton;
+////点击了忘记密码按钮
+//-(void)PasswordAlertViewDidClickForgetButton;
+@end
+
 @interface OrderListTabCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIButton *matchBtn;
-
+@property (nonatomic,assign)NSInteger index;
+@property (nonatomic,weak)id<OrderListTabCellDelegate> delegate;
 @end

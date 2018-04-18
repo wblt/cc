@@ -10,6 +10,16 @@
 
 @implementation OrderListTabCell
 
+
+
+- (IBAction)mactchAction:(id)sender {
+	
+	if (self.delegate && [self.delegate respondsToSelector:@selector(OrderListTabCellMacth:)]) {
+		[self.delegate OrderListTabCellMacth:self.index];
+	}
+}
+
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

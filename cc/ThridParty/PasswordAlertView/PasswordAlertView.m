@@ -136,7 +136,7 @@
     //监听键盘
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillHidden) name:UIKeyboardWillHideNotification object:nil];
-    
+
     self.bgView = [[UIView alloc]initWithFrame:CGRectMake(0, ScreenHeight, ScreenWidth, 200)];
     self.bgView.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.bgView];
@@ -285,6 +285,7 @@
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     [window addSubview:self];
     [self.inputTextFiled becomeFirstResponder];
+	
 }
 
 //密码文字改变

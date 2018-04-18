@@ -11,13 +11,16 @@
 #import "NewsVC.h"
 #import "ZoreWalletVC.h"
 #import "InvitionFriendVC.h"
+#import "QLCycleProgressView.h"
 @interface ReleaseViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *shiftToHashrateBtn;
 @property (weak, nonatomic) IBOutlet UIButton *inviteBtn;
 @property (weak, nonatomic) IBOutlet UIView *hashrateView;
 @property (weak, nonatomic) IBOutlet UIView *ZeroView;
+@property (weak, nonatomic) IBOutlet UIView *centerBgView;
 
-
+@property (nonatomic, strong) QLCycleProgressView *progressView;
+@property (nonatomic, strong) UIImageView *birdImage;
 @end
 
 @implementation ReleaseViewController
@@ -29,6 +32,7 @@
     _shiftToHashrateBtn.adjustsImageWhenHighlighted = NO;
     _inviteBtn.adjustsImageWhenHighlighted = NO;
     [self addNavView];
+	[self addheadthView];
     [self addtapView];
 }
 
@@ -60,6 +64,25 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(newsClick)];
     [newsImgView addGestureRecognizer:tap];
+}
+
+- (void)addheadthView {
+	[_centerBgView addSubview:self.progressView];
+	_progressView.progress = .3;
+	
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		_progressView.mainColor = [UIColor purpleColor];
+		_progressView.progress = .6;
+	});
+	//动画小人
+	//
+	 _birdImage = [[UIImageView alloc]initWithFrame:CGRectMake(KScreenWidth/2-50, 200, 100, 100)]; //实例化一个图片视图
+//	 [_birdImage setAnimationImages:self.imageArr];把保存了图片的数组放进去
+//	 _birdImage.animationRepeatCount = 0;
+//	 _birdImage.animationDuration = 1;//每隔多少秒切换图片
+//	 [_birdImage startAnimating];//开始动画
+	_birdImage.image = [UIImage imageNamed:@"big_logo"];
+	 [_centerBgView addSubview:_birdImage];//添加视图
 }
 
 - (void)addtapView {
@@ -100,6 +123,13 @@
     InvitionFriendVC *vc = [[InvitionFriendVC alloc] initWithNibName:@"InvitionFriendVC" bundle:nil];
     
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (QLCycleProgressView *)progressView {
+	if (!_progressView) {
+		_progressView = [[QLCycleProgressView alloc]initWithFrame:CGRectMake(KScreenWidth/2-80,30 , 160, 160)];
+	}
+	return _progressView;
 }
 
 - (void)didReceiveMemoryWarning {
