@@ -14,6 +14,7 @@
 @property (nonatomic, strong) CAShapeLayer *progressLayer;
 @property (nonatomic, strong) UIBezierPath *progressPath;
 @property (nonatomic, strong) UILabel *countJump;
+@property (nonatomic, strong) UILabel *titleLab;
 @property (nonatomic, strong) dispatch_source_t timer;
 @end
 
@@ -74,11 +75,26 @@
     _countJump.translatesAutoresizingMaskIntoConstraints = NO;
     [_countJump.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
     [_countJump.centerYAnchor constraintEqualToAnchor:self.centerYAnchor].active = YES;
+	
+	
+	self.titleLab = [[UILabel alloc]init];
+	self.titleLab.textColor = [UIColor whiteColor];
+	self.titleLab.font = [UIFont systemFontOfSize:25];
+	self.titleLab.textAlignment = NSTextAlignmentCenter;
+	self.titleLab.text = @"步数";
+	[self addSubview:self.titleLab];
+	
+	[self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.centerX.equalTo(self);
+		make.top.equalTo(_countJump.mas_bottom).offset(10);
+		make.width.mas_equalTo(50);
+		make.height.mas_equalTo(30);
+	}];
 }
 
 - (void)setProgress:(CGFloat)progress {
     _progress = progress;
-    [self countJumpAction];
+    [self countJumpAction2];
     CGPoint center = CGPointMake(CGRectGetWidth(self.bounds)/2, CGRectGetHeight(self.bounds)/2);
     CGFloat radius = 90;
     CGFloat startA =  M_PI_4 * 3;  //设置进度条起点位置
@@ -131,6 +147,38 @@
     
 }
 
+// 启动数字滚动
+- (void)countJumpAction2
+{
+	__block int _numText = 0;
+	//全局队列    默认优先级
+	dispatch_queue_t quene = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+	//定时器模式  事件源
+	_timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, quene);
+	//NSEC_PER_SEC是秒，＊1是每秒
+	dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), NSEC_PER_SEC * (self.animationDuration/(_progress * 10000)), 0);
+	//设置响应dispatch源事件的block，在dispatch源指定的队列上运行
+	dispatch_source_set_event_handler(_timer, ^{
+		//回调主线程，在主线程中操作UI
+		dispatch_async(dispatch_get_main_queue(), ^{
+			if (_numText < _stepNum) {
+				_countJump.text = [NSString stringWithFormat:@"%d",_numText];
+				_numText++;
+				
+			}
+			else
+			{
+				_countJump.text = [NSString stringWithFormat:@"%d",_numText];
+				dispatch_source_cancel(_timer);
+				
+			}
+		});
+	});
+	//启动源
+	dispatch_resume(_timer);
+	
+}
+
 
 #pragma mark ******** setter / getter
 
@@ -157,17 +205,16 @@
     _line_width = line_width;
     _backLayer.lineWidth = line_width;
     _progressLayer.lineWidth = line_width;
-    _backBorderLayer.lineWidth = line_width + 2;
+    _backBorderLayer.lineWidth = line_width;
 }
-
-
 - (UILabel *)countJump {
     if (!_countJump) {
         _countJump = [[UILabel alloc]init];
         _countJump.textColor = [UIColor redColor];
-        _countJump.font = [UIFont systemFontOfSize:25];
+        _countJump.font = [UIFont systemFontOfSize:30];
         _countJump.textAlignment = NSTextAlignmentCenter;
     }
     return _countJump;
 }
+
 @end

@@ -68,11 +68,15 @@
 
 - (void)addheadthView {
 	[_centerBgView addSubview:self.progressView];
-	_progressView.progress = .3;
+	_progressView.progress = .0;
+	_progressView.mainColor = [UIColor redColor];
+	_progressView.fillColor = [UIColor yellowColor];
+	_progressView.line_width = 15;
 	
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-		_progressView.mainColor = [UIColor purpleColor];
+		_progressView.stepNum = 6000;
 		_progressView.progress = .6;
+		
 	});
 	//动画小人
 	//

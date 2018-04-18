@@ -15,4 +15,6 @@
 @property (nonatomic, assign) CGFloat animationDuration;//动画时长
 @property (nonatomic, assign) BOOL needAnimation;//是否有动画
 @property (nonatomic, assign) CGFloat line_width;//线宽
+@property (nonatomic, assign) NSInteger stepNum; //步数
+
 @end
