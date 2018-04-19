@@ -48,10 +48,10 @@ static NSString *Identifier = @"cell";
 
 - (void)addNavBtn {
 	UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-	btn.frame = CGRectMake(0, 0, 120, 30);
+	btn.frame = CGRectMake(0, 0, 40, 30);
 	[btn setTitle:@"挂单" forState:UIControlStateNormal];
 	[btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-	btn.titleLabel.font = Font_13;
+	btn.titleLabel.font = Font_15;
 	
 	[btn addTapBlock:^(UIButton *btn) {
 		// 去挂单
