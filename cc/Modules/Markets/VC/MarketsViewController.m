@@ -16,6 +16,11 @@ static NSString *Identifier = @"cell";
 @interface MarketsViewController ()<UITableViewDelegate,UITableViewDataSource,PasswordAlertViewDelegate,OrderListTabCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) PasswordAlertView *alertView;
+@property (weak, nonatomic) IBOutlet UIButton *buyBtn;
+@property (weak, nonatomic) IBOutlet UIButton *sellBtn;
+@property (weak, nonatomic) IBOutlet UIView *bottomBuyView;
+@property (weak, nonatomic) IBOutlet UIView *bottomSellView;
+
 @end
 
 @implementation MarketsViewController
@@ -41,10 +46,32 @@ static NSString *Identifier = @"cell";
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"市场";
     self.edgesForExtendedLayout = UIRectEdgeTop;
+	_buyBtn.selected = YES;
+	_sellBtn.selected = NO;
+	_bottomSellView.hidden = YES;
+	
 	[self addNavBtn];
     [self setup];
 	
 }
+- (IBAction)buyAction:(UIButton *)sender {
+	if (!sender.selected) {
+		sender.selected = !sender.selected;
+	}
+	_sellBtn.selected = NO;
+	_bottomBuyView.hidden = NO;
+	_bottomSellView.hidden = YES;
+}
+
+- (IBAction)sellAction:(UIButton *)sender {
+	if (!sender.selected) {
+		sender.selected = !sender.selected;
+	}
+	_buyBtn.selected = NO;
+	_bottomBuyView.hidden = YES;
+	_bottomSellView.hidden = NO;
+}
+
 
 - (void)addNavBtn {
 	UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -112,6 +139,7 @@ static NSString *Identifier = @"cell";
     ViewBorderRadius(cell.matchBtn, 6, 0.6,UIColorFromHex(0xCCB17E));
 	cell.index = indexPath.row;
 	cell.delegate = self;
+	[cell.matchBtn setTitle:@"可匹配" forState:UIControlStateNormal];
     return cell;
 }
 

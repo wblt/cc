@@ -13,7 +13,8 @@ pod 'SVProgressHUD'
 pod 'LKDBHelper'
 pod 'FDStackView'
 pod 'MSWeakTimer'
-
+pod 'SDCycleScrollView' 
+ 
 pod 'Bugly'
 pod 'Pgyer'
 pod 'PgyUpdate'

@@ -21,6 +21,14 @@
 
 @interface OrderListTabCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIButton *matchBtn;
+@property (weak, nonatomic) IBOutlet UILabel *numLab;
+@property (weak, nonatomic) IBOutlet UILabel *priceLab;
+@property (weak, nonatomic) IBOutlet UILabel *totalLab;
+@property (weak, nonatomic) IBOutlet UILabel *nameLab;
+@property (weak, nonatomic) IBOutlet UILabel *timeLab;
+
+
+
 @property (nonatomic,assign)NSInteger index;
 @property (nonatomic,weak)id<OrderListTabCellDelegate> delegate;
 @end

@@ -27,7 +27,7 @@
 	self.window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
 	self.window.backgroundColor = [UIColor clearColor];
 	[self.window makeKeyAndVisible];
-	
+	[self test];
 	// 初始化本地话文件目录
 	IQKeyboardManager *keyboardManager = [IQKeyboardManager sharedManager]; // 获取类库的单例变量
 	keyboardManager.enable = YES; // 控制整个功能是否启用
@@ -89,5 +89,8 @@
 	// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-
+- (void)test {
+	NSString *str = @"15388965285dec";
+	DLog(@"MD5------%@",str.MD5Hash.lowercaseString);
+}
 @end

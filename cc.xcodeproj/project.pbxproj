@@ -36,6 +36,31 @@
 		CF82FDFA208662BA006EF9B6 /* xxx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF82FDF6208662BA006EF9B6 /* xxx@2x.png */; };
 		CF82FDFB208662BA006EF9B6 /* passwordIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF82FDF7208662BA006EF9B6 /* passwordIcon.png */; };
 		CF82FDFC208662BA006EF9B6 /* PasswordAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF82FDF9208662BA006EF9B6 /* PasswordAlertView.m */; };
+		F8056853208999930073B30C /* MineInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8056851208999930073B30C /* MineInfoViewController.m */; };
+		F8056854208999940073B30C /* MineInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8056852208999930073B30C /* MineInfoViewController.xib */; };
+		F805686C2089BDA20073B30C /* UIImage+XLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F80568572089BDA20073B30C /* UIImage+XLExtension.m */; };
+		F805686D2089BDA20073B30C /* UIView+XLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F80568592089BDA20073B30C /* UIView+XLExtension.m */; };
+		F805686E2089BDA20073B30C /* FSActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = F805685D2089BDA20073B30C /* FSActionSheet.m */; };
+		F805686F2089BDA20073B30C /* FSActionSheetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F805685F2089BDA20073B30C /* FSActionSheetCell.m */; };
+		F80568702089BDA20073B30C /* FSActionSheetConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = F80568612089BDA20073B30C /* FSActionSheetConfig.m */; };
+		F80568712089BDA20073B30C /* FSActionSheetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F80568632089BDA20073B30C /* FSActionSheetItem.m */; };
+		F80568722089BDA20073B30C /* XLPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = F80568652089BDA20073B30C /* XLPhotoBrowser.m */; };
+		F80568732089BDA20073B30C /* XLProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = F80568692089BDA20073B30C /* XLProgressView.m */; };
+		F80568742089BDA20073B30C /* XLZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F805686B2089BDA20073B30C /* XLZoomingScrollView.m */; };
+		F80568782089C1E00073B30C /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F80568762089C1E00073B30C /* MyOrderViewController.m */; };
+		F80568792089C1E00073B30C /* MyOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80568772089C1E00073B30C /* MyOrderViewController.xib */; };
+		F805687D2089C9A50073B30C /* CompoundSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F805687B2089C9A50073B30C /* CompoundSettingViewController.m */; };
+		F805687E2089C9A50073B30C /* CompoundSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F805687C2089C9A50073B30C /* CompoundSettingViewController.xib */; };
+		F80568822089D8C40073B30C /* TransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F80568802089D8C40073B30C /* TransferViewController.m */; };
+		F80568832089D8C40073B30C /* TransferViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80568812089D8C40073B30C /* TransferViewController.xib */; };
+		F80568872089EC4D0073B30C /* WalletExchangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F80568852089EC4D0073B30C /* WalletExchangeViewController.m */; };
+		F80568882089EC4D0073B30C /* WalletExchangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80568862089EC4D0073B30C /* WalletExchangeViewController.xib */; };
+		F805688C2089EFDD0073B30C /* TransferRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F805688A2089EFDD0073B30C /* TransferRecordViewController.m */; };
+		F805688D2089EFDD0073B30C /* TransferRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F805688B2089EFDD0073B30C /* TransferRecordViewController.xib */; };
+		F80568912089F0590073B30C /* MyFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F805688F2089F0590073B30C /* MyFriendsViewController.m */; };
+		F80568922089F0590073B30C /* MyFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80568902089F0590073B30C /* MyFriendsViewController.xib */; };
+		F80568962089F12F0073B30C /* NewsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F80568942089F12F0073B30C /* NewsDetailsViewController.m */; };
+		F80568972089F12F0073B30C /* NewsDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80568952089F12F0073B30C /* NewsDetailsViewController.xib */; };
 		F84E5B5A207D961200949AF1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F84E5B59207D961200949AF1 /* AppDelegate.m */; };
 		F84E5B5D207D961200949AF1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F84E5B5C207D961200949AF1 /* ViewController.m */; };
 		F84E5B60207D961200949AF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F84E5B5E207D961200949AF1 /* Main.storyboard */; };
@@ -138,6 +163,50 @@
 		CF82FDF8208662BA006EF9B6 /* PasswordAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordAlertView.h; sourceTree = "<group>"; };
 		CF82FDF9208662BA006EF9B6 /* PasswordAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordAlertView.m; sourceTree = "<group>"; };
 		DDF4D9A80B4C9B8D6DB5BDF5 /* Pods-cc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cc/Pods-cc.debug.xcconfig"; sourceTree = "<group>"; };
+		F8056850208999930073B30C /* MineInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineInfoViewController.h; sourceTree = "<group>"; };
+		F8056851208999930073B30C /* MineInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineInfoViewController.m; sourceTree = "<group>"; };
+		F8056852208999930073B30C /* MineInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineInfoViewController.xib; sourceTree = "<group>"; };
+		F80568562089BDA20073B30C /* UIImage+XLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+XLExtension.h"; sourceTree = "<group>"; };
+		F80568572089BDA20073B30C /* UIImage+XLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XLExtension.m"; sourceTree = "<group>"; };
+		F80568582089BDA20073B30C /* UIView+XLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XLExtension.h"; sourceTree = "<group>"; };
+		F80568592089BDA20073B30C /* UIView+XLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XLExtension.m"; sourceTree = "<group>"; };
+		F805685C2089BDA20073B30C /* FSActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSActionSheet.h; sourceTree = "<group>"; };
+		F805685D2089BDA20073B30C /* FSActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSActionSheet.m; sourceTree = "<group>"; };
+		F805685E2089BDA20073B30C /* FSActionSheetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSActionSheetCell.h; sourceTree = "<group>"; };
+		F805685F2089BDA20073B30C /* FSActionSheetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSActionSheetCell.m; sourceTree = "<group>"; };
+		F80568602089BDA20073B30C /* FSActionSheetConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSActionSheetConfig.h; sourceTree = "<group>"; };
+		F80568612089BDA20073B30C /* FSActionSheetConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSActionSheetConfig.m; sourceTree = "<group>"; };
+		F80568622089BDA20073B30C /* FSActionSheetItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSActionSheetItem.h; sourceTree = "<group>"; };
+		F80568632089BDA20073B30C /* FSActionSheetItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSActionSheetItem.m; sourceTree = "<group>"; };
+		F80568642089BDA20073B30C /* XLPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLPhotoBrowser.h; sourceTree = "<group>"; };
+		F80568652089BDA20073B30C /* XLPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLPhotoBrowser.m; sourceTree = "<group>"; };
+		F80568662089BDA20073B30C /* XLPhotoBrowserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLPhotoBrowserConfig.h; sourceTree = "<group>"; };
+		F80568672089BDA20073B30C /* XLPhotoBrowserTypeDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLPhotoBrowserTypeDefine.h; sourceTree = "<group>"; };
+		F80568682089BDA20073B30C /* XLProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLProgressView.h; sourceTree = "<group>"; };
+		F80568692089BDA20073B30C /* XLProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLProgressView.m; sourceTree = "<group>"; };
+		F805686A2089BDA20073B30C /* XLZoomingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLZoomingScrollView.h; sourceTree = "<group>"; };
+		F805686B2089BDA20073B30C /* XLZoomingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLZoomingScrollView.m; sourceTree = "<group>"; };
+		F80568752089C1E00073B30C /* MyOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyOrderViewController.h; sourceTree = "<group>"; };
+		F80568762089C1E00073B30C /* MyOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyOrderViewController.m; sourceTree = "<group>"; };
+		F80568772089C1E00073B30C /* MyOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyOrderViewController.xib; sourceTree = "<group>"; };
+		F805687A2089C9A50073B30C /* CompoundSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompoundSettingViewController.h; sourceTree = "<group>"; };
+		F805687B2089C9A50073B30C /* CompoundSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompoundSettingViewController.m; sourceTree = "<group>"; };
+		F805687C2089C9A50073B30C /* CompoundSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompoundSettingViewController.xib; sourceTree = "<group>"; };
+		F805687F2089D8C40073B30C /* TransferViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransferViewController.h; sourceTree = "<group>"; };
+		F80568802089D8C40073B30C /* TransferViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransferViewController.m; sourceTree = "<group>"; };
+		F80568812089D8C40073B30C /* TransferViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransferViewController.xib; sourceTree = "<group>"; };
+		F80568842089EC4D0073B30C /* WalletExchangeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WalletExchangeViewController.h; sourceTree = "<group>"; };
+		F80568852089EC4D0073B30C /* WalletExchangeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalletExchangeViewController.m; sourceTree = "<group>"; };
+		F80568862089EC4D0073B30C /* WalletExchangeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletExchangeViewController.xib; sourceTree = "<group>"; };
+		F80568892089EFDD0073B30C /* TransferRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransferRecordViewController.h; sourceTree = "<group>"; };
+		F805688A2089EFDD0073B30C /* TransferRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransferRecordViewController.m; sourceTree = "<group>"; };
+		F805688B2089EFDD0073B30C /* TransferRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransferRecordViewController.xib; sourceTree = "<group>"; };
+		F805688E2089F0590073B30C /* MyFriendsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyFriendsViewController.h; sourceTree = "<group>"; };
+		F805688F2089F0590073B30C /* MyFriendsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyFriendsViewController.m; sourceTree = "<group>"; };
+		F80568902089F0590073B30C /* MyFriendsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyFriendsViewController.xib; sourceTree = "<group>"; };
+		F80568932089F12F0073B30C /* NewsDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsDetailsViewController.h; sourceTree = "<group>"; };
+		F80568942089F12F0073B30C /* NewsDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsDetailsViewController.m; sourceTree = "<group>"; };
+		F80568952089F12F0073B30C /* NewsDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailsViewController.xib; sourceTree = "<group>"; };
 		F84E5B55207D961200949AF1 /* cc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F84E5B58207D961200949AF1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F84E5B59207D961200949AF1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -268,6 +337,9 @@
 				F8CE3BE9208746AB00C6994B /* DealViewController.h */,
 				F8CE3BEA208746AB00C6994B /* DealViewController.m */,
 				F8CE3BEB208746AB00C6994B /* DealViewController.xib */,
+				F80568752089C1E00073B30C /* MyOrderViewController.h */,
+				F80568762089C1E00073B30C /* MyOrderViewController.m */,
+				F80568772089C1E00073B30C /* MyOrderViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -305,6 +377,21 @@
 				CF71651C2081ECC30092692F /* MineViewController.h */,
 				CF71651D2081ECC30092692F /* MineViewController.m */,
 				CF71651E2081ECC30092692F /* MineViewController.xib */,
+				F8056850208999930073B30C /* MineInfoViewController.h */,
+				F8056851208999930073B30C /* MineInfoViewController.m */,
+				F8056852208999930073B30C /* MineInfoViewController.xib */,
+				F805687A2089C9A50073B30C /* CompoundSettingViewController.h */,
+				F805687B2089C9A50073B30C /* CompoundSettingViewController.m */,
+				F805687C2089C9A50073B30C /* CompoundSettingViewController.xib */,
+				F805687F2089D8C40073B30C /* TransferViewController.h */,
+				F80568802089D8C40073B30C /* TransferViewController.m */,
+				F80568812089D8C40073B30C /* TransferViewController.xib */,
+				F80568892089EFDD0073B30C /* TransferRecordViewController.h */,
+				F805688A2089EFDD0073B30C /* TransferRecordViewController.m */,
+				F805688B2089EFDD0073B30C /* TransferRecordViewController.xib */,
+				F80568842089EC4D0073B30C /* WalletExchangeViewController.h */,
+				F80568852089EC4D0073B30C /* WalletExchangeViewController.m */,
+				F80568862089EC4D0073B30C /* WalletExchangeViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -342,9 +429,15 @@
 				CF82FDE120863E2D006EF9B6 /* NewsVC.h */,
 				CF82FDE220863E2D006EF9B6 /* NewsVC.m */,
 				CF82FDE320863E2D006EF9B6 /* NewsVC.xib */,
+				F80568932089F12F0073B30C /* NewsDetailsViewController.h */,
+				F80568942089F12F0073B30C /* NewsDetailsViewController.m */,
+				F80568952089F12F0073B30C /* NewsDetailsViewController.xib */,
 				CF82FDF020864DE3006EF9B6 /* InvitionFriendVC.h */,
 				CF82FDF120864DE3006EF9B6 /* InvitionFriendVC.m */,
 				CF82FDF220864DE3006EF9B6 /* InvitionFriendVC.xib */,
+				F805688E2089F0590073B30C /* MyFriendsViewController.h */,
+				F805688F2089F0590073B30C /* MyFriendsViewController.m */,
+				F80568902089F0590073B30C /* MyFriendsViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -475,6 +568,49 @@
 				A0E310A8802745272B1EE1D7 /* Pods-cc.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F80568552089BDA20073B30C /* XLPhotoBrowser+CoderXL */ = {
+			isa = PBXGroup;
+			children = (
+				F80568562089BDA20073B30C /* UIImage+XLExtension.h */,
+				F80568572089BDA20073B30C /* UIImage+XLExtension.m */,
+				F80568582089BDA20073B30C /* UIView+XLExtension.h */,
+				F80568592089BDA20073B30C /* UIView+XLExtension.m */,
+				F805685A2089BDA20073B30C /* Vender */,
+				F80568642089BDA20073B30C /* XLPhotoBrowser.h */,
+				F80568652089BDA20073B30C /* XLPhotoBrowser.m */,
+				F80568662089BDA20073B30C /* XLPhotoBrowserConfig.h */,
+				F80568672089BDA20073B30C /* XLPhotoBrowserTypeDefine.h */,
+				F80568682089BDA20073B30C /* XLProgressView.h */,
+				F80568692089BDA20073B30C /* XLProgressView.m */,
+				F805686A2089BDA20073B30C /* XLZoomingScrollView.h */,
+				F805686B2089BDA20073B30C /* XLZoomingScrollView.m */,
+			);
+			path = "XLPhotoBrowser+CoderXL";
+			sourceTree = "<group>";
+		};
+		F805685A2089BDA20073B30C /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+				F805685B2089BDA20073B30C /* FSActionSheet */,
+			);
+			path = Vender;
+			sourceTree = "<group>";
+		};
+		F805685B2089BDA20073B30C /* FSActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				F805685C2089BDA20073B30C /* FSActionSheet.h */,
+				F805685D2089BDA20073B30C /* FSActionSheet.m */,
+				F805685E2089BDA20073B30C /* FSActionSheetCell.h */,
+				F805685F2089BDA20073B30C /* FSActionSheetCell.m */,
+				F80568602089BDA20073B30C /* FSActionSheetConfig.h */,
+				F80568612089BDA20073B30C /* FSActionSheetConfig.m */,
+				F80568622089BDA20073B30C /* FSActionSheetItem.h */,
+				F80568632089BDA20073B30C /* FSActionSheetItem.m */,
+			);
+			path = FSActionSheet;
 			sourceTree = "<group>";
 		};
 		F84E5B4C207D961200949AF1 = {
@@ -702,6 +838,7 @@
 		F8ED396F207DB31A006F4D2A /* ThridParty */ = {
 			isa = PBXGroup;
 			children = (
+				F80568552089BDA20073B30C /* XLPhotoBrowser+CoderXL */,
 				F8CE3BDB2087424100C6994B /* Step */,
 				CF82FDF5208662BA006EF9B6 /* PasswordAlertView */,
 				CF71653920839EA00092692F /* CQCountDownButton */,
@@ -815,6 +952,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F80568972089F12F0073B30C /* NewsDetailsViewController.xib in Resources */,
 				F8ED3945207DACDB006F4D2A /* README.md in Resources */,
 				F84E5B65207D961200949AF1 /* LaunchScreen.storyboard in Resources */,
 				CF71651B2081ECA30092692F /* ReleaseViewController.xib in Resources */,
@@ -826,21 +964,26 @@
 				CF71652F2082249E0092692F /* OrderListTabCell.xib in Resources */,
 				CF7165452083ADC30092692F /* SettingViewController.xib in Resources */,
 				F8ED3953207DACDB006F4D2A /* back_icon@2x.png in Resources */,
+				F80568792089C1E00073B30C /* MyOrderViewController.xib in Resources */,
 				F8ED3980207DB877006F4D2A /* LoginVC.xib in Resources */,
+				F8056854208999940073B30C /* MineInfoViewController.xib in Resources */,
 				F8ED3958207DACDB006F4D2A /* sure_placeholder_error@2x.png in Resources */,
 				F8ED3955207DACDB006F4D2A /* close_icon@2x.png in Resources */,
 				F8ED397A207DB81B006F4D2A /* README.md in Resources */,
 				F8ED395B207DACDB006F4D2A /* README.md in Resources */,
+				F805688D2089EFDD0073B30C /* TransferRecordViewController.xib in Resources */,
 				CF82FDEF20864339006EF9B6 /* ZoreWalletVC.xib in Resources */,
 				F84E5B62207D961200949AF1 /* Assets.xcassets in Resources */,
 				F8ED3989207DB8B0006F4D2A /* RegistViewController.xib in Resources */,
 				CF71652A2081F6530092692F /* kxian.jpg in Resources */,
+				F80568922089F0590073B30C /* MyFriendsViewController.xib in Resources */,
 				F8ED394D207DACDB006F4D2A /* README.md in Resources */,
 				F8ED3959207DACDB006F4D2A /* sure_placeholder_error@3x.png in Resources */,
 				F8ED3944207DACDB006F4D2A /* README.md in Resources */,
 				CF82FDF420864DE3006EF9B6 /* InvitionFriendVC.xib in Resources */,
 				F8ED390E207DACC7006F4D2A /* README.md in Resources */,
 				F8ED394F207DACDB006F4D2A /* README.md in Resources */,
+				F80568832089D8C40073B30C /* TransferViewController.xib in Resources */,
 				CF716538208399C60092692F /* ForgetPwdViewController.xib in Resources */,
 				F8ED395D207DACDB006F4D2A /* README.md in Resources */,
 				CF82FDE020862CDD006EF9B6 /* HashrateShifToWalletVC.xib in Resources */,
@@ -848,7 +991,9 @@
 				CF7165202081ECC30092692F /* MineViewController.xib in Resources */,
 				CF82FDFB208662BA006EF9B6 /* passwordIcon.png in Resources */,
 				F8ED394E207DACDB006F4D2A /* README.md in Resources */,
+				F805687E2089C9A50073B30C /* CompoundSettingViewController.xib in Resources */,
 				F84E5B60207D961200949AF1 /* Main.storyboard in Resources */,
+				F80568882089EC4D0073B30C /* WalletExchangeViewController.xib in Resources */,
 				F8ED3957207DACDB006F4D2A /* README.md in Resources */,
 				F8ED3954207DACDB006F4D2A /* back_icon@3x.png in Resources */,
 				F8CE3BED208746AB00C6994B /* DealViewController.xib in Resources */,
@@ -873,7 +1018,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E2183B97011C2D7154C4294C /* [CP] Embed Pods Frameworks */ = {
@@ -919,29 +1064,42 @@
 				CF71653C20839EA10092692F /* CQCountDownButton.m in Sources */,
 				F8CE3BE32087424100C6994B /* HGBStepTool.m in Sources */,
 				F8ED390D207DACC7006F4D2A /* NetworkSingleton.m in Sources */,
+				F80568702089BDA20073B30C /* FSActionSheetConfig.m in Sources */,
 				CF71652E2082249E0092692F /* OrderListTabCell.m in Sources */,
 				CF82FDDF20862CDD006EF9B6 /* HashrateShifToWalletVC.m in Sources */,
 				F8ED3943207DACDB006F4D2A /* BeanManager.m in Sources */,
+				F805686C2089BDA20073B30C /* UIImage+XLExtension.m in Sources */,
 				F8ED3948207DACDB006F4D2A /* UIColor+Extend.m in Sources */,
+				F80568872089EC4D0073B30C /* WalletExchangeViewController.m in Sources */,
 				F8CE3BDA2086E95600C6994B /* QLCycleProgressView.m in Sources */,
 				F8ED3952207DACDB006F4D2A /* SPUtil.m in Sources */,
 				CF7165272081ED4E0092692F /* MarketsViewController.m in Sources */,
+				F80568732089BDA20073B30C /* XLProgressView.m in Sources */,
 				F8ED3950207DACDB006F4D2A /* SandBoxHelper.m in Sources */,
 				F8CE3BEC208746AB00C6994B /* DealViewController.m in Sources */,
 				F8ED3947207DACDB006F4D2A /* UICollectionView+IndexPath.m in Sources */,
 				F8ED396C207DB311006F4D2A /* BaseNavViewController.m in Sources */,
+				F805686E2089BDA20073B30C /* FSActionSheet.m in Sources */,
 				CF82FDFC208662BA006EF9B6 /* PasswordAlertView.m in Sources */,
 				F8ED3946207DACDB006F4D2A /* UIButton+XYButton.m in Sources */,
+				F805688C2089EFDD0073B30C /* TransferRecordViewController.m in Sources */,
 				CF82FDEE20864339006EF9B6 /* ZoreWalletVC.m in Sources */,
 				F8CE3BE22087424100C6994B /* HGBStepMoel.m in Sources */,
 				CF82FDE420863E2D006EF9B6 /* NewsVC.m in Sources */,
+				F805687D2089C9A50073B30C /* CompoundSettingViewController.m in Sources */,
 				CF82FDE920863EBA006EF9B6 /* NewsTabCell.m in Sources */,
 				F8ED395C207DACDB006F4D2A /* SYCacheManager.m in Sources */,
 				CF7165442083ADC30092692F /* SettingViewController.m in Sources */,
 				F8ED394C207DACDB006F4D2A /* NSString+MD5.m in Sources */,
 				F8ED394B207DACDB006F4D2A /* GTMBase64.m in Sources */,
+				F80568712089BDA20073B30C /* FSActionSheetItem.m in Sources */,
+				F8056853208999930073B30C /* MineInfoViewController.m in Sources */,
+				F80568912089F0590073B30C /* MyFriendsViewController.m in Sources */,
+				F80568742089BDA20073B30C /* XLZoomingScrollView.m in Sources */,
 				F8ED3988207DB8B0006F4D2A /* RegistViewController.m in Sources */,
+				F80568822089D8C40073B30C /* TransferViewController.m in Sources */,
 				CF71651F2081ECC30092692F /* MineViewController.m in Sources */,
+				F80568782089C1E00073B30C /* MyOrderViewController.m in Sources */,
 				F8ED390F207DACC7006F4D2A /* RequestParams.m in Sources */,
 				CF716533208394E80092692F /* MQVerCodeImageView.m in Sources */,
 				CF82FDF320864DE3006EF9B6 /* InvitionFriendVC.m in Sources */,
@@ -951,9 +1109,13 @@
 				F8ED3976207DB3E0006F4D2A /* MainTabBarItem.m in Sources */,
 				F8ED394A207DACDB006F4D2A /* UIViewController+AlertViewAndActionSheet.m in Sources */,
 				F8ED395A207DACDB006F4D2A /* SureWebViewController.m in Sources */,
+				F80568722089BDA20073B30C /* XLPhotoBrowser.m in Sources */,
+				F805686F2089BDA20073B30C /* FSActionSheetCell.m in Sources */,
+				F805686D2089BDA20073B30C /* UIView+XLExtension.m in Sources */,
 				F84E5B5A207D961200949AF1 /* AppDelegate.m in Sources */,
 				F8ED397F207DB877006F4D2A /* LoginVC.m in Sources */,
 				CF71651A2081ECA30092692F /* ReleaseViewController.m in Sources */,
+				F80568962089F12F0073B30C /* NewsDetailsViewController.m in Sources */,
 				F8ED395E207DACDB006F4D2A /* Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

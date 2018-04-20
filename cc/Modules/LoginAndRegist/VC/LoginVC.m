@@ -58,8 +58,8 @@
 }
 
 - (IBAction)loginAction:(UIButton *)sender {
-    if (_phoneTextField.text.length <= 0 || _pwdTextField.text.length <=0 || _codeTextField.text.length <=0) {
-        [SVProgressHUD showInfoWithStatus:@"请将信息填写完整"];
+    if (_phoneTextField.text.length <= 0 || _pwdTextField.text.length <=0 ) {
+        [SVProgressHUD showInfoWithStatus:@"请填写账号密码"];
         return;
     }
     
@@ -67,7 +67,17 @@
         [SVProgressHUD showErrorWithStatus:@"请输入正确的手机号"];
         return;
     }
-    
+	
+	if (_pwdTextField.text.length <6) {
+		[SVProgressHUD showInfoWithStatus:@"请输入6位以上密码"];
+		return;
+	}
+	
+	if (_codeTextField.text.length == 0) {
+		[SVProgressHUD showErrorWithStatus:@"请输入验证码"];
+		return;
+	}
+	
     if (![_imageCodeStr.uppercaseString isEqualToString:_codeTextField.text.uppercaseString]) {
         [SVProgressHUD showErrorWithStatus:@"验证码错误"];
         [_codeImageView freshVerCode];

@@ -7,8 +7,8 @@
 //
 
 #import "DealViewController.h"
-@interface DealViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *bugBtn;
+@interface DealViewController ()<UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *buyBtn; 
 @property (weak, nonatomic) IBOutlet UIButton *sellBtn;
 @property (weak, nonatomic) IBOutlet UIView *bottomBuyView;
 @property (weak, nonatomic) IBOutlet UIView *bottomSellView;
@@ -23,16 +23,51 @@
     // Do any additional setup after loading the view from its nib.
 	self.navigationItem.title = @"挂单";
     [self setup];
-	[self addViewToScrollerView];
+	[self addBuyViewToScrollerView];
+	[self addSellViewToScrollerView];
 }
 
 - (void)setup {
+	_bottomSellView.hidden = YES;
+	
     self.scrollerView.contentSize = CGSizeMake(KScreenWidth*2, 300);
     self.scrollerView.pagingEnabled = YES;
+	self.scrollerView.delegate = self;
     self.scrollerView.contentOffset = CGPointMake(0, 0);
 }
+- (IBAction)buyAction:(UIButton *)sender {
+//	sender.selected = !sender.selected;
+	if (!sender.selected) {
+		sender.selected = !sender.selected;
+	}
+	_sellBtn.selected = NO;
+	_bottomBuyView.hidden = NO;
+	_bottomSellView.hidden = YES;
+	
+	[self.scrollerView setContentOffset:CGPointMake(0, 0) animated:YES];
+	
+}
 
-- (void)addViewToScrollerView {
+- (IBAction)sellAction:(UIButton *)sender {
+	if (!sender.selected) {
+		sender.selected = !sender.selected;
+	}
+	_buyBtn.selected = NO;
+	_bottomBuyView.hidden = YES;
+	_bottomSellView.hidden = NO;
+	[self.scrollerView setContentOffset:CGPointMake(KScreenWidth, 0) animated:YES];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+	if (scrollView.contentOffset.x == 0) {
+		[self buyAction:_buyBtn];
+	}else {
+		[self sellAction:_sellBtn];
+	}
+	
+}
+
+- (void)addBuyViewToScrollerView {
 	UIView *buyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, 300)];
    // buyView.backgroundColor = [UIColor darkGrayColor];
     
@@ -76,6 +111,7 @@
 	
 	UITextField *priceTextField = [[UITextField alloc] init];
 	priceTextField.placeholder = @"请输入1.999~2.333的价格";
+	priceTextField.keyboardType = UIKeyboardTypeDecimalPad;
     priceTextField.font = Font_13;
     priceTextField.textColor = [UIColor whiteColor];
     priceTextField.textAlignment = NSTextAlignmentRight;
@@ -95,6 +131,7 @@
 	UITextField *numTextField = [[UITextField alloc] init];
 	numTextField.placeholder = @"请输入1~10000的数量";
     numTextField.font = Font_13;
+	numTextField.keyboardType = UIKeyboardTypeNumberPad;
     numTextField.textColor = [UIColor whiteColor];
     numTextField.textAlignment = NSTextAlignmentRight;
     [numTextField setValue:[UIColor darkGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -115,6 +152,18 @@
 	[sumbitBtn setTitle:@"提交" forState:UIControlStateNormal];
 	sumbitBtn.titleLabel.font = Font_14;
 	[buyView addSubview:sumbitBtn];
+	[sumbitBtn addTapBlock:^(UIButton *btn) {
+		if (numTextField.text.length == 0 || priceTextField.text.length == 0) {
+			[SVProgressHUD showInfoWithStatus:@"请输入数量及单价"];
+			return ;
+		}
+		
+		if (numTextField.text.integerValue > 10) {
+			[SVProgressHUD showErrorWithStatus:@"超过可卖数量"];
+			return ;
+		}
+		
+	}];
 	
     [self.scrollerView addSubview:buyView];
  
@@ -208,6 +257,202 @@
         make.right.equalTo(buyView).offset(-20);
         make.height.mas_equalTo(50);
     }];
+}
+
+- (void)addSellViewToScrollerView {
+	UIView *sellView = [[UIView alloc] initWithFrame:CGRectMake(KScreenWidth, 0, KScreenWidth, 300)];
+	
+	UILabel *guideTipsLab = [[UILabel alloc] init];
+	guideTipsLab.text = @"指导价";
+	guideTipsLab.font = Font_13;
+	guideTipsLab.textColor = [UIColor whiteColor];
+	[sellView addSubview:guideTipsLab];
+	
+	UILabel *guideLab = [[UILabel alloc] init];
+	guideLab.text = @"1.234";
+	guideLab.font = Font_13;
+	guideLab.textColor = UIColorFromHex(0xCCB17E);
+	guideLab.textAlignment = NSTextAlignmentRight;
+	[sellView addSubview:guideLab];
+	
+	UIView *line1 = [[UIView alloc] init];
+	line1.backgroundColor = [UIColor grayColor];
+	[sellView addSubview:line1];
+	
+	UILabel *sellPriceTipsLab = [[UILabel alloc] init];
+	sellPriceTipsLab.text = @"卖单价格";
+	sellPriceTipsLab.font = Font_13;
+	sellPriceTipsLab.textColor = [UIColor whiteColor];
+	[sellView addSubview:sellPriceTipsLab];
+	
+//	UITextField *sellPriceTextField = [[UITextField alloc] init];
+//	sellPriceTextField.placeholder = @"请输入1.999~2.333的价格";
+//	sellPriceTextField.font = Font_13;
+//	sellPriceTextField.textColor = [UIColor whiteColor];
+//	sellPriceTextField.textAlignment = NSTextAlignmentRight;
+//	[sellPriceTextField setValue:[UIColor darkGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
+//	[buyView addSubview:sellPriceTextField];
+	UILabel *sellPriceLab = [[UILabel alloc] init];
+	sellPriceLab.text = @"1.234";
+	sellPriceLab.font = Font_13;
+	sellPriceLab.textColor = UIColorFromHex(0xCCB17E);
+	sellPriceLab.textAlignment = NSTextAlignmentRight;
+	[sellView addSubview:sellPriceLab];
+	
+	
+	UIView *line2 = [[UIView alloc] init];
+	line2.backgroundColor = [UIColor grayColor];
+	[sellView addSubview:line2];
+	
+	UILabel *sellNumTipsLab = [[UILabel alloc] init];
+	sellNumTipsLab.text = @"卖单数量";
+	sellNumTipsLab.font = Font_13;
+	sellNumTipsLab.textColor = [UIColor whiteColor];
+	[sellView addSubview:sellNumTipsLab];
+	
+	UITextField *sellNumTextField = [[UITextField alloc] init];
+	sellNumTextField.placeholder = @"请输入100~100000的价格";
+	sellNumTextField.font = Font_13;
+	sellNumTextField.keyboardType = UIKeyboardTypeNumberPad;
+	sellNumTextField.textColor = [UIColor whiteColor];
+	sellNumTextField.textAlignment = NSTextAlignmentRight;
+	[sellNumTextField setValue:[UIColor darkGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
+	[sellView addSubview:sellNumTextField];
+	
+	UIView *line3 = [[UIView alloc] init];
+	line3.backgroundColor = [UIColor grayColor];
+	[sellView addSubview:line3];
+	
+	UILabel *sellTotalPriceLab = [[UILabel alloc] init];
+	sellTotalPriceLab.text = @"总价：0";
+	sellTotalPriceLab.font = Font_13;
+	sellTotalPriceLab.textColor = [UIColor whiteColor];
+	[sellView addSubview:sellTotalPriceLab];
+	
+	UILabel *chargeLab = [[UILabel alloc] init];
+	chargeLab.text = @"手续费：0";
+	chargeLab.font = Font_13;
+	chargeLab.textColor = [UIColor whiteColor];
+	chargeLab.textAlignment = NSTextAlignmentRight;
+	[sellView addSubview:chargeLab];
+	
+	UIButton *sumbitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+	ViewBorderRadius(sumbitBtn, 10, 0.6, UIColorFromHex(0xCCB17E));
+	[sumbitBtn setTitle:@"提交" forState:UIControlStateNormal];
+	sumbitBtn.titleLabel.font = Font_14;
+	[sellView addSubview:sumbitBtn];
+	[sumbitBtn addTapBlock:^(UIButton *btn) {
+		if (sellNumTextField.text.length == 0) {
+			[SVProgressHUD showInfoWithStatus:@"请输入数量"];
+			return ;
+		}
+		
+		if (sellNumTextField.text.integerValue > 10) {
+			[SVProgressHUD showErrorWithStatus:@"超过可卖数量"];
+			return ;
+		}
+		
+	}];
+	
+	UILabel *tipsLab = [[UILabel alloc] init];
+	tipsLab.textColor =  [UIColor whiteColor];
+	tipsLab.font = Font_13;
+	tipsLab.textAlignment = NSTextAlignmentCenter;
+	tipsLab.attributedText = [Util setAllText:@"本次可挂卖最多5000个" andSpcifiStr:@"5000" withColor:UIColorFromHex(0xCCB17E) specifiStrFont:Font_13];
+	[sellView addSubview:tipsLab];
+	
+	[self.scrollerView addSubview:sellView];
+	
+	[guideTipsLab mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.left.equalTo(sellView).offset(30);
+		make.top.equalTo(sellView).offset(20);
+		make.width.mas_equalTo(60);
+		make.height.mas_equalTo(30);
+	}];
+	
+	[guideLab mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.left.equalTo(guideTipsLab.mas_right).offset(30);
+		make.right.equalTo(sellView).offset(-30);
+		make.top.equalTo(sellView).offset(20);
+		make.height.mas_equalTo(30);
+	}];
+	
+	[line1 mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.left.equalTo(sellView).offset(20);
+		make.right.equalTo(sellView).offset(-20);
+		make.top.equalTo(guideTipsLab.mas_bottom).offset(10);
+		make.height.mas_equalTo(0.6);
+	}];
+	
+	[sellPriceTipsLab mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.left.equalTo(sellView).offset(30);
+		make.top.equalTo(line1.mas_bottom).offset(10);
+		make.width.mas_equalTo(60);
+		make.height.mas_equalTo(30);
+	}];
+	
+	[sellPriceLab mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.left.equalTo(sellPriceTipsLab.mas_right).offset(30);
+		make.right.equalTo(sellView).offset(-30);
+		make.top.equalTo(line1.mas_bottom).offset(10);
+		make.height.mas_equalTo(30);
+	}];
+	
+	[line2 mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.left.equalTo(sellView).offset(20);
+		make.right.equalTo(sellView).offset(-20);
+		make.top.equalTo(sellPriceTipsLab.mas_bottom).offset(10);
+		make.height.mas_equalTo(0.6);
+	}];
+	
+	[sellNumTipsLab mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.left.equalTo(sellView).offset(30);
+		make.top.equalTo(line2.mas_bottom).offset(10);
+		make.width.mas_equalTo(60);
+		make.height.mas_equalTo(30);
+	}];
+	
+	[sellNumTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.left.equalTo(sellNumTipsLab.mas_right).offset(30);
+		make.right.equalTo(sellView).offset(-30);
+		make.top.equalTo(line2.mas_bottom).offset(10);
+		make.height.mas_equalTo(30);
+	}];
+	
+	[line3 mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.left.equalTo(sellView).offset(20);
+		make.right.equalTo(sellView).offset(-20);
+		make.top.equalTo(sellNumTipsLab.mas_bottom).offset(10);
+		make.height.mas_equalTo(0.6);
+	}];
+	
+	[sellTotalPriceLab mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.left.equalTo(sellView).offset(30);
+		make.top.equalTo(line3.mas_bottom).offset(10);
+		make.width.mas_equalTo(120);
+		make.height.mas_equalTo(30);
+	}];
+	
+	[chargeLab mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.left.equalTo(sellTotalPriceLab.mas_right).offset(20);
+		make.right.equalTo(sellView).offset(-30);
+		make.top.equalTo(line3.mas_bottom).offset(10);
+		make.height.mas_equalTo(30);
+	}];
+	
+	[sumbitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.top.equalTo(sellTotalPriceLab.mas_bottom).offset(10);
+		make.left.equalTo(sellView).offset(20);
+		make.right.equalTo(sellView).offset(-20);
+		make.height.mas_equalTo(50);
+	}];
+	
+	[tipsLab mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.top.equalTo(sumbitBtn.mas_bottom).offset(10);
+		make.left.equalTo(sellView).offset(20);
+		make.right.equalTo(sellView).offset(-20);
+		make.height.mas_equalTo(30);
+	}];
 }
 
 

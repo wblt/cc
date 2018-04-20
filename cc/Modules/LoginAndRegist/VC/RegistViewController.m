@@ -10,6 +10,10 @@
 #import "CQCountDownButton.h"
 
 @interface RegistViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *invitattextField;
+
 @property (weak, nonatomic) IBOutlet UITextField *phonetextField;
 @property (weak, nonatomic) IBOutlet UITextField *pwdTextField;
 @property (weak, nonatomic) IBOutlet UITextField *surePwdTextField;
@@ -85,13 +89,24 @@
 }
 - (IBAction)registAction:(UIButton *)sender {
     
-    if (_phonetextField.text.length <= 0 || _pwdTextField.text.length <=0 || _codeTextField.text.length <=0 || _surePwdTextField.text.length <=0 ) {
+    if (_userNameTextField.text.length <= 0 || _phonetextField.text.length <= 0 || _pwdTextField.text.length <=0 || _codeTextField.text.length <=0 || _surePwdTextField.text.length <=0 ) {
         [SVProgressHUD showInfoWithStatus:@"请将信息填写完整"];
         return;
     }
+	
+	if (_pwdTextField.text.length < 6) {
+		[SVProgressHUD showInfoWithStatus:@"请输入6位以上密码"];
+		return;
+	}
+	
+	if (_invitattextField.text.length <= 0) {
+		[SVProgressHUD showInfoWithStatus:@"请输入邀请码"];
+		return;
+	}
     
     if (![_pwdTextField.text isEqualToString:_surePwdTextField.text]) {
         [SVProgressHUD showErrorWithStatus:@"两次密码不一致"];
+		return;
     }
     
     if (![Util valiMobile:_phonetextField.text]) {
