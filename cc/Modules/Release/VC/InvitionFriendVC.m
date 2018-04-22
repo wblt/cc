@@ -10,6 +10,9 @@
 
 @interface InvitionFriendVC ()
 @property (weak, nonatomic) IBOutlet UIImageView *shareImgView;
+@property (nonatomic,copy)NSString *leftStr;
+@property (nonatomic,copy)NSString *rightStr;
+@property (nonatomic,copy)NSString *appUrl;
 
 @end
 
@@ -39,22 +42,32 @@
          "APP_URL": "http://shcunion.vip.img.800cdn.com/ala/fj/apple2.png"
          },
          */
-        
+        self.leftStr = data[@"pd"][@"LEFT_URL"];
+        self.leftStr = data[@"pd"][@"RIGHT_URL"];
+        self.appUrl = data[@"pd"][@"APP_URL"];
     } failureBlock:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"网络异常"];
     }];
 }
 
 - (IBAction)copyLeftAction:(id)sender {
+    if (self.leftStr.length == 0) {
+        [SVProgressHUD showErrorWithStatus:@"复制失败"];
+        return;
+    }
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    
-    [pasteboard setString:@"复制左区"];
+    [pasteboard setString:self.leftStr];
+     [SVProgressHUD showSuccessWithStatus:@"复制失败"];
 }
 
 - (IBAction)copyRightAction:(id)sender {
+    if (self.rightStr.length == 0) {
+        [SVProgressHUD showErrorWithStatus:@"复制失败"];
+        return;
+    }
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    
-    [pasteboard setString:@"复制右区"];
+    [pasteboard setString:self.rightStr];
+    [SVProgressHUD showSuccessWithStatus:@"复制失败"];
 }
 
 - (void)didReceiveMemoryWarning {

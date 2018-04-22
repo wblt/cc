@@ -90,7 +90,7 @@ static NSString *Identifier = @"cell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	OrderListTabCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
-	ViewBorderRadius(cell.matchBtn, 6, 0.6,UIColorFromHex(0xCCB17E));
+	ViewBorderRadius(cell.matchBtn, 6, 0.6,UIColorFromHex(0x4B5461));
 	cell.index = indexPath.row;
 	cell.delegate = self;
 	[cell.matchBtn setTitle:@"可取消" forState:UIControlStateNormal];

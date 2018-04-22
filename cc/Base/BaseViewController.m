@@ -10,6 +10,8 @@
 
 @interface BaseViewController ()
 @property (nonatomic,strong) UIImageView* noDataView;
+@property(nonatomic,strong)ErrorView *errorView;
+
 @end
 
 @implementation BaseViewController
@@ -18,31 +20,55 @@
     [super viewDidLoad];
     /**<设置导航栏背景颜色*/
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
-    self.navigationController.navigationBar.barTintColor = UIColorFromHex(0x303030);
+    self.navigationController.navigationBar.barTintColor = UIColorFromHex(0x020919);
     [self.navigationController.navigationBar setTranslucent:NO];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName :[UIColor whiteColor], NSFontAttributeName : [UIFont systemFontOfSize:18]}];
+    [self.view addSubview:self.errorView];
 }
 
--(void)showNoDataImage
-{
-    _noDataView=[[UIImageView alloc] init];
-    [_noDataView setImage:[UIImage imageNamed:@"generl_nodata"]];
+- (void)refreshData {
+    
     [self.view.subviews enumerateObjectsUsingBlock:^(UITableView* obj, NSUInteger idx, BOOL *stop) {
         if ([obj isKindOfClass:[UITableView class]]) {
-            [_noDataView setFrame:CGRectMake(0, 0,obj.frame.size.width, obj.frame.size.height)];
-            [obj addSubview:_noDataView];
+            obj.hidden = YES;
+            obj.hidden = NO;
+            self.errorView.hidden = YES;
         }
     }];
 }
 
--(void)removeNoDataImage{
-    if (_noDataView) {
-        [_noDataView removeFromSuperview];
-        _noDataView = nil;
+-(void)showImagePage:(BOOL)show withIsError:(BOOL)error {
+
+    self.errorView.isError = error;
+    [self.view.subviews enumerateObjectsUsingBlock:^(UITableView* obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:[UITableView class]]) {
+            obj.hidden = YES;
+            self.errorView.frame = obj.frame;
+            self.errorView.hidden = NO;
+        }
+    }];
+    if (error) {
+        self.errorView.backgroudImageView.image = [UIImage imageNamed:@"loaderror_icon"];
+    }else{
+        self.errorView.backgroudImageView.image = [UIImage imageNamed:@"loaderror"];
     }
+    
 }
 
-
+- (ErrorView *)errorView {
+    if (_errorView == nil) {
+        _errorView = [[ErrorView alloc] initWithFrame:CGRectZero];
+        _errorView.backgroudImageView.image = [UIImage imageNamed:@"loaderror"];
+        _errorView.contentMode = UIViewContentModeScaleAspectFit;
+        _errorView.hidden = YES;
+        typeof(self) weekSelf = self;
+        _errorView.block = ^(NSInteger tag){
+            weekSelf.errorView.hidden = YES;
+            [weekSelf refreshData];
+        };
+    }
+    return _errorView;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

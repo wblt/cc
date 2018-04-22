@@ -21,7 +21,7 @@
     // Do any additional setup after loading the view.
     self.delegate = self;
     
-    self.navigationBar.backgroundColor = UIColorFromHex(0x303030);
+    self.navigationBar.backgroundColor =  [UIColor clearColor]; //UIColorFromHex(0x010A19);
 }
 
 //这里可以封装成一个分类

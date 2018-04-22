@@ -32,8 +32,8 @@
 }
 
 - (void)setup {
-    ViewBorderRadius(_sumbitBtn, 8, 0.6, UIColorFromHex(0xCCB17E));
-    _tipsLab.attributedText = [Util setAllText:@"本次最多可转入5000.00算力钱包" andSpcifiStr:@"5000.00" withColor:UIColorFromHex(0xCCB17E) specifiStrFont:Font_15];
+    ViewBorderRadius(_sumbitBtn, 8, 0.6, UIColorFromHex(0x4B5461));
+   // _tipsLab.attributedText = [Util setAllText:@"本次最多可转入5000.00算力钱包" andSpcifiStr:@"5000.00" withColor:UIColorFromHex(0x4B5461) specifiStrFont:Font_15];
     
     _codeImageView = [[MQVerCodeImageView alloc] initWithFrame:CGRectMake(0, 0, 80, 35)];
     _codeImageView.bolck = ^(NSString *imageCodeStr){
@@ -75,6 +75,23 @@
          [SVProgressHUD showErrorWithStatus:@"请输入整数数量"];
         return;
     }
+    
+    
+    RequestParams *params = [[RequestParams alloc] initWithParams:API_TRANSFERRED];
+    [params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
+    [params addParameter:@"D_CURRENCY" value:_numTextField.text];
+    
+    [[NetworkSingleton shareInstace] httpPost:params withTitle:@"零钱转入算力钱包" successBlock:^(id data) {
+        NSString *code = data[@"code"];
+        if (![code isEqualToString:@"1000"]) {
+            [SVProgressHUD showErrorWithStatus:data[@"message"]];
+            return ;
+        }
+        
+    } failureBlock:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"网络异常"];
+    }];
+    
     // 转入
     [SVProgressHUD showSuccessWithStatus:@"转入成功"];
     

@@ -122,13 +122,18 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(newsClick)];
     [newsImgView addGestureRecognizer:tap];
+    
+    ViewBorderRadius(_shiftToHashrateBtn, 6, 0.6, UIColorFromHex(0x4B5461));
+    ViewBorderRadius(_inviteBtn, 6, 0.6, UIColorFromHex(0x4B5461));
+    ViewBorderRadius(_hashrateView, 10, 0.6,  UIColorFromHex(0x4B5461));
+    ViewBorderRadius(_ZeroView, 10, 0.6,  UIColorFromHex(0x4B5461));
 }
 
 - (void)addheadthView {
 	[_centerBgView addSubview:self.progressView];
 	_progressView.progress = .0;
 	_progressView.mainColor = [UIColor redColor];
-	_progressView.fillColor = [UIColor yellowColor];
+	_progressView.fillColor = [UIColor whiteColor];
 	_progressView.line_width = 15;
 	
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -137,7 +142,6 @@
 		
 	});
 	//动画小人
-	//
 	 _birdImage = [[UIImageView alloc]initWithFrame:CGRectMake(KScreenWidth/2-50, 200, 100, 100)]; //实例化一个图片视图
 //	 [_birdImage setAnimationImages:self.imageArr];把保存了图片的数组放进去
 //	 _birdImage.animationRepeatCount = 0;

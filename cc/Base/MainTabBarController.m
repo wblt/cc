@@ -66,8 +66,9 @@
     NSArray *selectedImgArray = @[@"deliver_icon_selector", @"market_icon_selector", @"mine_icon_selector"];
     // 按钮的标题数组
     NSArray *titleArray = @[@"释放", @"市场",@"我的"];
-    UIColor *normalTitleColor = UIColorFromHex(0x808080);
-    UIColor *selectedTitleColor = UI_ColorWithRGBA(204, 177, 126, 1.0); //UIColorFromHex(0xCCB17E);
+    UIColor *normalTitleColor =  [UIColor whiteColor]; //UIColorFromHex(0x808080);
+    UIColor *selectedTitleColor = [UIColor whiteColor];
+    //UI_ColorWithRGBA(204, 177, 126, 1.0); //UIColorFromHex(0xCCB17E);
     
     // 按钮的宽、高
     CGFloat itemWidth = KScreenWidth / (float)normalImgArray.count;
@@ -82,7 +83,8 @@
                                                      normalFontColor:normalTitleColor
                                                    selectedFontColor:selectedTitleColor
                                                                title:titleArray[i]];
-        item.backgroundColor = [UIColor darkGrayColor];
+        item.backgroundColor = UIColorFromHex(0x020919);
+        //[UIColor darkGrayColor];
         item.tag = i;
         item.isSelected = NO;
         if (i == self.selectedIndex) {

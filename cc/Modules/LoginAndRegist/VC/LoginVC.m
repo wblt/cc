@@ -20,6 +20,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *rememberBtn;
 @property (weak, nonatomic) IBOutlet UIButton *autoLoginBtn;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+@property (weak, nonatomic) IBOutlet UIView *bgView1;
+@property (weak, nonatomic) IBOutlet UIView *bgView2;
+@property (weak, nonatomic) IBOutlet UIView *bgView3;
 
 @property(nonatomic,strong)MQVerCodeImageView *codeImageView;
 @property(nonatomic,copy)NSString *imageCodeStr;
@@ -42,7 +45,10 @@
 }
 
 - (void)setup {
-    ViewBorderRadius(_loginBtn, 8, 0.6, UIColorFromHex(0xCCB17E));
+    ViewBorderRadius(_loginBtn, 8, 0.6, UIColorFromHex(0x4B5461));
+    ViewBorderRadius(_bgView1, 10, 0.6, UIColorFromHex(0x4B5461));
+    ViewBorderRadius(_bgView2, 10, 0.6, UIColorFromHex(0x4B5461));
+    ViewBorderRadius(_bgView3, 10, 0.6, UIColorFromHex(0x4B5461));
     
     _codeImageView = [[MQVerCodeImageView alloc] initWithFrame:CGRectMake(0, 0, 80, 35)];
     _codeImageView.bolck = ^(NSString *imageCodeStr){

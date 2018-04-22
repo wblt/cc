@@ -10,8 +10,6 @@
 
 @implementation OrderListTabCell
 
-
-
 - (IBAction)mactchAction:(id)sender {
 	
 	if (self.delegate && [self.delegate respondsToSelector:@selector(OrderListTabCellMacth:)]) {

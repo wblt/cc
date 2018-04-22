@@ -10,6 +10,12 @@
 #import "CQCountDownButton.h"
 
 @interface RegistViewController ()
+@property (weak, nonatomic) IBOutlet UIView *bgView1;
+@property (weak, nonatomic) IBOutlet UIView *bgView2;
+@property (weak, nonatomic) IBOutlet UIView *bgView3;
+@property (weak, nonatomic) IBOutlet UIView *bgView4;
+@property (weak, nonatomic) IBOutlet UIView *bgView5;
+@property (weak, nonatomic) IBOutlet UIView *bgView6;
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *invitattextField;
@@ -36,7 +42,13 @@
 }
 
 - (void)setup {
-    ViewBorderRadius(_registBtn, 8, 0.6, UIColorFromHex(0xCCB17E));
+    ViewBorderRadius(_registBtn, 8, 0.6, UIColorFromHex(0x4B5461));
+    ViewBorderRadius(_bgView1, 10, 0.6, UIColorFromHex(0x4B5461));
+    ViewBorderRadius(_bgView2, 10, 0.6, UIColorFromHex(0x4B5461));
+    ViewBorderRadius(_bgView3, 10, 0.6, UIColorFromHex(0x4B5461));
+    ViewBorderRadius(_bgView4, 10, 0.6, UIColorFromHex(0x4B5461));
+    ViewBorderRadius(_bgView5, 10, 0.6, UIColorFromHex(0x4B5461));
+    ViewBorderRadius(_bgView6, 10, 0.6, UIColorFromHex(0x4B5461));
     
     __weak __typeof__(self) weakSelf = self;
     
@@ -77,13 +89,13 @@
         [weakSelf.countDownButton setTitle:@"获取验证码" forState:UIControlStateNormal];
         NSLog(@"倒计时结束");
     }];
-    ViewBorderRadius(self.countDownButton, 6, 0.6, UIColorFromHex(0xCCB17E));
+    ViewBorderRadius(self.countDownButton, 6, 0.6, UIColorFromHex(0x4B5461));
     
     [_codeBgView addSubview:self.countDownButton];
     self.countDownButton.frame = CGRectMake(0, 0, 100, 30);
     [self.countDownButton setTitle:@"获取验证码" forState:UIControlStateNormal];
     self.countDownButton.titleLabel.font = Font_14;
-    self.countDownButton.backgroundColor = UIColorFromHex(0x484848);
+    self.countDownButton.backgroundColor = UIColorFromHex(0x020919);
     [self.countDownButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.countDownButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     

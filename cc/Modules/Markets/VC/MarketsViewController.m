@@ -49,7 +49,8 @@ static NSString *Identifier = @"cell";
 	_buyBtn.selected = YES;
 	_sellBtn.selected = NO;
 	_bottomSellView.hidden = YES;
-	
+	_bottomBuyView.hidden = YES;
+    
 	[self addNavBtn];
     [self setup];
 	
@@ -59,8 +60,8 @@ static NSString *Identifier = @"cell";
 		sender.selected = !sender.selected;
 	}
 	_sellBtn.selected = NO;
-	_bottomBuyView.hidden = NO;
-	_bottomSellView.hidden = YES;
+//    _bottomBuyView.hidden = NO;
+//    _bottomSellView.hidden = YES;
 }
 
 - (IBAction)sellAction:(UIButton *)sender {
@@ -68,8 +69,8 @@ static NSString *Identifier = @"cell";
 		sender.selected = !sender.selected;
 	}
 	_buyBtn.selected = NO;
-	_bottomBuyView.hidden = YES;
-	_bottomSellView.hidden = NO;
+//    _bottomBuyView.hidden = YES;
+//    _bottomSellView.hidden = NO;
 }
 
 
@@ -136,7 +137,8 @@ static NSString *Identifier = @"cell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     OrderListTabCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    ViewBorderRadius(cell.matchBtn, 6, 0.6,UIColorFromHex(0xCCB17E));
+    ViewBorderRadius(cell.matchBtn, 6, 0.6,UIColorFromHex(0x4B5461));
+    ViewBorderRadius(cell.bgView, 6, 0.6,UIColorFromHex(0x4B5461));
 	cell.index = indexPath.row;
 	cell.delegate = self;
 	[cell.matchBtn setTitle:@"可匹配" forState:UIControlStateNormal];

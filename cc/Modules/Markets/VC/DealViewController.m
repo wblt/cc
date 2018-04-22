@@ -28,6 +28,7 @@
 }
 
 - (void)setup {
+    _buyBtn.selected = YES;
 	_bottomSellView.hidden = YES;
 	
     self.scrollerView.contentSize = CGSizeMake(KScreenWidth*2, 300);
@@ -73,7 +74,7 @@
     
 	UILabel *hightLab = [[UILabel alloc] init];
 	hightLab.text = @"1.234";
-	hightLab.textColor = UIColorFromHex(0xCCB17E);
+    hightLab.textColor =  [UIColor whiteColor]; // UIColorFromHex(0xCCB17E);
 	hightLab.font = Font_13;
     hightLab.textAlignment = NSTextAlignmentCenter;
 	[buyView addSubview:hightLab];
@@ -87,7 +88,7 @@
 	
 	UILabel *lowerLab = [[UILabel alloc] init];
 	lowerLab.text = @"1.234";
-	lowerLab.textColor = UIColorFromHex(0xCCB17E);
+	lowerLab.textColor = [UIColor whiteColor]; //UIColorFromHex(0xCCB17E);
 	lowerLab.font = Font_13;
     lowerLab.textAlignment = NSTextAlignmentCenter;
 	[buyView addSubview:lowerLab];
@@ -115,7 +116,7 @@
     priceTextField.font = Font_13;
     priceTextField.textColor = [UIColor whiteColor];
     priceTextField.textAlignment = NSTextAlignmentRight;
-    [priceTextField setValue:[UIColor darkGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [priceTextField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
 	[buyView addSubview:priceTextField];
 	
 	UIView *line2 = [[UIView alloc] init];
@@ -134,7 +135,7 @@
 	numTextField.keyboardType = UIKeyboardTypeNumberPad;
     numTextField.textColor = [UIColor whiteColor];
     numTextField.textAlignment = NSTextAlignmentRight;
-    [numTextField setValue:[UIColor darkGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [numTextField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [buyView addSubview:numTextField];
     
     UIView *line3 = [[UIView alloc] init];
@@ -148,7 +149,7 @@
 	[buyView addSubview:totalPriceLab];
 	
 	UIButton *sumbitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-	ViewBorderRadius(sumbitBtn, 10, 0.6, UIColorFromHex(0xCCB17E));
+	ViewBorderRadius(sumbitBtn, 10, 0.6, UIColorFromHex(0x4B5461));
 	[sumbitBtn setTitle:@"提交" forState:UIControlStateNormal];
 	sumbitBtn.titleLabel.font = Font_14;
 	[buyView addSubview:sumbitBtn];
@@ -271,7 +272,7 @@
 	UILabel *guideLab = [[UILabel alloc] init];
 	guideLab.text = @"1.234";
 	guideLab.font = Font_13;
-	guideLab.textColor = UIColorFromHex(0xCCB17E);
+    guideLab.textColor = [UIColor whiteColor];// UIColorFromHex(0xCCB17E);
 	guideLab.textAlignment = NSTextAlignmentRight;
 	[sellView addSubview:guideLab];
 	
@@ -295,7 +296,7 @@
 	UILabel *sellPriceLab = [[UILabel alloc] init];
 	sellPriceLab.text = @"1.234";
 	sellPriceLab.font = Font_13;
-	sellPriceLab.textColor = UIColorFromHex(0xCCB17E);
+    sellPriceLab.textColor = [UIColor whiteColor] ;//UIColorFromHex(0xCCB17E);
 	sellPriceLab.textAlignment = NSTextAlignmentRight;
 	[sellView addSubview:sellPriceLab];
 	
@@ -316,7 +317,7 @@
 	sellNumTextField.keyboardType = UIKeyboardTypeNumberPad;
 	sellNumTextField.textColor = [UIColor whiteColor];
 	sellNumTextField.textAlignment = NSTextAlignmentRight;
-	[sellNumTextField setValue:[UIColor darkGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
+	[sellNumTextField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
 	[sellView addSubview:sellNumTextField];
 	
 	UIView *line3 = [[UIView alloc] init];
@@ -337,7 +338,7 @@
 	[sellView addSubview:chargeLab];
 	
 	UIButton *sumbitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-	ViewBorderRadius(sumbitBtn, 10, 0.6, UIColorFromHex(0xCCB17E));
+	ViewBorderRadius(sumbitBtn, 10, 0.6, UIColorFromHex(0x4B5461));
 	[sumbitBtn setTitle:@"提交" forState:UIControlStateNormal];
 	sumbitBtn.titleLabel.font = Font_14;
 	[sellView addSubview:sumbitBtn];
@@ -358,7 +359,7 @@
 	tipsLab.textColor =  [UIColor whiteColor];
 	tipsLab.font = Font_13;
 	tipsLab.textAlignment = NSTextAlignmentCenter;
-	tipsLab.attributedText = [Util setAllText:@"本次可挂卖最多5000个" andSpcifiStr:@"5000" withColor:UIColorFromHex(0xCCB17E) specifiStrFont:Font_13];
+	tipsLab.attributedText = [Util setAllText:@"本次可挂卖最多5000个" andSpcifiStr:@"5000" withColor:UIColorFromHex(0xFFFFFF) specifiStrFont:Font_13];
 	[sellView addSubview:tipsLab];
 	
 	[self.scrollerView addSubview:sellView];

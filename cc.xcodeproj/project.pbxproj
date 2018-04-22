@@ -37,6 +37,12 @@
 		CF82FDFB208662BA006EF9B6 /* passwordIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF82FDF7208662BA006EF9B6 /* passwordIcon.png */; };
 		CF82FDFC208662BA006EF9B6 /* PasswordAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF82FDF9208662BA006EF9B6 /* PasswordAlertView.m */; };
 		CF82FE03208C607C006EF9B6 /* NoticeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF82FE02208C607C006EF9B6 /* NoticeModel.m */; };
+		CF82FE06208CB622006EF9B6 /* FriendInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF82FE05208CB622006EF9B6 /* FriendInfoModel.m */; };
+		CF82FE0A208CB761006EF9B6 /* FriendListTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF82FE08208CB761006EF9B6 /* FriendListTabCell.m */; };
+		CF82FE0B208CB761006EF9B6 /* FriendListTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF82FE09208CB761006EF9B6 /* FriendListTabCell.xib */; };
+		CF82FE0E208CB982006EF9B6 /* ErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF82FE0D208CB982006EF9B6 /* ErrorView.m */; };
+		CF82FE12208CF8C2006EF9B6 /* ReleaseRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF82FE10208CF8C2006EF9B6 /* ReleaseRecordViewController.m */; };
+		CF82FE13208CF8C2006EF9B6 /* ReleaseRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF82FE11208CF8C2006EF9B6 /* ReleaseRecordViewController.xib */; };
 		F8056853208999930073B30C /* MineInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8056851208999930073B30C /* MineInfoViewController.m */; };
 		F8056854208999940073B30C /* MineInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8056852208999930073B30C /* MineInfoViewController.xib */; };
 		F805686C2089BDA20073B30C /* UIImage+XLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F80568572089BDA20073B30C /* UIImage+XLExtension.m */; };
@@ -165,6 +171,16 @@
 		CF82FDF9208662BA006EF9B6 /* PasswordAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordAlertView.m; sourceTree = "<group>"; };
 		CF82FE01208C607C006EF9B6 /* NoticeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeModel.h; sourceTree = "<group>"; };
 		CF82FE02208C607C006EF9B6 /* NoticeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeModel.m; sourceTree = "<group>"; };
+		CF82FE04208CB622006EF9B6 /* FriendInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendInfoModel.h; sourceTree = "<group>"; };
+		CF82FE05208CB622006EF9B6 /* FriendInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendInfoModel.m; sourceTree = "<group>"; };
+		CF82FE07208CB761006EF9B6 /* FriendListTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendListTabCell.h; sourceTree = "<group>"; };
+		CF82FE08208CB761006EF9B6 /* FriendListTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendListTabCell.m; sourceTree = "<group>"; };
+		CF82FE09208CB761006EF9B6 /* FriendListTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendListTabCell.xib; sourceTree = "<group>"; };
+		CF82FE0C208CB981006EF9B6 /* ErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorView.h; sourceTree = "<group>"; };
+		CF82FE0D208CB982006EF9B6 /* ErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorView.m; sourceTree = "<group>"; };
+		CF82FE0F208CF8C2006EF9B6 /* ReleaseRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReleaseRecordViewController.h; sourceTree = "<group>"; };
+		CF82FE10208CF8C2006EF9B6 /* ReleaseRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReleaseRecordViewController.m; sourceTree = "<group>"; };
+		CF82FE11208CF8C2006EF9B6 /* ReleaseRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReleaseRecordViewController.xib; sourceTree = "<group>"; };
 		DDF4D9A80B4C9B8D6DB5BDF5 /* Pods-cc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cc/Pods-cc.debug.xcconfig"; sourceTree = "<group>"; };
 		F8056850208999930073B30C /* MineInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineInfoViewController.h; sourceTree = "<group>"; };
 		F8056851208999930073B30C /* MineInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineInfoViewController.m; sourceTree = "<group>"; };
@@ -441,6 +457,9 @@
 				F805688E2089F0590073B30C /* MyFriendsViewController.h */,
 				F805688F2089F0590073B30C /* MyFriendsViewController.m */,
 				F80568902089F0590073B30C /* MyFriendsViewController.xib */,
+				CF82FE0F208CF8C2006EF9B6 /* ReleaseRecordViewController.h */,
+				CF82FE10208CF8C2006EF9B6 /* ReleaseRecordViewController.m */,
+				CF82FE11208CF8C2006EF9B6 /* ReleaseRecordViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -450,6 +469,8 @@
 			children = (
 				CF82FE01208C607C006EF9B6 /* NoticeModel.h */,
 				CF82FE02208C607C006EF9B6 /* NoticeModel.m */,
+				CF82FE04208CB622006EF9B6 /* FriendInfoModel.h */,
+				CF82FE05208CB622006EF9B6 /* FriendInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -462,6 +483,9 @@
 				CF82FDE620863EBA006EF9B6 /* NewsTabCell.h */,
 				CF82FDE720863EBA006EF9B6 /* NewsTabCell.m */,
 				CF82FDE820863EBA006EF9B6 /* NewsTabCell.xib */,
+				CF82FE07208CB761006EF9B6 /* FriendListTabCell.h */,
+				CF82FE08208CB761006EF9B6 /* FriendListTabCell.m */,
+				CF82FE09208CB761006EF9B6 /* FriendListTabCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -827,6 +851,8 @@
 		F8ED3966207DB310006F4D2A /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				CF82FE0C208CB981006EF9B6 /* ErrorView.h */,
+				CF82FE0D208CB982006EF9B6 /* ErrorView.m */,
 				F8ED3967207DB310006F4D2A /* BaseNavViewController.h */,
 				F8ED3968207DB310006F4D2A /* BaseNavViewController.m */,
 				F8ED3969207DB310006F4D2A /* BaseViewController.h */,
@@ -974,12 +1000,14 @@
 				F8056854208999940073B30C /* MineInfoViewController.xib in Resources */,
 				F8ED3958207DACDB006F4D2A /* sure_placeholder_error@2x.png in Resources */,
 				F8ED3955207DACDB006F4D2A /* close_icon@2x.png in Resources */,
+				CF82FE13208CF8C2006EF9B6 /* ReleaseRecordViewController.xib in Resources */,
 				F8ED397A207DB81B006F4D2A /* README.md in Resources */,
 				F8ED395B207DACDB006F4D2A /* README.md in Resources */,
 				F805688D2089EFDD0073B30C /* TransferRecordViewController.xib in Resources */,
 				CF82FDEF20864339006EF9B6 /* ZoreWalletVC.xib in Resources */,
 				F84E5B62207D961200949AF1 /* Assets.xcassets in Resources */,
 				F8ED3989207DB8B0006F4D2A /* RegistViewController.xib in Resources */,
+				CF82FE0B208CB761006EF9B6 /* FriendListTabCell.xib in Resources */,
 				CF71652A2081F6530092692F /* kxian.jpg in Resources */,
 				F80568922089F0590073B30C /* MyFriendsViewController.xib in Resources */,
 				F8ED394D207DACDB006F4D2A /* README.md in Resources */,
@@ -1080,11 +1108,13 @@
 				F8CE3BDA2086E95600C6994B /* QLCycleProgressView.m in Sources */,
 				F8ED3952207DACDB006F4D2A /* SPUtil.m in Sources */,
 				CF7165272081ED4E0092692F /* MarketsViewController.m in Sources */,
+				CF82FE06208CB622006EF9B6 /* FriendInfoModel.m in Sources */,
 				F80568732089BDA20073B30C /* XLProgressView.m in Sources */,
 				F8ED3950207DACDB006F4D2A /* SandBoxHelper.m in Sources */,
 				F8CE3BEC208746AB00C6994B /* DealViewController.m in Sources */,
 				F8ED3947207DACDB006F4D2A /* UICollectionView+IndexPath.m in Sources */,
 				F8ED396C207DB311006F4D2A /* BaseNavViewController.m in Sources */,
+				CF82FE12208CF8C2006EF9B6 /* ReleaseRecordViewController.m in Sources */,
 				F805686E2089BDA20073B30C /* FSActionSheet.m in Sources */,
 				CF82FDFC208662BA006EF9B6 /* PasswordAlertView.m in Sources */,
 				F8ED3946207DACDB006F4D2A /* UIButton+XYButton.m in Sources */,
@@ -1103,6 +1133,7 @@
 				F80568912089F0590073B30C /* MyFriendsViewController.m in Sources */,
 				F80568742089BDA20073B30C /* XLZoomingScrollView.m in Sources */,
 				F8ED3988207DB8B0006F4D2A /* RegistViewController.m in Sources */,
+				CF82FE0A208CB761006EF9B6 /* FriendListTabCell.m in Sources */,
 				F80568822089D8C40073B30C /* TransferViewController.m in Sources */,
 				CF71651F2081ECC30092692F /* MineViewController.m in Sources */,
 				F80568782089C1E00073B30C /* MyOrderViewController.m in Sources */,
@@ -1110,6 +1141,7 @@
 				CF716533208394E80092692F /* MQVerCodeImageView.m in Sources */,
 				CF82FDF320864DE3006EF9B6 /* InvitionFriendVC.m in Sources */,
 				F8ED3949207DACDB006F4D2A /* UIView+Extend.m in Sources */,
+				CF82FE0E208CB982006EF9B6 /* ErrorView.m in Sources */,
 				CF716537208399C60092692F /* ForgetPwdViewController.m in Sources */,
 				F8ED3977207DB3E0006F4D2A /* MainTabBarController.m in Sources */,
 				F8ED3976207DB3E0006F4D2A /* MainTabBarItem.m in Sources */,

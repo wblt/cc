@@ -7,9 +7,13 @@
 //
 
 #import "MyFriendsViewController.h"
+#import "FriendListTabCell.h"
+#import "FriendInfoModel.h"
+static NSString *Identifier = @"cell";
 
-@interface MyFriendsViewController ()
+@interface MyFriendsViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic,strong)NSMutableArray *data;
 
 @end
 
@@ -19,7 +23,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	self.navigationItem.title = @"我的好友";
+    self.data = [NSMutableArray array];
+    [self setup];
     [self requestData];
+}
+// 重新获取数据
+- (void)refreshData {
+    
+    [self.data removeAllObjects];
+    [self requestData];
+    
 }
 
 - (void)requestData {
@@ -33,14 +46,70 @@
         }
         NSArray *pd = data[@"pd"];
         if (pd.count == 0) {
-            [self showNoDataImage];
+            [self showImagePage:YES withIsError:NO];
+            return;
         }
-        
+        for (NSDictionary *dic in pd) {
+            FriendInfoModel *model = [FriendInfoModel mj_objectWithKeyValues:dic];
+            [self.data addObject:model];
+        }
+        [self.tableView reloadData];
         
     } failureBlock:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"网络异常"];
     }];
 }
+
+- (void)setup {
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+      [self.tableView registerNib:[UINib nibWithNibName:@"FriendListTabCell" bundle:nil] forCellReuseIdentifier:Identifier];
+}
+
+# pragma mark tableView delegate dataSourse
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.data.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 150;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0.001;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.001;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return nil;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    return nil;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    FriendListTabCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.model = self.data[indexPath.row];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

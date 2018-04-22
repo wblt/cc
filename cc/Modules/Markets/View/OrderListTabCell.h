@@ -26,9 +26,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalLab;
 @property (weak, nonatomic) IBOutlet UILabel *nameLab;
 @property (weak, nonatomic) IBOutlet UILabel *timeLab;
+@property (weak, nonatomic) IBOutlet UIView *bgView;
 
 
 
 @property (nonatomic,assign)NSInteger index;
 @property (nonatomic,weak)id<OrderListTabCellDelegate> delegate;
+
 @end

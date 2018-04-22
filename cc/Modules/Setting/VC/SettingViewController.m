@@ -25,7 +25,7 @@
 }
 
 - (void)setup {
-    ViewBorderRadius(_logoutBtn, 8, 0.6, UIColorFromHex(0xCCB17E));
+    ViewBorderRadius(_logoutBtn, 8, 0.6, UIColorFromHex(0x4B5461));
     
 }
 

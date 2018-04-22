@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -29,12 +29,13 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0w-bS-tEN">
                             <rect key="frame" x="20" y="10.5" width="162.5" height="40"/>
-                            <color key="backgroundColor" red="0.80000000000000004" green="0.69411764705882351" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.0039215686269999999" green="0.039215686270000001" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="n3B-Gl-W81"/>
                             </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <state key="normal" title="转入算力钱包" image="kabao">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleColor" red="0.29411764705882354" green="0.32941176470588235" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="6"/>
@@ -45,9 +46,10 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXL-G8-QvI">
                             <rect key="frame" x="192.5" y="10.5" width="162.5" height="40"/>
-                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="0.0039215686269999999" green="0.039215686270000001" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <state key="normal" title="邀请好友" image="kabao">
-                                <color key="titleColor" red="0.80000000000000004" green="0.69411764710000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="6"/>
@@ -57,7 +59,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="r0w-bS-tEN" firstAttribute="leading" secondItem="vHC-zP-tFo" secondAttribute="leading" constant="20" id="4bA-jD-CEu"/>
                         <constraint firstItem="oXL-G8-QvI" firstAttribute="height" secondItem="r0w-bS-tEN" secondAttribute="height" id="Hae-Rg-jUj"/>
@@ -101,7 +103,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="0.0039215686269999999" green="0.039215686270000001" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="5ia-Gp-Sa2" firstAttribute="leading" secondItem="GDY-LF-kJr" secondAttribute="trailing" constant="5" id="3yw-cZ-m2R"/>
                                 <constraint firstAttribute="trailing" secondItem="uqL-HZ-7Pg" secondAttribute="trailing" constant="5" id="6mR-w8-47g"/>
@@ -147,7 +149,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="0.0039215686269999999" green="0.039215686270000001" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="c0n-f1-hwE" firstAttribute="leading" secondItem="LO6-VB-s5g" secondAttribute="leading" constant="5" id="D1f-MZ-m7M"/>
                                 <constraint firstItem="c0n-f1-hwE" firstAttribute="centerY" secondItem="LO6-VB-s5g" secondAttribute="centerY" id="FLe-8J-mwT"/>
@@ -163,7 +165,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="6C8-Sm-ArX" firstAttribute="centerY" secondItem="MCY-C2-rUZ" secondAttribute="centerY" id="443-cw-IH1"/>
                         <constraint firstItem="LO6-VB-s5g" firstAttribute="leading" secondItem="6C8-Sm-ArX" secondAttribute="trailing" constant="10" id="BNN-zK-BA7"/>
@@ -180,10 +182,10 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D03-aq-Zbp">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="527"/>
-                            <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.0039215686274509803" green="0.039215686274509803" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="D03-aq-Zbp" secondAttribute="bottom" id="KWd-Ua-EEV"/>
                         <constraint firstItem="D03-aq-Zbp" firstAttribute="leading" secondItem="z8T-Ad-B1B" secondAttribute="leading" id="QH5-VT-QZS"/>
@@ -192,7 +194,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="MCY-C2-rUZ" secondAttribute="trailing" id="0hY-VD-o4i"/>
                 <constraint firstItem="z8T-Ad-B1B" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FkZ-jP-gz5"/>

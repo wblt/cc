@@ -36,6 +36,11 @@ static NSString *Identifier = @"cell";
     [self.tableView registerNib:[UINib nibWithNibName:@"NewsTabCell" bundle:nil] forCellReuseIdentifier:Identifier];
 }
 
+- (void)refreshData {
+    [self.data removeAllObjects];
+    [self requestData];
+}
+
 - (void)requestData {
     RequestParams *params = [[RequestParams alloc] initWithParams:API_NOTICE];
     [[NetworkSingleton shareInstace] httpPost:params withTitle:@"公告" successBlock:^(id data) {
@@ -45,6 +50,12 @@ static NSString *Identifier = @"cell";
             return ;
         }
         NSArray *pdAry = data[@"pd"];
+        
+        if (pdAry.count == 0) {
+            [self showImagePage:YES withIsError:NO];
+            return;
+        }
+        
         for (NSDictionary *dic in pdAry) {
             NoticeModel *model = [NoticeModel mj_objectWithKeyValues:dic];
             [self.data addObject:model];
