@@ -10,6 +10,13 @@
 
 @implementation NewsTabCell
 
+- (void)setModel:(NoticeModel *)model {
+    _model = model;
+    self.titleLab.text = model.TITLE;
+    self.contentLab.text = model.CONTENT;
+    self.timeLab.text = model.CREATE_TIME;
+    
+}
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

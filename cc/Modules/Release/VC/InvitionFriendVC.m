@@ -18,6 +18,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self requestData];
+}
+
+- (void)requestData {
+    RequestParams *params = [[RequestParams alloc] initWithParams:API_INVITATION];
+    [params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
+    [params addParameter:@"TERMINAL" value:@"1"];
+    
+    [[NetworkSingleton shareInstace] httpPost:params withTitle:@"" successBlock:^(id data) {
+        NSString *code = data[@"code"];
+        if (![code isEqualToString:@"1000"]) {
+            [SVProgressHUD showErrorWithStatus:data[@"message"]];
+            return ;
+        }
+        /*
+         "pd": {
+         "LEFT_URL": "http://ala-1254340937.file.myqcloud.com/100000280.png",
+         "RIGHT_URL": "http://ala-1254340937.file.myqcloud.com/100000281.png",
+         "APP_URL": "http://shcunion.vip.img.800cdn.com/ala/fj/apple2.png"
+         },
+         */
+        
+    } failureBlock:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"网络异常"];
+    }];
 }
 
 - (IBAction)copyLeftAction:(id)sender {

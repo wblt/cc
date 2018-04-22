@@ -27,6 +27,11 @@
 
 @implementation LoginVC
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    _phoneTextField.text = [SPUtil objectForKey:k_app_userNumber];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -55,16 +60,19 @@
     
     _phoneTextField.text = [SPUtil objectForKey:k_app_userNumber];
     _pwdTextField.text = [SPUtil objectForKey:k_app_passNumber];
+    
+    if (_phoneTextField.text.length >0) {
+        _rememberBtn.selected = YES;
+    }
+    
+    if ([SPUtil boolForKey:k_app_autologin]) {
+        _autoLoginBtn.selected = YES;
+    }
 }
 
 - (IBAction)loginAction:(UIButton *)sender {
     if (_phoneTextField.text.length <= 0 || _pwdTextField.text.length <=0 ) {
         [SVProgressHUD showInfoWithStatus:@"请填写账号密码"];
-        return;
-    }
-    
-    if (![Util valiMobile:_phoneTextField.text]) {
-        [SVProgressHUD showErrorWithStatus:@"请输入正确的手机号"];
         return;
     }
 	
@@ -84,17 +92,38 @@
         return;
     }
     
-    // 进入页面
-    MainTabBarController *mainTabbar = [[MainTabBarController alloc] init];
-    mainTabbar.selectIndex = 0;
-    [UIApplication sharedApplication].keyWindow.rootViewController = mainTabbar;
-    if (_rememberBtn.selected) {
-        [SPUtil setObject:_pwdTextField.text forKey:k_app_passNumber];
-        [SPUtil setObject:_phoneTextField.text forKey:k_app_userNumber];
-    }
-    if (_autoLoginBtn.selected) {
-       [SPUtil setBool:YES forKey:k_app_login];
-    }
+    // wb wb6174784
+    RequestParams *params = [[RequestParams alloc] initWithParams:API_LOGIN];
+   
+    [params addParameter:@"USER_NAME" value:_phoneTextField.text];
+    [params addParameter:@"PASSWORD" value:_pwdTextField.text];
+    
+    
+    [[NetworkSingleton shareInstace] httpPost:params withTitle:@"登陆" successBlock:^(id data) {
+        NSString *code = data[@"code"];
+        if (![code isEqualToString:@"1000"]) {
+            [SVProgressHUD showErrorWithStatus:data[@"message"]];
+            return ;
+        }
+        // 保存配置信息
+        if (_rememberBtn.selected) {
+            [SPUtil setObject:_pwdTextField.text forKey:k_app_passNumber];
+            [SPUtil setObject:_phoneTextField.text forKey:k_app_userNumber];
+        }
+        if (_autoLoginBtn.selected) {
+            [SPUtil setBool:YES forKey:k_app_autologin];
+        }
+        // 保存用户信息
+        
+        // 进入页面
+        MainTabBarController *mainTabbar = [[MainTabBarController alloc] init];
+        mainTabbar.selectIndex = 0;
+        [UIApplication sharedApplication].keyWindow.rootViewController = mainTabbar;
+      
+        
+    } failureBlock:^(NSError *error) {
+        
+    }];
 }
 
 

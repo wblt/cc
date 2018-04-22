@@ -9,6 +9,9 @@
 #import "NewsDetailsViewController.h"
 
 @interface NewsDetailsViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *contentLab;
+@property (weak, nonatomic) IBOutlet UILabel *timeLab;
+@property (weak, nonatomic) IBOutlet UILabel *titleLab;
 
 @end
 
@@ -17,6 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = @"公告详情";
+    self.contentLab.text = [NSString stringWithFormat:@"   %@",self.model.CONTENT];
+    self.timeLab.text = self.model.CREATE_TIME;
+    self.titleLab.text = self.model.TITLE;
 }
 
 - (void)didReceiveMemoryWarning {

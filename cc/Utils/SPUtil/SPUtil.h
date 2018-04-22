@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #define k_app_login @"app_login"      // 判断是否登录
+#define k_app_autologin @"app_autologin"  // 判断是否是自动登陆
 #define k_app_security @"app_security" // 判断是否输入安全密码
 #define k_app_userNumber @"app_userNumber"
 #define k_app_passNumber @"app_passNumber"

@@ -43,7 +43,7 @@
 	//启动更新检查SDK
 	//[[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"PGY_APP_ID"];
 	
-    BOOL flag = [SPUtil boolForKey:k_app_login];;
+    BOOL flag = [SPUtil boolForKey:k_app_autologin];
     
     if (flag) {
         MainTabBarController *mainTabbar = [[MainTabBarController alloc] init];
@@ -90,7 +90,7 @@
 }
 
 - (void)test {
-	NSString *str = @"15388965285dec";
+	NSString *str = @"wyshc";
 	DLog(@"MD5------%@",str.MD5Hash.lowercaseString);
 }
 @end

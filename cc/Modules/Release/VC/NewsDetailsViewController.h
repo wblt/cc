@@ -7,7 +7,9 @@
 //
 
 #import "BaseViewController.h"
-
+#import "NoticeModel.h"
 @interface NewsDetailsViewController : BaseViewController
+
+@property(nonatomic,strong)NoticeModel *model;
 
 @end

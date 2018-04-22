@@ -19,6 +19,27 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	self.navigationItem.title = @"我的好友";
+    [self requestData];
+}
+
+- (void)requestData {
+    RequestParams *params = [[RequestParams alloc] initWithParams:API_MY_FRIENDS];
+    [params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
+    [[NetworkSingleton shareInstace] httpPost:params withTitle:@"我的好友" successBlock:^(id data) {
+        NSString *code = data[@"code"];
+        if (![code isEqualToString:@"1000"]) {
+            [SVProgressHUD showErrorWithStatus:data[@"message"]];
+            return ;
+        }
+        NSArray *pd = data[@"pd"];
+        if (pd.count == 0) {
+            [self showNoDataImage];
+        }
+        
+        
+    } failureBlock:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"网络异常"];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

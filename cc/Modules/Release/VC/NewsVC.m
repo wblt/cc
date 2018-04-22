@@ -8,12 +8,13 @@
 
 #import "NewsVC.h"
 #import "NewsTabCell.h"
-
+#import "NewsDetailsViewController.h"
+#import "NoticeModel.h"
 static NSString *Identifier = @"cell";
 
 @interface NewsVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (nonatomic,strong)NSMutableArray *data;
 @end
 
 @implementation NewsVC
@@ -21,8 +22,11 @@ static NSString *Identifier = @"cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"新闻";
+    self.navigationItem.title = @"公告";
+    self.data = [NSMutableArray array];
+    
     [self setup];
+    [self requestData];
 }
 
 - (void)setup {
@@ -32,10 +36,32 @@ static NSString *Identifier = @"cell";
     [self.tableView registerNib:[UINib nibWithNibName:@"NewsTabCell" bundle:nil] forCellReuseIdentifier:Identifier];
 }
 
+- (void)requestData {
+    RequestParams *params = [[RequestParams alloc] initWithParams:API_NOTICE];
+    [[NetworkSingleton shareInstace] httpPost:params withTitle:@"公告" successBlock:^(id data) {
+         NSString *code = data[@"code"];
+        if (![code isEqualToString:@"1000"]) {
+            [SVProgressHUD showErrorWithStatus:@"message"];
+            return ;
+        }
+        NSArray *pdAry = data[@"pd"];
+        for (NSDictionary *dic in pdAry) {
+            NoticeModel *model = [NoticeModel mj_objectWithKeyValues:dic];
+            [self.data addObject:model];
+        }
+        [self.tableView reloadData];
+    } failureBlock:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"网络异常"];
+    }];
+}
+
 # pragma mark tableView delegate dataSourse
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.data.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -60,13 +86,15 @@ static NSString *Identifier = @"cell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NewsTabCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
+    cell.model = self.data[indexPath.row];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    NewsDetailsViewController *vc =[[NewsDetailsViewController alloc] initWithNibName:@"NewsDetailsViewController" bundle:nil];
+    vc.model = self.data[indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -45,9 +45,21 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="查看详情&gt;&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvj-w1-n04">
-                        <rect key="frame" x="224" y="81" width="70" height="16"/>
+                        <rect key="frame" x="219" y="81" width="75" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="75" id="szf-bc-UNs"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.80000000000000004" green="0.69411764710000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="2018-04-20 20:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzG-hm-KhL">
+                        <rect key="frame" x="58" y="78.5" width="151" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="fLm-0H-Cxi"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -58,16 +70,20 @@
                     <constraint firstItem="TJ4-HJ-s2q" firstAttribute="top" secondItem="7k0-ly-RcF" secondAttribute="bottom" id="KN1-M1-NVR"/>
                     <constraint firstItem="7k0-ly-RcF" firstAttribute="leading" secondItem="vR3-93-XM9" secondAttribute="trailing" constant="8" id="MMH-7Y-kTf"/>
                     <constraint firstItem="vR3-93-XM9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="Mud-O6-nLS"/>
+                    <constraint firstItem="rzG-hm-KhL" firstAttribute="leading" secondItem="TJ4-HJ-s2q" secondAttribute="leading" id="QhK-Jf-ekV"/>
                     <constraint firstAttribute="trailingMargin" secondItem="7k0-ly-RcF" secondAttribute="trailing" constant="20" id="aiY-NA-8mD"/>
+                    <constraint firstItem="rzG-hm-KhL" firstAttribute="centerY" secondItem="yvj-w1-n04" secondAttribute="centerY" id="d0S-Fe-jW9"/>
                     <constraint firstItem="vR3-93-XM9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="dky-mV-HU7"/>
                     <constraint firstItem="yvj-w1-n04" firstAttribute="top" secondItem="TJ4-HJ-s2q" secondAttribute="bottom" constant="5" id="e4x-RE-H9h"/>
                     <constraint firstItem="TJ4-HJ-s2q" firstAttribute="leading" secondItem="7k0-ly-RcF" secondAttribute="leading" id="gcT-or-Jyn"/>
                     <constraint firstItem="yvj-w1-n04" firstAttribute="trailing" secondItem="TJ4-HJ-s2q" secondAttribute="trailing" id="mxe-5H-whe"/>
+                    <constraint firstItem="yvj-w1-n04" firstAttribute="leading" secondItem="rzG-hm-KhL" secondAttribute="trailing" constant="10" id="oNj-g6-LSP"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="contentLab" destination="TJ4-HJ-s2q" id="7Sm-Vs-1u0"/>
                 <outlet property="leftImgView" destination="vR3-93-XM9" id="jsU-GD-q30"/>
+                <outlet property="timeLab" destination="rzG-hm-KhL" id="Ojs-MT-jeC"/>
                 <outlet property="titleLab" destination="7k0-ly-RcF" id="0G6-PO-Wut"/>
             </connections>
             <point key="canvasLocation" x="-31" y="124"/>

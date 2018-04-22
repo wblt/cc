@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NoticeModel.h"
 
 @interface NewsTabCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *leftImgView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLab;
 @property (weak, nonatomic) IBOutlet UILabel *contentLab;
+@property (weak, nonatomic) IBOutlet UILabel *timeLab;
 
+@property (nonatomic,strong)NoticeModel *model;
 @end

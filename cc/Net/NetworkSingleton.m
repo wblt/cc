@@ -52,8 +52,9 @@ static AFHTTPSessionManager *manager;
     //NSString *requestURL = [baseUrl stringByAppendingString:ut8Str];
     // 3. 构造一个操作对象的管理者
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.requestSerializer = [AFJSONRequestSerializer serializerWithWritingOptions:NSJSONWritingPrettyPrinted];
+ //   manager.requestSerializer = [AFJSONRequestSerializer serializerWithWritingOptions:NSJSONWritingPrettyPrinted];
     manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+    
     // 这里要注意一下，不同的接口，我们在这里拼接一下可能会出错
     manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain", nil];
     //设置超时时间

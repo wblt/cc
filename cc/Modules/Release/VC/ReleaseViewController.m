@@ -12,6 +12,7 @@
 #import "ZoreWalletVC.h"
 #import "InvitionFriendVC.h"
 #import "QLCycleProgressView.h"
+#import "MyFriendsViewController.h"
 @interface ReleaseViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *shiftToHashrateBtn;
 @property (weak, nonatomic) IBOutlet UIButton *inviteBtn;
@@ -25,6 +26,11 @@
 
 @implementation ReleaseViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self updataDayStep];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -36,7 +42,54 @@
     [self addtapView];
 }
 
+// 获取首页数据
+- (void)requestData {
+    RequestParams *params = [[RequestParams alloc] initWithParams:API_HOMEPAGE];
+    
+    [params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
+    
+    [[NetworkSingleton shareInstace] httpPost:params withTitle:@"" successBlock:^(id data) {
+        NSString *code = data[@"code"];
+        if (![code isEqualToString:@"1000"]) {
+            [SVProgressHUD showErrorWithStatus:data[@"message"]];
+            return ;
+        }
+        /*
+         "pd": {
+         "W_ENERGY": 0,
+         "D_CURRENCY": 499,
+         "HEAD_URL": "http://shcunion.vip.img.800cdn.com/ala/fj/apple2.png",
+         "W_ADDRESS": "243213feb0824c6986633cb1c336a3da8162a6ff490448419a6a29d6bb243359",
+         "USER_NAME": "jun",
+         "S_CURRENCY": 10004,
+         "NICK_NAME": "jun"
+         },
+         */
+        
+    } failureBlock:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"网络异常"];
+    }];
+}
 
+- (void)updataDayStep {
+    
+    RequestParams *params = [[RequestParams alloc] initWithParams:API_DAYSTEP];
+    [params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
+    [params addParameter:@"USER_STEP" value:@"0"];
+    [params addParameter:@"CREATE_TIME" value:[Util getCurrentTime]];
+    
+    [[NetworkSingleton shareInstace] httpPost:params withTitle:@"" successBlock:^(id data) {
+        NSString *code = data[@"code"];
+        if (![code isEqualToString:@"1000"]) {
+            [SVProgressHUD showErrorWithStatus:data[@"message"]];
+            return ;
+        }
+        
+        
+    } failureBlock:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"网络异常"];
+    }];
+}
 
 -(void)addNavView {
     
@@ -49,6 +102,11 @@
     [btn setTitle:@"点击查看我的朋友" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     btn.titleLabel.font = Font_13;
+    [btn addTapBlock:^(UIButton *btn) {
+        MyFriendsViewController *vc = [[MyFriendsViewController alloc] initWithNibName:@"MyFriendsViewController" bundle:nil];
+        [self.navigationController pushViewController:vc animated:YES];
+    }];
+    
     UIBarButtonItem *anotherButton2 = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
     [self.navigationItem setLeftBarButtonItems:[NSArray arrayWithObjects: imgItm,anotherButton2,nil]];

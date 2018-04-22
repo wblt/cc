@@ -36,6 +36,7 @@
 		CF82FDFA208662BA006EF9B6 /* xxx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF82FDF6208662BA006EF9B6 /* xxx@2x.png */; };
 		CF82FDFB208662BA006EF9B6 /* passwordIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF82FDF7208662BA006EF9B6 /* passwordIcon.png */; };
 		CF82FDFC208662BA006EF9B6 /* PasswordAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF82FDF9208662BA006EF9B6 /* PasswordAlertView.m */; };
+		CF82FE03208C607C006EF9B6 /* NoticeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF82FE02208C607C006EF9B6 /* NoticeModel.m */; };
 		F8056853208999930073B30C /* MineInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8056851208999930073B30C /* MineInfoViewController.m */; };
 		F8056854208999940073B30C /* MineInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8056852208999930073B30C /* MineInfoViewController.xib */; };
 		F805686C2089BDA20073B30C /* UIImage+XLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F80568572089BDA20073B30C /* UIImage+XLExtension.m */; };
@@ -162,6 +163,8 @@
 		CF82FDF7208662BA006EF9B6 /* passwordIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = passwordIcon.png; sourceTree = "<group>"; };
 		CF82FDF8208662BA006EF9B6 /* PasswordAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordAlertView.h; sourceTree = "<group>"; };
 		CF82FDF9208662BA006EF9B6 /* PasswordAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordAlertView.m; sourceTree = "<group>"; };
+		CF82FE01208C607C006EF9B6 /* NoticeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeModel.h; sourceTree = "<group>"; };
+		CF82FE02208C607C006EF9B6 /* NoticeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeModel.m; sourceTree = "<group>"; };
 		DDF4D9A80B4C9B8D6DB5BDF5 /* Pods-cc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cc/Pods-cc.debug.xcconfig"; sourceTree = "<group>"; };
 		F8056850208999930073B30C /* MineInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineInfoViewController.h; sourceTree = "<group>"; };
 		F8056851208999930073B30C /* MineInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineInfoViewController.m; sourceTree = "<group>"; };
@@ -445,6 +448,8 @@
 		CF7165152081EC890092692F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CF82FE01208C607C006EF9B6 /* NoticeModel.h */,
+				CF82FE02208C607C006EF9B6 /* NoticeModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1018,7 +1023,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E2183B97011C2D7154C4294C /* [CP] Embed Pods Frameworks */ = {
@@ -1061,6 +1066,7 @@
 				F84E5B5D207D961200949AF1 /* ViewController.m in Sources */,
 				F8ED396D207DB311006F4D2A /* BaseViewController.m in Sources */,
 				F84E5B68207D961200949AF1 /* main.m in Sources */,
+				CF82FE03208C607C006EF9B6 /* NoticeModel.m in Sources */,
 				CF71653C20839EA10092692F /* CQCountDownButton.m in Sources */,
 				F8CE3BE32087424100C6994B /* HGBStepTool.m in Sources */,
 				F8ED390D207DACC7006F4D2A /* NetworkSingleton.m in Sources */,

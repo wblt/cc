@@ -39,22 +39,31 @@
     __weak __typeof__(self) weakSelf = self;
     
     self.countDownButton = [[CQCountDownButton alloc] initWithDuration:60 buttonClicked:^{
-        //------- 按钮点击 -------//
-        [SVProgressHUD showWithStatus:@"正在获取验证码..."];
-        // 请求数据
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            int a = arc4random() % 2;
-            if (a == 0) {
-                // 获取成功
-                [SVProgressHUD showSuccessWithStatus:@"验证码已发送"];
-                // 获取到验证码后开始倒计时
-                [weakSelf.countDownButton startCountDown];
-            } else {
-                // 获取失败
-                [SVProgressHUD showErrorWithStatus:@"获取失败，请重试"];
-                weakSelf.countDownButton.enabled = YES;
-            }
-        });
+        if (_phoneTextField.text.length == 0 || ![Util valiMobile:_phoneTextField.text] || _userNameTextField.text.length == 0) {
+            [SVProgressHUD showErrorWithStatus:@"请输入正确的手机号及用户名"];
+             weakSelf.countDownButton.enabled = YES;
+        }else {
+            [SVProgressHUD showWithStatus:@"正在获取验证码..."];
+            RequestParams *params = [[RequestParams alloc] initWithParams:API_FGPWD_CODE];
+            [params addParameter:@"USER_NAME" value:_userNameTextField.text];
+            [params addParameter:@"digestStr" value:[NSString stringWithFormat:@"%@shc",_phoneTextField.text].MD5Hash];
+            
+                [[NetworkSingleton shareInstace] httpPost:params withTitle:@"获取忘记密码短信验证码" successBlock:^(id data) {
+                    NSString *code = data[@"code"];
+                    if (![code isEqualToString:@"1000"]) {
+                        [SVProgressHUD showErrorWithStatus:data[@"message"]];
+                        weakSelf.countDownButton.enabled = YES;
+                        return ;
+                    }
+                    [SVProgressHUD showSuccessWithStatus:@"验证码已发送"];
+                    // 获取到验证码后开始倒计时
+                    [weakSelf.countDownButton startCountDown];
+                } failureBlock:^(NSError *error) {
+                    [SVProgressHUD showErrorWithStatus:@"网络异常"];
+                    weakSelf.countDownButton.enabled = YES;
+                }];
+        }
+       
     } countDownStart:^{
         //------- 倒计时开始 -------//
         NSLog(@"倒计时开始");
@@ -98,8 +107,27 @@
         return;
     }
 
-    // 回到登录界面、 或者直接进入
-    [self.navigationController popViewControllerAnimated:YES];
+    RequestParams *params = [[RequestParams alloc] initWithParams:API_FGPWD];
+    [params addParameter:@"USER_NAME" value:_userNameTextField.text];
+    [params addParameter:@"SJYZM" value:_codeTextFiedl.text];
+    [params addParameter:@"PASSWORD" value:_pwdTextField.text];
+    
+    [[NetworkSingleton shareInstace] httpPost:params withTitle:@"忘记密码" successBlock:^(id data) {
+        NSString *code = data[@"code"];
+        if (![code isEqualToString:@"1000"]) {
+            [SVProgressHUD showErrorWithStatus:data[@"message"]];
+            return ;
+        }
+        //保存用户信息
+        [SPUtil setObject:_userNameTextField.text forKey:k_app_userNumber];
+        // 回到登录界面、 或者直接进入
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    } failureBlock:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"网络异常"];
+    }];
+    
+   
     
 }
 
