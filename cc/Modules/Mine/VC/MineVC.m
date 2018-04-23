@@ -78,12 +78,14 @@
 	self.rightImgView.userInteractionEnabled = YES;
 	[self.rightImgView addGestureRecognizer:imgTap];
 	
-	
+	// 获取当前数据
 	UserInfoModel *model = [[BeanManager shareInstace] getBeanfromPath:UserModelPath];
 	self.nameLab.text = model.USER_NAME;
 	self.walletAddressLab.text = model.W_ADDRESS;
+	self.walletNumLab.text = model.W_ENERGY;
 	[_headImgView sd_setImageWithURL:[NSURL URLWithString:model.HEAD_URL] placeholderImage:[UIImage imageNamed:@"logo"]];
 }
+
 - (IBAction)copyWalletAddressAction:(id)sender {
 	if (self.walletAddressLab.text.length == 0) {
 		[SVProgressHUD showErrorWithStatus:@"复制失败"];
