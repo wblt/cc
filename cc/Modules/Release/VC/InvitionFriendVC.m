@@ -29,7 +29,7 @@
     [params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
     [params addParameter:@"TERMINAL" value:@"1"];
     
-    [[NetworkSingleton shareInstace] httpPost:params withTitle:@"" successBlock:^(id data) {
+    [[NetworkSingleton shareInstace] httpPost:params withTitle:@"邀请好友" successBlock:^(id data) {
         NSString *code = data[@"code"];
         if (![code isEqualToString:@"1000"]) {
             [SVProgressHUD showErrorWithStatus:data[@"message"]];
@@ -57,7 +57,7 @@
     }
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     [pasteboard setString:self.leftStr];
-     [SVProgressHUD showSuccessWithStatus:@"复制失败"];
+     [SVProgressHUD showSuccessWithStatus:@"复制成功"];
 }
 
 - (IBAction)copyRightAction:(id)sender {
@@ -67,7 +67,7 @@
     }
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     [pasteboard setString:self.rightStr];
-    [SVProgressHUD showSuccessWithStatus:@"复制失败"];
+    [SVProgressHUD showSuccessWithStatus:@"复制成功"];
 }
 
 - (void)didReceiveMemoryWarning {

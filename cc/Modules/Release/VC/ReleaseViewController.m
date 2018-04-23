@@ -14,6 +14,7 @@
 #import "InvitionFriendVC.h"
 #import "QLCycleProgressView.h"
 #import "MyFriendsViewController.h"
+#import "UserInfoModel.h"
 @interface ReleaseViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *shiftToHashrateBtn;
 @property (weak, nonatomic) IBOutlet UIButton *inviteBtn;
@@ -21,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UIView *ZeroView;
 @property (weak, nonatomic) IBOutlet UIView *centerBgView;
 
+@property (nonatomic, strong) UIImageView *headImage;
+@property (nonatomic, strong) UILabel *nameLab;
 @property (nonatomic, strong) QLCycleProgressView *progressView;
 @property (nonatomic, strong) UIImageView *birdImage;
 @end
@@ -41,6 +44,7 @@
     [self addNavView];
 	[self addheadthView];
     [self addtapView];
+	[self requestData];
 }
 
 // 获取首页数据
@@ -55,31 +59,27 @@
             [SVProgressHUD showErrorWithStatus:data[@"message"]];
             return ;
         }
-        /*
-         "pd": {
-         "W_ENERGY": 0,
-         "D_CURRENCY": 499,
-         "HEAD_URL": "http://shcunion.vip.img.800cdn.com/ala/fj/apple2.png",
-         "W_ADDRESS": "243213feb0824c6986633cb1c336a3da8162a6ff490448419a6a29d6bb243359",
-         "USER_NAME": "jun",
-         "S_CURRENCY": 10004,
-         "NICK_NAME": "jun"
-         },
-         */
-        
+		
+		NSDictionary *dic = data[@"pd"];
+		UserInfoModel *model = [UserInfoModel mj_objectWithKeyValues:dic];
+		[[BeanManager shareInstace] setBean:model path:UserModelPath];
+		
+		[_headImage sd_setImageWithURL:[NSURL URLWithString:model.HEAD_URL] placeholderImage:[UIImage imageNamed:@"logo"]];
+		
+		
     } failureBlock:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"网络异常"];
     }];
 }
 
 - (void)updataDayStep {
-    
+    // 记录步数
     RequestParams *params = [[RequestParams alloc] initWithParams:API_DAYSTEP];
     [params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
     [params addParameter:@"USER_STEP" value:@"0"];
     [params addParameter:@"CREATE_TIME" value:[Util getCurrentTime]];
     
-    [[NetworkSingleton shareInstace] httpPost:params withTitle:@"" successBlock:^(id data) {
+    [[NetworkSingleton shareInstace] httpPost:params withTitle:@"记录步数" successBlock:^(id data) {
         NSString *code = data[@"code"];
         if (![code isEqualToString:@"1000"]) {
             [SVProgressHUD showErrorWithStatus:data[@"message"]];
@@ -94,18 +94,16 @@
 
 -(void)addNavView {
     
-    UIImageView *imgView  = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-    imgView.image = [UIImage imageNamed:@"head"];
-    UIBarButtonItem *imgItm = [[UIBarButtonItem alloc] initWithCustomView:imgView];
-	
+    _headImage  = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    _headImage.image = [UIImage imageNamed:@"logo"];
+    UIBarButtonItem *imgItm = [[UIBarButtonItem alloc] initWithCustomView:_headImage];
 	
 	UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 110, 40)];
-	
-	UILabel *nameLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
-	nameLab.textColor = [UIColor whiteColor];
-	nameLab.font = Font_11;
-	nameLab.text = [SPUtil objectForKey:k_app_userNumber];
-	[bgView addSubview:nameLab];
+	_nameLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
+	_nameLab.textColor = [UIColor whiteColor];
+	_nameLab.font = Font_11;
+	_nameLab.text = [SPUtil objectForKey:k_app_userNumber];
+	[bgView addSubview:_nameLab];
 	
 	UILabel *friendsLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, 110, 20)];
 	friendsLab.userInteractionEnabled = YES;
@@ -122,9 +120,8 @@
     [self.navigationItem setLeftBarButtonItems:[NSArray arrayWithObjects: imgItm,anotherButton2,nil]];
     
     UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(lookClick)];
-    [imgView addGestureRecognizer:tap1];
-    
-    
+    [_headImage addGestureRecognizer:tap1];
+	
     UIImageView *newsImgView  = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
     newsImgView.image = [UIImage imageNamed:@"xinfeng"];
     UIBarButtonItem *rightAnotherButton = [[UIBarButtonItem alloc] initWithCustomView:newsImgView];

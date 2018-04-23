@@ -12,6 +12,7 @@
 
 @interface SettingViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *logoutBtn;
+@property (weak, nonatomic) IBOutlet UILabel *buildNumLab;
 
 @end
 
@@ -26,7 +27,13 @@
 
 - (void)setup {
     ViewBorderRadius(_logoutBtn, 8, 0.6, UIColorFromHex(0x4B5461));
-    
+	
+	// 获取系统版本号
+	NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+	CFShow(CFBridgingRetain(infoDictionary));
+	
+	 NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+	_buildNumLab.text = app_Version;
 }
 
 - (IBAction)logoutAction:(id)sender {
@@ -37,6 +44,8 @@
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 // 退出登录
                 [SPUtil setBool:NO forKey:k_app_login];
+				
+				
                 LoginVC *vc = [[LoginVC alloc] initWithNibName:@"LoginVC" bundle:nil];
                 BaseNavViewController *nav = [[BaseNavViewController alloc] initWithRootViewController:vc];
                 [UIApplication sharedApplication].keyWindow.rootViewController = nav;

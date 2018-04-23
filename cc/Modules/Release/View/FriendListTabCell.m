@@ -15,7 +15,7 @@
     _model = model;
     self.telLab.text = [NSString stringWithFormat:@"tel:%@",model.TEL];
     self.nameLab.text = model.USER_NAME;
-    [self.headImgView sd_setImageWithURL:[NSURL URLWithString:model.HEAD_URL] placeholderImage:[UIImage imageNamed:@""]];
+    [self.headImgView sd_setImageWithURL:[NSURL URLWithString:model.HEAD_URL] placeholderImage:[UIImage imageNamed:@"logo"]];
     
 }
 

@@ -20,9 +20,11 @@
     [super viewDidLoad];
     /**<设置导航栏背景颜色*/
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
-    self.navigationController.navigationBar.barTintColor = UIColorFromHex(0x020919);
+	
+	self.navigationController.navigationBar.barTintColor = UIColorFromHex(0x020919);
     [self.navigationController.navigationBar setTranslucent:NO];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName :[UIColor whiteColor], NSFontAttributeName : [UIFont systemFontOfSize:18]}];
+
+	[self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName :[UIColor whiteColor], NSFontAttributeName : [UIFont systemFontOfSize:18]}];
     [self.view addSubview:self.errorView];
 }
 

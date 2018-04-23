@@ -27,9 +27,43 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	self.navigationItem.title = @"释放记录";
-	
 	[self addViewTap];
 	[self setup];
+	[self requestData];
+}
+
+- (void)requestData {
+	RequestParams *params = [[RequestParams alloc] initWithParams:API_RELEASE];
+	[params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
+	
+	[[NetworkSingleton shareInstace] httpPost:params withTitle:@"" successBlock:^(id data) {
+		NSString *code = data[@"code"];
+		if (![code isEqualToString:@"1000"]) {
+			[SVProgressHUD showErrorWithStatus:data[@"message"]];
+			return ;
+		}
+		/*
+		 "pd": {
+		 "JD_CURRENCY": "3.00",
+		 "STEP_CURRENCY": "4.00",
+		 "BIG_CURRENCY": "1.53",
+		 "CALCULATE_MONEY": "0.11",
+		 "USER_NAME": "haha",
+		 "CREATE_TIME": "2018-4-21",
+		 "SMALL_CURRENCY": "0.00"
+		 },
+		 */
+		NSDictionary *dic = data[@"pd"];
+		self.todayReleaseLab.text = dic[@"CALCULATE_MONEY"];
+		self.bigLab.text = dic[@"CALCULATE_MONEY"];
+		self.smallLab.text = dic[@"SMALL_CURRENCY"];
+		self.intelligentLab.text = dic[@"STATIC_CURRENCY"];
+		self.sportPointLab.text = dic[@"STEP_CURRENCY"];
+		self.nodeLab.text = dic[@"JD_CURRENCY"];
+		
+	} failureBlock:^(NSError *error) {
+		[SVProgressHUD showErrorWithStatus:@"网络异常"];
+	}];
 }
 
 - (void)setup {

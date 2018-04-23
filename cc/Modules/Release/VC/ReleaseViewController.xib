@@ -46,7 +46,7 @@
                             <rect key="frame" x="192.5" y="10.5" width="162.5" height="40"/>
                             <color key="backgroundColor" red="0.0039215686269999999" green="0.039215686270000001" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" title="邀请好友" image="kabao">
+                            <state key="normal" title="邀请好友" image="chang60">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <userDefinedRuntimeAttributes>
@@ -210,6 +210,7 @@
     </objects>
     <resources>
         <image name="chang" width="60" height="60"/>
+        <image name="chang60" width="30" height="30"/>
         <image name="kabao" width="30" height="30"/>
     </resources>
 </document>

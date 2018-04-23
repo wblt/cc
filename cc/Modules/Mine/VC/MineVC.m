@@ -7,6 +7,14 @@
 //
 
 #import "MineVC.h"
+#import "SettingViewController.h"
+#import "MineInfoViewController.h"
+#import "MyOrderViewController.h"
+#import "CompoundSettingViewController.h"
+#import "TransferViewController.h"
+#import "TransferRecordViewController.h"
+#import "WalletExchangeViewController.h"
+#import "UserInfoModel.h"
 
 @interface MineVC ()
 @property (weak, nonatomic) IBOutlet UIView *bgView1;
@@ -20,6 +28,13 @@
 @property (weak, nonatomic) IBOutlet UIView *bgView9;
 @property (weak, nonatomic) IBOutlet UIView *bgView10;
 @property (weak, nonatomic) IBOutlet UIView *bgView11;
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLab;
+@property (weak, nonatomic) IBOutlet UIImageView *rightImgView;
+@property (weak, nonatomic) IBOutlet UILabel *walletNumLab;
+@property (weak, nonatomic) IBOutlet UILabel *walletAddressLab;
+@property (weak, nonatomic) IBOutlet UIImageView *headImgView;
+
 @end
 
 @implementation MineVC
@@ -27,7 +42,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+	self.navigationItem.title = @"我的";
 	[self setup];
+	[self addTapAction];
 }
 
 - (void)setup {
@@ -42,7 +59,134 @@
 	ViewBorderRadius(_bgView9, 0, 0.6, UIColorFromHex(0x4B5461));
 	ViewBorderRadius(_bgView10, 0, 0.6, UIColorFromHex(0x4B5461));
 	ViewBorderRadius(_bgView11, 0, 0.6, UIColorFromHex(0x4B5461));
+	
+	UIImageView *newsImgView  = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+	newsImgView.userInteractionEnabled = YES;
+	newsImgView.image = [UIImage imageNamed:@"setting_icon"];
+	UIBarButtonItem *rightAnotherButton = [[UIBarButtonItem alloc] initWithCustomView:newsImgView];
+	[self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: rightAnotherButton,nil]];
+	
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(settingAction:)];
+	[newsImgView addGestureRecognizer:tap];
+	
+	
+	UITapGestureRecognizer *nameTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(rightTap)];
+	self.nameLab.userInteractionEnabled = YES;
+	[self.nameLab addGestureRecognizer:nameTap];
+	
+	UITapGestureRecognizer *imgTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(rightTap)];
+	self.rightImgView.userInteractionEnabled = YES;
+	[self.rightImgView addGestureRecognizer:imgTap];
+	
+	
+	UserInfoModel *model = [[BeanManager shareInstace] getBeanfromPath:UserModelPath];
+	self.nameLab.text = model.USER_NAME;
+	self.walletAddressLab.text = model.W_ADDRESS;
+	[_headImgView sd_setImageWithURL:[NSURL URLWithString:model.HEAD_URL] placeholderImage:[UIImage imageNamed:@"logo"]];
 }
+- (IBAction)copyWalletAddressAction:(id)sender {
+	if (self.walletAddressLab.text.length == 0) {
+		[SVProgressHUD showErrorWithStatus:@"复制失败"];
+		return;
+	}
+	UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+	[pasteboard setString:self.walletAddressLab.text];
+	[SVProgressHUD showSuccessWithStatus:@"复制成功"];
+}
+
+- (void)rightTap {
+	MineInfoViewController *vc = [[MineInfoViewController alloc] initWithNibName:@"MineInfoViewController" bundle:nil];
+	[self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)settingAction:(UITapGestureRecognizer *)tap {
+	SettingViewController *vc = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:nil];
+	
+	[self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)addTapAction {
+	UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ViewTapAction:)];
+	[_bgView3 addGestureRecognizer:tap1];
+	UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ViewTapAction:)];
+	[_bgView4 addGestureRecognizer:tap2];
+	
+	UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ViewTapAction:)];
+	[_bgView5 addGestureRecognizer:tap3];
+	
+	UITapGestureRecognizer *tap4 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ViewTapAction:)];
+	[_bgView6 addGestureRecognizer:tap4];
+	
+	UITapGestureRecognizer *tap5 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ViewTapAction:)];
+	[_bgView7 addGestureRecognizer:tap5];
+	
+	UITapGestureRecognizer *tap6 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ViewTapAction:)];
+	[_bgView8 addGestureRecognizer:tap6];
+	
+	UITapGestureRecognizer *tap7 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ViewTapAction:)];
+	[_bgView11 addGestureRecognizer:tap7];
+	
+}
+
+- (void)ViewTapAction:(UITapGestureRecognizer *)tap {
+	NSInteger tag = tap.view.tag;
+	switch (tag) {
+		case 100:
+		{
+			MyOrderViewController *vc = [[MyOrderViewController alloc] initWithNibName:@"MyOrderViewController" bundle:nil];
+			
+			[self.navigationController pushViewController:vc animated:YES];
+		}
+			break;
+		case 101:
+		{
+			CompoundSettingViewController *vc = [[CompoundSettingViewController alloc] initWithNibName:@"CompoundSettingViewController" bundle:nil];
+			[self.navigationController pushViewController:vc animated:YES];
+		}
+			break;
+		case 102:
+		{
+			TransferViewController *vc = [[TransferViewController alloc] initWithNibName:@"TransferViewController" bundle:nil];
+			[self.navigationController pushViewController:vc animated:YES];
+		}
+			break;
+		case 103:
+		{
+			TransferRecordViewController *vc = [[TransferRecordViewController alloc] initWithNibName:@"TransferRecordViewController" bundle:nil];
+			[self.navigationController pushViewController:vc animated:YES];
+		}
+			break;
+		case 104:
+		{
+			WalletExchangeViewController *vc = [[WalletExchangeViewController alloc] initWithNibName:@"WalletExchangeViewController" bundle:nil];
+			[self.navigationController pushViewController:vc animated:YES];
+			
+		}
+			break;
+		case 105:
+		{
+			[SVProgressHUD showInfoWithStatus:@"正在开发中"];
+			
+		}
+			break;
+		case 106:
+		{
+			[SVProgressHUD showInfoWithStatus:@"正在开发中"];
+			
+		}
+			break;
+		case 107:
+		{
+			[SVProgressHUD showInfoWithStatus:@"正在开发中"];
+			
+		}
+			break;
+			
+		default:
+			break;
+	}
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

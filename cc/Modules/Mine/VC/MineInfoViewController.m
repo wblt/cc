@@ -8,8 +8,11 @@
 
 #import "MineInfoViewController.h"
 #import "XLPhotoBrowser.h"
+#import "UserInfoModel.h"
+
 @interface MineInfoViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *headImgView;
+@property (weak, nonatomic) IBOutlet UILabel *nickLab;
 
 @end
 
@@ -19,7 +22,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	self.navigationItem.title = @"个人信息";
+	[self setup];
 	[self addTapAction];
+}
+- (void)setup {
+	UserInfoModel *model = [[BeanManager shareInstace] getBeanfromPath:UserModelPath];
+	_nickLab.text = model.NICK_NAME;
+	[_headImgView sd_setImageWithURL:[NSURL URLWithString:model.HEAD_URL] placeholderImage:[UIImage imageNamed:@"logo"]];
 }
 
 - (void)addTapAction {

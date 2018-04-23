@@ -49,6 +49,7 @@
 		F80212A2208D82DA00792465 /* AllRecodeTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80212A0208D82DA00792465 /* AllRecodeTabCell.xib */; };
 		F80212A6208D8D3B00792465 /* MineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F80212A4208D8D3B00792465 /* MineVC.m */; };
 		F80212A7208D8D3B00792465 /* MineVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80212A5208D8D3B00792465 /* MineVC.xib */; };
+		F80212AA208DC6BB00792465 /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F80212A9208DC6BB00792465 /* UserInfoModel.m */; };
 		F8056853208999930073B30C /* MineInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8056851208999930073B30C /* MineInfoViewController.m */; };
 		F8056854208999940073B30C /* MineInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8056852208999930073B30C /* MineInfoViewController.xib */; };
 		F805686C2089BDA20073B30C /* UIImage+XLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F80568572089BDA20073B30C /* UIImage+XLExtension.m */; };
@@ -197,6 +198,8 @@
 		F80212A3208D8D3B00792465 /* MineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineVC.h; sourceTree = "<group>"; };
 		F80212A4208D8D3B00792465 /* MineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineVC.m; sourceTree = "<group>"; };
 		F80212A5208D8D3B00792465 /* MineVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineVC.xib; sourceTree = "<group>"; };
+		F80212A8208DC6BB00792465 /* UserInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoModel.h; sourceTree = "<group>"; };
+		F80212A9208DC6BB00792465 /* UserInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoModel.m; sourceTree = "<group>"; };
 		F8056850208999930073B30C /* MineInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineInfoViewController.h; sourceTree = "<group>"; };
 		F8056851208999930073B30C /* MineInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineInfoViewController.m; sourceTree = "<group>"; };
 		F8056852208999930073B30C /* MineInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineInfoViewController.xib; sourceTree = "<group>"; };
@@ -489,6 +492,8 @@
 				CF82FE02208C607C006EF9B6 /* NoticeModel.m */,
 				CF82FE04208CB622006EF9B6 /* FriendInfoModel.h */,
 				CF82FE05208CB622006EF9B6 /* FriendInfoModel.m */,
+				F80212A8208DC6BB00792465 /* UserInfoModel.h */,
+				F80212A9208DC6BB00792465 /* UserInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1128,6 +1133,7 @@
 				F80568702089BDA20073B30C /* FSActionSheetConfig.m in Sources */,
 				CF71652E2082249E0092692F /* OrderListTabCell.m in Sources */,
 				CF82FDDF20862CDD006EF9B6 /* HashrateShifToWalletVC.m in Sources */,
+				F80212AA208DC6BB00792465 /* UserInfoModel.m in Sources */,
 				F8ED3943207DACDB006F4D2A /* BeanManager.m in Sources */,
 				F805686C2089BDA20073B30C /* UIImage+XLExtension.m in Sources */,
 				F8ED3948207DACDB006F4D2A /* UIColor+Extend.m in Sources */,
