@@ -33,8 +33,11 @@
                                 <constraint firstAttribute="height" constant="40" id="efH-15-A6C"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" title="转出能量包">
-                                <color key="titleColor" red="0.80000000000000004" green="0.69411764710000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="兑换算力钱包">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="enchangLeftAction:" destination="-1" eventType="touchUpInside" id="GJQ-vG-RAq"/>
@@ -43,8 +46,11 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3U-D6-jRn">
                             <rect key="frame" x="187.5" y="0.0" width="187.5" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" title="转出零钱包">
-                                <color key="titleColor" red="0.80000000000000004" green="0.69411764710000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="兑换能量钱包">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="exchangeRightAction:" destination="-1" eventType="touchUpInside" id="aKh-Ez-YzQ"/>
@@ -52,20 +58,20 @@
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Kf-dR-NoD">
                             <rect key="frame" x="10" y="40" width="167.5" height="2"/>
-                            <color key="backgroundColor" red="0.80000000000000004" green="0.69411764710000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="2" id="V5w-P7-9IS"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHQ-8U-IJc">
                             <rect key="frame" x="197.5" y="40" width="167.5" height="2"/>
-                            <color key="backgroundColor" red="0.80000000000000004" green="0.69411764710000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="2" id="sWp-nI-QpQ"/>
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="7Kf-dR-NoD" firstAttribute="trailing" secondItem="FBZ-2c-RLu" secondAttribute="trailing" constant="-10" id="2BB-YK-cny"/>
                         <constraint firstItem="FBZ-2c-RLu" firstAttribute="leading" secondItem="Zky-B2-jwJ" secondAttribute="leading" id="5eM-Mu-tQr"/>
@@ -92,7 +98,7 @@
                     </constraints>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="EMT-Us-7dh" firstAttribute="top" secondItem="Zky-B2-jwJ" secondAttribute="bottom" id="4Ae-NR-ars"/>
                 <constraint firstItem="Zky-B2-jwJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="5ID-zM-aoq"/>

@@ -7,8 +7,12 @@
 //
 
 #import "ReleaseRecordViewController.h"
+#import "AllRecodeTabCell.h"
 
-@interface ReleaseRecordViewController ()
+static NSString *Identifier = @"cell";
+
+@interface ReleaseRecordViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -18,7 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"全部记录";
-    
+	[self setup];
 }
 
 // 获取释放记录
@@ -37,6 +41,59 @@
         [SVProgressHUD showErrorWithStatus:@"网络异常"];
     }];
 }
+
+
+- (void)setup {
+	self.tableView.delegate = self;
+	self.tableView.dataSource = self;
+	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+	[self.tableView registerNib:[UINib nibWithNibName:@"AllRecodeTabCell" bundle:nil] forCellReuseIdentifier:Identifier];
+}
+
+
+# pragma mark tableView delegate dataSourse
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	return 1;
+}
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	return 8;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return 135;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+	return 0.001;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+	return 0.001;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+	return nil;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+	return nil;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	AllRecodeTabCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
+	cell.selectionStyle = UITableViewCellSelectionStyleNone;
+	ViewBorderRadius(cell, 8, 0.6, UIColorFromHex(0x4B5461));
+	
+	return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	
+	
+	
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

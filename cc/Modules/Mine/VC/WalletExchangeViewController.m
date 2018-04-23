@@ -80,7 +80,7 @@
 	UILabel *powerLab = [[UILabel alloc] init];
 	powerLab.text = @"1.234";
 	powerLab.font = Font_13;
-	powerLab.textColor = UIColorFromHex(0xCCB17E);
+	powerLab.textColor = [UIColor whiteColor]; //UIColorFromHex(0xCCB17E);
 	powerLab.textAlignment = NSTextAlignmentRight;
 	[leftView addSubview:powerLab];
 	
@@ -125,7 +125,7 @@
 	[leftView addSubview:line3];
 	
 	UIButton *sumbitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-	ViewBorderRadius(sumbitBtn, 10, 0.6, UIColorFromHex(0xCCB17E));
+	ViewBorderRadius(sumbitBtn, 10, 0.6, UIColorFromHex(0x4B5461));
 	[sumbitBtn setTitle:@"提交" forState:UIControlStateNormal];
 	sumbitBtn.titleLabel.font = Font_14;
 	[leftView addSubview:sumbitBtn];
@@ -232,7 +232,7 @@
 	UILabel *powerLab = [[UILabel alloc] init];
 	powerLab.text = @"1.234";
 	powerLab.font = Font_13;
-	powerLab.textColor = UIColorFromHex(0xCCB17E);
+	powerLab.textColor =   [UIColor whiteColor];//UIColorFromHex(0xCCB17E);
 	powerLab.textAlignment = NSTextAlignmentRight;
 	[rightView addSubview:powerLab];
 	
@@ -277,7 +277,7 @@
 	[rightView addSubview:line3];
 	
 	UIButton *sumbitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-	ViewBorderRadius(sumbitBtn, 10, 0.6, UIColorFromHex(0xCCB17E));
+	ViewBorderRadius(sumbitBtn, 10, 0.6, UIColorFromHex(0x4B5461));
 	[sumbitBtn setTitle:@"提交" forState:UIControlStateNormal];
 	sumbitBtn.titleLabel.font = Font_14;
 	[rightView addSubview:sumbitBtn];

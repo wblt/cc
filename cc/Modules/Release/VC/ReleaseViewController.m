@@ -10,6 +10,7 @@
 #import "HashrateShifToWalletVC.h"
 #import "NewsVC.h"
 #import "ZoreWalletVC.h"
+#import "ZeroWalletVC.h"
 #import "InvitionFriendVC.h"
 #import "QLCycleProgressView.h"
 #import "MyFriendsViewController.h"
@@ -96,18 +97,27 @@
     UIImageView *imgView  = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
     imgView.image = [UIImage imageNamed:@"head"];
     UIBarButtonItem *imgItm = [[UIBarButtonItem alloc] initWithCustomView:imgView];
+	
+	
+	UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 110, 40)];
+	
+	UILabel *nameLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
+	nameLab.textColor = [UIColor whiteColor];
+	nameLab.font = Font_11;
+	nameLab.text = [SPUtil objectForKey:k_app_userNumber];
+	[bgView addSubview:nameLab];
+	
+	UILabel *friendsLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, 110, 20)];
+	friendsLab.userInteractionEnabled = YES;
+	friendsLab.textColor = [UIColor whiteColor];
+	friendsLab.font = Font_12;
+	friendsLab.text = @"点击查看我的朋友";
+	[bgView addSubview:friendsLab];
+	
+	UITapGestureRecognizer *friendTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(lookClick)];
+	[friendsLab addGestureRecognizer:friendTap];
     
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(0, 0, 120, 30);
-    [btn setTitle:@"点击查看我的朋友" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    btn.titleLabel.font = Font_13;
-    [btn addTapBlock:^(UIButton *btn) {
-        MyFriendsViewController *vc = [[MyFriendsViewController alloc] initWithNibName:@"MyFriendsViewController" bundle:nil];
-        [self.navigationController pushViewController:vc animated:YES];
-    }];
-    
-    UIBarButtonItem *anotherButton2 = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    UIBarButtonItem *anotherButton2 = [[UIBarButtonItem alloc] initWithCustomView:bgView];
     
     [self.navigationItem setLeftBarButtonItems:[NSArray arrayWithObjects: imgItm,anotherButton2,nil]];
     
@@ -166,13 +176,13 @@
 }
 
 - (void)zeroTapAction {
-    ZoreWalletVC *vc = [[ZoreWalletVC alloc] initWithNibName:@"ZoreWalletVC" bundle:nil];
-    
+    ZeroWalletVC *vc = [[ZeroWalletVC alloc] initWithNibName:@"ZeroWalletVC" bundle:nil];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)lookClick{
-    
+	MyFriendsViewController *vc = [[MyFriendsViewController alloc] initWithNibName:@"MyFriendsViewController" bundle:nil];
+	[self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)newsClick {

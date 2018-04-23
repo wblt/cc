@@ -30,9 +30,9 @@
 
 
 - (void)setup {
-	ViewBorderRadius(_sumbitBtn, 8, 0.6, UIColorFromHex(0xCCB17E));
+	ViewBorderRadius(_sumbitBtn, 8, 0.6, UIColorFromHex(0x4B5461));
 	
-	_tipslab.attributedText = [Util setAllText:@"开启自动复利：每天系统结算算力以后，会自动将释放钱包中的余额转入算力钱包进行循环复利" andSpcifiStr:@"开启自动复利：" withColor:UIColorFromHex(0xCCB17E) specifiStrFont:Font_13];
+	//_tipslab.attributedText = [Util setAllText:@"开启自动复利：每天系统结算算力以后，会自动将释放钱包中的余额转入算力钱包进行循环复利" andSpcifiStr:@"开启自动复利：" withColor:UIColorFromHex(0xCCB17E) specifiStrFont:Font_13];
 	
 	_bgView1.backgroundColor = [UIColor darkGrayColor];
 	_autoImgView.hidden = NO;

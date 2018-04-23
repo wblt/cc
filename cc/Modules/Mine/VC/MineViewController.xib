@@ -148,7 +148,7 @@
                                                 <constraint firstAttribute="width" constant="95" id="wuj-WS-dZg"/>
                                             </constraints>
                                             <state key="normal" title="复制钱包地址">
-                                                <color key="titleColor" red="0.80000000000000004" green="0.69411764710000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
                                                 <action selector="copyAddressAction:" destination="-1" eventType="touchUpInside" id="oAo-sT-Seb"/>

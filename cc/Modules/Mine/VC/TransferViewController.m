@@ -79,7 +79,7 @@
 	UILabel *powerLab = [[UILabel alloc] init];
 	powerLab.text = @"1.234";
 	powerLab.font = Font_13;
-	powerLab.textColor = UIColorFromHex(0xCCB17E);
+	powerLab.textColor = [UIColor whiteColor];//  UIColorFromHex(0xCCB17E);
 	powerLab.textAlignment = NSTextAlignmentRight;
 	[leftView addSubview:powerLab];
 	
@@ -98,7 +98,7 @@
 	accountTextField.font = Font_13;
 	accountTextField.textColor = [UIColor whiteColor];
 	accountTextField.textAlignment = NSTextAlignmentRight;
-	[accountTextField setValue:[UIColor darkGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
+	[accountTextField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
 	[leftView addSubview:accountTextField];
 	
 	UIView *line2 = [[UIView alloc] init];
@@ -117,7 +117,7 @@
 	numTextField.keyboardType = UIKeyboardTypeNumberPad;
 	numTextField.textColor = [UIColor whiteColor];
 	numTextField.textAlignment = NSTextAlignmentRight;
-	[numTextField setValue:[UIColor darkGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
+	[numTextField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
 	[leftView addSubview:numTextField];
 	
 	UIView *line3 = [[UIView alloc] init];
@@ -125,7 +125,7 @@
 	[leftView addSubview:line3];
 	
 	UIButton *sumbitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-	ViewBorderRadius(sumbitBtn, 10, 0.6, UIColorFromHex(0xCCB17E));
+	ViewBorderRadius(sumbitBtn, 10, 0.6, UIColorFromHex(0x4B5461));
 	[sumbitBtn setTitle:@"提交" forState:UIControlStateNormal];
 	sumbitBtn.titleLabel.font = Font_14;
 	[leftView addSubview:sumbitBtn];
@@ -232,7 +232,7 @@
 	UILabel *powerLab = [[UILabel alloc] init];
 	powerLab.text = @"1.234";
 	powerLab.font = Font_13;
-	powerLab.textColor = UIColorFromHex(0xCCB17E);
+	powerLab.textColor =  [UIColor whiteColor];//UIColorFromHex(0xCCB17E);
 	powerLab.textAlignment = NSTextAlignmentRight;
 	[rightView addSubview:powerLab];
 	
@@ -251,7 +251,7 @@
 	accountTextField.font = Font_13;
 	accountTextField.textColor = [UIColor whiteColor];
 	accountTextField.textAlignment = NSTextAlignmentRight;
-	[accountTextField setValue:[UIColor darkGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
+	[accountTextField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
 	[rightView addSubview:accountTextField];
 	
 	UIView *line2 = [[UIView alloc] init];
@@ -270,7 +270,7 @@
 	numTextField.keyboardType = UIKeyboardTypeNumberPad;
 	numTextField.textColor = [UIColor whiteColor];
 	numTextField.textAlignment = NSTextAlignmentRight;
-	[numTextField setValue:[UIColor darkGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
+	[numTextField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
 	[rightView addSubview:numTextField];
 	
 	UIView *line3 = [[UIView alloc] init];
@@ -278,7 +278,7 @@
 	[rightView addSubview:line3];
 	
 	UIButton *sumbitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-	ViewBorderRadius(sumbitBtn, 10, 0.6, UIColorFromHex(0xCCB17E));
+	ViewBorderRadius(sumbitBtn, 10, 0.6, UIColorFromHex(0x4B5461));
 	[sumbitBtn setTitle:@"提交" forState:UIControlStateNormal];
 	sumbitBtn.titleLabel.font = Font_14;
 	[rightView addSubview:sumbitBtn];

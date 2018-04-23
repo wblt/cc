@@ -13,6 +13,7 @@
 #import "ReleaseViewController.h"
 #import "MarketsViewController.h"
 #import "MineViewController.h"
+#import "MineVC.h"
 
 @interface MainTabBarController ()
 {
@@ -46,7 +47,9 @@
 -(void)addViewControllers {/**<添加二级控制器*/
     ReleaseViewController *releaseVC = [[ReleaseViewController alloc] initWithNibName:@"ReleaseViewController" bundle:nil];
     MarketsViewController *marketsVC = [[MarketsViewController alloc] initWithNibName:@"MarketsViewController" bundle:nil];
-	MineViewController *mineVC = [[MineViewController alloc] initWithNibName:@"MineViewController" bundle:nil];
+//	MineViewController *mineVC = [[MineViewController alloc] initWithNibName:@"MineViewController" bundle:nil];
+	MineVC *mineVC = [[MineVC alloc] initWithNibName:@"MineVC" bundle:nil];
+
 	
     NSArray *vcArray = @[releaseVC,marketsVC, mineVC];
     NSMutableArray *viewControllers = [[NSMutableArray alloc] initWithCapacity:vcArray.count];
@@ -62,8 +65,8 @@
 	
     self.tabBar.backgroundColor = [UIColor darkGrayColor]; //UIColorFromHex(0x303030);
     // 按钮的非循环中状态图片数组
-    NSArray *normalImgArray = @[@"deliver_icon", @"market_icon", @"mine_icon"];
-    NSArray *selectedImgArray = @[@"deliver_icon_selector", @"market_icon_selector", @"mine_icon_selector"];
+    NSArray *normalImgArray = @[@"circle_unselected", @"market_unselected", @"mine_unselected"];
+    NSArray *selectedImgArray = @[@"circle_selected", @"market_selected", @"mine_selected"];
     // 按钮的标题数组
     NSArray *titleArray = @[@"释放", @"市场",@"我的"];
     UIColor *normalTitleColor =  [UIColor whiteColor]; //UIColorFromHex(0x808080);

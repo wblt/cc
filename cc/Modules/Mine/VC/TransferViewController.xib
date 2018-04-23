@@ -34,7 +34,10 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <state key="normal" title="转出能量包">
-                                <color key="titleColor" red="0.80000000000000004" green="0.69411764710000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="returnToPowerPackAction:" destination="-1" eventType="touchUpInside" id="EDc-hr-kXX"/>
@@ -44,7 +47,10 @@
                             <rect key="frame" x="187.5" y="0.0" width="187.5" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <state key="normal" title="转出零钱包">
-                                <color key="titleColor" red="0.80000000000000004" green="0.69411764710000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="returnToZeroPackAction:" destination="-1" eventType="touchUpInside" id="Tf7-J7-Ue1"/>
@@ -52,20 +58,20 @@
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFX-Bc-Mch">
                             <rect key="frame" x="10" y="40" width="167.5" height="2"/>
-                            <color key="backgroundColor" red="0.80000000000000004" green="0.69411764710000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="2" id="glc-ua-4cB"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96D-x5-Y44">
                             <rect key="frame" x="197.5" y="40" width="167.5" height="2"/>
-                            <color key="backgroundColor" red="0.80000000000000004" green="0.69411764710000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="2" id="JXU-k9-1Xb"/>
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="96D-x5-Y44" firstAttribute="trailing" secondItem="3Al-Fm-co8" secondAttribute="trailing" constant="-10" id="1hy-LD-8ek"/>
                         <constraint firstItem="tne-vI-e8t" firstAttribute="top" secondItem="edz-oH-vmO" secondAttribute="top" id="6sf-P0-blR"/>
@@ -86,12 +92,13 @@
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvb-Ei-eIS">
                     <rect key="frame" x="0.0" y="70" width="375" height="300"/>
+                    <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="6dR-7q-L6h"/>
                     </constraints>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="bvb-Ei-eIS" firstAttribute="top" secondItem="edz-oH-vmO" secondAttribute="bottom" id="TR2-wO-8xE"/>
                 <constraint firstItem="bvb-Ei-eIS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="cGO-he-WdW"/>
