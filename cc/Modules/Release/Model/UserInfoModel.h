@@ -20,5 +20,6 @@
 @property(nonatomic,copy)NSString *A_CURRENCY;//可转余额
 @property(nonatomic,copy)NSString *W_ENERGY;//能量钱包余额
 @property(nonatomic,copy)NSString *W_ADDRESS;//钱包地址
+@property(nonatomic,copy)NSString *IFPAS;//是否含有安全密码  0 没有，1有
 
 @end

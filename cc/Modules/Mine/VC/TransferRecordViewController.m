@@ -20,6 +20,24 @@
 	self.navigationItem.title = @"转账记录";
 }
 
+- (void)requestData {
+	RequestParams *params = [[RequestParams alloc] initWithParams:API_SENDDETAIL];
+	[params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
+	[params addParameter:@"QUERY_ID" value:@"0"];
+	[params addParameter:@"TYPE" value:@"1"];
+	
+	[[NetworkSingleton shareInstace] httpPost:params withTitle:@"转账记录" successBlock:^(id data) {
+		NSString *code = data[@"code"];
+		if (![code isEqualToString:@"1000"]) {
+			[SVProgressHUD showErrorWithStatus:data[@"message"]];
+			return ;
+		}
+		
+		
+	} failureBlock:^(NSError *error) {
+		[SVProgressHUD showErrorWithStatus:@"网络异常"];
+	}];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

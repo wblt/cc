@@ -19,11 +19,30 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	self.navigationItem.title = @"能量兑换";
+	[self requestData];
 	[self setup];
 }
 
 - (void)setup {
 		ViewBorderRadius(_sumbitBtn, 10, 0.6, UIColorFromHex(0x4B5461));
+}
+
+
+- (void)requestData {
+	RequestParams *params = [[RequestParams alloc] initWithParams:API_CGENERGYMES];
+	[params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
+	
+	[[NetworkSingleton shareInstace] httpPost:params withTitle:@"能量兑换页面" successBlock:^(id data) {
+		NSString *code = data[@"code"];
+		if (![code isEqualToString:@"1000"]) {
+			[SVProgressHUD showErrorWithStatus:data[@"message"]];
+			return ;
+		}
+		
+		
+	} failureBlock:^(NSError *error) {
+		[SVProgressHUD showErrorWithStatus:@"网络异常"];
+	}];
 }
 
 - (IBAction)sumbitAction:(id)sender {
