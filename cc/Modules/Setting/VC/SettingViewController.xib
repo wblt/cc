@@ -11,6 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingViewController">
             <connections>
+                <outlet property="bgView1" destination="xx7-ac-fP1" id="9FY-WH-Y3f"/>
+                <outlet property="bgView2" destination="8Ra-SW-xYr" id="XL9-q3-tx1"/>
+                <outlet property="bgView3" destination="Kcu-Ud-JOR" id="Kjg-fx-dAM"/>
+                <outlet property="bgView4" destination="uAR-rZ-FLj" id="nTF-oj-kQh"/>
                 <outlet property="buildNumLab" destination="MOj-hW-bC2" id="tkW-E4-HSF"/>
                 <outlet property="logoutBtn" destination="TjH-gX-ZX9" id="6SF-pd-WeP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -24,7 +28,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGC-tk-n27">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xx7-ac-fP1">
+                        <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xx7-ac-fP1">
                             <rect key="frame" x="0.0" y="10" width="375" height="50"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="819-fY-Yh3">
@@ -64,7 +68,7 @@
                                 <constraint firstAttribute="height" constant="50" id="v2g-po-hnq"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ra-SW-xYr">
+                        <view tag="101" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ra-SW-xYr">
                             <rect key="frame" x="0.0" y="60" width="375" height="50"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登陆密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdV-Je-PmW">
@@ -104,7 +108,7 @@
                                 <constraint firstAttribute="trailing" secondItem="jGZ-F3-u34" secondAttribute="trailing" id="oM6-0h-35T"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kcu-Ud-JOR">
+                        <view tag="102" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kcu-Ud-JOR">
                             <rect key="frame" x="0.0" y="110" width="375" height="50"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="安全密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyt-ol-hEH">
@@ -144,7 +148,7 @@
                                 <constraint firstAttribute="height" constant="50" id="oEV-gK-77k"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uAR-rZ-FLj">
+                        <view tag="103" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uAR-rZ-FLj">
                             <rect key="frame" x="0.0" y="160" width="375" height="50"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="身份绑定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQg-Zs-imX">

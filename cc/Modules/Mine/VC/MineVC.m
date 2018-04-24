@@ -13,8 +13,10 @@
 #import "CompoundSettingViewController.h"
 #import "TransferViewController.h"
 #import "TransferRecordViewController.h"
+#import "MoneyTransferViewController.h"
 #import "WalletExchangeViewController.h"
 #import "UserInfoModel.h"
+#import "PowerCGViewController.h"
 
 @interface MineVC ()
 @property (weak, nonatomic) IBOutlet UIView *bgView1;
@@ -148,8 +150,11 @@
 			break;
 		case 102:
 		{
-			TransferViewController *vc = [[TransferViewController alloc] initWithNibName:@"TransferViewController" bundle:nil];
+//			TransferViewController *vc = [[TransferViewController alloc] initWithNibName:@"TransferViewController" bundle:nil];
+//			[self.navigationController pushViewController:vc animated:YES];
+			MoneyTransferViewController *vc = [[MoneyTransferViewController alloc] initWithNibName:@"MoneyTransferViewController" bundle:nil];
 			[self.navigationController pushViewController:vc animated:YES];
+			
 		}
 			break;
 		case 103:
@@ -160,21 +165,21 @@
 			break;
 		case 104:
 		{
-			WalletExchangeViewController *vc = [[WalletExchangeViewController alloc] initWithNibName:@"WalletExchangeViewController" bundle:nil];
-			[self.navigationController pushViewController:vc animated:YES];
+//			WalletExchangeViewController *vc = [[WalletExchangeViewController alloc] initWithNibName:@"WalletExchangeViewController" bundle:nil];
+//			[self.navigationController pushViewController:vc animated:YES];
 			
 		}
 			break;
 		case 105:
 		{
-			[SVProgressHUD showInfoWithStatus:@"正在开发中"];
+			PowerCGViewController *vc = [[PowerCGViewController alloc] initWithNibName:@"PowerCGViewController" bundle:nil];
+			[self.navigationController pushViewController:vc animated:YES];
 			
 		}
 			break;
 		case 106:
 		{
 			[SVProgressHUD showInfoWithStatus:@"正在开发中"];
-			
 		}
 			break;
 		case 107:

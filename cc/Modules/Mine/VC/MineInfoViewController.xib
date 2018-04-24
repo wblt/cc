@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MineInfoViewController">
             <connections>
+                <outlet property="bgView1" destination="8Mt-gM-QWz" id="T7c-xP-136"/>
+                <outlet property="bgView2" destination="Utq-KL-PxH" id="ZSN-G5-Fw4"/>
                 <outlet property="headImgView" destination="Crx-hZ-xCO" id="zko-T1-vOT"/>
                 <outlet property="nickLab" destination="LMW-Fq-7Y0" id="UWv-RG-67u"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

@@ -27,16 +27,16 @@ static NSString *Identifier = @"cell";
 
 // 获取释放记录
 - (void)requestData {
-    RequestParams *params = [[RequestParams alloc] initWithParams:@"123"];
+    RequestParams *params = [[RequestParams alloc] initWithParams:API_RELEASEDTTAIIL];
     [params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
-    
+
     [[NetworkSingleton shareInstace] httpPost:params withTitle:@"释放记录" successBlock:^(id data) {
         NSString *code = data[@"code"];
         if (![code isEqualToString:@"1000"]) {
             [SVProgressHUD showErrorWithStatus:data[@"message"]];
             return ;
         }
-        
+
     } failureBlock:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"网络异常"];
     }];

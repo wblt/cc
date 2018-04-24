@@ -9,10 +9,17 @@
 #import "SettingViewController.h"
 #import "LoginVC.h"
 #import "BaseNavViewController.h"
+#import "CGPhoneNumViewController.h"
+#import "CGPwdNumViewController.h"
+#import "SetAQPwdNumViewController.h"
 
 @interface SettingViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *logoutBtn;
 @property (weak, nonatomic) IBOutlet UILabel *buildNumLab;
+@property (weak, nonatomic) IBOutlet UIView *bgView1;
+@property (weak, nonatomic) IBOutlet UIView *bgView2;
+@property (weak, nonatomic) IBOutlet UIView *bgView3;
+@property (weak, nonatomic) IBOutlet UIView *bgView4;
 
 @end
 
@@ -23,6 +30,7 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"设置";
     [self setup];
+	[self addViewTap];
 }
 
 - (void)setup {
@@ -36,6 +44,53 @@
 	_buildNumLab.text = app_Version;
 }
 
+- (void)addViewTap {
+	UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+	[_bgView1 addGestureRecognizer:tap1];
+	
+	UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+	[_bgView2 addGestureRecognizer:tap2];
+	
+	UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+	[_bgView3 addGestureRecognizer:tap3];
+	
+	
+	UITapGestureRecognizer *tap4 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+	[_bgView4 addGestureRecognizer:tap4];
+	
+	
+}
+
+- (void)tapAction:(UITapGestureRecognizer *)tap {
+	NSInteger tag = tap.view.tag;
+	switch (tag) {
+		case 100:
+		{
+			CGPhoneNumViewController *vc = [[CGPhoneNumViewController alloc] initWithNibName:@"CGPhoneNumViewController" bundle:nil];
+			[self.navigationController pushViewController:vc animated:YES];
+		}
+			break;
+		case 101:
+		{
+			CGPwdNumViewController *vc = [[CGPwdNumViewController alloc] initWithNibName:@"CGPwdNumViewController" bundle:nil];
+			[self.navigationController pushViewController:vc animated:YES];
+		}
+			break;
+		case 102:
+		{
+			SetAQPwdNumViewController *vc = [[SetAQPwdNumViewController alloc] initWithNibName:@"SetAQPwdNumViewController" bundle:nil];
+			[self.navigationController pushViewController:vc animated:YES];
+		}
+			break;
+		case 103:
+		{
+			
+		}
+			break;
+		default:
+			break;
+	}
+}
 - (IBAction)logoutAction:(id)sender {
     
     [self AlertWithTitle:@"温馨提示" message:@"退出登录" andOthers:@[@"确定",@"取消"] animated:YES action:^(NSInteger index) {

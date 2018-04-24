@@ -63,7 +63,7 @@
         RequestParams *params = [[RequestParams alloc] initWithParams:API_REGIST_CODE];
         [params addParameter:@"ACCOUNT" value:_phonetextField.text];
         [params addParameter:@"digestStr" value:[NSString stringWithFormat:@"%@shc",_phonetextField.text].MD5Hash];
-        
+
         [[NetworkSingleton shareInstace] httpPost:params withTitle:@"获取注册短信验证码" successBlock:^(id data) {
             NSString *code = data[@"code"];
             if (![code isEqualToString:@"1000"]) {

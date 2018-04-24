@@ -81,6 +81,17 @@
 		F84E5B62207D961200949AF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F84E5B61207D961200949AF1 /* Assets.xcassets */; };
 		F84E5B65207D961200949AF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F84E5B63207D961200949AF1 /* LaunchScreen.storyboard */; };
 		F84E5B68207D961200949AF1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F84E5B67207D961200949AF1 /* main.m */; };
+		F8C3C9B3208ED4E0009E201F /* MoneyTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C3C9B1208ED4E0009E201F /* MoneyTransferViewController.m */; };
+		F8C3C9B4208ED4E0009E201F /* MoneyTransferViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8C3C9B2208ED4E0009E201F /* MoneyTransferViewController.xib */; };
+		F8C3C9B8208ED9D2009E201F /* PowerCGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C3C9B6208ED9D2009E201F /* PowerCGViewController.m */; };
+		F8C3C9B9208ED9D2009E201F /* PowerCGViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8C3C9B7208ED9D2009E201F /* PowerCGViewController.xib */; };
+		F8C3C9BD208EDED1009E201F /* CGPhoneNumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C3C9BB208EDED1009E201F /* CGPhoneNumViewController.m */; };
+		F8C3C9BE208EDED1009E201F /* CGPhoneNumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8C3C9BC208EDED1009E201F /* CGPhoneNumViewController.xib */; };
+		F8C3C9C2208EDEFE009E201F /* CGPwdNumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C3C9C0208EDEFE009E201F /* CGPwdNumViewController.m */; };
+		F8C3C9C3208EDEFE009E201F /* CGPwdNumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8C3C9C1208EDEFE009E201F /* CGPwdNumViewController.xib */; };
+		F8C3C9C7208EDF5A009E201F /* SetAQPwdNumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C3C9C5208EDF5A009E201F /* SetAQPwdNumViewController.m */; };
+		F8C3C9C8208EDF5A009E201F /* SetAQPwdNumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8C3C9C6208EDF5A009E201F /* SetAQPwdNumViewController.xib */; };
+		F8C3C9CA208F20E9009E201F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C3C9C9208F20E2009E201F /* AVFoundation.framework */; };
 		F8CE3BDA2086E95600C6994B /* QLCycleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CE3BD92086E95600C6994B /* QLCycleProgressView.m */; };
 		F8CE3BE22087424100C6994B /* HGBStepMoel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CE3BDE2087424100C6994B /* HGBStepMoel.m */; };
 		F8CE3BE32087424100C6994B /* HGBStepTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CE3BE12087424100C6994B /* HGBStepTool.m */; };
@@ -254,6 +265,22 @@
 		F84E5B64207D961200949AF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F84E5B66207D961200949AF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F84E5B67207D961200949AF1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F8C3C9B0208ED4E0009E201F /* MoneyTransferViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoneyTransferViewController.h; sourceTree = "<group>"; };
+		F8C3C9B1208ED4E0009E201F /* MoneyTransferViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoneyTransferViewController.m; sourceTree = "<group>"; };
+		F8C3C9B2208ED4E0009E201F /* MoneyTransferViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoneyTransferViewController.xib; sourceTree = "<group>"; };
+		F8C3C9B5208ED9D2009E201F /* PowerCGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PowerCGViewController.h; sourceTree = "<group>"; };
+		F8C3C9B6208ED9D2009E201F /* PowerCGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PowerCGViewController.m; sourceTree = "<group>"; };
+		F8C3C9B7208ED9D2009E201F /* PowerCGViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PowerCGViewController.xib; sourceTree = "<group>"; };
+		F8C3C9BA208EDED1009E201F /* CGPhoneNumViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGPhoneNumViewController.h; sourceTree = "<group>"; };
+		F8C3C9BB208EDED1009E201F /* CGPhoneNumViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGPhoneNumViewController.m; sourceTree = "<group>"; };
+		F8C3C9BC208EDED1009E201F /* CGPhoneNumViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CGPhoneNumViewController.xib; sourceTree = "<group>"; };
+		F8C3C9BF208EDEFE009E201F /* CGPwdNumViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGPwdNumViewController.h; sourceTree = "<group>"; };
+		F8C3C9C0208EDEFE009E201F /* CGPwdNumViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGPwdNumViewController.m; sourceTree = "<group>"; };
+		F8C3C9C1208EDEFE009E201F /* CGPwdNumViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CGPwdNumViewController.xib; sourceTree = "<group>"; };
+		F8C3C9C4208EDF5A009E201F /* SetAQPwdNumViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetAQPwdNumViewController.h; sourceTree = "<group>"; };
+		F8C3C9C5208EDF5A009E201F /* SetAQPwdNumViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetAQPwdNumViewController.m; sourceTree = "<group>"; };
+		F8C3C9C6208EDF5A009E201F /* SetAQPwdNumViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetAQPwdNumViewController.xib; sourceTree = "<group>"; };
+		F8C3C9C9208F20E2009E201F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F8CE3BD82086E95600C6994B /* QLCycleProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLCycleProgressView.h; sourceTree = "<group>"; };
 		F8CE3BD92086E95600C6994B /* QLCycleProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLCycleProgressView.m; sourceTree = "<group>"; };
 		F8CE3BDD2087424100C6994B /* HGBStepMoel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGBStepMoel.h; sourceTree = "<group>"; };
@@ -340,6 +367,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8C3C9CA208F20E9009E201F /* AVFoundation.framework in Frameworks */,
 				712C2F0D8AD11A4ACF3382D4 /* libPods-cc.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,6 +378,7 @@
 		9E0C2D18142C2E65B31F9CEF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F8C3C9C9208F20E2009E201F /* AVFoundation.framework */,
 				52AB57A49FC5F3A48FAEDE1E /* libPods-cc.a */,
 			);
 			name = Frameworks;
@@ -432,6 +461,12 @@
 				F80568842089EC4D0073B30C /* WalletExchangeViewController.h */,
 				F80568852089EC4D0073B30C /* WalletExchangeViewController.m */,
 				F80568862089EC4D0073B30C /* WalletExchangeViewController.xib */,
+				F8C3C9B0208ED4E0009E201F /* MoneyTransferViewController.h */,
+				F8C3C9B1208ED4E0009E201F /* MoneyTransferViewController.m */,
+				F8C3C9B2208ED4E0009E201F /* MoneyTransferViewController.xib */,
+				F8C3C9B5208ED9D2009E201F /* PowerCGViewController.h */,
+				F8C3C9B6208ED9D2009E201F /* PowerCGViewController.m */,
+				F8C3C9B7208ED9D2009E201F /* PowerCGViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -550,6 +585,15 @@
 				CF7165412083ADC30092692F /* SettingViewController.h */,
 				CF7165422083ADC30092692F /* SettingViewController.m */,
 				CF7165432083ADC30092692F /* SettingViewController.xib */,
+				F8C3C9BA208EDED1009E201F /* CGPhoneNumViewController.h */,
+				F8C3C9BB208EDED1009E201F /* CGPhoneNumViewController.m */,
+				F8C3C9BC208EDED1009E201F /* CGPhoneNumViewController.xib */,
+				F8C3C9BF208EDEFE009E201F /* CGPwdNumViewController.h */,
+				F8C3C9C0208EDEFE009E201F /* CGPwdNumViewController.m */,
+				F8C3C9C1208EDEFE009E201F /* CGPwdNumViewController.xib */,
+				F8C3C9C4208EDF5A009E201F /* SetAQPwdNumViewController.h */,
+				F8C3C9C5208EDF5A009E201F /* SetAQPwdNumViewController.m */,
+				F8C3C9C6208EDF5A009E201F /* SetAQPwdNumViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -1028,6 +1072,7 @@
 				CF7165452083ADC30092692F /* SettingViewController.xib in Resources */,
 				F8ED3953207DACDB006F4D2A /* back_icon@2x.png in Resources */,
 				F80568792089C1E00073B30C /* MyOrderViewController.xib in Resources */,
+				F8C3C9C3208EDEFE009E201F /* CGPwdNumViewController.xib in Resources */,
 				F8ED3980207DB877006F4D2A /* LoginVC.xib in Resources */,
 				F8056854208999940073B30C /* MineInfoViewController.xib in Resources */,
 				F8ED3958207DACDB006F4D2A /* sure_placeholder_error@2x.png in Resources */,
@@ -1047,11 +1092,14 @@
 				F8ED3944207DACDB006F4D2A /* README.md in Resources */,
 				CF82FDF420864DE3006EF9B6 /* InvitionFriendVC.xib in Resources */,
 				F8ED390E207DACC7006F4D2A /* README.md in Resources */,
+				F8C3C9C8208EDF5A009E201F /* SetAQPwdNumViewController.xib in Resources */,
 				F8ED394F207DACDB006F4D2A /* README.md in Resources */,
 				F80568832089D8C40073B30C /* TransferViewController.xib in Resources */,
 				CF716538208399C60092692F /* ForgetPwdViewController.xib in Resources */,
 				F8ED395D207DACDB006F4D2A /* README.md in Resources */,
 				CF82FDE020862CDD006EF9B6 /* HashrateShifToWalletVC.xib in Resources */,
+				F8C3C9BE208EDED1009E201F /* CGPhoneNumViewController.xib in Resources */,
+				F8C3C9B4208ED4E0009E201F /* MoneyTransferViewController.xib in Resources */,
 				CF7165282081ED4E0092692F /* MarketsViewController.xib in Resources */,
 				CF7165202081ECC30092692F /* MineViewController.xib in Resources */,
 				CF82FDFB208662BA006EF9B6 /* passwordIcon.png in Resources */,
@@ -1060,6 +1108,7 @@
 				F84E5B60207D961200949AF1 /* Main.storyboard in Resources */,
 				F80568882089EC4D0073B30C /* WalletExchangeViewController.xib in Resources */,
 				F8ED3957207DACDB006F4D2A /* README.md in Resources */,
+				F8C3C9B9208ED9D2009E201F /* PowerCGViewController.xib in Resources */,
 				F8ED3954207DACDB006F4D2A /* back_icon@3x.png in Resources */,
 				F8CE3BED208746AB00C6994B /* DealViewController.xib in Resources */,
 				CF82FDE520863E2D006EF9B6 /* NewsVC.xib in Resources */,
@@ -1139,6 +1188,7 @@
 				F8ED3948207DACDB006F4D2A /* UIColor+Extend.m in Sources */,
 				F80568872089EC4D0073B30C /* WalletExchangeViewController.m in Sources */,
 				F8CE3BDA2086E95600C6994B /* QLCycleProgressView.m in Sources */,
+				F8C3C9C7208EDF5A009E201F /* SetAQPwdNumViewController.m in Sources */,
 				F8ED3952207DACDB006F4D2A /* SPUtil.m in Sources */,
 				CF7165272081ED4E0092692F /* MarketsViewController.m in Sources */,
 				CF82FE06208CB622006EF9B6 /* FriendInfoModel.m in Sources */,
@@ -1147,6 +1197,7 @@
 				F8CE3BEC208746AB00C6994B /* DealViewController.m in Sources */,
 				F8ED3947207DACDB006F4D2A /* UICollectionView+IndexPath.m in Sources */,
 				F8ED396C207DB311006F4D2A /* BaseNavViewController.m in Sources */,
+				F8C3C9B3208ED4E0009E201F /* MoneyTransferViewController.m in Sources */,
 				CF82FE12208CF8C2006EF9B6 /* ReleaseRecordViewController.m in Sources */,
 				F805686E2089BDA20073B30C /* FSActionSheet.m in Sources */,
 				CF82FDFC208662BA006EF9B6 /* PasswordAlertView.m in Sources */,
@@ -1179,6 +1230,7 @@
 				F8ED3949207DACDB006F4D2A /* UIView+Extend.m in Sources */,
 				CF82FE0E208CB982006EF9B6 /* ErrorView.m in Sources */,
 				CF716537208399C60092692F /* ForgetPwdViewController.m in Sources */,
+				F8C3C9BD208EDED1009E201F /* CGPhoneNumViewController.m in Sources */,
 				F8ED3977207DB3E0006F4D2A /* MainTabBarController.m in Sources */,
 				F8ED3976207DB3E0006F4D2A /* MainTabBarItem.m in Sources */,
 				F8ED394A207DACDB006F4D2A /* UIViewController+AlertViewAndActionSheet.m in Sources */,
@@ -1186,11 +1238,13 @@
 				F80568722089BDA20073B30C /* XLPhotoBrowser.m in Sources */,
 				F805686F2089BDA20073B30C /* FSActionSheetCell.m in Sources */,
 				F805686D2089BDA20073B30C /* UIView+XLExtension.m in Sources */,
+				F8C3C9B8208ED9D2009E201F /* PowerCGViewController.m in Sources */,
 				F84E5B5A207D961200949AF1 /* AppDelegate.m in Sources */,
 				F8ED397F207DB877006F4D2A /* LoginVC.m in Sources */,
 				CF71651A2081ECA30092692F /* ReleaseViewController.m in Sources */,
 				F80568962089F12F0073B30C /* NewsDetailsViewController.m in Sources */,
 				F8ED395E207DACDB006F4D2A /* Util.m in Sources */,
+				F8C3C9C2208EDEFE009E201F /* CGPwdNumViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
