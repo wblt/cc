@@ -17,6 +17,7 @@
 #import "WalletExchangeViewController.h"
 #import "UserInfoModel.h"
 #import "PowerCGViewController.h"
+#import "ReceiveRecordVC.h"
 
 @interface MineVC ()
 @property (weak, nonatomic) IBOutlet UIView *bgView1;
@@ -165,9 +166,8 @@
 			break;
 		case 104:
 		{
-//			WalletExchangeViewController *vc = [[WalletExchangeViewController alloc] initWithNibName:@"WalletExchangeViewController" bundle:nil];
-//			[self.navigationController pushViewController:vc animated:YES];
-			
+			ReceiveRecordVC *vc = [[ReceiveRecordVC alloc] initWithNibName:@"ReceiveRecordVC" bundle:nil];
+			[self.navigationController pushViewController:vc animated:YES];
 		}
 			break;
 		case 105:

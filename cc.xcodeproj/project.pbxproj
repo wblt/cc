@@ -92,6 +92,8 @@
 		F8C3C9C7208EDF5A009E201F /* SetAQPwdNumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C3C9C5208EDF5A009E201F /* SetAQPwdNumViewController.m */; };
 		F8C3C9C8208EDF5A009E201F /* SetAQPwdNumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8C3C9C6208EDF5A009E201F /* SetAQPwdNumViewController.xib */; };
 		F8C3C9CA208F20E9009E201F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C3C9C9208F20E2009E201F /* AVFoundation.framework */; };
+		F8C3C9CE208F3070009E201F /* ReceiveRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C3C9CC208F3070009E201F /* ReceiveRecordVC.m */; };
+		F8C3C9CF208F3070009E201F /* ReceiveRecordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8C3C9CD208F3070009E201F /* ReceiveRecordVC.xib */; };
 		F8CE3BDA2086E95600C6994B /* QLCycleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CE3BD92086E95600C6994B /* QLCycleProgressView.m */; };
 		F8CE3BE22087424100C6994B /* HGBStepMoel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CE3BDE2087424100C6994B /* HGBStepMoel.m */; };
 		F8CE3BE32087424100C6994B /* HGBStepTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CE3BE12087424100C6994B /* HGBStepTool.m */; };
@@ -281,6 +283,9 @@
 		F8C3C9C5208EDF5A009E201F /* SetAQPwdNumViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetAQPwdNumViewController.m; sourceTree = "<group>"; };
 		F8C3C9C6208EDF5A009E201F /* SetAQPwdNumViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetAQPwdNumViewController.xib; sourceTree = "<group>"; };
 		F8C3C9C9208F20E2009E201F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F8C3C9CB208F3070009E201F /* ReceiveRecordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReceiveRecordVC.h; sourceTree = "<group>"; };
+		F8C3C9CC208F3070009E201F /* ReceiveRecordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReceiveRecordVC.m; sourceTree = "<group>"; };
+		F8C3C9CD208F3070009E201F /* ReceiveRecordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiveRecordVC.xib; sourceTree = "<group>"; };
 		F8CE3BD82086E95600C6994B /* QLCycleProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLCycleProgressView.h; sourceTree = "<group>"; };
 		F8CE3BD92086E95600C6994B /* QLCycleProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLCycleProgressView.m; sourceTree = "<group>"; };
 		F8CE3BDD2087424100C6994B /* HGBStepMoel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGBStepMoel.h; sourceTree = "<group>"; };
@@ -458,6 +463,9 @@
 				F80568892089EFDD0073B30C /* TransferRecordViewController.h */,
 				F805688A2089EFDD0073B30C /* TransferRecordViewController.m */,
 				F805688B2089EFDD0073B30C /* TransferRecordViewController.xib */,
+				F8C3C9CB208F3070009E201F /* ReceiveRecordVC.h */,
+				F8C3C9CC208F3070009E201F /* ReceiveRecordVC.m */,
+				F8C3C9CD208F3070009E201F /* ReceiveRecordVC.xib */,
 				F80568842089EC4D0073B30C /* WalletExchangeViewController.h */,
 				F80568852089EC4D0073B30C /* WalletExchangeViewController.m */,
 				F80568862089EC4D0073B30C /* WalletExchangeViewController.xib */,
@@ -1071,6 +1079,7 @@
 				CF71652F2082249E0092692F /* OrderListTabCell.xib in Resources */,
 				CF7165452083ADC30092692F /* SettingViewController.xib in Resources */,
 				F8ED3953207DACDB006F4D2A /* back_icon@2x.png in Resources */,
+				F8C3C9CF208F3070009E201F /* ReceiveRecordVC.xib in Resources */,
 				F80568792089C1E00073B30C /* MyOrderViewController.xib in Resources */,
 				F8C3C9C3208EDEFE009E201F /* CGPwdNumViewController.xib in Resources */,
 				F8ED3980207DB877006F4D2A /* LoginVC.xib in Resources */,
@@ -1217,6 +1226,7 @@
 				F80568712089BDA20073B30C /* FSActionSheetItem.m in Sources */,
 				F8056853208999930073B30C /* MineInfoViewController.m in Sources */,
 				F80568912089F0590073B30C /* MyFriendsViewController.m in Sources */,
+				F8C3C9CE208F3070009E201F /* ReceiveRecordVC.m in Sources */,
 				F80568742089BDA20073B30C /* XLZoomingScrollView.m in Sources */,
 				F8ED3988207DB8B0006F4D2A /* RegistViewController.m in Sources */,
 				CF82FE0A208CB761006EF9B6 /* FriendListTabCell.m in Sources */,

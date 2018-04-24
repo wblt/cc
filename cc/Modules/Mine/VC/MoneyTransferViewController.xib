@@ -101,8 +101,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxa-ML-M0y">
                     <rect key="frame" x="0.0" y="110" width="375" height="50"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前发送SHC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBF-AA-OEc">
-                            <rect key="frame" x="20" y="15" width="92" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前可发送SHC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBF-AA-OEc">
+                            <rect key="frame" x="20" y="15" width="107.5" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="IVF-bv-c7S"/>
                             </constraints>
@@ -133,7 +133,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dcp-rt-fzk">
                     <rect key="frame" x="0.0" y="160" width="375" height="50"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qcv-cD-Z2j">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="钱包地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qcv-cD-Z2j">
                             <rect key="frame" x="20" y="15" width="61.5" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="TYw-kx-tZU"/>
@@ -149,7 +149,7 @@
                                 <constraint firstAttribute="height" constant="0.59999999999999998" id="sLY-9g-sIe"/>
                             </constraints>
                         </view>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123123" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2CB-Q9-VqO">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入转入钱包地址" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2CB-Q9-VqO">
                             <rect key="frame" x="101.5" y="10" width="258.5" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="jsp-nh-4dX"/>
@@ -225,6 +225,9 @@
                     <state key="normal" title="提交">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="sumbitAction:" destination="-1" eventType="touchUpInside" id="Qrv-kI-K6N"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
