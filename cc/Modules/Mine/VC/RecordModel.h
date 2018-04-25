@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface RecordModel : NSObject
+
 @property(nonatomic,copy)NSString *CREATE_TIME;
 @property(nonatomic,copy)NSNumber *ID;
 @property(nonatomic,copy)NSString *W_ADDRESS;

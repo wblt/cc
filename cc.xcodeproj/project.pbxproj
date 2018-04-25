@@ -149,6 +149,11 @@
 		F8F82BF0209016C600A9A81A /* ReceiveRecordTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F82BEE209016C600A9A81A /* ReceiveRecordTabCell.m */; };
 		F8F82BF1209016C600A9A81A /* ReceiveRecordTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F82BEF209016C600A9A81A /* ReceiveRecordTabCell.xib */; };
 		F8F82BF42090193D00A9A81A /* RecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F82BF32090193D00A9A81A /* RecordModel.m */; };
+		F8F82BF7209059FD00A9A81A /* ReleaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F82BF6209059FD00A9A81A /* ReleaseModel.m */; };
+		F8F82BFB20906C2F00A9A81A /* SportRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F82BF920906C2F00A9A81A /* SportRecordViewController.m */; };
+		F8F82BFC20906C2F00A9A81A /* SportRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F82BFA20906C2F00A9A81A /* SportRecordViewController.xib */; };
+		F8F82C0020906C7400A9A81A /* SportRecordTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F82BFE20906C7400A9A81A /* SportRecordTabCell.m */; };
+		F8F82C0120906C7400A9A81A /* SportRecordTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F82BFF20906C7400A9A81A /* SportRecordTabCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -384,6 +389,14 @@
 		F8F82BEF209016C600A9A81A /* ReceiveRecordTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ReceiveRecordTabCell.xib; path = cc/Modules/Mine/VC/ReceiveRecordTabCell.xib; sourceTree = SOURCE_ROOT; };
 		F8F82BF22090193D00A9A81A /* RecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RecordModel.h; path = cc/Modules/Mine/VC/RecordModel.h; sourceTree = SOURCE_ROOT; };
 		F8F82BF32090193D00A9A81A /* RecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RecordModel.m; path = cc/Modules/Mine/VC/RecordModel.m; sourceTree = SOURCE_ROOT; };
+		F8F82BF5209059FD00A9A81A /* ReleaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReleaseModel.h; sourceTree = "<group>"; };
+		F8F82BF6209059FD00A9A81A /* ReleaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReleaseModel.m; sourceTree = "<group>"; };
+		F8F82BF820906C2F00A9A81A /* SportRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SportRecordViewController.h; sourceTree = "<group>"; };
+		F8F82BF920906C2F00A9A81A /* SportRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SportRecordViewController.m; sourceTree = "<group>"; };
+		F8F82BFA20906C2F00A9A81A /* SportRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportRecordViewController.xib; sourceTree = "<group>"; };
+		F8F82BFD20906C7400A9A81A /* SportRecordTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SportRecordTabCell.h; path = cc/Modules/Mine/VC/SportRecordTabCell.h; sourceTree = SOURCE_ROOT; };
+		F8F82BFE20906C7400A9A81A /* SportRecordTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SportRecordTabCell.m; path = cc/Modules/Mine/VC/SportRecordTabCell.m; sourceTree = SOURCE_ROOT; };
+		F8F82BFF20906C7400A9A81A /* SportRecordTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SportRecordTabCell.xib; path = cc/Modules/Mine/VC/SportRecordTabCell.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -511,6 +524,9 @@
 				F8C3C9B5208ED9D2009E201F /* PowerCGViewController.h */,
 				F8C3C9B6208ED9D2009E201F /* PowerCGViewController.m */,
 				F8C3C9B7208ED9D2009E201F /* PowerCGViewController.xib */,
+				F8F82BF820906C2F00A9A81A /* SportRecordViewController.h */,
+				F8F82BF920906C2F00A9A81A /* SportRecordViewController.m */,
+				F8F82BFA20906C2F00A9A81A /* SportRecordViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -530,6 +546,9 @@
 				F8F82BED209016C600A9A81A /* ReceiveRecordTabCell.h */,
 				F8F82BEE209016C600A9A81A /* ReceiveRecordTabCell.m */,
 				F8F82BEF209016C600A9A81A /* ReceiveRecordTabCell.xib */,
+				F8F82BFD20906C7400A9A81A /* SportRecordTabCell.h */,
+				F8F82BFE20906C7400A9A81A /* SportRecordTabCell.m */,
+				F8F82BFF20906C7400A9A81A /* SportRecordTabCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -578,6 +597,8 @@
 				CF82FE05208CB622006EF9B6 /* FriendInfoModel.m */,
 				F80212A8208DC6BB00792465 /* UserInfoModel.h */,
 				F80212A9208DC6BB00792465 /* UserInfoModel.m */,
+				F8F82BF5209059FD00A9A81A /* ReleaseModel.h */,
+				F8F82BF6209059FD00A9A81A /* ReleaseModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1109,6 +1130,7 @@
 				F80568972089F12F0073B30C /* NewsDetailsViewController.xib in Resources */,
 				F8ED3945207DACDB006F4D2A /* README.md in Resources */,
 				F80212A7208D8D3B00792465 /* MineVC.xib in Resources */,
+				F8F82C0120906C7400A9A81A /* SportRecordTabCell.xib in Resources */,
 				F802129D208D787500792465 /* ZeroWalletVC.xib in Resources */,
 				F80212A2208D82DA00792465 /* AllRecodeTabCell.xib in Resources */,
 				F84E5B65207D961200949AF1 /* LaunchScreen.storyboard in Resources */,
@@ -1154,6 +1176,7 @@
 				F8C3C9B4208ED4E0009E201F /* MoneyTransferViewController.xib in Resources */,
 				CF7165282081ED4E0092692F /* MarketsViewController.xib in Resources */,
 				CF7165202081ECC30092692F /* MineViewController.xib in Resources */,
+				F8F82BFC20906C2F00A9A81A /* SportRecordViewController.xib in Resources */,
 				CF82FDFB208662BA006EF9B6 /* passwordIcon.png in Resources */,
 				F8ED394E207DACDB006F4D2A /* README.md in Resources */,
 				F805687E2089C9A50073B30C /* CompoundSettingViewController.xib in Resources */,
@@ -1263,6 +1286,7 @@
 				CF82FDE420863E2D006EF9B6 /* NewsVC.m in Sources */,
 				F80212A1208D82DA00792465 /* AllRecodeTabCell.m in Sources */,
 				F805687D2089C9A50073B30C /* CompoundSettingViewController.m in Sources */,
+				F8F82BF7209059FD00A9A81A /* ReleaseModel.m in Sources */,
 				CF82FDE920863EBA006EF9B6 /* NewsTabCell.m in Sources */,
 				F8ED395C207DACDB006F4D2A /* SYCacheManager.m in Sources */,
 				CF7165442083ADC30092692F /* SettingViewController.m in Sources */,
@@ -1284,6 +1308,7 @@
 				CF716533208394E80092692F /* MQVerCodeImageView.m in Sources */,
 				CF82FDF320864DE3006EF9B6 /* InvitionFriendVC.m in Sources */,
 				F8ED3949207DACDB006F4D2A /* UIView+Extend.m in Sources */,
+				F8F82C0020906C7400A9A81A /* SportRecordTabCell.m in Sources */,
 				CF82FE0E208CB982006EF9B6 /* ErrorView.m in Sources */,
 				CF716537208399C60092692F /* ForgetPwdViewController.m in Sources */,
 				F8C3C9BD208EDED1009E201F /* CGPhoneNumViewController.m in Sources */,
@@ -1292,6 +1317,7 @@
 				F8ED394A207DACDB006F4D2A /* UIViewController+AlertViewAndActionSheet.m in Sources */,
 				F8ED395A207DACDB006F4D2A /* SureWebViewController.m in Sources */,
 				F80568722089BDA20073B30C /* XLPhotoBrowser.m in Sources */,
+				F8F82BFB20906C2F00A9A81A /* SportRecordViewController.m in Sources */,
 				F805686F2089BDA20073B30C /* FSActionSheetCell.m in Sources */,
 				F805686D2089BDA20073B30C /* UIView+XLExtension.m in Sources */,
 				F8C3C9B8208ED9D2009E201F /* PowerCGViewController.m in Sources */,

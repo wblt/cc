@@ -1,25 +1,24 @@
 //
-//  ReceiveRecordVC.m
+//  SportRecordViewController.m
 //  cc
 //
-//  Created by yanghuan on 2018/4/24.
+//  Created by yanghuan on 2018/4/25.
 //  Copyright © 2018年 wyChirs. All rights reserved.
 //
 
-#import "ReceiveRecordVC.h"
-#import "ReceiveRecordTabCell.h"
-#import "RecordModel.h"
+#import "SportRecordViewController.h"
+#import "SportRecordTabCell.h"
 
 static NSString *Identifier = @"cell";
 
-@interface ReceiveRecordVC ()<UITableViewDelegate,UITableViewDataSource>
+@interface SportRecordViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)NSMutableArray *data;
 @property (nonatomic,copy)NSString *QUERY_ID;//如果QUERY_ID = 0，则获取最新数据.
 @property (nonatomic,copy)NSString *TYPE; //1：向下拉；QUERY_ID =0,该值没意义2：向上拉(必填)
 @end
 
-@implementation ReceiveRecordVC
+@implementation SportRecordViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,12 +38,12 @@ static NSString *Identifier = @"cell";
 }
 
 - (void)requestData {
-	RequestParams *params = [[RequestParams alloc] initWithParams:API_RECEIVEDETAIL];
+	RequestParams *params = [[RequestParams alloc] initWithParams:API_STEPDETAIL];
 	[params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
 	[params addParameter:@"QUERY_ID" value:_QUERY_ID];
 	[params addParameter:@"TYPE" value:_TYPE];
 	
-	[[NetworkSingleton shareInstace] httpPost:params withTitle:@"接收记录" successBlock:^(id data) {
+	[[NetworkSingleton shareInstace] httpPost:params withTitle:@"运动记录" successBlock:^(id data) {
 		[self.tableView.mj_header endRefreshing];
 		[self.tableView.mj_footer endRefreshing];
 		NSString *code = data[@"code"];
@@ -77,7 +76,7 @@ static NSString *Identifier = @"cell";
 	self.tableView.delegate = self;
 	self.tableView.dataSource = self;
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-	[self.tableView registerNib:[UINib nibWithNibName:@"ReceiveRecordTabCell" bundle:nil] forCellReuseIdentifier:Identifier];
+	[self.tableView registerNib:[UINib nibWithNibName:@"SportRecordTabCell" bundle:nil] forCellReuseIdentifier:Identifier];
 	
 	self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
 		// 进入刷新状态后会自动调用这个block
@@ -103,7 +102,7 @@ static NSString *Identifier = @"cell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 95;
+	return 100;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -122,10 +121,10 @@ static NSString *Identifier = @"cell";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	ReceiveRecordTabCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
+	SportRecordTabCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	ViewBorderRadius(cell.contentView, 6, 0.6,UIColorFromHex(0x4B5461));
-	cell.recceiveModel = self.data[indexPath.row];
+	cell.model = self.data[indexPath.row];
 	
 	return cell;
 }

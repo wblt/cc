@@ -34,6 +34,8 @@
 	keyboardManager.shouldResignOnTouchOutside = YES; // 控制点击背景是否收起键盘
 	keyboardManager.keyboardDistanceFromTextField = 10.0f; // 输入框距离键盘的距离
 	
+	[SVProgressHUD setMaximumDismissTimeInterval:2.0];
+	
 	// 还未去Bugly 注册appId
 	//[Bugly startWithAppId:@"此处替换为你的AppId"];
 	

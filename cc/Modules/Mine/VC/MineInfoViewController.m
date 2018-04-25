@@ -67,7 +67,10 @@
 				return ;
 			}
 			[SVProgressHUD showSuccessWithStatus:@"修改成功"];
-			
+			UserInfoModel *model = [[BeanManager shareInstace] getBeanfromPath:UserModelPath];
+			model.HEAD_URL = _url;
+			model.NICK_NAME = _nickTextField.text;
+			[[BeanManager shareInstace] setBean:model path:UserModelPath];
 			
 		} failureBlock:^(NSError *error) {
 			[SVProgressHUD showErrorWithStatus:@"网络异常"];

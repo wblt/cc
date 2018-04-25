@@ -45,6 +45,7 @@
         self.leftStr = data[@"pd"][@"LEFT_URL"];
         self.leftStr = data[@"pd"][@"RIGHT_URL"];
         self.appUrl = data[@"pd"][@"APP_URL"];
+		[_shareImgView sd_setImageWithURL:[NSURL URLWithString:self.appUrl] placeholderImage:[UIImage imageNamed:@"logo"]];
     } failureBlock:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"网络异常"];
     }];

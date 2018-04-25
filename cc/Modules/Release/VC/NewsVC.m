@@ -32,7 +32,7 @@ static NSString *Identifier = @"cell";
 - (void)setup {
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"NewsTabCell" bundle:nil] forCellReuseIdentifier:Identifier];
 }
 
@@ -97,13 +97,15 @@ static NSString *Identifier = @"cell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NewsTabCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.model = self.data[indexPath.row];
+	ViewBorderRadius(cell.contentView, 6, 0.6,UIColorFromHex(0x4B5461));
+	cell.model = self.data[indexPath.row];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NewsDetailsViewController *vc =[[NewsDetailsViewController alloc] initWithNibName:@"NewsDetailsViewController" bundle:nil];
+	
     vc.model = self.data[indexPath.row];
     [self.navigationController pushViewController:vc animated:YES];
 }

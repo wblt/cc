@@ -1,42 +1,42 @@
 //
-//  AllRecodeTabCell.m
+//  SportRecordTabCell.m
 //  cc
 //
-//  Created by yanghuan on 2018/4/23.
+//  Created by yanghuan on 2018/4/25.
 //  Copyright © 2018年 wyChirs. All rights reserved.
 //
 
-#import "AllRecodeTabCell.h"
+#import "SportRecordTabCell.h"
 
-@implementation AllRecodeTabCell
+@implementation SportRecordTabCell
 
 
-- (void)setModel:(ReleaseModel *)model {
+- (void)setModel:(RecordModel *)model {
 	_model = model;
-	self.calcuLateLab.text = model.CALCULATE_MONEY;
-	self.bigLab.text = model.BIG_CURRENCY;
-	self.smallLab.text = model.SMALL_CURRENCY;
-	self.staticLab.text = model.STATIC_CURRENCY;
-	self.stepLab.text = model.STEP_CURRENCY;
 	self.timeLab.text = model.CREATE_TIME;
-	self.jdLab.text = model.JD_CURRENCY;
+	self.stepLab.text = [NSString stringWithFormat:@"%@",model.USER_STEP];
+	
+	UserInfoModel *userModel = [[BeanManager shareInstace] getBeanfromPath:UserModelPath];
+	
+	self.nameLab.text = userModel.USER_NAME;
+	[self.headImgView sd_setImageWithURL:[NSURL URLWithString:userModel.HEAD_URL] placeholderImage:[UIImage imageNamed:@"logo"]];
 }
 
-// 在cell 的视线文件中重写该方法
 - (void)setFrame:(CGRect)frame
 {
 	//修改cell的左右边距为5; 自定义
 	//修改cell的Y值下移5;
 	//修改cell的高度减少5;
 	//未测试UICollectionViewCell    ps：应该是一样的，不过没必要，可以自己设置间距
-	static CGFloat margin = 2;
+	static CGFloat margin = 5;
 	frame.origin.x = margin;
 	frame.size.width -= 2 * frame.origin.x;
 	frame.origin.y += margin;
-	frame.size.height -= margin*2;
+	frame.size.height -= margin;
 	
 	[super setFrame:frame];
 }
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];

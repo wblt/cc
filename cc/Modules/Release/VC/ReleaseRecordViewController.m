@@ -8,11 +8,13 @@
 
 #import "ReleaseRecordViewController.h"
 #import "AllRecodeTabCell.h"
-
+#import "ReleaseModel.h"
 static NSString *Identifier = @"cell";
 
 @interface ReleaseRecordViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic,strong)NSMutableArray *data;
+
 
 @end
 
@@ -23,6 +25,14 @@ static NSString *Identifier = @"cell";
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"全部记录";
 	[self setup];
+	self.data = [NSMutableArray array];
+	[self requestData];
+}
+
+- (void)refreshData {
+	[self.data removeAllObjects];
+	[self.tableView reloadData];
+	[self requestData];
 }
 
 // 获取释放记录
@@ -36,6 +46,17 @@ static NSString *Identifier = @"cell";
             [SVProgressHUD showErrorWithStatus:data[@"message"]];
             return ;
         }
+		NSArray *pd = data[@"pd"];
+		if (pd.count == 0) {
+			[self showImagePage:YES withIsError:NO];
+			return;
+		}
+		for (NSDictionary *dic in pd) {
+			ReleaseModel *model = [ReleaseModel mj_objectWithKeyValues:dic];
+			[self.data addObject:model];
+		}
+		[self.tableView reloadData];
+		
 
     } failureBlock:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"网络异常"];
@@ -57,7 +78,7 @@ static NSString *Identifier = @"cell";
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return 8;
+	return self.data.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -83,14 +104,13 @@ static NSString *Identifier = @"cell";
 	AllRecodeTabCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	ViewBorderRadius(cell, 8, 0.6, UIColorFromHex(0x4B5461));
+	cell.model = self.data[indexPath.row];
 	
 	return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-	
-	
 	
 }
 

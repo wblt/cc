@@ -15,7 +15,8 @@ static NSString *Identifier = @"cell";
 @interface TransferRecordViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)NSMutableArray *data;
-
+@property (nonatomic,copy)NSString *QUERY_ID;//如果QUERY_ID = 0，则获取最新数据.
+@property (nonatomic,copy)NSString *TYPE; //1：向下拉；QUERY_ID =0,该值没意义2：向上拉(必填)
 @end
 
 @implementation TransferRecordViewController
@@ -25,6 +26,8 @@ static NSString *Identifier = @"cell";
     // Do any additional setup after loading the view from its nib.
 	self.navigationItem.title = @"转账记录";
 	self.data = [NSMutableArray array];
+	_QUERY_ID = @"0";
+	_TYPE = @"1";
 	[self setup];
 	[self requestData];
 }
@@ -38,27 +41,35 @@ static NSString *Identifier = @"cell";
 - (void)requestData {
 	RequestParams *params = [[RequestParams alloc] initWithParams:API_SENDDETAIL];
 	[params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
-	[params addParameter:@"QUERY_ID" value:@"0"];
-	[params addParameter:@"TYPE" value:@"1"];
+	[params addParameter:@"QUERY_ID" value:_QUERY_ID];
+	[params addParameter:@"TYPE" value:_TYPE];
 	
 	[[NetworkSingleton shareInstace] httpPost:params withTitle:@"转账记录" successBlock:^(id data) {
 		NSString *code = data[@"code"];
+		[self.tableView.mj_header endRefreshing];
+		[self.tableView.mj_footer endRefreshing];
 		if (![code isEqualToString:@"1000"]) {
 			[SVProgressHUD showErrorWithStatus:data[@"message"]];
 			return ;
 		}
 		NSArray *pd = data[@"pd"];
-		if (pd.count == 0) {
+		if (pd.count == 0 && [_QUERY_ID isEqualToString:@"0"]) {
 			[self showImagePage:YES withIsError:NO];
 			return;
 		}
 		for (NSDictionary *dic in pd) {
 			RecordModel *model = [RecordModel mj_objectWithKeyValues:dic];
 			[self.data addObject:model];
+			if (pd.lastObject == dic) {
+				_QUERY_ID = [NSString stringWithFormat:@"%@",model.ID];
+			}
 		}
+		
 		[self.tableView reloadData];
 		
 	} failureBlock:^(NSError *error) {
+		[self.tableView.mj_header endRefreshing];
+		[self.tableView.mj_footer endRefreshing];
 		[SVProgressHUD showErrorWithStatus:@"网络异常"];
 	}];
 }
@@ -68,6 +79,19 @@ static NSString *Identifier = @"cell";
 	self.tableView.dataSource = self;
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	[self.tableView registerNib:[UINib nibWithNibName:@"ReceiveRecordTabCell" bundle:nil] forCellReuseIdentifier:Identifier];
+	
+	self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+		// 进入刷新状态后会自动调用这个block
+		_QUERY_ID = @"0";
+		_TYPE = @"1";
+		[self refreshData];
+	}];
+	
+	self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+		// 进入刷新状态后会自动调用这个 block
+		_TYPE = @"2";
+		[self requestData];
+	}];
 }
 
 # pragma mark tableView delegate dataSourse

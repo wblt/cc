@@ -15,10 +15,10 @@
                 <outlet property="codeTextField" destination="yWs-5I-8EQ" id="2Ea-wB-qfd"/>
                 <outlet property="hashrateLab" destination="1mf-zJ-G5e" id="Poo-Bo-xiq"/>
                 <outlet property="numTextField" destination="geX-1a-tmR" id="orn-iG-yoX"/>
-                <outlet property="powerLab" destination="tV1-Mq-e77" id="7hE-GS-Bmm"/>
                 <outlet property="sumbitBtn" destination="t5W-gx-Bbh" id="9Ln-R4-QbA"/>
                 <outlet property="tipsLab" destination="9QS-KF-o9e" id="0sX-cI-0D1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="zeroLab" destination="tV1-Mq-e77" id="WcR-oh-xyB"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

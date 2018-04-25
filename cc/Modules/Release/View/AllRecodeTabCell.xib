@@ -202,6 +202,15 @@
                     <constraint firstAttribute="trailing" secondItem="OMV-YE-AkV" secondAttribute="trailing" constant="10" id="yYL-fU-CGp"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="bigLab" destination="isG-AG-z3q" id="0GQ-qh-Wg1"/>
+                <outlet property="calcuLateLab" destination="IrH-GC-pW4" id="tse-Ez-Z15"/>
+                <outlet property="jdLab" destination="OAv-en-3Tt" id="7bG-LM-Osi"/>
+                <outlet property="smallLab" destination="YVd-2j-1ZP" id="qZZ-fA-ySe"/>
+                <outlet property="staticLab" destination="nlM-wW-sGT" id="e0V-1w-dtB"/>
+                <outlet property="stepLab" destination="NcZ-6g-uJN" id="ipP-EA-UtZ"/>
+                <outlet property="timeLab" destination="2Mx-pv-YZo" id="tpa-db-pmC"/>
+            </connections>
             <point key="canvasLocation" x="25" y="97.5"/>
         </tableViewCell>
     </objects>

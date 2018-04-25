@@ -121,39 +121,33 @@
 
 -(void)PasswordAlertViewCompleteInputWith:(NSString*)password{
 	NSLog(@"完成了密码输入,密码为：%@",password);
-	if ([password isEqualToString:@"111111"]) {
-		NSLog(@"密码正确！");
+	
+	//这里必须延迟一下  不然看不到最后一个黑点显示整个视图就消失了
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[_alertView passwordCorrect];
+		//  开始转换请求
+		RequestParams *params = [[RequestParams alloc] initWithParams:API_SEND];
+		[params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
+		[params addParameter:@"W_ADDRESS" value:_addressTextField.text];
+		[params addParameter:@"S_MONEY" value:_numTextField.text];
+		[params addParameter:@"PASSW" value:password];
 		
-		//这里必须延迟一下  不然看不到最后一个黑点显示整个视图就消失了
-		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-			[_alertView passwordCorrect];
-			//  开始转换请求
-			RequestParams *params = [[RequestParams alloc] initWithParams:API_SEND];
-			[params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
-			[params addParameter:@"W_ADDRESS" value:_addressTextField.text];
-			[params addParameter:@"S_MONEY" value:_numTextField.text];
-			[params addParameter:@"PASSW" value:password];
-			
-			[[NetworkSingleton shareInstace] httpPost:params withTitle:@"发送SHC" successBlock:^(id data) {
-				NSString *code = data[@"code"];
-				if (![code isEqualToString:@"1000"]) {
-					[SVProgressHUD showErrorWithStatus:data[@"message"]];
-					return ;
-				}
-				
-				
-			} failureBlock:^(NSError *error) {
-				[SVProgressHUD showErrorWithStatus:@"网络异常"];
-			}];
-			
-		});
+		[[NetworkSingleton shareInstace] httpPost:params withTitle:@"发送SHC" successBlock:^(id data) {
+			NSString *code = data[@"code"];
+			if (![code isEqualToString:@"1000"]) {
+				[SVProgressHUD showErrorWithStatus:data[@"message"]];
+				return ;
+			}
+			[SVProgressHUD showSuccessWithStatus:@"转账成功"];
+			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+				[self requestData];
+			});
+		} failureBlock:^(NSError *error) {
+			[SVProgressHUD showErrorWithStatus:@"网络异常"];
+		}];
 		
-	}else{
-		//这里必须延迟一下  不然看不到最后一个黑点显示整个视图就消失了
-		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-			[_alertView passwordError];
-		});
-	}
+	});
+	
 }
 
 -(void)PasswordAlertViewDidClickCancleButton{

@@ -18,6 +18,7 @@
 #import "UserInfoModel.h"
 #import "PowerCGViewController.h"
 #import "ReceiveRecordVC.h"
+#import "SportRecordViewController.h"
 
 @interface MineVC ()
 @property (weak, nonatomic) IBOutlet UIView *bgView1;
@@ -41,6 +42,17 @@
 @end
 
 @implementation MineVC
+
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	// 获取当前数据
+	UserInfoModel *model = [[BeanManager shareInstace] getBeanfromPath:UserModelPath];
+	self.nameLab.text = model.USER_NAME;
+	self.walletAddressLab.text = model.W_ADDRESS;
+	self.walletNumLab.text = model.W_ENERGY;
+	[_headImgView sd_setImageWithURL:[NSURL URLWithString:model.HEAD_URL] placeholderImage:[UIImage imageNamed:@"logo"]];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -80,13 +92,7 @@
 	UITapGestureRecognizer *imgTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(rightTap)];
 	self.rightImgView.userInteractionEnabled = YES;
 	[self.rightImgView addGestureRecognizer:imgTap];
-	
-	// 获取当前数据
-	UserInfoModel *model = [[BeanManager shareInstace] getBeanfromPath:UserModelPath];
-	self.nameLab.text = model.USER_NAME;
-	self.walletAddressLab.text = model.W_ADDRESS;
-	self.walletNumLab.text = model.W_ENERGY;
-	[_headImgView sd_setImageWithURL:[NSURL URLWithString:model.HEAD_URL] placeholderImage:[UIImage imageNamed:@"logo"]];
+
 }
 
 - (IBAction)copyWalletAddressAction:(id)sender {
@@ -179,12 +185,13 @@
 			break;
 		case 106:
 		{
-			[SVProgressHUD showInfoWithStatus:@"正在开发中"];
+			SportRecordViewController *vc = [[SportRecordViewController alloc] initWithNibName:@"SportRecordViewController" bundle:nil];
+			[self.navigationController pushViewController:vc animated:YES];
 		}
 			break;
 		case 107:
 		{
-			[SVProgressHUD showInfoWithStatus:@"正在开发中"];
+			 [SVProgressHUD showInfoWithStatus:@"正在开发中"];
 			
 		}
 			break;

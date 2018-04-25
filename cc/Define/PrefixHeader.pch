@@ -15,6 +15,7 @@
 #import "UtilsMacros.h"
 #import "FlowAPI.h"
 #import "FontAndColorMacros.h"
+#import "UserInfoModel.h"
 
 // 基础类
 #import <Foundation/Foundation.h>

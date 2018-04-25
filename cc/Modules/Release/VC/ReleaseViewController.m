@@ -34,7 +34,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self updataDayStep];
+	[self requestData];
 }
 
 - (void)viewDidLoad {
@@ -46,7 +46,9 @@
     [self addNavView];
 	[self addheadthView];
     [self addtapView];
-	[self requestData];
+	
+	//[self updataDayStep];
+	
 }
 
 // 获取首页数据
@@ -78,7 +80,7 @@
     // 记录步数
     RequestParams *params = [[RequestParams alloc] initWithParams:API_DAYSTEP];
     [params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
-    [params addParameter:@"USER_STEP" value:@"0"];
+    [params addParameter:@"USER_STEP" value:@"1000"];
     [params addParameter:@"CREATE_TIME" value:[Util getCurrentTime]];
     
     [[NetworkSingleton shareInstace] httpPost:params withTitle:@"记录步数" successBlock:^(id data) {
@@ -202,7 +204,7 @@
 
 - (QLCycleProgressView *)progressView {
 	if (!_progressView) {
-		_progressView = [[QLCycleProgressView alloc]initWithFrame:CGRectMake(KScreenWidth/2-80,30 , 160, 160)];
+		_progressView = [[QLCycleProgressView alloc]initWithFrame:CGRectMake(KScreenWidth/2-70,30 , 140, 140)];
 	}
 	return _progressView;
 }

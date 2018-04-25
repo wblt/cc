@@ -9,9 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReleaseRecordViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SportRecordViewController">
             <connections>
-                <outlet property="tableView" destination="mWI-V6-2GZ" id="nnI-m0-TZr"/>
+                <outlet property="tableView" destination="kg1-DG-Rqh" id="rfS-cq-Nku"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,17 +20,17 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mWI-V6-2GZ">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kg1-DG-Rqh">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="mWI-V6-2GZ" secondAttribute="bottom" id="803-N6-40M"/>
-                <constraint firstItem="mWI-V6-2GZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Z7S-oV-ETQ"/>
-                <constraint firstItem="mWI-V6-2GZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iA8-zi-DQs"/>
-                <constraint firstAttribute="trailing" secondItem="mWI-V6-2GZ" secondAttribute="trailing" id="p3G-1N-VL8"/>
+                <constraint firstItem="kg1-DG-Rqh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ryp-5q-qu8"/>
+                <constraint firstItem="kg1-DG-Rqh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="VMh-3v-9wl"/>
+                <constraint firstAttribute="bottom" secondItem="kg1-DG-Rqh" secondAttribute="bottom" id="Vgg-00-9E2"/>
+                <constraint firstAttribute="trailing" secondItem="kg1-DG-Rqh" secondAttribute="trailing" id="vVT-et-YNk"/>
             </constraints>
         </view>
     </objects>

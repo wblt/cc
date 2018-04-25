@@ -8,10 +8,10 @@
 
 #import "HashrateShifToWalletVC.h"
 #import "MQVerCodeImageView.h"
-
+#import "UserInfoModel.h"
 @interface HashrateShifToWalletVC ()
 @property (weak, nonatomic) IBOutlet UILabel *hashrateLab;
-@property (weak, nonatomic) IBOutlet UILabel *powerLab;
+@property (weak, nonatomic) IBOutlet UILabel *zeroLab;
 @property (weak, nonatomic) IBOutlet UITextField *numTextField;
 @property (weak, nonatomic) IBOutlet UIView *codeBgView;
 @property (weak, nonatomic) IBOutlet UITextField *codeTextField;
@@ -32,6 +32,12 @@
 }
 
 - (void)setup {
+	UserInfoModel *model = [[BeanManager shareInstace] getBeanfromPath:UserModelPath];
+	_hashrateLab.text = model.S_CURRENCY;
+	_zeroLab.text = model.D_CURRENCY;
+	_numTextField.placeholder = [NSString stringWithFormat:@"最多可转余额为%d",model.D_CURRENCY.intValue];
+	_tipsLab.text = [NSString stringWithFormat:@"本次最多可转入%d算力钱包",model.D_CURRENCY.intValue];
+	
     ViewBorderRadius(_sumbitBtn, 8, 0.6, UIColorFromHex(0x4B5461));
    // _tipsLab.attributedText = [Util setAllText:@"本次最多可转入5000.00算力钱包" andSpcifiStr:@"5000.00" withColor:UIColorFromHex(0x4B5461) specifiStrFont:Font_15];
     
@@ -87,15 +93,15 @@
             [SVProgressHUD showErrorWithStatus:data[@"message"]];
             return ;
         }
+		
+		[SVProgressHUD showSuccessWithStatus:@"转入成功"];
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+			[self.navigationController popViewControllerAnimated:YES];
+		});
         
     } failureBlock:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"网络异常"];
     }];
-    
-    // 转入
-    [SVProgressHUD showSuccessWithStatus:@"转入成功"];
-    
-    
 }
 
 - (void)tapClick:(UITapGestureRecognizer *)tap {
