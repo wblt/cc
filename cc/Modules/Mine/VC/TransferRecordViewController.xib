@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransferRecordViewController">
             <connections>
+                <outlet property="tableView" destination="CXn-0m-d9W" id="Osx-6a-8C6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,7 +19,19 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CXn-0m-d9W">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="CXn-0m-d9W" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Jlj-Dz-9k6"/>
+                <constraint firstAttribute="bottom" secondItem="CXn-0m-d9W" secondAttribute="bottom" id="YFU-gc-nmG"/>
+                <constraint firstAttribute="trailing" secondItem="CXn-0m-d9W" secondAttribute="trailing" id="fEx-8S-Qjb"/>
+                <constraint firstItem="CXn-0m-d9W" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gQY-ye-Vgc"/>
+            </constraints>
         </view>
     </objects>
 </document>

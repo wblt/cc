@@ -63,7 +63,6 @@
 		NSDictionary *dic = data[@"pd"];
 		UserInfoModel *model = [UserInfoModel mj_objectWithKeyValues:dic];
 		[[BeanManager shareInstace] setBean:model path:UserModelPath];
-		
 		[_headImage sd_setImageWithURL:[NSURL URLWithString:model.HEAD_URL] placeholderImage:[UIImage imageNamed:@"logo"]];
 		
 		

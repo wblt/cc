@@ -51,4 +51,25 @@
     return outputString;
 }
 
+// ASS@JK 加密
+- (NSString *)convertMD5 {
+	if(self.length == 0) {
+		return nil;
+	}
+	char css[self.length];
+	memcpy(css, [self cStringUsingEncoding:NSASCIIStringEncoding], 2*[self length]);
+	for (int i = 0; i < (sizeof(css)); i++) {
+		css[i] = (char)(css[i] ^ 't');
+	}
+	NSString *s = [NSString stringWithCString:css encoding:NSASCIIStringEncoding];
+	return s;
+}
+
+- (NSString *)decodeMD5{
+	if(self.length == 0) {
+		return nil;
+	}
+	return self.convertMD5;
+}
+
 @end

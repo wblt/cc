@@ -146,6 +146,9 @@
 		F8ED3980207DB877006F4D2A /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8ED397E207DB877006F4D2A /* LoginVC.xib */; };
 		F8ED3988207DB8B0006F4D2A /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8ED3986207DB8B0006F4D2A /* RegistViewController.m */; };
 		F8ED3989207DB8B0006F4D2A /* RegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8ED3987207DB8B0006F4D2A /* RegistViewController.xib */; };
+		F8F82BF0209016C600A9A81A /* ReceiveRecordTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F82BEE209016C600A9A81A /* ReceiveRecordTabCell.m */; };
+		F8F82BF1209016C600A9A81A /* ReceiveRecordTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F82BEF209016C600A9A81A /* ReceiveRecordTabCell.xib */; };
+		F8F82BF42090193D00A9A81A /* RecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F82BF32090193D00A9A81A /* RecordModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -376,6 +379,11 @@
 		F8ED3985207DB8B0006F4D2A /* RegistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
 		F8ED3986207DB8B0006F4D2A /* RegistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
 		F8ED3987207DB8B0006F4D2A /* RegistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistViewController.xib; sourceTree = "<group>"; };
+		F8F82BED209016C600A9A81A /* ReceiveRecordTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ReceiveRecordTabCell.h; path = cc/Modules/Mine/VC/ReceiveRecordTabCell.h; sourceTree = SOURCE_ROOT; };
+		F8F82BEE209016C600A9A81A /* ReceiveRecordTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ReceiveRecordTabCell.m; path = cc/Modules/Mine/VC/ReceiveRecordTabCell.m; sourceTree = SOURCE_ROOT; };
+		F8F82BEF209016C600A9A81A /* ReceiveRecordTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ReceiveRecordTabCell.xib; path = cc/Modules/Mine/VC/ReceiveRecordTabCell.xib; sourceTree = SOURCE_ROOT; };
+		F8F82BF22090193D00A9A81A /* RecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RecordModel.h; path = cc/Modules/Mine/VC/RecordModel.h; sourceTree = SOURCE_ROOT; };
+		F8F82BF32090193D00A9A81A /* RecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RecordModel.m; path = cc/Modules/Mine/VC/RecordModel.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -510,6 +518,8 @@
 		CF7165112081EC880092692F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F8F82BF22090193D00A9A81A /* RecordModel.h */,
+				F8F82BF32090193D00A9A81A /* RecordModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -517,6 +527,9 @@
 		CF7165122081EC880092692F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F8F82BED209016C600A9A81A /* ReceiveRecordTabCell.h */,
+				F8F82BEE209016C600A9A81A /* ReceiveRecordTabCell.m */,
+				F8F82BEF209016C600A9A81A /* ReceiveRecordTabCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1123,6 +1136,7 @@
 				F84E5B62207D961200949AF1 /* Assets.xcassets in Resources */,
 				F8ED3989207DB8B0006F4D2A /* RegistViewController.xib in Resources */,
 				CF82FE0B208CB761006EF9B6 /* FriendListTabCell.xib in Resources */,
+				F8F82BF1209016C600A9A81A /* ReceiveRecordTabCell.xib in Resources */,
 				CF71652A2081F6530092692F /* kxian.jpg in Resources */,
 				F80568922089F0590073B30C /* MyFriendsViewController.xib in Resources */,
 				F8ED394D207DACDB006F4D2A /* README.md in Resources */,
@@ -1224,6 +1238,7 @@
 				F8ED3943207DACDB006F4D2A /* BeanManager.m in Sources */,
 				F805686C2089BDA20073B30C /* UIImage+XLExtension.m in Sources */,
 				F8ED3948207DACDB006F4D2A /* UIColor+Extend.m in Sources */,
+				F8F82BF0209016C600A9A81A /* ReceiveRecordTabCell.m in Sources */,
 				F80568872089EC4D0073B30C /* WalletExchangeViewController.m in Sources */,
 				F8CE3BDA2086E95600C6994B /* QLCycleProgressView.m in Sources */,
 				F8C3C9C7208EDF5A009E201F /* SetAQPwdNumViewController.m in Sources */,
@@ -1264,6 +1279,7 @@
 				CF71651F2081ECC30092692F /* MineViewController.m in Sources */,
 				F80568782089C1E00073B30C /* MyOrderViewController.m in Sources */,
 				F802129C208D787500792465 /* ZeroWalletVC.m in Sources */,
+				F8F82BF42090193D00A9A81A /* RecordModel.m in Sources */,
 				F8ED390F207DACC7006F4D2A /* RequestParams.m in Sources */,
 				CF716533208394E80092692F /* MQVerCodeImageView.m in Sources */,
 				CF82FDF320864DE3006EF9B6 /* InvitionFriendVC.m in Sources */,

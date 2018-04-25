@@ -90,7 +90,12 @@
 }
 
 - (void)test {
-	NSString *str = @"wyshc";
+	NSString *str = @"13917114404";
+	DLog(@"原始------%@",str);
 	DLog(@"MD5------%@",str.MD5Hash.lowercaseString);
+	
+	DLog(@"加密------%@",str.convertMD5);
+	DLog(@"解密------%@",str.convertMD5.decodeMD5);
 }
+
 @end

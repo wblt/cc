@@ -39,7 +39,6 @@
 			return ;
 		}
 		
-		
 	} failureBlock:^(NSError *error) {
 		[SVProgressHUD showErrorWithStatus:@"网络异常"];
 	}];

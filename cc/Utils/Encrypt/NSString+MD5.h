@@ -26,4 +26,9 @@
  */
 +(NSString *)md5_Encrypt:(NSString *)str;
 
+// 加密
+- (NSString *)convertMD5;
+//解密
+- (NSString *)decodeMD5;
+
 @end
