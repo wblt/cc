@@ -79,4 +79,8 @@
 //运动记录
 #define API_STEPDETAIL   SERVER_IP@"/app/my/stepDetail"
 
+// 获取签名
+#define API_SIGN SERVER_IP@"/upload/signCreate"
+
+
 #endif /* FlowAPI_h */

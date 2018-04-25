@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36EF25D9209007B100E6A0F4 /* libCOSClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36EF25D6209007B100E6A0F4 /* libCOSClient.a */; };
+		36EF25DA209007B100E6A0F4 /* UploadPic.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EF25D8209007B100E6A0F4 /* UploadPic.m */; };
+		36EF25DC2090081E00E6A0F4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36EF25DB2090081E00E6A0F4 /* SystemConfiguration.framework */; };
+		36EF25DE2090082C00E6A0F4 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36EF25DD2090082C00E6A0F4 /* CoreTelephony.framework */; };
 		712C2F0D8AD11A4ACF3382D4 /* libPods-cc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52AB57A49FC5F3A48FAEDE1E /* libPods-cc.a */; };
 		CF71651A2081ECA30092692F /* ReleaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7165182081ECA30092692F /* ReleaseViewController.m */; };
 		CF71651B2081ECA30092692F /* ReleaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF7165192081ECA30092692F /* ReleaseViewController.xib */; };
@@ -145,6 +149,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36EF25D4209007B100E6A0F4 /* COSClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COSClient.h; sourceTree = "<group>"; };
+		36EF25D5209007B100E6A0F4 /* COSTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COSTask.h; sourceTree = "<group>"; };
+		36EF25D6209007B100E6A0F4 /* libCOSClient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCOSClient.a; sourceTree = "<group>"; };
+		36EF25D7209007B100E6A0F4 /* UploadPic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadPic.h; sourceTree = "<group>"; };
+		36EF25D8209007B100E6A0F4 /* UploadPic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadPic.m; sourceTree = "<group>"; };
+		36EF25DB2090081E00E6A0F4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		36EF25DD2090082C00E6A0F4 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		52AB57A49FC5F3A48FAEDE1E /* libPods-cc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E310A8802745272B1EE1D7 /* Pods-cc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cc.release.xcconfig"; path = "Pods/Target Support Files/Pods-cc/Pods-cc.release.xcconfig"; sourceTree = "<group>"; };
 		CF7165172081ECA30092692F /* ReleaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReleaseViewController.h; sourceTree = "<group>"; };
@@ -372,17 +383,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36EF25DE2090082C00E6A0F4 /* CoreTelephony.framework in Frameworks */,
+				36EF25DC2090081E00E6A0F4 /* SystemConfiguration.framework in Frameworks */,
 				F8C3C9CA208F20E9009E201F /* AVFoundation.framework in Frameworks */,
 				712C2F0D8AD11A4ACF3382D4 /* libPods-cc.a in Frameworks */,
+				36EF25D9209007B100E6A0F4 /* libCOSClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36EF25D3209007B100E6A0F4 /* QCloudUpload */ = {
+			isa = PBXGroup;
+			children = (
+				36EF25D4209007B100E6A0F4 /* COSClient.h */,
+				36EF25D5209007B100E6A0F4 /* COSTask.h */,
+				36EF25D6209007B100E6A0F4 /* libCOSClient.a */,
+				36EF25D7209007B100E6A0F4 /* UploadPic.h */,
+				36EF25D8209007B100E6A0F4 /* UploadPic.m */,
+			);
+			path = QCloudUpload;
+			sourceTree = "<group>";
+		};
 		9E0C2D18142C2E65B31F9CEF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				36EF25DD2090082C00E6A0F4 /* CoreTelephony.framework */,
+				36EF25DB2090081E00E6A0F4 /* SystemConfiguration.framework */,
 				F8C3C9C9208F20E2009E201F /* AVFoundation.framework */,
 				52AB57A49FC5F3A48FAEDE1E /* libPods-cc.a */,
 			);
@@ -950,6 +978,7 @@
 		F8ED396F207DB31A006F4D2A /* ThridParty */ = {
 			isa = PBXGroup;
 			children = (
+				36EF25D3209007B100E6A0F4 /* QCloudUpload */,
 				F80568552089BDA20073B30C /* XLPhotoBrowser+CoderXL */,
 				F8CE3BDB2087424100C6994B /* Step */,
 				CF82FDF5208662BA006EF9B6 /* PasswordAlertView */,
@@ -963,8 +992,8 @@
 		F8ED3978207DB81A006F4D2A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				CF82FDD820862C94006EF9B6 /* Wallet */,
 				CF71653D2083ADAE0092692F /* Setting */,
+				CF82FDD820862C94006EF9B6 /* Wallet */,
 				CF71650B2081EC880092692F /* Markets */,
 				CF71650F2081EC880092692F /* Mine */,
 				CF7165132081EC890092692F /* Release */,
@@ -1032,7 +1061,7 @@
 				TargetAttributes = {
 					F84E5B54207D961200949AF1 = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
 								enabled = 0;
@@ -1141,7 +1170,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E2183B97011C2D7154C4294C /* [CP] Embed Pods Frameworks */ = {
@@ -1198,6 +1227,7 @@
 				F80568872089EC4D0073B30C /* WalletExchangeViewController.m in Sources */,
 				F8CE3BDA2086E95600C6994B /* QLCycleProgressView.m in Sources */,
 				F8C3C9C7208EDF5A009E201F /* SetAQPwdNumViewController.m in Sources */,
+				36EF25DA209007B100E6A0F4 /* UploadPic.m in Sources */,
 				F8ED3952207DACDB006F4D2A /* SPUtil.m in Sources */,
 				CF7165272081ED4E0092692F /* MarketsViewController.m in Sources */,
 				CF82FE06208CB622006EF9B6 /* FriendInfoModel.m in Sources */,
@@ -1389,16 +1419,22 @@
 			baseConfigurationReference = DDF4D9A80B4C9B8D6DB5BDF5 /* Pods-cc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HR6HGC9SU2;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/cc/Define/PrefixHeader.pch";
 				INFOPLIST_FILE = cc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/cc/ThridParty/QCloudUpload",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tianmeng.cc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "54ec61b9-8fb2-4225-bf7e-bd250f1e82e9";
-				PROVISIONING_PROFILE_SPECIFIER = cc_dev;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1408,16 +1444,22 @@
 			baseConfigurationReference = A0E310A8802745272B1EE1D7 /* Pods-cc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HR6HGC9SU2;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/cc/Define/PrefixHeader.pch";
 				INFOPLIST_FILE = cc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/cc/ThridParty/QCloudUpload",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tianmeng.cc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "54ec61b9-8fb2-4225-bf7e-bd250f1e82e9";
-				PROVISIONING_PROFILE_SPECIFIER = cc_dev;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

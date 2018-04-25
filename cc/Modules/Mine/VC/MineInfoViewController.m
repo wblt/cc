@@ -11,6 +11,7 @@
 #import "UserInfoModel.h"
 #import <Photos/PHPhotoLibrary.h>
 #import <AVFoundation/AVFoundation.h>
+#import "UploadPic.h"
 @interface MineInfoViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *headImgView;
 @property (weak, nonatomic) IBOutlet UILabel *nickLab;
@@ -111,7 +112,6 @@
 #pragma mark - UIImagePickerController delegate
 //相册处理，获取图片
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {/**<选中照片回调*/
-	
 	_originalImage = [info objectForKey:@"UIImagePickerControllerEditedImage"];
 	if (picker.sourceType == UIImagePickerControllerSourceTypeCamera)
 	{
@@ -120,6 +120,17 @@
 	}
 	_headImgView.image = _originalImage;
 	[self dismissViewControllerAnimated:YES completion:nil];
+    // 上传照片
+    NSString *photoPath = [[UploadPic sharedInstance] photoSavePathForURL:info[UIImagePickerControllerReferenceURL]];
+    NSData *imageData = UIImageJPEGRepresentation(info[UIImagePickerControllerEditedImage],1.0);
+    if ((float)imageData.length/1024 > 100) {//需要测试
+        imageData = UIImageJPEGRepresentation(info[UIImagePickerControllerEditedImage], 1024*100.0/(float)imageData.length);
+    }
+    [imageData writeToFile:photoPath atomically:YES];
+    NSString *fileName = [NSString stringWithFormat:@"%f_%d.jpg", [[NSDate date] timeIntervalSince1970], arc4random()%1000];
+    [[UploadPic sharedInstance] uploadFileMultipartWithPath:photoPath fileName:fileName callback:^(NSString *url) {
+        NSLog(@"%@",url);
+    }];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {/**<不选照片点击取消回调*/
