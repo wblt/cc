@@ -154,6 +154,8 @@
 		F8F82BFC20906C2F00A9A81A /* SportRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F82BFA20906C2F00A9A81A /* SportRecordViewController.xib */; };
 		F8F82C0020906C7400A9A81A /* SportRecordTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F82BFE20906C7400A9A81A /* SportRecordTabCell.m */; };
 		F8F82C0120906C7400A9A81A /* SportRecordTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F82BFF20906C7400A9A81A /* SportRecordTabCell.xib */; };
+		F8F82C0420907DE000A9A81A /* app_loading1.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F82C0220907DDF00A9A81A /* app_loading1.png */; };
+		F8F82C0520907DE000A9A81A /* app_loading0.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F82C0320907DDF00A9A81A /* app_loading0.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -397,6 +399,8 @@
 		F8F82BFD20906C7400A9A81A /* SportRecordTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SportRecordTabCell.h; path = cc/Modules/Mine/VC/SportRecordTabCell.h; sourceTree = SOURCE_ROOT; };
 		F8F82BFE20906C7400A9A81A /* SportRecordTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SportRecordTabCell.m; path = cc/Modules/Mine/VC/SportRecordTabCell.m; sourceTree = SOURCE_ROOT; };
 		F8F82BFF20906C7400A9A81A /* SportRecordTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SportRecordTabCell.xib; path = cc/Modules/Mine/VC/SportRecordTabCell.xib; sourceTree = SOURCE_ROOT; };
+		F8F82C0220907DDF00A9A81A /* app_loading1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_loading1.png; sourceTree = "<group>"; };
+		F8F82C0320907DDF00A9A81A /* app_loading0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_loading0.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -818,6 +822,8 @@
 				F84E5B5B207D961200949AF1 /* ViewController.h */,
 				F84E5B5C207D961200949AF1 /* ViewController.m */,
 				CF7165292081F6530092692F /* kxian.jpg */,
+				F8F82C0320907DDF00A9A81A /* app_loading0.png */,
+				F8F82C0220907DDF00A9A81A /* app_loading1.png */,
 				F84E5B5E207D961200949AF1 /* Main.storyboard */,
 				F84E5B61207D961200949AF1 /* Assets.xcassets */,
 				F84E5B63207D961200949AF1 /* LaunchScreen.storyboard */,
@@ -1140,6 +1146,7 @@
 				CF82FDFA208662BA006EF9B6 /* xxx@2x.png in Resources */,
 				F8ED396E207DB311006F4D2A /* README.md in Resources */,
 				F8ED3951207DACDB006F4D2A /* README.md in Resources */,
+				F8F82C0420907DE000A9A81A /* app_loading1.png in Resources */,
 				CF71652F2082249E0092692F /* OrderListTabCell.xib in Resources */,
 				CF7165452083ADC30092692F /* SettingViewController.xib in Resources */,
 				F8ED3953207DACDB006F4D2A /* back_icon@2x.png in Resources */,
@@ -1175,6 +1182,7 @@
 				F8C3C9BE208EDED1009E201F /* CGPhoneNumViewController.xib in Resources */,
 				F8C3C9B4208ED4E0009E201F /* MoneyTransferViewController.xib in Resources */,
 				CF7165282081ED4E0092692F /* MarketsViewController.xib in Resources */,
+				F8F82C0520907DE000A9A81A /* app_loading0.png in Resources */,
 				CF7165202081ECC30092692F /* MineViewController.xib in Resources */,
 				F8F82BFC20906C2F00A9A81A /* SportRecordViewController.xib in Resources */,
 				CF82FDFB208662BA006EF9B6 /* passwordIcon.png in Resources */,

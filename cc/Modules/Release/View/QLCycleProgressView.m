@@ -37,7 +37,7 @@
     
     CGPoint center = CGPointMake(CGRectGetWidth(self.bounds)/2, CGRectGetHeight(self.bounds)/2);
    
-    CGFloat radius = 90;
+    CGFloat radius = 80;
     CGFloat startA =  M_PI_4 * 3;  //设置进度条起点位置
     CGFloat endA = M_PI * 2 + M_PI_4;  //设置进度条终点位置
     
@@ -96,7 +96,7 @@
     _progress = progress;
     [self countJumpAction2];
     CGPoint center = CGPointMake(CGRectGetWidth(self.bounds)/2, CGRectGetHeight(self.bounds)/2);
-    CGFloat radius = 90;
+    CGFloat radius = 80;
     CGFloat startA =  M_PI_4 * 3;  //设置进度条起点位置
     CGFloat endA = M_PI_4 * 3 + M_PI_2 * 3 * _progress;  //设置进度条终点位置
      UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:startA endAngle:endA clockwise:YES];

@@ -143,7 +143,7 @@
 - (void)addheadthView {
 	[_centerBgView addSubview:self.progressView];
 	_progressView.progress = .0;
-	_progressView.mainColor = [UIColor redColor];
+	_progressView.mainColor = UI_ColorWithRGBA(81, 178, 77, 1.0);
 	_progressView.fillColor = [UIColor whiteColor];
 	_progressView.line_width = 15;
 	
@@ -153,13 +153,20 @@
 		
 	});
 	//动画小人
-	 _birdImage = [[UIImageView alloc]initWithFrame:CGRectMake(KScreenWidth/2-50, 200, 100, 100)]; //实例化一个图片视图
-//	 [_birdImage setAnimationImages:self.imageArr];把保存了图片的数组放进去
-//	 _birdImage.animationRepeatCount = 0;
-//	 _birdImage.animationDuration = 1;//每隔多少秒切换图片
-//	 [_birdImage startAnimating];//开始动画
-	_birdImage.image = [UIImage imageNamed:@"big_logo"];
-	 [_centerBgView addSubview:_birdImage];//添加视图
+	_birdImage = [[UIImageView alloc]init]; //实例化一个图片视图
+	_birdImage.contentMode = UIViewContentModeScaleAspectFit;
+	[_centerBgView addSubview:_birdImage];//添加视图
+	[_birdImage mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.top.equalTo(_progressView.mas_bottom).offset(5);
+		make.centerX.equalTo(_centerBgView);
+		make.bottom.equalTo(_centerBgView.mas_bottom).offset(0);
+		make.width.mas_equalTo(200);
+	}];
+	
+	[_birdImage setAnimationImages:@[[UIImage imageNamed:@"app_loading0"],[UIImage imageNamed:@"app_loading1"]]];//把保存了图片的数组放进去
+	_birdImage.animationRepeatCount = 0;
+	_birdImage.animationDuration = 0.25;//每隔多少秒切换图片
+	[_birdImage startAnimating];//开始动画
 }
 
 - (void)addtapView {
