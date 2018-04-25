@@ -14,11 +14,13 @@
 #import "UploadPic.h"
 @interface MineInfoViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *headImgView;
-@property (weak, nonatomic) IBOutlet UILabel *nickLab;
+@property (weak, nonatomic) IBOutlet UITextField *nickTextField;
+
 @property (weak, nonatomic) IBOutlet UIView *bgView1;
 @property (weak, nonatomic) IBOutlet UIView *bgView2;
 @property(nonatomic,strong) UIImagePickerController *imagePicker;
 @property(nonatomic,strong) UIImage *originalImage;
+@property(nonatomic,copy) NSString *url;
 @end
 
 @implementation MineInfoViewController
@@ -28,12 +30,54 @@
     // Do any additional setup after loading the view from its nib.
 	self.navigationItem.title = @"个人信息";
 	[self setup];
+	[self addNavBtn];
 	[self addTapAction];
 }
 - (void)setup {
 	UserInfoModel *model = [[BeanManager shareInstace] getBeanfromPath:UserModelPath];
-	_nickLab.text = model.NICK_NAME;
+	_nickTextField.text = model.NICK_NAME;
 	[_headImgView sd_setImageWithURL:[NSURL URLWithString:model.HEAD_URL] placeholderImage:[UIImage imageNamed:@"logo"]];
+	_url = model.HEAD_URL;
+}
+
+- (void)addNavBtn {
+	UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+	btn.frame = CGRectMake(0, 0, 40, 30);
+	[btn setTitle:@"完成" forState:UIControlStateNormal];
+	[btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+	btn.titleLabel.font = Font_15;
+	
+	[btn addTapBlock:^(UIButton *btn) {
+		// 修改个人信息
+		if (_nickTextField.text == 0) {
+			[SVProgressHUD showInfoWithStatus:@"请输入昵称"];
+			return ;
+		}
+		
+		RequestParams *params = [[RequestParams alloc] initWithParams:API_CGPERSONMSG];
+		[params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
+		[params addParameter:@"HEAD_URL" value:_url];
+		[params addParameter:@"NICK_NAME" value:_nickTextField.text];
+		
+		
+		[[NetworkSingleton shareInstace] httpPost:params withTitle:@"" successBlock:^(id data) {
+			NSString *code = data[@"code"];
+			if (![code isEqualToString:@"1000"]) {
+				[SVProgressHUD showErrorWithStatus:data[@"message"]];
+				return ;
+			}
+			[SVProgressHUD showSuccessWithStatus:@"修改成功"];
+			
+			
+		} failureBlock:^(NSError *error) {
+			[SVProgressHUD showErrorWithStatus:@"网络异常"];
+		}];
+		
+	}];
+	
+	UIBarButtonItem *anotherButton2 = [[UIBarButtonItem alloc] initWithCustomView:btn];
+	[self.navigationItem setRightBarButtonItem:anotherButton2];
+	
 }
 
 - (void)addTapAction {
@@ -130,6 +174,7 @@
     NSString *fileName = [NSString stringWithFormat:@"%f_%d.jpg", [[NSDate date] timeIntervalSince1970], arc4random()%1000];
     [[UploadPic sharedInstance] uploadFileMultipartWithPath:photoPath fileName:fileName callback:^(NSString *url) {
         NSLog(@"%@",url);
+		_url = url;
     }];
 }
 

@@ -13,8 +13,10 @@
             <connections>
                 <outlet property="ZeroView" destination="LO6-VB-s5g" id="bcA-QG-xXr"/>
                 <outlet property="centerBgView" destination="z8T-Ad-B1B" id="DNg-Eu-Jvl"/>
+                <outlet property="dNumLab" destination="8LN-g7-Yw0" id="8Gi-3T-aUC"/>
                 <outlet property="hashrateView" destination="6C8-Sm-ArX" id="brP-Tf-Jne"/>
                 <outlet property="inviteBtn" destination="oXL-G8-QvI" id="6ZI-6J-Yfi"/>
+                <outlet property="sNumLab" destination="uqL-HZ-7Pg" id="Q66-wO-UyG"/>
                 <outlet property="shiftToHashrateBtn" destination="r0w-bS-tEN" id="lht-l4-DBy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

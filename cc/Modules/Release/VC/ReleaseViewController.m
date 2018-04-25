@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIView *hashrateView;
 @property (weak, nonatomic) IBOutlet UIView *ZeroView;
 @property (weak, nonatomic) IBOutlet UIView *centerBgView;
+@property (weak, nonatomic) IBOutlet UILabel *sNumLab;
+@property (weak, nonatomic) IBOutlet UILabel *dNumLab;
 
 @property (nonatomic, strong) UIImageView *headImage;
 @property (nonatomic, strong) UILabel *nameLab;
@@ -64,7 +66,8 @@
 		UserInfoModel *model = [UserInfoModel mj_objectWithKeyValues:dic];
 		[[BeanManager shareInstace] setBean:model path:UserModelPath];
 		[_headImage sd_setImageWithURL:[NSURL URLWithString:model.HEAD_URL] placeholderImage:[UIImage imageNamed:@"logo"]];
-		
+		_sNumLab.text = model.S_CURRENCY;
+		_dNumLab.text = model.D_CURRENCY;
 		
     } failureBlock:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"网络异常"];
