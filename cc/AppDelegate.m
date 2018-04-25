@@ -36,8 +36,7 @@
 	
 	[SVProgressHUD setMaximumDismissTimeInterval:2.0];
 	
-	// 还未去Bugly 注册appId
-	//[Bugly startWithAppId:@"此处替换为你的AppId"];
+	[Bugly startWithAppId:@"10dcef5d13"];
 	
 	//还未去 蒲公英注册appid
 	//启动基本SDK

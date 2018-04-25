@@ -146,16 +146,21 @@
 		F8ED3980207DB877006F4D2A /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8ED397E207DB877006F4D2A /* LoginVC.xib */; };
 		F8ED3988207DB8B0006F4D2A /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8ED3986207DB8B0006F4D2A /* RegistViewController.m */; };
 		F8ED3989207DB8B0006F4D2A /* RegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8ED3987207DB8B0006F4D2A /* RegistViewController.xib */; };
-		F8F82BF0209016C600A9A81A /* ReceiveRecordTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F82BEE209016C600A9A81A /* ReceiveRecordTabCell.m */; };
-		F8F82BF1209016C600A9A81A /* ReceiveRecordTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F82BEF209016C600A9A81A /* ReceiveRecordTabCell.xib */; };
-		F8F82BF42090193D00A9A81A /* RecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F82BF32090193D00A9A81A /* RecordModel.m */; };
 		F8F82BF7209059FD00A9A81A /* ReleaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F82BF6209059FD00A9A81A /* ReleaseModel.m */; };
 		F8F82BFB20906C2F00A9A81A /* SportRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F82BF920906C2F00A9A81A /* SportRecordViewController.m */; };
 		F8F82BFC20906C2F00A9A81A /* SportRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F82BFA20906C2F00A9A81A /* SportRecordViewController.xib */; };
-		F8F82C0020906C7400A9A81A /* SportRecordTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F82BFE20906C7400A9A81A /* SportRecordTabCell.m */; };
-		F8F82C0120906C7400A9A81A /* SportRecordTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F82BFF20906C7400A9A81A /* SportRecordTabCell.xib */; };
 		F8F82C0420907DE000A9A81A /* app_loading1.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F82C0220907DDF00A9A81A /* app_loading1.png */; };
 		F8F82C0520907DE000A9A81A /* app_loading0.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F82C0320907DDF00A9A81A /* app_loading0.png */; };
+		F8F82C16209086D500A9A81A /* SportRecordTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F82C13209086D500A9A81A /* SportRecordTabCell.m */; };
+		F8F82C17209086D500A9A81A /* SportRecordTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F82C14209086D500A9A81A /* SportRecordTabCell.xib */; };
+		F8F82C1A209086E500A9A81A /* RecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F82C19209086E500A9A81A /* RecordModel.m */; };
+		F8F82C1E2090871C00A9A81A /* ReceiveRecordTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F82C1B2090871C00A9A81A /* ReceiveRecordTabCell.m */; };
+		F8F82C1F2090871C00A9A81A /* ReceiveRecordTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F82C1D2090871C00A9A81A /* ReceiveRecordTabCell.xib */; };
+		F8F82C242090878700A9A81A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F8F82C212090878600A9A81A /* README.md */; };
+		F8F82C252090878700A9A81A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F8F82C232090878600A9A81A /* README.md */; };
+		F8F82C2A209087B300A9A81A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F8F82C27209087B300A9A81A /* README.md */; };
+		F8F82C2B209087B300A9A81A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F8F82C29209087B300A9A81A /* README.md */; };
+		F8F82C2E209087CA00A9A81A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F8F82C2D209087C900A9A81A /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -386,21 +391,26 @@
 		F8ED3985207DB8B0006F4D2A /* RegistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
 		F8ED3986207DB8B0006F4D2A /* RegistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
 		F8ED3987207DB8B0006F4D2A /* RegistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistViewController.xib; sourceTree = "<group>"; };
-		F8F82BED209016C600A9A81A /* ReceiveRecordTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ReceiveRecordTabCell.h; path = cc/Modules/Mine/VC/ReceiveRecordTabCell.h; sourceTree = SOURCE_ROOT; };
-		F8F82BEE209016C600A9A81A /* ReceiveRecordTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ReceiveRecordTabCell.m; path = cc/Modules/Mine/VC/ReceiveRecordTabCell.m; sourceTree = SOURCE_ROOT; };
-		F8F82BEF209016C600A9A81A /* ReceiveRecordTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ReceiveRecordTabCell.xib; path = cc/Modules/Mine/VC/ReceiveRecordTabCell.xib; sourceTree = SOURCE_ROOT; };
-		F8F82BF22090193D00A9A81A /* RecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RecordModel.h; path = cc/Modules/Mine/VC/RecordModel.h; sourceTree = SOURCE_ROOT; };
-		F8F82BF32090193D00A9A81A /* RecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RecordModel.m; path = cc/Modules/Mine/VC/RecordModel.m; sourceTree = SOURCE_ROOT; };
 		F8F82BF5209059FD00A9A81A /* ReleaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReleaseModel.h; sourceTree = "<group>"; };
 		F8F82BF6209059FD00A9A81A /* ReleaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReleaseModel.m; sourceTree = "<group>"; };
 		F8F82BF820906C2F00A9A81A /* SportRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SportRecordViewController.h; sourceTree = "<group>"; };
 		F8F82BF920906C2F00A9A81A /* SportRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SportRecordViewController.m; sourceTree = "<group>"; };
 		F8F82BFA20906C2F00A9A81A /* SportRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportRecordViewController.xib; sourceTree = "<group>"; };
-		F8F82BFD20906C7400A9A81A /* SportRecordTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SportRecordTabCell.h; path = cc/Modules/Mine/VC/SportRecordTabCell.h; sourceTree = SOURCE_ROOT; };
-		F8F82BFE20906C7400A9A81A /* SportRecordTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SportRecordTabCell.m; path = cc/Modules/Mine/VC/SportRecordTabCell.m; sourceTree = SOURCE_ROOT; };
-		F8F82BFF20906C7400A9A81A /* SportRecordTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SportRecordTabCell.xib; path = cc/Modules/Mine/VC/SportRecordTabCell.xib; sourceTree = SOURCE_ROOT; };
 		F8F82C0220907DDF00A9A81A /* app_loading1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_loading1.png; sourceTree = "<group>"; };
 		F8F82C0320907DDF00A9A81A /* app_loading0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_loading0.png; sourceTree = "<group>"; };
+		F8F82C13209086D500A9A81A /* SportRecordTabCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportRecordTabCell.m; sourceTree = "<group>"; };
+		F8F82C14209086D500A9A81A /* SportRecordTabCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SportRecordTabCell.xib; sourceTree = "<group>"; };
+		F8F82C15209086D500A9A81A /* SportRecordTabCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportRecordTabCell.h; sourceTree = "<group>"; };
+		F8F82C18209086E500A9A81A /* RecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordModel.h; sourceTree = "<group>"; };
+		F8F82C19209086E500A9A81A /* RecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordModel.m; sourceTree = "<group>"; };
+		F8F82C1B2090871C00A9A81A /* ReceiveRecordTabCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiveRecordTabCell.m; sourceTree = "<group>"; };
+		F8F82C1C2090871C00A9A81A /* ReceiveRecordTabCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiveRecordTabCell.h; sourceTree = "<group>"; };
+		F8F82C1D2090871C00A9A81A /* ReceiveRecordTabCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReceiveRecordTabCell.xib; sourceTree = "<group>"; };
+		F8F82C212090878600A9A81A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F8F82C232090878600A9A81A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F8F82C27209087B300A9A81A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F8F82C29209087B300A9A81A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F8F82C2D209087C900A9A81A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -445,8 +455,8 @@
 		CF71650B2081EC880092692F /* Markets */ = {
 			isa = PBXGroup;
 			children = (
+				F8F82C2C209087C900A9A81A /* Model */,
 				CF71650C2081EC880092692F /* VC */,
-				CF71650D2081EC880092692F /* Model */,
 				CF71650E2081EC880092692F /* View */,
 			);
 			path = Markets;
@@ -468,13 +478,6 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
-		CF71650D2081EC880092692F /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		CF71650E2081EC880092692F /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,9 +491,9 @@
 		CF71650F2081EC880092692F /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				F8F82C07209085FD00A9A81A /* View */,
+				F8F82C06209085F500A9A81A /* Model */,
 				CF7165102081EC880092692F /* VC */,
-				CF7165112081EC880092692F /* Model */,
-				CF7165122081EC880092692F /* View */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -533,28 +536,6 @@
 				F8F82BFA20906C2F00A9A81A /* SportRecordViewController.xib */,
 			);
 			path = VC;
-			sourceTree = "<group>";
-		};
-		CF7165112081EC880092692F /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				F8F82BF22090193D00A9A81A /* RecordModel.h */,
-				F8F82BF32090193D00A9A81A /* RecordModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		CF7165122081EC880092692F /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F8F82BED209016C600A9A81A /* ReceiveRecordTabCell.h */,
-				F8F82BEE209016C600A9A81A /* ReceiveRecordTabCell.m */,
-				F8F82BEF209016C600A9A81A /* ReceiveRecordTabCell.xib */,
-				F8F82BFD20906C7400A9A81A /* SportRecordTabCell.h */,
-				F8F82BFE20906C7400A9A81A /* SportRecordTabCell.m */,
-				F8F82BFF20906C7400A9A81A /* SportRecordTabCell.xib */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		CF7165132081EC890092692F /* Release */ = {
@@ -646,9 +627,9 @@
 		CF71653D2083ADAE0092692F /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				F8F82C202090878600A9A81A /* Model */,
+				F8F82C222090878600A9A81A /* View */,
 				CF71653E2083ADAE0092692F /* VC */,
-				CF71653F2083ADAE0092692F /* Model */,
-				CF7165402083ADAE0092692F /* View */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -672,26 +653,12 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
-		CF71653F2083ADAE0092692F /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		CF7165402083ADAE0092692F /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		CF82FDD820862C94006EF9B6 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				F8F82C26209087B300A9A81A /* Model */,
+				F8F82C28209087B300A9A81A /* View */,
 				CF82FDD920862C94006EF9B6 /* VC */,
-				CF82FDDA20862C94006EF9B6 /* Model */,
-				CF82FDDB20862C94006EF9B6 /* View */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -710,20 +677,6 @@
 				F802129B208D787500792465 /* ZeroWalletVC.xib */,
 			);
 			path = VC;
-			sourceTree = "<group>";
-		};
-		CF82FDDA20862C94006EF9B6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		CF82FDDB20862C94006EF9B6 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		CF82FDF5208662BA006EF9B6 /* PasswordAlertView */ = {
@@ -1067,6 +1020,68 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
+		F8F82C06209085F500A9A81A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F8F82C18209086E500A9A81A /* RecordModel.h */,
+				F8F82C19209086E500A9A81A /* RecordModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F8F82C07209085FD00A9A81A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F8F82C1C2090871C00A9A81A /* ReceiveRecordTabCell.h */,
+				F8F82C1B2090871C00A9A81A /* ReceiveRecordTabCell.m */,
+				F8F82C1D2090871C00A9A81A /* ReceiveRecordTabCell.xib */,
+				F8F82C15209086D500A9A81A /* SportRecordTabCell.h */,
+				F8F82C13209086D500A9A81A /* SportRecordTabCell.m */,
+				F8F82C14209086D500A9A81A /* SportRecordTabCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F8F82C202090878600A9A81A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F8F82C212090878600A9A81A /* README.md */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F8F82C222090878600A9A81A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F8F82C232090878600A9A81A /* README.md */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F8F82C26209087B300A9A81A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F8F82C27209087B300A9A81A /* README.md */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F8F82C28209087B300A9A81A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F8F82C29209087B300A9A81A /* README.md */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F8F82C2C209087C900A9A81A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F8F82C2D209087C900A9A81A /* README.md */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1135,8 +1150,8 @@
 			files = (
 				F80568972089F12F0073B30C /* NewsDetailsViewController.xib in Resources */,
 				F8ED3945207DACDB006F4D2A /* README.md in Resources */,
+				F8F82C1F2090871C00A9A81A /* ReceiveRecordTabCell.xib in Resources */,
 				F80212A7208D8D3B00792465 /* MineVC.xib in Resources */,
-				F8F82C0120906C7400A9A81A /* SportRecordTabCell.xib in Resources */,
 				F802129D208D787500792465 /* ZeroWalletVC.xib in Resources */,
 				F80212A2208D82DA00792465 /* AllRecodeTabCell.xib in Resources */,
 				F84E5B65207D961200949AF1 /* LaunchScreen.storyboard in Resources */,
@@ -1150,6 +1165,7 @@
 				CF71652F2082249E0092692F /* OrderListTabCell.xib in Resources */,
 				CF7165452083ADC30092692F /* SettingViewController.xib in Resources */,
 				F8ED3953207DACDB006F4D2A /* back_icon@2x.png in Resources */,
+				F8F82C242090878700A9A81A /* README.md in Resources */,
 				F8C3C9CF208F3070009E201F /* ReceiveRecordVC.xib in Resources */,
 				F80568792089C1E00073B30C /* MyOrderViewController.xib in Resources */,
 				F8C3C9C3208EDEFE009E201F /* CGPwdNumViewController.xib in Resources */,
@@ -1165,7 +1181,6 @@
 				F84E5B62207D961200949AF1 /* Assets.xcassets in Resources */,
 				F8ED3989207DB8B0006F4D2A /* RegistViewController.xib in Resources */,
 				CF82FE0B208CB761006EF9B6 /* FriendListTabCell.xib in Resources */,
-				F8F82BF1209016C600A9A81A /* ReceiveRecordTabCell.xib in Resources */,
 				CF71652A2081F6530092692F /* kxian.jpg in Resources */,
 				F80568922089F0590073B30C /* MyFriendsViewController.xib in Resources */,
 				F8ED394D207DACDB006F4D2A /* README.md in Resources */,
@@ -1175,6 +1190,7 @@
 				F8ED390E207DACC7006F4D2A /* README.md in Resources */,
 				F8C3C9C8208EDF5A009E201F /* SetAQPwdNumViewController.xib in Resources */,
 				F8ED394F207DACDB006F4D2A /* README.md in Resources */,
+				F8F82C252090878700A9A81A /* README.md in Resources */,
 				F80568832089D8C40073B30C /* TransferViewController.xib in Resources */,
 				CF716538208399C60092692F /* ForgetPwdViewController.xib in Resources */,
 				F8ED395D207DACDB006F4D2A /* README.md in Resources */,
@@ -1186,15 +1202,19 @@
 				CF7165202081ECC30092692F /* MineViewController.xib in Resources */,
 				F8F82BFC20906C2F00A9A81A /* SportRecordViewController.xib in Resources */,
 				CF82FDFB208662BA006EF9B6 /* passwordIcon.png in Resources */,
+				F8F82C2E209087CA00A9A81A /* README.md in Resources */,
 				F8ED394E207DACDB006F4D2A /* README.md in Resources */,
 				F805687E2089C9A50073B30C /* CompoundSettingViewController.xib in Resources */,
 				F84E5B60207D961200949AF1 /* Main.storyboard in Resources */,
 				F80568882089EC4D0073B30C /* WalletExchangeViewController.xib in Resources */,
+				F8F82C17209086D500A9A81A /* SportRecordTabCell.xib in Resources */,
 				F8ED3957207DACDB006F4D2A /* README.md in Resources */,
 				F8C3C9B9208ED9D2009E201F /* PowerCGViewController.xib in Resources */,
 				F8ED3954207DACDB006F4D2A /* back_icon@3x.png in Resources */,
+				F8F82C2B209087B300A9A81A /* README.md in Resources */,
 				F8CE3BED208746AB00C6994B /* DealViewController.xib in Resources */,
 				CF82FDE520863E2D006EF9B6 /* NewsVC.xib in Resources */,
+				F8F82C2A209087B300A9A81A /* README.md in Resources */,
 				F8ED3971207DB31A006F4D2A /* README.md in Resources */,
 				F8ED3956207DACDB006F4D2A /* close_icon@3x.png in Resources */,
 			);
@@ -1269,7 +1289,6 @@
 				F8ED3943207DACDB006F4D2A /* BeanManager.m in Sources */,
 				F805686C2089BDA20073B30C /* UIImage+XLExtension.m in Sources */,
 				F8ED3948207DACDB006F4D2A /* UIColor+Extend.m in Sources */,
-				F8F82BF0209016C600A9A81A /* ReceiveRecordTabCell.m in Sources */,
 				F80568872089EC4D0073B30C /* WalletExchangeViewController.m in Sources */,
 				F8CE3BDA2086E95600C6994B /* QLCycleProgressView.m in Sources */,
 				F8C3C9C7208EDF5A009E201F /* SetAQPwdNumViewController.m in Sources */,
@@ -1282,6 +1301,7 @@
 				F8CE3BEC208746AB00C6994B /* DealViewController.m in Sources */,
 				F8ED3947207DACDB006F4D2A /* UICollectionView+IndexPath.m in Sources */,
 				F8ED396C207DB311006F4D2A /* BaseNavViewController.m in Sources */,
+				F8F82C1E2090871C00A9A81A /* ReceiveRecordTabCell.m in Sources */,
 				F8C3C9B3208ED4E0009E201F /* MoneyTransferViewController.m in Sources */,
 				CF82FE12208CF8C2006EF9B6 /* ReleaseRecordViewController.m in Sources */,
 				F805686E2089BDA20073B30C /* FSActionSheet.m in Sources */,
@@ -1295,6 +1315,7 @@
 				F80212A1208D82DA00792465 /* AllRecodeTabCell.m in Sources */,
 				F805687D2089C9A50073B30C /* CompoundSettingViewController.m in Sources */,
 				F8F82BF7209059FD00A9A81A /* ReleaseModel.m in Sources */,
+				F8F82C16209086D500A9A81A /* SportRecordTabCell.m in Sources */,
 				CF82FDE920863EBA006EF9B6 /* NewsTabCell.m in Sources */,
 				F8ED395C207DACDB006F4D2A /* SYCacheManager.m in Sources */,
 				CF7165442083ADC30092692F /* SettingViewController.m in Sources */,
@@ -1311,12 +1332,10 @@
 				CF71651F2081ECC30092692F /* MineViewController.m in Sources */,
 				F80568782089C1E00073B30C /* MyOrderViewController.m in Sources */,
 				F802129C208D787500792465 /* ZeroWalletVC.m in Sources */,
-				F8F82BF42090193D00A9A81A /* RecordModel.m in Sources */,
 				F8ED390F207DACC7006F4D2A /* RequestParams.m in Sources */,
 				CF716533208394E80092692F /* MQVerCodeImageView.m in Sources */,
 				CF82FDF320864DE3006EF9B6 /* InvitionFriendVC.m in Sources */,
 				F8ED3949207DACDB006F4D2A /* UIView+Extend.m in Sources */,
-				F8F82C0020906C7400A9A81A /* SportRecordTabCell.m in Sources */,
 				CF82FE0E208CB982006EF9B6 /* ErrorView.m in Sources */,
 				CF716537208399C60092692F /* ForgetPwdViewController.m in Sources */,
 				F8C3C9BD208EDED1009E201F /* CGPhoneNumViewController.m in Sources */,
@@ -1325,6 +1344,7 @@
 				F8ED394A207DACDB006F4D2A /* UIViewController+AlertViewAndActionSheet.m in Sources */,
 				F8ED395A207DACDB006F4D2A /* SureWebViewController.m in Sources */,
 				F80568722089BDA20073B30C /* XLPhotoBrowser.m in Sources */,
+				F8F82C1A209086E500A9A81A /* RecordModel.m in Sources */,
 				F8F82BFB20906C2F00A9A81A /* SportRecordViewController.m in Sources */,
 				F805686F2089BDA20073B30C /* FSActionSheetCell.m in Sources */,
 				F805686D2089BDA20073B30C /* UIView+XLExtension.m in Sources */,
