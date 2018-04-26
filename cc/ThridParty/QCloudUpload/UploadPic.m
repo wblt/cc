@@ -46,7 +46,7 @@
     // 请求签名
     RequestParams *params = [[RequestParams alloc] initWithParams:API_SIGN];
     [[NetworkSingleton shareInstace] httpPost:params withTitle:@"签名" successBlock:^(id data) {
-        NSString *code = data[@"cdoe"];
+        NSString *code = data[@"code"];
         if (![code isEqualToString:@"1000"]) {
             [SVProgressHUD showErrorWithStatus:data[@"message"]];
             return ;
