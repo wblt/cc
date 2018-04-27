@@ -15,6 +15,7 @@
 #import "QLCycleProgressView.h"
 #import "MyFriendsViewController.h"
 #import "UserInfoModel.h"
+#import "HGBStepTool.h"
 @interface ReleaseViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *shiftToHashrateBtn;
 @property (weak, nonatomic) IBOutlet UIButton *inviteBtn;
@@ -32,9 +33,42 @@
 
 @implementation ReleaseViewController
 
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 	[self requestData];
+	
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	NSDate *now = [NSDate date];
+	NSDateComponents *components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:now];
+	[components setHour:0];
+	[components setMinute:0];
+	[components setSecond: 0];
+	
+	NSDate *startDate = [calendar dateFromComponents:components];
+	NSDate *endDate = [calendar dateByAddingUnit:NSCalendarUnitDay value:1 toDate:startDate options:0];
+	
+	MJWeakSelf
+	[[HGBStepTool shareInstance] queryStepDataFromDate:startDate toDate:endDate andWithReslut:^(BOOL status, NSDictionary *returnMessage) {
+		
+		/*
+		 {
+		 distance = "754.1300000017509";
+		 floorsAscended = "(null)";
+		 floorsDescended = "(null)";
+		 numberOfSteps = 1201;
+		 }
+		 */
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+			_progressView.stepNum = [returnMessage[@"numberOfSteps"] integerValue];
+			//最大步数量
+			_progressView.progress = (float)_progressView.stepNum/10000;
+			//上传到服务器
+			[weakSelf updataDayStep:[NSString stringWithFormat:@"%ld",_progressView.stepNum]];
+		});
+		
+	}];
+	
 }
 
 - (void)viewDidLoad {
@@ -47,7 +81,7 @@
 	[self addheadthView];
     [self addtapView];
 	
-	//[self updataDayStep];
+	//
 	
 }
 
@@ -76,11 +110,11 @@
     }];
 }
 
-- (void)updataDayStep {
+- (void)updataDayStep:(NSString *)step {
     // 记录步数
     RequestParams *params = [[RequestParams alloc] initWithParams:API_DAYSTEP];
     [params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
-    [params addParameter:@"USER_STEP" value:@"1000"];
+    [params addParameter:@"USER_STEP" value:step];
     [params addParameter:@"CREATE_TIME" value:[Util getCurrentTime]];
     
     [[NetworkSingleton shareInstace] httpPost:params withTitle:@"记录步数" successBlock:^(id data) {
@@ -147,11 +181,6 @@
 	_progressView.fillColor = [UIColor whiteColor];
 	_progressView.line_width = 15;
 	
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-		_progressView.stepNum = 6000;
-		_progressView.progress = .6;
-		
-	});
 	//动画小人
 	_birdImage = [[UIImageView alloc]init]; //实例化一个图片视图
 	_birdImage.contentMode = UIViewContentModeScaleAspectFit;

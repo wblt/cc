@@ -104,7 +104,7 @@
     [params addParameter:@"USER_NAME" value:_phoneTextField.text];
     [params addParameter:@"PASSWORD" value:_pwdTextField.text];
     
-    
+    [SVProgressHUD showWithStatus:@"请稍后"];
     [[NetworkSingleton shareInstace] httpPost:params withTitle:@"登陆" successBlock:^(id data) {
         NSString *code = data[@"code"];
         if (![code isEqualToString:@"1000"]) {
@@ -128,7 +128,7 @@
       
         
     } failureBlock:^(NSError *error) {
-        
+        [SVProgressHUD showErrorWithStatus:@"网络异常"];
     }];
 }
 

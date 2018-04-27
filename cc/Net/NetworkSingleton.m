@@ -75,7 +75,7 @@ static AFHTTPSessionManager *manager;
         }
         DLog(@"%@参数:{{%@}}",title,values);
     }
-    [SVProgressHUD showWithStatus:@"请稍后"];
+    //[SVProgressHUD showWithStatus:@"请稍后"];
     [manager POST:requestURL parameters:parmas progress:^(NSProgress * _Nonnull uploadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [SVProgressHUD dismiss];

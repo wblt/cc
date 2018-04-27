@@ -121,7 +121,7 @@
     [params addParameter:@"USER_NAME" value:_userNameTextField.text];
     [params addParameter:@"SJYZM" value:_codeTextFiedl.text];
     [params addParameter:@"PASSWORD" value:_pwdTextField.text];
-    
+    [SVProgressHUD showWithStatus:@"请稍后"];
     [[NetworkSingleton shareInstace] httpPost:params withTitle:@"忘记密码" successBlock:^(id data) {
         NSString *code = data[@"code"];
         if (![code isEqualToString:@"1000"]) {

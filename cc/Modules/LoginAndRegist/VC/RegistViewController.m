@@ -147,7 +147,8 @@
     [params addParameter:@"ACCOUNT" value:_phonetextField.text];
     [params addParameter:@"SJYZM" value:_codeTextField.text];
     [params addParameter:@"YQ_CODE" value:_invitattextField.text];
-    
+	
+	[SVProgressHUD showWithStatus:@"请稍后"];
     [[NetworkSingleton shareInstace] httpPost:params withTitle:@"" successBlock:^(id data) {
         NSString *code = data[@"code"];
         if (![code isEqualToString:@"1000"]) {
@@ -162,10 +163,6 @@
     } failureBlock:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"网络异常"];
     }];
-    
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
