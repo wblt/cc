@@ -12,6 +12,7 @@
 #import <IQKeyboardManager.h>
 #import "DealViewController.h"
 #import "PNChart.h"
+#import "AAChartKit.h"
 
 static NSString *Identifier = @"cell";
 
@@ -24,7 +25,7 @@ static NSString *Identifier = @"cell";
 @property (weak, nonatomic) IBOutlet UIView *bottomSellView;
 @property (weak, nonatomic) IBOutlet UIView *chartBgView;
 @property (nonatomic) PNLineChart * lineChart;
-
+@property (nonatomic,strong)AAChartView *aaChartView;
 @end
 
 @implementation MarketsViewController
@@ -62,58 +63,48 @@ static NSString *Identifier = @"cell";
 }
 	
 - (void)addChartView {
-	
-//	//For Line Chart
-//	self.lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(0, 30, SCREEN_WIDTH, 200.0)];
-//	self.lineChart.showCoordinateAxis = YES;
-//	self.lineChart.yLabelFormat = @"%1.1f";
-//	self.lineChart.xLabelFont = Font_12;
-//	self.lineChart.yLabelColor = [UIColor whiteColor];
-//	self.lineChart.xLabelColor = [UIColor whiteColor];
-//	self.lineChart.backgroundColor = [UIColor clearColor];
-//	self.lineChart.showGenYLabels = YES;
-//	self.lineChart.showYGridLines = YES;
-//	[self.lineChart setXLabels:@[@"4.22", @"4.23", @"4.24", @"4.25", @"4.26", @"4.27", @"4.28"]];
-//
-//	self.lineChart.yFixedValueMax = 10.0;
-//	self.lineChart.yFixedValueMin = -0.5;
-//	[self.lineChart setYLabels:@[
-//							 								 @"0",
-//							 								 @"2",
-//							 								 @"4",
-//							 								 @"6",
-//							 								 @"8",
-//							 								 @"10",
-//							 								 ]
-//							 	 ];
-//
-//	// Line Chart No.1
-//	NSArray * data01Array = @[@2, @4, @1, @3, @7, @5, @9];
-//	PNLineChartData *data01 = [PNLineChartData new];
-//	data01.color = PNFreshGreen;
-//	data01.itemCount = self.lineChart.xLabels.count;
-//	data01.dataTitle = @"走势图";
-//	data01.showPointLabel = YES;
-//	data01.pointLabelColor = [UIColor whiteColor];
-//	data01.pointLabelFont = [UIFont systemFontOfSize:8];
-//	data01.inflexionPointStyle = PNLineChartPointStyleCircle;
-//	data01.inflexionPointColor = [UIColor whiteColor];
-//	data01.getData = ^(NSUInteger index) {
-//		CGFloat yValue = [data01Array[index] floatValue];
-//		return [PNLineChartDataItem dataItemWithY:yValue-0.5 andRawY:yValue];
-//	};
-//	self.lineChart.chartData = @[data01];
-//	[self.chartBgView addSubview:self.lineChart];
-//
-//	self.lineChart.legendStyle = PNLegendItemStyleStacked;
-//	self.lineChart.legendFont = [UIFont boldSystemFontOfSize:12.0f];
-//	self.lineChart.legendFontColor = [UIColor whiteColor];
-//	UIView *legend = [self.lineChart getLegendWithMaxWidth:320];
-//	[legend setFrame:CGRectMake(30, 240, legend.frame.size.width, legend.frame.size.width)];
-//	[self.chartBgView addSubview:legend];
-//
-//	[self.lineChart strokeChart];
-	
+    CGFloat chartViewWidth  = KScreenWidth;
+    CGFloat chartViewHeight = 200;
+    self.aaChartView = [[AAChartView alloc]init];
+   
+    self.aaChartView.frame = CGRectMake(0, 30, chartViewWidth, chartViewHeight);
+    ////禁用 AAChartView 滚动效果(默认不禁用)
+    self.aaChartView.scrollEnabled = NO;
+    [self.chartBgView addSubview:self.aaChartView];
+    //设置 AAChartView 的背景色是否为透明
+    self.aaChartView.isClearBackgroundColor = YES;
+    
+    AAMarker *marker = AAObject(AAMarker)
+    .fillColorSet(@"#FFFFFF");
+    
+    AAChartModel *aaChartModel= AAObject(AAChartModel)
+    .chartTypeSet(AAChartTypeLine)//设置图表的类型
+    .backgroundColorSet(@"#020919")
+    .symbolSet(AAChartSymbolTypeCircle)
+    .titleSet(@"")//设置图表标题
+    .subtitleSet(@"价格")//设置图表副标题
+    .subtitleFontColorSet(@"#FFFFFF")
+    .categoriesSet(@[@"4.22",@"4.23",@"4.24",@"4.25", @"4.26",@"4.27",@"4.28"])//图表横轴的内容
+    .yAxisTitleSet(@"")//设置图表 y 轴的单位
+    .dataLabelEnabledSet(YES)
+    .yAxisTickPositionsSet(@[@(0),@(2),@(4),@(6),@(8),@(10)])
+    .yAxisMaxSet(@10)
+    .yAxisMinSet(@0)
+    .yAxisLabelsFontColorSet(@"#FFFFFF")
+    .xAxisLabelsFontColorSet(@"#FFFFFF")
+    .seriesSet(@[
+                 AAObject(AASeriesElement)
+                 .nameSet(@"走势图")
+                 .colorSet(@"#51B24D")
+                 .negativeColorSet(@"#AFAg01")
+                 .dataSet(@[@1.0, @3.9, @2.5, @9, @4, @8, @2])
+                 .markerSet(marker),
+                 ])
+    
+    ;
+    
+    [self.aaChartView aa_drawChartWithChartModel:aaChartModel];
+    
 }
 	
 - (IBAction)buyAction:(UIButton *)sender {
