@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,6 +14,7 @@
                 <outlet property="bottomBuyView" destination="ZUM-Ea-FHR" id="6Gv-jd-0Cf"/>
                 <outlet property="bottomSellView" destination="PXm-DJ-dXl" id="rXH-XW-cxP"/>
                 <outlet property="buyBtn" destination="kPt-Ek-kth" id="ZYd-1i-B76"/>
+                <outlet property="chartBgView" destination="IHN-XK-Q5T" id="GFG-ZW-KtO"/>
                 <outlet property="sellBtn" destination="Dq5-SG-WAM" id="2Zp-eG-juh"/>
                 <outlet property="tableView" destination="cr0-VJ-rTs" id="ffb-1K-00u"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -24,24 +25,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHN-XK-Q5T">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kxian.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Ri2-S0-O0y">
-                            <rect key="frame" x="10" y="10" width="355" height="130"/>
-                        </imageView>
-                    </subviews>
-                    <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="Ri2-S0-O0y" firstAttribute="leading" secondItem="IHN-XK-Q5T" secondAttribute="leading" constant="10" id="Fve-Bh-xJz"/>
-                        <constraint firstAttribute="trailing" secondItem="Ri2-S0-O0y" secondAttribute="trailing" constant="10" id="mcj-rJ-ZfI"/>
-                        <constraint firstAttribute="bottom" secondItem="Ri2-S0-O0y" secondAttribute="bottom" constant="10" id="mn3-rR-rOU"/>
-                        <constraint firstAttribute="height" constant="150" id="pAQ-fU-CS3"/>
-                        <constraint firstItem="Ri2-S0-O0y" firstAttribute="top" secondItem="IHN-XK-Q5T" secondAttribute="top" constant="10" id="t9n-PC-jN9"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6IO-pQ-o9h">
-                    <rect key="frame" x="0.0" y="150" width="375" height="40"/>
+                    <rect key="frame" x="0.0" y="300" width="375" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPt-Ek-kth">
                             <rect key="frame" x="0.0" y="0.0" width="187.5" height="38"/>
@@ -104,9 +89,16 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cr0-VJ-rTs">
-                    <rect key="frame" x="0.0" y="190" width="375" height="477"/>
+                    <rect key="frame" x="0.0" y="340" width="375" height="327"/>
                     <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHN-XK-Q5T">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                    <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="pAQ-fU-CS3"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -124,7 +116,4 @@
             <point key="canvasLocation" x="49.5" y="59.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="kxian.jpg" width="960" height="630"/>
-    </resources>
 </document>

@@ -11,15 +11,19 @@
 #import "PasswordAlertView.h"
 #import <IQKeyboardManager.h>
 #import "DealViewController.h"
+#import "PNChart.h"
+
 static NSString *Identifier = @"cell";
 
-@interface MarketsViewController ()<UITableViewDelegate,UITableViewDataSource,PasswordAlertViewDelegate,OrderListTabCellDelegate>
+@interface MarketsViewController ()<UITableViewDelegate,UITableViewDataSource,PasswordAlertViewDelegate,OrderListTabCellDelegate,PNChartDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) PasswordAlertView *alertView;
 @property (weak, nonatomic) IBOutlet UIButton *buyBtn;
 @property (weak, nonatomic) IBOutlet UIButton *sellBtn;
 @property (weak, nonatomic) IBOutlet UIView *bottomBuyView;
 @property (weak, nonatomic) IBOutlet UIView *bottomSellView;
+@property (weak, nonatomic) IBOutlet UIView *chartBgView;
+@property (nonatomic) PNLineChart * lineChart;
 
 @end
 
@@ -53,8 +57,65 @@ static NSString *Identifier = @"cell";
     
 	[self addNavBtn];
     [self setup];
+	[self addChartView];
 	
 }
+	
+- (void)addChartView {
+	
+//	//For Line Chart
+//	self.lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(0, 30, SCREEN_WIDTH, 200.0)];
+//	self.lineChart.showCoordinateAxis = YES;
+//	self.lineChart.yLabelFormat = @"%1.1f";
+//	self.lineChart.xLabelFont = Font_12;
+//	self.lineChart.yLabelColor = [UIColor whiteColor];
+//	self.lineChart.xLabelColor = [UIColor whiteColor];
+//	self.lineChart.backgroundColor = [UIColor clearColor];
+//	self.lineChart.showGenYLabels = YES;
+//	self.lineChart.showYGridLines = YES;
+//	[self.lineChart setXLabels:@[@"4.22", @"4.23", @"4.24", @"4.25", @"4.26", @"4.27", @"4.28"]];
+//
+//	self.lineChart.yFixedValueMax = 10.0;
+//	self.lineChart.yFixedValueMin = -0.5;
+//	[self.lineChart setYLabels:@[
+//							 								 @"0",
+//							 								 @"2",
+//							 								 @"4",
+//							 								 @"6",
+//							 								 @"8",
+//							 								 @"10",
+//							 								 ]
+//							 	 ];
+//
+//	// Line Chart No.1
+//	NSArray * data01Array = @[@2, @4, @1, @3, @7, @5, @9];
+//	PNLineChartData *data01 = [PNLineChartData new];
+//	data01.color = PNFreshGreen;
+//	data01.itemCount = self.lineChart.xLabels.count;
+//	data01.dataTitle = @"走势图";
+//	data01.showPointLabel = YES;
+//	data01.pointLabelColor = [UIColor whiteColor];
+//	data01.pointLabelFont = [UIFont systemFontOfSize:8];
+//	data01.inflexionPointStyle = PNLineChartPointStyleCircle;
+//	data01.inflexionPointColor = [UIColor whiteColor];
+//	data01.getData = ^(NSUInteger index) {
+//		CGFloat yValue = [data01Array[index] floatValue];
+//		return [PNLineChartDataItem dataItemWithY:yValue-0.5 andRawY:yValue];
+//	};
+//	self.lineChart.chartData = @[data01];
+//	[self.chartBgView addSubview:self.lineChart];
+//
+//	self.lineChart.legendStyle = PNLegendItemStyleStacked;
+//	self.lineChart.legendFont = [UIFont boldSystemFontOfSize:12.0f];
+//	self.lineChart.legendFontColor = [UIColor whiteColor];
+//	UIView *legend = [self.lineChart getLegendWithMaxWidth:320];
+//	[legend setFrame:CGRectMake(30, 240, legend.frame.size.width, legend.frame.size.width)];
+//	[self.chartBgView addSubview:legend];
+//
+//	[self.lineChart strokeChart];
+	
+}
+	
 - (IBAction)buyAction:(UIButton *)sender {
 	if (!sender.selected) {
 		sender.selected = !sender.selected;
@@ -150,7 +211,7 @@ static NSString *Identifier = @"cell";
 	
 	
 	
-    
+	
 }
 
 - (void)OrderListTabCellMacth:(NSInteger)index {
@@ -197,6 +258,14 @@ static NSString *Identifier = @"cell";
     NSLog(@"点击了忘记密码按钮");
 }
 
+
+- (void)userClickedOnLineKeyPoint:(CGPoint)point lineIndex:(NSInteger)lineIndex pointIndex:(NSInteger)pointIndex {
+	NSLog(@"Click Key on line %f, %f line index is %d and point index is %d", point.x, point.y, (int) lineIndex, (int) pointIndex);
+}
+	
+- (void)userClickedOnLinePoint:(CGPoint)point lineIndex:(NSInteger)lineIndex {
+	NSLog(@"Click on line %f, %f, line index is %d", point.x, point.y, (int) lineIndex);
+}
 
 
 - (void)didReceiveMemoryWarning {
