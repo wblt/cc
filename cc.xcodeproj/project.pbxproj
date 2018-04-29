@@ -51,6 +51,8 @@
 		CFF1AF6B2095A6870008898A /* ReceiveAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFF1AF692095A6870008898A /* ReceiveAddressViewController.xib */; };
 		CFF1AF7E2095B6C40008898A /* WCQRCodeScanningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1AF7D2095B6C40008898A /* WCQRCodeScanningVC.m */; };
 		CFF1AF812095C74D0008898A /* KDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1AF802095C74D0008898A /* KDataModel.m */; };
+		CFF1AF852096129E0008898A /* PayInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1AF832096129E0008898A /* PayInfoViewController.m */; };
+		CFF1AF862096129E0008898A /* PayInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFF1AF842096129E0008898A /* PayInfoViewController.xib */; };
 		F802129C208D787500792465 /* ZeroWalletVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F802129A208D787500792465 /* ZeroWalletVC.m */; };
 		F802129D208D787500792465 /* ZeroWalletVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F802129B208D787500792465 /* ZeroWalletVC.xib */; };
 		F80212A1208D82DA00792465 /* AllRecodeTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F802129F208D82DA00792465 /* AllRecodeTabCell.m */; };
@@ -294,6 +296,9 @@
 		CFF1AF7D2095B6C40008898A /* WCQRCodeScanningVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCQRCodeScanningVC.m; sourceTree = "<group>"; };
 		CFF1AF7F2095C74D0008898A /* KDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KDataModel.h; sourceTree = "<group>"; };
 		CFF1AF802095C74D0008898A /* KDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KDataModel.m; sourceTree = "<group>"; };
+		CFF1AF822096129E0008898A /* PayInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayInfoViewController.h; sourceTree = "<group>"; };
+		CFF1AF832096129E0008898A /* PayInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayInfoViewController.m; sourceTree = "<group>"; };
+		CFF1AF842096129E0008898A /* PayInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayInfoViewController.xib; sourceTree = "<group>"; };
 		DDF4D9A80B4C9B8D6DB5BDF5 /* Pods-cc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cc/Pods-cc.debug.xcconfig"; sourceTree = "<group>"; };
 		F8021299208D787500792465 /* ZeroWalletVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZeroWalletVC.h; sourceTree = "<group>"; };
 		F802129A208D787500792465 /* ZeroWalletVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZeroWalletVC.m; sourceTree = "<group>"; };
@@ -834,6 +839,9 @@
 				F8C3C9C4208EDF5A009E201F /* SetAQPwdNumViewController.h */,
 				F8C3C9C5208EDF5A009E201F /* SetAQPwdNumViewController.m */,
 				F8C3C9C6208EDF5A009E201F /* SetAQPwdNumViewController.xib */,
+				CFF1AF822096129E0008898A /* PayInfoViewController.h */,
+				CFF1AF832096129E0008898A /* PayInfoViewController.m */,
+				CFF1AF842096129E0008898A /* PayInfoViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -1503,6 +1511,7 @@
 				CF71652F2082249E0092692F /* OrderListTabCell.xib in Resources */,
 				CF7165452083ADC30092692F /* SettingViewController.xib in Resources */,
 				F8ED3953207DACDB006F4D2A /* back_icon@2x.png in Resources */,
+				CFF1AF862096129E0008898A /* PayInfoViewController.xib in Resources */,
 				F847ACCD209480B700487899 /* AAHighchartsLib.js in Resources */,
 				F8F82C242090878700A9A81A /* README.md in Resources */,
 				F8C3C9CF208F3070009E201F /* ReceiveRecordVC.xib in Resources */,
@@ -1687,6 +1696,7 @@
 				CF82FDE420863E2D006EF9B6 /* NewsVC.m in Sources */,
 				F80212A1208D82DA00792465 /* AllRecodeTabCell.m in Sources */,
 				F847ACC9209480B700487899 /* AASeriesElement.m in Sources */,
+				CFF1AF852096129E0008898A /* PayInfoViewController.m in Sources */,
 				F847ACE5209480B800487899 /* AATooltip.m in Sources */,
 				F805687D2089C9A50073B30C /* CompoundSettingViewController.m in Sources */,
 				F847ACE3209480B800487899 /* AASubtitle.m in Sources */,

@@ -12,7 +12,7 @@
 #import "CGPhoneNumViewController.h"
 #import "CGPwdNumViewController.h"
 #import "SetAQPwdNumViewController.h"
-
+#import "PayInfoViewController.h"
 @interface SettingViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *logoutBtn;
 @property (weak, nonatomic) IBOutlet UILabel *buildNumLab;
@@ -84,7 +84,8 @@
 			break;
 		case 103:
 		{
-			
+            PayInfoViewController *vc = [[PayInfoViewController alloc] initWithNibName:@"PayInfoViewController" bundle:nil];
+            [self.navigationController pushViewController:vc animated:YES];
 		}
 			break;
 		default:

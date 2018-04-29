@@ -7,12 +7,15 @@
 //
 
 #import "DealViewController.h"
-@interface DealViewController ()<UIScrollViewDelegate>{
+@interface DealViewController ()<UIScrollViewDelegate,UITextFieldDelegate>{
     UILabel *guideLab;
-    UILabel *sellPriceLab;
+    UITextField *sellPriceTextField;
     UITextField *sellNumTextField;
     UILabel *sellTotalPriceLab;
     UILabel *chargeLab;
+    UILabel *tipsLab;
+    
+    NSString *power;
 }
 
 @end
@@ -22,16 +25,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-	self.navigationItem.title = @"挂卖单";
+	self.navigationItem.title = @"卖单";
     [self setup];
 	//[self addBuyViewToScrollerView];
 	[self addSellViewToScrollerView];
+    [self requestPrice];
 }
 
 - (void)setup {
     
 }
 
+- (void)requestPrice {
+    RequestParams *params = [[RequestParams alloc] initWithParams:API_price];
+    [params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]
+     ];
+    
+    [[NetworkSingleton shareInstace] httpPost:params withTitle:@"获取指导价" successBlock:^(id data) {
+        NSString *code = data[@"code"];
+        if (![code isEqualToString:@"1000"]) {
+            [SVProgressHUD showErrorWithStatus:data[@"message"]];
+            return ;
+        }
+        NSDictionary *pd = data[@"pd"];
+        guideLab.text = [NSString stringWithFormat:@"%@",pd[@"BUSINESS_PRICE"]];
+        tipsLab.text = [NSString stringWithFormat:@"本次可挂卖最多%@个",pd[@"D_CURRENCY"]];
+        power = [NSString stringWithFormat:@"%@",pd[@"D_CURRENCY"]];
+    } failureBlock:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"网络异常"];
+    }];
+}
 
 //- (void)addBuyViewToScrollerView {
 //    UIView *buyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, 300)];
@@ -225,6 +248,19 @@
 //    }];
 //}
 
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if (sellNumTextField.text.length >0 && sellPriceTextField.text.length > 0 && ![sellPriceTextField.text isEqualToString:@"."]) {
+     
+        float money =   [sellNumTextField.text floatValue] * [sellPriceTextField.text floatValue];
+        sellTotalPriceLab.text = [NSString stringWithFormat:@"总价:%.02f",money];
+        chargeLab.text = [NSString stringWithFormat:@"手续费:%@能量",sellNumTextField.text];
+    }else {
+        sellTotalPriceLab.text = @"总价:0";
+        chargeLab.text = @"手续费:0";
+    }
+    
+}
+
 - (void)addSellViewToScrollerView {
 	UIView *sellView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, 300)];
 	
@@ -251,12 +287,15 @@
 	sellPriceTipsLab.textColor = [UIColor whiteColor];
 	[sellView addSubview:sellPriceTipsLab];
     
-	sellPriceLab = [[UILabel alloc] init];
-	sellPriceLab.text = @"1.234";
-	sellPriceLab.font = Font_13;
-    sellPriceLab.textColor = [UIColor whiteColor] ;//UIColorFromHex(0xCCB17E);
-	sellPriceLab.textAlignment = NSTextAlignmentRight;
-	[sellView addSubview:sellPriceLab];
+    sellPriceTextField = [[UITextField alloc] init];
+    sellPriceTextField.placeholder = @"请输入卖单价格";
+    sellPriceTextField.font = Font_13;
+    sellPriceTextField.delegate = self;
+    sellPriceTextField.keyboardType = UIKeyboardTypeDecimalPad;
+    sellPriceTextField.textColor = [UIColor whiteColor];
+    sellPriceTextField.textAlignment = NSTextAlignmentRight;
+    [sellPriceTextField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [sellView addSubview:sellPriceTextField];
 	
 	
 	UIView *line2 = [[UIView alloc] init];
@@ -270,8 +309,9 @@
 	[sellView addSubview:sellNumTipsLab];
 	
 	sellNumTextField = [[UITextField alloc] init];
-	sellNumTextField.placeholder = @"请输入100~100000的价格";
+	sellNumTextField.placeholder = @"请输入挂卖数量(整数且1的倍数)";
 	sellNumTextField.font = Font_13;
+    sellNumTextField.delegate = self;
 	sellNumTextField.keyboardType = UIKeyboardTypeNumberPad;
 	sellNumTextField.textColor = [UIColor whiteColor];
 	sellNumTextField.textAlignment = NSTextAlignmentRight;
@@ -302,20 +342,41 @@
 	[sellView addSubview:sumbitBtn];
 	[sumbitBtn addTapBlock:^(UIButton *btn) {
 		if (sellNumTextField.text.length == 0) {
-			[SVProgressHUD showInfoWithStatus:@"请输入数量"];
-			return ;
+			[SVProgressHUD showInfoWithStatus:@"请输入单价"];
+			return;
 		}
-		
-		if (sellNumTextField.text.integerValue > 10) {
+        if (sellPriceTextField.text.length == 0) {
+            [SVProgressHUD showInfoWithStatus:@"请输入数量"];
+            return ;
+        }
+        
+		if (sellNumTextField.text.integerValue > power.integerValue) {
 			[SVProgressHUD showErrorWithStatus:@"超过可卖数量"];
 			return ;
 		}
         
+        RequestParams *params = [[RequestParams alloc] initWithParams:API_sell];
+        [params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
+        [params addParameter:@"PRICE" value:sellPriceTextField.text];
+         [params addParameter:@"D_CURRENCY" value:sellNumTextField.text];
+        
+        
+        [[NetworkSingleton shareInstace] httpPost:params withTitle:@"" successBlock:^(id data) {
+            NSString *code = data[@"code"];
+            if (![code isEqualToString:@"1000"]) {
+                [SVProgressHUD showErrorWithStatus:data[@"message"]];
+                return ;
+            }
+            [SVProgressHUD showSuccessWithStatus:@"挂单成功"];
+            
+        } failureBlock:^(NSError *error) {
+            [SVProgressHUD showErrorWithStatus:@"网络异常"];
+        }];
         
 		
 	}];
 	
-	UILabel *tipsLab = [[UILabel alloc] init];
+	tipsLab = [[UILabel alloc] init];
 	tipsLab.textColor =  [UIColor whiteColor];
 	tipsLab.font = Font_13;
 	tipsLab.textAlignment = NSTextAlignmentCenter;
@@ -352,7 +413,7 @@
 		make.height.mas_equalTo(30);
 	}];
 	
-	[sellPriceLab mas_makeConstraints:^(MASConstraintMaker *make) {
+	[sellPriceTextField mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.left.equalTo(sellPriceTipsLab.mas_right).offset(30);
 		make.right.equalTo(sellView).offset(-30);
 		make.top.equalTo(line1.mas_bottom).offset(10);
@@ -374,7 +435,7 @@
 	}];
 	
 	[sellNumTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-		make.left.equalTo(sellNumTipsLab.mas_right).offset(30);
+		make.left.equalTo(sellNumTipsLab.mas_right).offset(10);
 		make.right.equalTo(sellView).offset(-30);
 		make.top.equalTo(line2.mas_bottom).offset(10);
 		make.height.mas_equalTo(30);
@@ -415,7 +476,6 @@
 		make.height.mas_equalTo(30);
 	}];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -13,7 +13,6 @@
 #import "DealViewController.h"
 #import "PNChart.h"
 #import "AAChartKit.h"
-
 static NSString *Identifier = @"cell";
 
 @interface MarketsViewController ()<UITableViewDelegate,UITableViewDataSource,PasswordAlertViewDelegate,OrderListTabCellDelegate,PNChartDelegate>
@@ -25,6 +24,9 @@ static NSString *Identifier = @"cell";
 
 @property (nonatomic,strong)UIButton *dayBtn;
 @property (nonatomic,strong)UIButton *weekBtn;
+@property (nonatomic,strong)NSMutableArray *xArray;
+@property (nonatomic,strong)NSMutableArray *valueArray;
+@property (nonatomic,copy)NSString *TYPE;
 
 @end
 
@@ -51,16 +53,22 @@ static NSString *Identifier = @"cell";
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"市场";
     self.edgesForExtendedLayout = UIRectEdgeTop;
-    
+    self.xArray = [NSMutableArray array];
+    self.valueArray = [NSMutableArray array];
+    self.TYPE = @"0";
 	[self addNavBtn];
     [self setup];
 	[self addChartView];
+    [self requesKData];
 	
 }
 
 - (void)requesKData {
+  
+    [self.xArray removeAllObjects];
+    [self.valueArray removeAllObjects];
     RequestParams *params = [[RequestParams alloc] initWithParams:API_depth];
-    [params addParameter:@"TYPE" value:@"0"];
+    [params addParameter:@"TYPE" value:self.TYPE];
     [params addParameter:@"NUM" value:@"7"];
     
     [[NetworkSingleton shareInstace] httpPost:params withTitle:@"" successBlock:^(id data) {
@@ -69,9 +77,49 @@ static NSString *Identifier = @"cell";
             [SVProgressHUD showErrorWithStatus:data[@"message"]];
             return ;
         }
-        NSDictionary *pd = data[@"pd"];
+        NSArray *pd = data[@"pd"];
+        if (pd.count == 0) {
+            [SVProgressHUD showInfoWithStatus:@"暂无k线数据"];
+            return;
+        }
+        for (NSDictionary *dic in pd) {
+            NSString *str = dic[@"DEAL_TIME"];
+            [self.xArray addObject:[str substringWithRange:NSMakeRange(5, 5 )]];
+            [self.valueArray addObject:dic[@"BUSINESS_PRICE"]];
+        }
+      self.xArray =  (NSMutableArray *)[[self.xArray reverseObjectEnumerator] allObjects];
+      self.valueArray =  (NSMutableArray *)[[self.valueArray reverseObjectEnumerator] allObjects];
+        AAMarker *marker = AAObject(AAMarker)
+        .fillColorSet(@"#FFFFFF");
         
+        AAChartModel *aaChartModel= AAObject(AAChartModel)
+        .chartTypeSet(AAChartTypeLine)//设置图表的类型
+        .backgroundColorSet(@"#020919")
+        .symbolSet(AAChartSymbolTypeCircle)
+        .titleSet(@"")//设置图表标题
+        .subtitleSet(@"单位¥")//设置图表副标题
+        .subtitleFontSizeSet(@13)
+        .subtitleAlignSet(AAChartSubtitleAlignTypeRight)
+        .subtitleFontColorSet(@"#FFFFFF")
+        .categoriesSet(self.xArray)//图表横轴的内容
+        .yAxisTitleSet(@"")//设置图表 y 轴的单位
+        .dataLabelEnabledSet(YES)
+        .yAxisTickPositionsSet(@[@(0),@(0.2),@(0.4),@(0.6),@(0.8),@(1.0)])
+        .yAxisMaxSet(@1.0)
+        .yAxisMinSet(@0)
+        .yAxisLabelsFontColorSet(@"#FFFFFF")
+        .xAxisLabelsFontColorSet(@"#FFFFFF")
+        .seriesSet(@[
+                     AAObject(AASeriesElement)
+                     .nameSet(@"走势图")
+                     .colorSet(@"#51B24D")
+                     .negativeColorSet(@"#AFAg01")
+                     .dataSet(self.valueArray)
+                     .markerSet(marker),
+                     ])
+        ;
         
+        [self.aaChartView aa_drawChartWithChartModel:aaChartModel];
     } failureBlock:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"网络异常"];
     }];
@@ -119,7 +167,6 @@ static NSString *Identifier = @"cell";
                  ])
     
     ;
-    
     [self.aaChartView aa_drawChartWithChartModel:aaChartModel];
     
 }
@@ -157,8 +204,9 @@ static NSString *Identifier = @"cell";
     MJWeakSelf
     [self.dayBtn addTapBlock:^(UIButton *btn) {
          weakSelf.dayBtn.selected = YES;
-        weakSelf.weekBtn.selected = NO;
-        
+         weakSelf.weekBtn.selected = NO;
+         weakSelf.TYPE = @"0";
+        [weakSelf requesKData];
     }];
     
     
@@ -174,6 +222,8 @@ static NSString *Identifier = @"cell";
     [self.weekBtn addTapBlock:^(UIButton *btn) {
         weakSelf.dayBtn.selected = NO;
         weakSelf.weekBtn.selected = YES;
+        weakSelf.TYPE = @"1";
+        [weakSelf requesKData];
     }];
     
     self.tableView.delegate = self;

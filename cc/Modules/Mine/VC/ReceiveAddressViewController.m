@@ -37,8 +37,8 @@
     _addressLab.text = model.W_ADDRESS;
     
     _codeImgView.image = [SGQRCodeGenerateManager generateWithDefaultQRCodeData:model.W_ADDRESS imageViewWidth:200];
-    
 }
+
 - (IBAction)copyAddressAction:(id)sender {
     UserInfoModel *model = [[BeanManager shareInstace] getBeanfromPath:UserModelPath];
     

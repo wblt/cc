@@ -81,7 +81,10 @@
 #define API_PHONECG   SERVER_IP@"/app/tool/phoneCg"
 // 修改登陆密码
 #define API_CGPASSWORD   SERVER_IP@"/app/tool/changePassw"
-
+// 修改支付信息
+#define API_cgPayMes   SERVER_IP@"/app/tool/cgPayMes"
+// 查询支付信息
+#define API_payMes SERVER_IP@"/app/tool/payMes"
 
 //  MY
 //设置复利
