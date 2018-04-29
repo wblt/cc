@@ -27,6 +27,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addViewControllers];
+    self.tabBar.backgroundImage = [UIImage imageNamed:@"tabbarImageView"];
+    self.tabBar.shadowImage = [[UIImage alloc]init];
+}
+
+- (UIImage *)imageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0.0f,0.0f, 1.0f,1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context =UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *image =UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -86,7 +99,8 @@
                                                      normalFontColor:normalTitleColor
                                                    selectedFontColor:selectedTitleColor
                                                                title:titleArray[i]];
-        item.backgroundColor = UIColorFromHex(0x020919);
+       // item.backgroundColor = UIColorFromHex(0x020919);
+        item.backgroundColor = [UIColor clearColor];
         //[UIColor darkGrayColor];
         item.tag = i;
         item.isSelected = NO;

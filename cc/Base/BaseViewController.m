@@ -16,14 +16,23 @@
 
 @implementation BaseViewController
 
+
+- (void)viewWillAppear:(BOOL)animated{
+    
+    //设置导航栏背景图片为一个空的image，这样就透明了
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbgImageView"] forBarMetrics:UIBarMetricsDefault];
+    
+    //去掉透明后导航栏下边的黑边
+    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     /**<设置导航栏背景颜色*/
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
-	
-	self.navigationController.navigationBar.barTintColor = UIColorFromHex(0x020919);
-    [self.navigationController.navigationBar setTranslucent:NO];
 
+    self.view.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"bgImageView"]];
+    
 	[self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName :[UIColor whiteColor], NSFontAttributeName : [UIFont systemFontOfSize:18]}];
     [self.view addSubview:self.errorView];
 }

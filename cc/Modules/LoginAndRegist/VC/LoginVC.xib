@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -63,7 +63,7 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="nRY-1v-iE0" firstAttribute="centerY" secondItem="fGg-vo-HCP" secondAttribute="centerY" id="4Lm-0Q-fh3"/>
                         <constraint firstItem="fGg-vo-HCP" firstAttribute="leading" secondItem="BoE-HM-thA" secondAttribute="leading" constant="15" id="GAS-UF-sMl"/>
@@ -103,7 +103,7 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="9JN-nQ-A3j" firstAttribute="leading" secondItem="M6s-bW-Tis" secondAttribute="leading" constant="15" id="182-UC-DlD"/>
                         <constraint firstItem="I1t-u7-Tlg" firstAttribute="leading" secondItem="9JN-nQ-A3j" secondAttribute="trailing" constant="5" id="36Q-oP-Qt5"/>
@@ -122,7 +122,7 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgK-rk-ew1">
                             <rect key="frame" x="247" y="7.5" width="80" height="35"/>
-                            <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="22Z-FT-e39"/>
                                 <constraint firstAttribute="width" constant="80" id="RS8-fX-h55"/>
@@ -150,7 +150,7 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="sgK-rk-ew1" secondAttribute="trailing" constant="8" id="5cB-QS-ngz"/>
                         <constraint firstItem="2cP-Q5-hfb" firstAttribute="centerY" secondItem="jTA-v2-Q7J" secondAttribute="centerY" id="CQa-mv-grB"/>
@@ -237,7 +237,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="jTA-v2-Q7J" firstAttribute="width" secondItem="M6s-bW-Tis" secondAttribute="width" id="2yj-kj-6jc"/>
                 <constraint firstItem="M6s-bW-Tis" firstAttribute="top" secondItem="BoE-HM-thA" secondAttribute="bottom" constant="10" id="7dq-2Q-Jxj"/>

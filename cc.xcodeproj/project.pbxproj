@@ -47,6 +47,9 @@
 		CF82FE0E208CB982006EF9B6 /* ErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF82FE0D208CB982006EF9B6 /* ErrorView.m */; };
 		CF82FE12208CF8C2006EF9B6 /* ReleaseRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF82FE10208CF8C2006EF9B6 /* ReleaseRecordViewController.m */; };
 		CF82FE13208CF8C2006EF9B6 /* ReleaseRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF82FE11208CF8C2006EF9B6 /* ReleaseRecordViewController.xib */; };
+		CFF1AF6A2095A6870008898A /* ReceiveAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1AF682095A6870008898A /* ReceiveAddressViewController.m */; };
+		CFF1AF6B2095A6870008898A /* ReceiveAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFF1AF692095A6870008898A /* ReceiveAddressViewController.xib */; };
+		CFF1AF7E2095B6C40008898A /* WCQRCodeScanningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1AF7D2095B6C40008898A /* WCQRCodeScanningVC.m */; };
 		F802129C208D787500792465 /* ZeroWalletVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F802129A208D787500792465 /* ZeroWalletVC.m */; };
 		F802129D208D787500792465 /* ZeroWalletVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F802129B208D787500792465 /* ZeroWalletVC.xib */; };
 		F80212A1208D82DA00792465 /* AllRecodeTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F802129F208D82DA00792465 /* AllRecodeTabCell.m */; };
@@ -283,6 +286,11 @@
 		CF82FE0F208CF8C2006EF9B6 /* ReleaseRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReleaseRecordViewController.h; sourceTree = "<group>"; };
 		CF82FE10208CF8C2006EF9B6 /* ReleaseRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReleaseRecordViewController.m; sourceTree = "<group>"; };
 		CF82FE11208CF8C2006EF9B6 /* ReleaseRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReleaseRecordViewController.xib; sourceTree = "<group>"; };
+		CFF1AF672095A6870008898A /* ReceiveAddressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReceiveAddressViewController.h; sourceTree = "<group>"; };
+		CFF1AF682095A6870008898A /* ReceiveAddressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReceiveAddressViewController.m; sourceTree = "<group>"; };
+		CFF1AF692095A6870008898A /* ReceiveAddressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiveAddressViewController.xib; sourceTree = "<group>"; };
+		CFF1AF7C2095B6C40008898A /* WCQRCodeScanningVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCQRCodeScanningVC.h; sourceTree = "<group>"; };
+		CFF1AF7D2095B6C40008898A /* WCQRCodeScanningVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCQRCodeScanningVC.m; sourceTree = "<group>"; };
 		DDF4D9A80B4C9B8D6DB5BDF5 /* Pods-cc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cc/Pods-cc.debug.xcconfig"; sourceTree = "<group>"; };
 		F8021299208D787500792465 /* ZeroWalletVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZeroWalletVC.h; sourceTree = "<group>"; };
 		F802129A208D787500792465 /* ZeroWalletVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZeroWalletVC.m; sourceTree = "<group>"; };
@@ -661,6 +669,7 @@
 		CF71650F2081EC880092692F /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				CFF1AF6C2095B52F0008898A /* Scan */,
 				F8F82C07209085FD00A9A81A /* View */,
 				F8F82C06209085F500A9A81A /* Model */,
 				CF7165102081EC880092692F /* VC */,
@@ -704,6 +713,9 @@
 				F8F82BF820906C2F00A9A81A /* SportRecordViewController.h */,
 				F8F82BF920906C2F00A9A81A /* SportRecordViewController.m */,
 				F8F82BFA20906C2F00A9A81A /* SportRecordViewController.xib */,
+				CFF1AF672095A6870008898A /* ReceiveAddressViewController.h */,
+				CFF1AF682095A6870008898A /* ReceiveAddressViewController.m */,
+				CFF1AF692095A6870008898A /* ReceiveAddressViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -858,6 +870,15 @@
 				CF82FDF9208662BA006EF9B6 /* PasswordAlertView.m */,
 			);
 			path = PasswordAlertView;
+			sourceTree = "<group>";
+		};
+		CFF1AF6C2095B52F0008898A /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				CFF1AF7C2095B6C40008898A /* WCQRCodeScanningVC.h */,
+				CFF1AF7D2095B6C40008898A /* WCQRCodeScanningVC.m */,
+			);
+			path = Scan;
 			sourceTree = "<group>";
 		};
 		E4E04DAFB40C17D2FBC6488A /* Pods */ = {
@@ -1490,6 +1511,7 @@
 				F8ED397A207DB81B006F4D2A /* README.md in Resources */,
 				F8ED395B207DACDB006F4D2A /* README.md in Resources */,
 				F805688D2089EFDD0073B30C /* TransferRecordViewController.xib in Resources */,
+				CFF1AF6B2095A6870008898A /* ReceiveAddressViewController.xib in Resources */,
 				CF82FDEF20864339006EF9B6 /* ZoreWalletVC.xib in Resources */,
 				F84E5B62207D961200949AF1 /* Assets.xcassets in Resources */,
 				F8ED3989207DB8B0006F4D2A /* RegistViewController.xib in Resources */,
@@ -1597,6 +1619,7 @@
 				F84E5B5D207D961200949AF1 /* ViewController.m in Sources */,
 				F8ED396D207DB311006F4D2A /* BaseViewController.m in Sources */,
 				F84E5B68207D961200949AF1 /* main.m in Sources */,
+				CFF1AF6A2095A6870008898A /* ReceiveAddressViewController.m in Sources */,
 				CF82FE03208C607C006EF9B6 /* NoticeModel.m in Sources */,
 				CF71653C20839EA10092692F /* CQCountDownButton.m in Sources */,
 				F8CE3BE32087424100C6994B /* HGBStepTool.m in Sources */,
@@ -1641,6 +1664,7 @@
 				F847ACD2209480B800487899 /* AABar.m in Sources */,
 				F847AC7E2094749F00487899 /* PNScatterChartData.m in Sources */,
 				F847AC7F2094749F00487899 /* PNScatterChartDataItem.m in Sources */,
+				CFF1AF7E2095B6C40008898A /* WCQRCodeScanningVC.m in Sources */,
 				F847AC772094749F00487899 /* PNLineChartData.m in Sources */,
 				F847ACD1209480B800487899 /* AAAreaspline.m in Sources */,
 				F847AC7C2094749F00487899 /* PNRadarChartDataItem.m in Sources */,

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -52,7 +52,7 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="0eT-yj-U78" firstAttribute="centerY" secondItem="13e-g2-bVB" secondAttribute="centerY" id="7cB-ok-xGP"/>
                         <constraint firstItem="PCH-bY-LO0" firstAttribute="leading" secondItem="0eT-yj-U78" secondAttribute="trailing" constant="5" id="7oy-tH-85Y">
@@ -99,7 +99,7 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="eS7-Yt-aZP" firstAttribute="centerY" secondItem="kFm-IE-5Jn" secondAttribute="centerY" id="Avs-nB-cK6"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="CXl-ap-w7h"/>
@@ -148,14 +148,14 @@
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhn-cU-j07">
                             <rect key="frame" x="247" y="10" width="100" height="30"/>
-                            <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="100" id="JWc-Yf-61B"/>
                                 <constraint firstAttribute="height" constant="30" id="si5-r5-2fV"/>
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="3iy-LI-SQE" firstAttribute="leading" secondItem="5ke-HM-wHg" secondAttribute="trailing" constant="5" id="Dny-K5-c91">
                             <userDefinedRuntimeAttributes>
@@ -193,7 +193,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.0078431372550000003" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="GDg-7s-Vlc" firstAttribute="top" secondItem="0sc-Cm-GvD" secondAttribute="bottom" constant="20" id="03u-Hc-xhx"/>
                 <constraint firstItem="iVU-Yu-IKZ" firstAttribute="top" secondItem="13e-g2-bVB" secondAttribute="bottom" constant="15" id="0zT-Tw-EwS"/>

@@ -14,6 +14,7 @@ pod 'LKDBHelper'
 pod 'FDStackView'
 pod 'MSWeakTimer'
 pod 'SDCycleScrollView'
+pod 'SGQRCode', '~> 2.2.0'
 
 pod 'Bugly'
 pod 'Pgyer'

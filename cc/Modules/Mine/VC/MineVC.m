@@ -19,7 +19,8 @@
 #import "PowerCGViewController.h"
 #import "ReceiveRecordVC.h"
 #import "SportRecordViewController.h"
-
+#import "ReceiveAddressViewController.h"
+#import "WCQRCodeScanningVC.h"
 @interface MineVC ()
 @property (weak, nonatomic) IBOutlet UIView *bgView1;
 @property (weak, nonatomic) IBOutlet UIView *bgView2;
@@ -75,6 +76,15 @@
 	ViewBorderRadius(_bgView10, 0, 0.6, UIColorFromHex(0x4B5461));
 	ViewBorderRadius(_bgView11, 0, 0.6, UIColorFromHex(0x4B5461));
 	
+    UIImageView *saoyisaoImgView  = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    saoyisaoImgView.userInteractionEnabled = YES;
+    saoyisaoImgView.image = [UIImage imageNamed:@"saoyisao"];
+    UIBarButtonItem *leftAnotherButton = [[UIBarButtonItem alloc] initWithCustomView:saoyisaoImgView];
+    [self.navigationItem setLeftBarButtonItems:[NSArray arrayWithObjects: leftAnotherButton,nil]];
+    
+    UITapGestureRecognizer *leftTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(saoyisaoAction)];
+    [saoyisaoImgView addGestureRecognizer:leftTap];
+    
 	UIImageView *newsImgView  = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
 	newsImgView.userInteractionEnabled = YES;
 	newsImgView.image = [UIImage imageNamed:@"setting_icon"];
@@ -104,6 +114,12 @@
 	[pasteboard setString:self.walletAddressLab.text];
 	[SVProgressHUD showSuccessWithStatus:@"复制成功"];
 }
+
+- (void)saoyisaoAction {
+    WCQRCodeScanningVC *vc = [[WCQRCodeScanningVC alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 - (void)rightTap {
 	MineInfoViewController *vc = [[MineInfoViewController alloc] initWithNibName:@"MineInfoViewController" bundle:nil];
@@ -136,6 +152,12 @@
 	
 	UITapGestureRecognizer *tap7 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ViewTapAction:)];
 	[_bgView11 addGestureRecognizer:tap7];
+    
+    UITapGestureRecognizer *tap8 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ViewTapAction:)];
+    [_bgView9 addGestureRecognizer:tap8];
+    
+    UITapGestureRecognizer *tap9 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ViewTapAction:)];
+    [_bgView10 addGestureRecognizer:tap9];
 	
 }
 
@@ -191,15 +213,22 @@
 			break;
 		case 107:
 		{
-			 [SVProgressHUD showInfoWithStatus:@"正在开发中"];
+            ReceiveAddressViewController *vc = [[ReceiveAddressViewController alloc] initWithNibName:@"ReceiveAddressViewController" bundle:nil];
+            [self.navigationController pushViewController:vc animated:YES];
 			
 		}
 			break;
+        case 108:
+        {
+            [SVProgressHUD showInfoWithStatus:@"正在开发中"];
+        }
+            break;
 			
 		default:
 			break;
 	}
 }
+
 
 
 - (void)didReceiveMemoryWarning {
