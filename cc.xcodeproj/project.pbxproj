@@ -50,6 +50,7 @@
 		CFF1AF6A2095A6870008898A /* ReceiveAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1AF682095A6870008898A /* ReceiveAddressViewController.m */; };
 		CFF1AF6B2095A6870008898A /* ReceiveAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFF1AF692095A6870008898A /* ReceiveAddressViewController.xib */; };
 		CFF1AF7E2095B6C40008898A /* WCQRCodeScanningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1AF7D2095B6C40008898A /* WCQRCodeScanningVC.m */; };
+		CFF1AF812095C74D0008898A /* KDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1AF802095C74D0008898A /* KDataModel.m */; };
 		F802129C208D787500792465 /* ZeroWalletVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F802129A208D787500792465 /* ZeroWalletVC.m */; };
 		F802129D208D787500792465 /* ZeroWalletVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F802129B208D787500792465 /* ZeroWalletVC.xib */; };
 		F80212A1208D82DA00792465 /* AllRecodeTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F802129F208D82DA00792465 /* AllRecodeTabCell.m */; };
@@ -291,6 +292,8 @@
 		CFF1AF692095A6870008898A /* ReceiveAddressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiveAddressViewController.xib; sourceTree = "<group>"; };
 		CFF1AF7C2095B6C40008898A /* WCQRCodeScanningVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCQRCodeScanningVC.h; sourceTree = "<group>"; };
 		CFF1AF7D2095B6C40008898A /* WCQRCodeScanningVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCQRCodeScanningVC.m; sourceTree = "<group>"; };
+		CFF1AF7F2095C74D0008898A /* KDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KDataModel.h; sourceTree = "<group>"; };
+		CFF1AF802095C74D0008898A /* KDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KDataModel.m; sourceTree = "<group>"; };
 		DDF4D9A80B4C9B8D6DB5BDF5 /* Pods-cc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cc/Pods-cc.debug.xcconfig"; sourceTree = "<group>"; };
 		F8021299208D787500792465 /* ZeroWalletVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZeroWalletVC.h; sourceTree = "<group>"; };
 		F802129A208D787500792465 /* ZeroWalletVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZeroWalletVC.m; sourceTree = "<group>"; };
@@ -1411,6 +1414,8 @@
 			isa = PBXGroup;
 			children = (
 				F8F82C2D209087C900A9A81A /* README.md */,
+				CFF1AF7F2095C74D0008898A /* KDataModel.h */,
+				CFF1AF802095C74D0008898A /* KDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1656,6 +1661,7 @@
 				F8ED396C207DB311006F4D2A /* BaseNavViewController.m in Sources */,
 				F847ACE4209480B800487899 /* AATitle.m in Sources */,
 				F8F82C1E2090871C00A9A81A /* ReceiveRecordTabCell.m in Sources */,
+				CFF1AF812095C74D0008898A /* KDataModel.m in Sources */,
 				F847ACDD209480B800487899 /* AAPie.m in Sources */,
 				F847AC802094749F00487899 /* UICountingLabel.m in Sources */,
 				F847AC7A2094749F00487899 /* PNPieChartDataItem.m in Sources */,

@@ -11,11 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DealViewController">
             <connections>
-                <outlet property="bottomBuyView" destination="Zio-kr-GZe" id="czG-hX-aeT"/>
-                <outlet property="bottomSellView" destination="4N8-sw-TPN" id="g0N-qM-0bd"/>
-                <outlet property="buyBtn" destination="dxT-BO-6dc" id="AZ5-bX-vVt"/>
-                <outlet property="scrollerView" destination="nMg-ju-97R" id="CLF-Qo-ibM"/>
-                <outlet property="sellBtn" destination="U5B-NS-QUR" id="lFw-He-3Ef"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,89 +18,7 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3e-DK-0x9">
-                    <rect key="frame" x="0.0" y="15" width="375" height="50"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxT-BO-6dc">
-                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="Viq-eh-v4H"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" title="挂买单">
-                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <state key="selected">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="buyAction:" destination="-1" eventType="touchUpInside" id="YfY-Ie-toY"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5B-NS-QUR">
-                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="40"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" title="挂卖单">
-                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <state key="selected">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="sellAction:" destination="-1" eventType="touchUpInside" id="vAw-Mi-dZx"/>
-                            </connections>
-                        </button>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zio-kr-GZe">
-                            <rect key="frame" x="10" y="40" width="167.5" height="2"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="2" id="eGl-zS-Doa"/>
-                            </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4N8-sw-TPN">
-                            <rect key="frame" x="197.5" y="40" width="167.5" height="2"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="2" id="AbM-LA-gJw"/>
-                            </constraints>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="U5B-NS-QUR" firstAttribute="leading" secondItem="dxT-BO-6dc" secondAttribute="trailing" id="3PZ-GH-v9z"/>
-                        <constraint firstItem="Zio-kr-GZe" firstAttribute="trailing" secondItem="dxT-BO-6dc" secondAttribute="trailing" constant="-10" id="93V-s6-njX"/>
-                        <constraint firstItem="Zio-kr-GZe" firstAttribute="leading" secondItem="dxT-BO-6dc" secondAttribute="leading" constant="10" id="B5w-XE-Lue"/>
-                        <constraint firstAttribute="height" constant="50" id="KWu-T1-Ce6"/>
-                        <constraint firstItem="dxT-BO-6dc" firstAttribute="top" secondItem="g3e-DK-0x9" secondAttribute="top" id="LHf-4A-Wkp"/>
-                        <constraint firstItem="U5B-NS-QUR" firstAttribute="height" secondItem="dxT-BO-6dc" secondAttribute="height" id="N3R-PA-NeD"/>
-                        <constraint firstItem="dxT-BO-6dc" firstAttribute="leading" secondItem="g3e-DK-0x9" secondAttribute="leading" id="P9u-YE-0Kc"/>
-                        <constraint firstAttribute="trailing" secondItem="U5B-NS-QUR" secondAttribute="trailing" id="Ybd-b5-YyD"/>
-                        <constraint firstItem="4N8-sw-TPN" firstAttribute="top" secondItem="U5B-NS-QUR" secondAttribute="bottom" id="Yy6-co-MzZ"/>
-                        <constraint firstItem="U5B-NS-QUR" firstAttribute="centerY" secondItem="dxT-BO-6dc" secondAttribute="centerY" id="dff-2D-sZF"/>
-                        <constraint firstItem="4N8-sw-TPN" firstAttribute="trailing" secondItem="U5B-NS-QUR" secondAttribute="trailing" constant="-10" id="ldc-bj-rEM"/>
-                        <constraint firstItem="4N8-sw-TPN" firstAttribute="leading" secondItem="U5B-NS-QUR" secondAttribute="leading" constant="10" id="naC-Lt-hHD"/>
-                        <constraint firstItem="Zio-kr-GZe" firstAttribute="top" secondItem="dxT-BO-6dc" secondAttribute="bottom" id="nfZ-MZ-PIA"/>
-                        <constraint firstItem="U5B-NS-QUR" firstAttribute="width" secondItem="dxT-BO-6dc" secondAttribute="width" id="tZs-tm-CaB"/>
-                    </constraints>
-                </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMg-ju-97R">
-                    <rect key="frame" x="0.0" y="65" width="375" height="300"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="300" id="3wM-KK-a7W"/>
-                    </constraints>
-                </scrollView>
-            </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="g3e-DK-0x9" secondAttribute="trailing" id="0eu-2t-x4h"/>
-                <constraint firstItem="g3e-DK-0x9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3m6-Ej-RxG"/>
-                <constraint firstItem="nMg-ju-97R" firstAttribute="top" secondItem="g3e-DK-0x9" secondAttribute="bottom" id="EoU-Z9-j3i"/>
-                <constraint firstAttribute="trailing" secondItem="nMg-ju-97R" secondAttribute="trailing" id="QAV-U8-HuH"/>
-                <constraint firstItem="nMg-ju-97R" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Zvg-R3-EbP"/>
-                <constraint firstItem="g3e-DK-0x9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="wgU-Tw-UiJ"/>
-            </constraints>
             <point key="canvasLocation" x="-121" y="-169"/>
         </view>
     </objects>

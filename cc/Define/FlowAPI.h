@@ -47,6 +47,30 @@
 //首页
 #define API_HOMEPAGE   SERVER_IP@"/app/index/homePage"
 
+//MARKET
+//MARKET - K线图
+#define API_depth SERVER_IP@"/app/market/depth"
+//买单
+#define API_buy  SERVER_IP@"/app/market/buy
+// 买单列表
+#define API_buyList SERVER_IP@"/app/market/buyList"
+// 卖单列表
+#define API_sellList SERVER_IP@"/app/market/sellList"
+//市场列表
+#define API_marketList SERVER_IP@"/app/market/marketList"
+//挂单
+#define API_sell SERVER_IP@"/app/market/sell"
+//指导价 点击挂单时候获取
+#define API_price SERVER_IP@"/app/market/price"
+//订单取消
+#define API_orderCancle SERVER_IP@"/app/market/orderCancle"
+//订单已付款(测试过审核也可用此接口)
+#define API_pay SERVER_IP@"/app/market/pay"
+//订单确认收款
+#define API_surePay SERVER_IP@"/app/market/surePay"
+//订单详情
+#define API_orderDetail SERVER_IP@"/app/market/orderDetail"
+
 
 // TOOL
 // 修改个人信息

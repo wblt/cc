@@ -19,13 +19,13 @@ static NSString *Identifier = @"cell";
 @interface MarketsViewController ()<UITableViewDelegate,UITableViewDataSource,PasswordAlertViewDelegate,OrderListTabCellDelegate,PNChartDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) PasswordAlertView *alertView;
-@property (weak, nonatomic) IBOutlet UIButton *buyBtn;
-@property (weak, nonatomic) IBOutlet UIButton *sellBtn;
-@property (weak, nonatomic) IBOutlet UIView *bottomBuyView;
-@property (weak, nonatomic) IBOutlet UIView *bottomSellView;
 @property (weak, nonatomic) IBOutlet UIView *chartBgView;
 @property (nonatomic) PNLineChart * lineChart;
 @property (nonatomic,strong)AAChartView *aaChartView;
+
+@property (nonatomic,strong)UIButton *dayBtn;
+@property (nonatomic,strong)UIButton *weekBtn;
+
 @end
 
 @implementation MarketsViewController
@@ -51,15 +51,30 @@ static NSString *Identifier = @"cell";
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"市场";
     self.edgesForExtendedLayout = UIRectEdgeTop;
-	_buyBtn.selected = YES;
-	_sellBtn.selected = NO;
-	_bottomSellView.hidden = YES;
-	_bottomBuyView.hidden = YES;
     
 	[self addNavBtn];
     [self setup];
 	[self addChartView];
 	
+}
+
+- (void)requesKData {
+    RequestParams *params = [[RequestParams alloc] initWithParams:API_depth];
+    [params addParameter:@"TYPE" value:@"0"];
+    [params addParameter:@"NUM" value:@"7"];
+    
+    [[NetworkSingleton shareInstace] httpPost:params withTitle:@"" successBlock:^(id data) {
+        NSString *code = data[@"code"];
+        if (![code isEqualToString:@"1000"]) {
+            [SVProgressHUD showErrorWithStatus:data[@"message"]];
+            return ;
+        }
+        NSDictionary *pd = data[@"pd"];
+        
+        
+    } failureBlock:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"网络异常"];
+    }];
 }
 	
 - (void)addChartView {
@@ -82,7 +97,9 @@ static NSString *Identifier = @"cell";
     .backgroundColorSet(@"#020919")
     .symbolSet(AAChartSymbolTypeCircle)
     .titleSet(@"")//设置图表标题
-    .subtitleSet(@"价格")//设置图表副标题
+    .subtitleSet(@"单位¥")//设置图表副标题
+    .subtitleFontSizeSet(@13)
+    .subtitleAlignSet(AAChartSubtitleAlignTypeRight)
     .subtitleFontColorSet(@"#FFFFFF")
     .categoriesSet(@[@"4.22",@"4.23",@"4.24",@"4.25", @"4.26",@"4.27",@"4.28"])//图表横轴的内容
     .yAxisTitleSet(@"")//设置图表 y 轴的单位
@@ -106,24 +123,6 @@ static NSString *Identifier = @"cell";
     [self.aaChartView aa_drawChartWithChartModel:aaChartModel];
     
 }
-	
-- (IBAction)buyAction:(UIButton *)sender {
-	if (!sender.selected) {
-		sender.selected = !sender.selected;
-	}
-	_sellBtn.selected = NO;
-//    _bottomBuyView.hidden = NO;
-//    _bottomSellView.hidden = YES;
-}
-
-- (IBAction)sellAction:(UIButton *)sender {
-	if (!sender.selected) {
-		sender.selected = !sender.selected;
-	}
-	_buyBtn.selected = NO;
-//    _bottomBuyView.hidden = YES;
-//    _bottomSellView.hidden = NO;
-}
 
 
 - (void)addNavBtn {
@@ -146,6 +145,37 @@ static NSString *Identifier = @"cell";
 }
 
 - (void)setup {
+    
+    self.dayBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.dayBtn.frame = CGRectMake(20, 0, 40, 30);
+    [self.dayBtn setTitle:@"日线" forState:UIControlStateNormal];
+    [self.dayBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.dayBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateSelected];
+    self.dayBtn.selected = YES;
+    self.dayBtn.titleLabel.font = Font_13;
+    [self.chartBgView addSubview:self.dayBtn];
+    MJWeakSelf
+    [self.dayBtn addTapBlock:^(UIButton *btn) {
+         weakSelf.dayBtn.selected = YES;
+        weakSelf.weekBtn.selected = NO;
+        
+    }];
+    
+    
+    self.weekBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.weekBtn.frame = CGRectMake(70, 0, 40, 30);
+    [self.weekBtn setTitle:@"周线" forState:UIControlStateNormal];
+    [self.weekBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.weekBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateSelected];
+    self.weekBtn.titleLabel.font = Font_13;
+    self.weekBtn.selected = NO;
+    [self.chartBgView addSubview:self.weekBtn];
+    
+    [self.weekBtn addTapBlock:^(UIButton *btn) {
+        weakSelf.dayBtn.selected = NO;
+        weakSelf.weekBtn.selected = YES;
+    }];
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = [UIColor clearColor];
