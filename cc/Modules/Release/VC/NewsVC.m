@@ -76,7 +76,7 @@ static NSString *Identifier = @"cell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 112;
+    return 132;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -98,6 +98,7 @@ static NSString *Identifier = @"cell";
     NewsTabCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	ViewBorderRadius(cell.contentView, 6, 0.6,UIColorFromHex(0x4B5461));
+    ViewBorderRadius(cell.lookLab, 6, 0.6,UIColorFromHex(0x4B5461));
 	cell.model = self.data[indexPath.row];
     return cell;
 }

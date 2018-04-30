@@ -23,7 +23,7 @@ static NSString *Identifier = @"cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-	self.navigationItem.title = @"接收记录";
+	self.navigationItem.title = @"运动记录";
 	[self setup];
 	self.data = [NSMutableArray array];
 	_QUERY_ID = @"0";

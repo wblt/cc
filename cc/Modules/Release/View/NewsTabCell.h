@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLab;
 @property (weak, nonatomic) IBOutlet UILabel *contentLab;
 @property (weak, nonatomic) IBOutlet UILabel *timeLab;
+@property (weak, nonatomic) IBOutlet UILabel *lookLab;
 
 @property (nonatomic,strong)NoticeModel *model;
 @end
