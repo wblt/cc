@@ -10,10 +10,65 @@
 
 @implementation OrderListTabCell
 
+/*
+ @property (weak, nonatomic) IBOutlet UILabel *numLab;
+ @property (weak, nonatomic) IBOutlet UILabel *priceLab;
+ @property (weak, nonatomic) IBOutlet UILabel *totalLab;
+ @property (weak, nonatomic) IBOutlet UILabel *nameLab;
+ @property (weak, nonatomic) IBOutlet UILabel *timeLab;
+ */
+- (void)setOrder:(OrderModel *)order {
+    _order = order;
+    self.nameLab.text = order.USER_NAME;
+    self.timeLab.text = order.CREATE_TIME;
+    self.numLab.text = [NSString stringWithFormat:@"%@",order.BUSINESS_COUNT];
+    self.priceLab.text = [NSString stringWithFormat:@"%@",order.BUSINESS_PRICE];
+    self.totalLab.text = [NSString stringWithFormat:@"%@", order.TOTAL_MONEY];
+    self.matchBtn.hidden = NO;
+    if ([order.STATUS isEqualToString:@"0"]) {
+        self.statesLab.text = @"待审核";
+    }else if ([order.STATUS isEqualToString:@"1"]) {
+         self.statesLab.text = @"审核通过";
+    }else if ([order.STATUS isEqualToString:@"2"]) {
+         self.statesLab.text = @"部分成交";
+    }else if ([order.STATUS isEqualToString:@"3"]) {
+         self.statesLab.text = @"待付款";
+      //  [self.matchBtn setTitle:@"确认付款" forState:UIControlStateNormal];
+        if ([_ordertype isEqualToString:@"1"]) {
+            [self.matchBtn setTitle:@"查看详情" forState:UIControlStateNormal];
+        }else {
+             self.matchBtn.hidden = YES;
+        }
+    }else if ([order.STATUS isEqualToString:@"4"]) {
+         self.statesLab.text = @"已付款";
+        if ([_ordertype isEqualToString:@"1"]) {
+            [self.matchBtn setTitle:@"查看详情" forState:UIControlStateNormal];
+        }else {
+            //self.matchBtn.hidden = YES;
+              [self.matchBtn setTitle:@"确认收款" forState:UIControlStateNormal];
+        }
+    }else if ([order.STATUS isEqualToString:@"5"]) {
+         self.statesLab.text = @"已成交";
+        if ([_ordertype isEqualToString:@"1"]) {
+            [self.matchBtn setTitle:@"查看详情" forState:UIControlStateNormal];
+        }else {
+            self.matchBtn.hidden = YES;
+        }
+    }else if ([order.STATUS isEqualToString:@"6"]) {
+         self.statesLab.text = @"已取消";
+        if ([_ordertype isEqualToString:@"1"]) {
+            [self.matchBtn setTitle:@"查看详情" forState:UIControlStateNormal];
+        }else {
+            self.matchBtn.hidden = YES;
+        }
+    }
+    
+}
+
 - (IBAction)mactchAction:(id)sender {
 	
-	if (self.delegate && [self.delegate respondsToSelector:@selector(OrderListTabCellMacth:)]) {
-		[self.delegate OrderListTabCellMacth:self.index];
+	if (self.delegate && [self.delegate respondsToSelector:@selector(OrderListTabCellMacth: orderType:)]) {
+		[self.delegate OrderListTabCellMacth:self.index orderType:self.ordertype];
 	}
 }
 

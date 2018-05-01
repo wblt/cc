@@ -342,11 +342,11 @@
 	[sellView addSubview:sumbitBtn];
 	[sumbitBtn addTapBlock:^(UIButton *btn) {
 		if (sellNumTextField.text.length == 0) {
-			[SVProgressHUD showInfoWithStatus:@"请输入单价"];
+			[SVProgressHUD showInfoWithStatus:@"请输入数量"];
 			return;
 		}
         if (sellPriceTextField.text.length == 0) {
-            [SVProgressHUD showInfoWithStatus:@"请输入数量"];
+            [SVProgressHUD showInfoWithStatus:@"请输入单价"];
             return ;
         }
         
@@ -368,7 +368,9 @@
                 return ;
             }
             [SVProgressHUD showSuccessWithStatus:@"挂单成功"];
-            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self.navigationController popViewControllerAnimated:YES];
+            });
         } failureBlock:^(NSError *error) {
             [SVProgressHUD showErrorWithStatus:@"网络异常"];
         }];

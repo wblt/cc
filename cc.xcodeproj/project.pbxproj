@@ -53,6 +53,11 @@
 		CFF1AF812095C74D0008898A /* KDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1AF802095C74D0008898A /* KDataModel.m */; };
 		CFF1AF852096129E0008898A /* PayInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1AF832096129E0008898A /* PayInfoViewController.m */; };
 		CFF1AF862096129E0008898A /* PayInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFF1AF842096129E0008898A /* PayInfoViewController.xib */; };
+		CFF1AF89209831D30008898A /* OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1AF88209831D30008898A /* OrderModel.m */; };
+		CFF1AF8D209848A10008898A /* BuyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1AF8B209848A10008898A /* BuyViewController.m */; };
+		CFF1AF8E209848A10008898A /* BuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFF1AF8C209848A10008898A /* BuyViewController.xib */; };
+		CFF1AF92209854300008898A /* OrderDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1AF90209854300008898A /* OrderDetailsViewController.m */; };
+		CFF1AF93209854300008898A /* OrderDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFF1AF91209854300008898A /* OrderDetailsViewController.xib */; };
 		F802129C208D787500792465 /* ZeroWalletVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F802129A208D787500792465 /* ZeroWalletVC.m */; };
 		F802129D208D787500792465 /* ZeroWalletVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F802129B208D787500792465 /* ZeroWalletVC.xib */; };
 		F80212A1208D82DA00792465 /* AllRecodeTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F802129F208D82DA00792465 /* AllRecodeTabCell.m */; };
@@ -299,6 +304,14 @@
 		CFF1AF822096129E0008898A /* PayInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayInfoViewController.h; sourceTree = "<group>"; };
 		CFF1AF832096129E0008898A /* PayInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayInfoViewController.m; sourceTree = "<group>"; };
 		CFF1AF842096129E0008898A /* PayInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayInfoViewController.xib; sourceTree = "<group>"; };
+		CFF1AF87209831D30008898A /* OrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderModel.h; sourceTree = "<group>"; };
+		CFF1AF88209831D30008898A /* OrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderModel.m; sourceTree = "<group>"; };
+		CFF1AF8A209848A10008898A /* BuyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyViewController.h; sourceTree = "<group>"; };
+		CFF1AF8B209848A10008898A /* BuyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyViewController.m; sourceTree = "<group>"; };
+		CFF1AF8C209848A10008898A /* BuyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyViewController.xib; sourceTree = "<group>"; };
+		CFF1AF8F209854300008898A /* OrderDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsViewController.h; sourceTree = "<group>"; };
+		CFF1AF90209854300008898A /* OrderDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsViewController.m; sourceTree = "<group>"; };
+		CFF1AF91209854300008898A /* OrderDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailsViewController.xib; sourceTree = "<group>"; };
 		DDF4D9A80B4C9B8D6DB5BDF5 /* Pods-cc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cc/Pods-cc.debug.xcconfig"; sourceTree = "<group>"; };
 		F8021299208D787500792465 /* ZeroWalletVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZeroWalletVC.h; sourceTree = "<group>"; };
 		F802129A208D787500792465 /* ZeroWalletVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZeroWalletVC.m; sourceTree = "<group>"; };
@@ -657,9 +670,15 @@
 				F8CE3BE9208746AB00C6994B /* DealViewController.h */,
 				F8CE3BEA208746AB00C6994B /* DealViewController.m */,
 				F8CE3BEB208746AB00C6994B /* DealViewController.xib */,
+				CFF1AF8A209848A10008898A /* BuyViewController.h */,
+				CFF1AF8B209848A10008898A /* BuyViewController.m */,
+				CFF1AF8C209848A10008898A /* BuyViewController.xib */,
 				F80568752089C1E00073B30C /* MyOrderViewController.h */,
 				F80568762089C1E00073B30C /* MyOrderViewController.m */,
 				F80568772089C1E00073B30C /* MyOrderViewController.xib */,
+				CFF1AF8F209854300008898A /* OrderDetailsViewController.h */,
+				CFF1AF90209854300008898A /* OrderDetailsViewController.m */,
+				CFF1AF91209854300008898A /* OrderDetailsViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -1424,6 +1443,8 @@
 				F8F82C2D209087C900A9A81A /* README.md */,
 				CFF1AF7F2095C74D0008898A /* KDataModel.h */,
 				CFF1AF802095C74D0008898A /* KDataModel.m */,
+				CFF1AF87209831D30008898A /* OrderModel.h */,
+				CFF1AF88209831D30008898A /* OrderModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1511,6 +1532,7 @@
 				CF71652F2082249E0092692F /* OrderListTabCell.xib in Resources */,
 				CF7165452083ADC30092692F /* SettingViewController.xib in Resources */,
 				F8ED3953207DACDB006F4D2A /* back_icon@2x.png in Resources */,
+				CFF1AF93209854300008898A /* OrderDetailsViewController.xib in Resources */,
 				CFF1AF862096129E0008898A /* PayInfoViewController.xib in Resources */,
 				F847ACCD209480B700487899 /* AAHighchartsLib.js in Resources */,
 				F8F82C242090878700A9A81A /* README.md in Resources */,
@@ -1547,6 +1569,7 @@
 				F8C3C9BE208EDED1009E201F /* CGPhoneNumViewController.xib in Resources */,
 				F847AC6F2094749F00487899 /* Info.plist in Resources */,
 				F8C3C9B4208ED4E0009E201F /* MoneyTransferViewController.xib in Resources */,
+				CFF1AF8E209848A10008898A /* BuyViewController.xib in Resources */,
 				CF7165282081ED4E0092692F /* MarketsViewController.xib in Resources */,
 				F8F82C0520907DE000A9A81A /* app_loading0.png in Resources */,
 				CF7165202081ECC30092692F /* MineViewController.xib in Resources */,
@@ -1688,6 +1711,7 @@
 				CF82FDFC208662BA006EF9B6 /* PasswordAlertView.m in Sources */,
 				F847ACD6209480B800487899 /* AADataLabels.m in Sources */,
 				F8ED3946207DACDB006F4D2A /* UIButton+XYButton.m in Sources */,
+				CFF1AF89209831D30008898A /* OrderModel.m in Sources */,
 				F80212A6208D8D3B00792465 /* MineVC.m in Sources */,
 				F805688C2089EFDD0073B30C /* TransferRecordViewController.m in Sources */,
 				CF82FDEE20864339006EF9B6 /* ZoreWalletVC.m in Sources */,
@@ -1741,6 +1765,7 @@
 				F847AC752094749F00487899 /* PNGenericChart.m in Sources */,
 				F847AC762094749F00487899 /* PNLineChart.m in Sources */,
 				F8ED395A207DACDB006F4D2A /* SureWebViewController.m in Sources */,
+				CFF1AF8D209848A10008898A /* BuyViewController.m in Sources */,
 				F80568722089BDA20073B30C /* XLPhotoBrowser.m in Sources */,
 				F8F82C1A209086E500A9A81A /* RecordModel.m in Sources */,
 				F8F82BFB20906C2F00A9A81A /* SportRecordViewController.m in Sources */,
@@ -1757,6 +1782,7 @@
 				CF71651A2081ECA30092692F /* ReleaseViewController.m in Sources */,
 				F80568962089F12F0073B30C /* NewsDetailsViewController.m in Sources */,
 				F8ED395E207DACDB006F4D2A /* Util.m in Sources */,
+				CFF1AF92209854300008898A /* OrderDetailsViewController.m in Sources */,
 				F847ACE7209480B800487899 /* AAYAxis.m in Sources */,
 				F8C3C9C2208EDEFE009E201F /* CGPwdNumViewController.m in Sources */,
 			);

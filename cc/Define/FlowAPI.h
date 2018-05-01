@@ -51,7 +51,7 @@
 //MARKET - K线图
 #define API_depth SERVER_IP@"/app/market/depth"
 //买单
-#define API_buy  SERVER_IP@"/app/market/buy
+#define API_buy  SERVER_IP@"/app/market/buy"
 // 买单列表
 #define API_buyList SERVER_IP@"/app/market/buyList"
 // 卖单列表

@@ -81,8 +81,6 @@
 	[self addheadthView];
     [self addtapView];
 	
-	//
-	
 }
 
 // 获取首页数据
@@ -132,10 +130,13 @@
 
 -(void)addNavView {
     
-    _headImage  = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    UIView *iconBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)
+                          ];
+    _headImage  = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     _headImage.image = [UIImage imageNamed:@"logo"];
-    UIBarButtonItem *imgItm = [[UIBarButtonItem alloc] initWithCustomView:_headImage];
-	
+    [iconBgView addSubview:_headImage];
+    UIBarButtonItem *imgItm = [[UIBarButtonItem alloc] initWithCustomView:iconBgView];
+    
 	UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 110, 40)];
 	_nameLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
 	_nameLab.textColor = [UIColor whiteColor];
@@ -160,9 +161,12 @@
     UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(lookClick)];
     [_headImage addGestureRecognizer:tap1];
 	
+    
+    UIView *newBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
     UIImageView *newsImgView  = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
     newsImgView.image = [UIImage imageNamed:@"xinfeng"];
-    UIBarButtonItem *rightAnotherButton = [[UIBarButtonItem alloc] initWithCustomView:newsImgView];
+    [newBgView addSubview:newsImgView];
+    UIBarButtonItem *rightAnotherButton = [[UIBarButtonItem alloc] initWithCustomView:newBgView];
     [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: rightAnotherButton,nil]];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(newsClick)];

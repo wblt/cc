@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OrderModel.h"
 
 @protocol OrderListTabCellDelegate <NSObject>
 
--(void)OrderListTabCellMacth:(NSInteger )index;
+-(void)OrderListTabCellMacth:(NSInteger )index orderType:(NSString *)type;
 ////点击了确定按钮  或者是完成了6位密码的输入
 //-(void)PasswordAlertViewCompleteInputWith:(NSString*)password;
 ////点击了取消按钮
@@ -28,9 +29,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLab;
 @property (weak, nonatomic) IBOutlet UIView *bgView;
 
+@property (weak, nonatomic) IBOutlet UILabel *statesLab;
 
 
 @property (nonatomic,assign)NSInteger index;
 @property (nonatomic,weak)id<OrderListTabCellDelegate> delegate;
+
+@property (nonatomic,strong)OrderModel *order;
+@property (nonatomic,strong)NSString *ordertype;
 
 @end

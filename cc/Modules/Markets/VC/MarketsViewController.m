@@ -13,6 +13,9 @@
 #import "DealViewController.h"
 #import "PNChart.h"
 #import "AAChartKit.h"
+#import "OrderModel.h"
+#import "SetAQPwdNumViewController.h"
+#import "BuyViewController.h"
 static NSString *Identifier = @"cell";
 
 @interface MarketsViewController ()<UITableViewDelegate,UITableViewDataSource,PasswordAlertViewDelegate,OrderListTabCellDelegate,PNChartDelegate>
@@ -26,15 +29,22 @@ static NSString *Identifier = @"cell";
 @property (nonatomic,strong)UIButton *weekBtn;
 @property (nonatomic,strong)NSMutableArray *xArray;
 @property (nonatomic,strong)NSMutableArray *valueArray;
-@property (nonatomic,copy)NSString *TYPE;
+@property (nonatomic,copy)NSString *TYPE; //k线类型
 
+@property (nonatomic,strong)NSMutableArray *data;
+@property (nonatomic,copy)NSString *QUERY_ID;//如果QUERY_ID = 0，则获取最新数据.
+@property (nonatomic,copy)NSString *type; //1：向下拉；QUERY_ID =0,该值没意义2：向上拉(必填)
 @end
 
 @implementation MarketsViewController
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	
+    _QUERY_ID = @"0";
+    _type = @"1";
+    [self.data removeAllObjects];
+    [self requestData];
+    
 	//TODO: 页面appear 禁用
 	[[IQKeyboardManager sharedManager] setEnable:NO];
 	[IQKeyboardManager sharedManager].shouldResignOnTouchOutside = NO; // 控制点击背景是否收起键盘
@@ -53,14 +63,53 @@ static NSString *Identifier = @"cell";
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"市场";
     self.edgesForExtendedLayout = UIRectEdgeTop;
+    self.data = [NSMutableArray array];
     self.xArray = [NSMutableArray array];
     self.valueArray = [NSMutableArray array];
     self.TYPE = @"0";
+   
 	[self addNavBtn];
     [self setup];
 	[self addChartView];
     [self requesKData];
-	
+    
+}
+
+- (void)requestData {
+    RequestParams *params = [[RequestParams alloc] initWithParams:API_marketList];
+    [params addParameter:@"QUERY_ID" value:_QUERY_ID];
+    [params addParameter:@"TYPE" value:_type];
+    
+    [[NetworkSingleton shareInstace] httpPost:params withTitle:@"市场列表" successBlock:^(id data) {
+        NSString *code = data[@"code"];
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
+        if (![code isEqualToString:@"1000"]) {
+            [SVProgressHUD showErrorWithStatus:data[@"message"]];
+            return ;
+        }
+        
+        NSArray *pd = data[@"pd"];
+        if (pd.count == 0 && [_QUERY_ID isEqualToString:@"0"]) {
+         //   [self showImagePage:YES withIsError:NO];
+            [SVProgressHUD showInfoWithStatus:@"暂无可买数据"];
+            return;
+        }
+        for (NSDictionary *dic in pd) {
+            OrderModel *model = [OrderModel mj_objectWithKeyValues:dic];
+            [self.data addObject:model];
+            if (pd.lastObject == dic) {
+                _QUERY_ID = [NSString stringWithFormat:@"%@",model.TRADE_ID];
+            }
+        }
+        
+        [self.tableView reloadData];
+        
+    } failureBlock:^(NSError *error) {
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
+        [SVProgressHUD showErrorWithStatus:@"网络异常"];
+    }];
 }
 
 - (void)requesKData {
@@ -231,6 +280,24 @@ static NSString *Identifier = @"cell";
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"OrderListTabCell" bundle:nil] forCellReuseIdentifier:Identifier];
+     
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        // 进入刷新状态后会自动调用这个block
+        _QUERY_ID = @"0";
+        _TYPE = @"1";
+        
+        [weakSelf.data removeAllObjects];
+        [weakSelf.tableView reloadData];
+        [weakSelf requestData];
+    }];
+    
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        // 进入刷新状态后会自动调用这个 block
+        _TYPE = @"2";
+        [weakSelf requestData];
+    }];
+    
+    
     
 	_alertView = [[PasswordAlertView alloc]initWithType:PasswordAlertViewType_sheet];
 	_alertView.delegate = self;
@@ -245,11 +312,11 @@ static NSString *Identifier = @"cell";
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 8;
+    return self.data.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 150;
+    return 160;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -275,6 +342,9 @@ static NSString *Identifier = @"cell";
 	cell.index = indexPath.row;
 	cell.delegate = self;
 	[cell.matchBtn setTitle:@"可匹配" forState:UIControlStateNormal];
+    cell.statesLab.hidden = YES;
+    cell.order = self.data[indexPath.row];
+    
     return cell;
 }
 
@@ -286,9 +356,15 @@ static NSString *Identifier = @"cell";
 	
 }
 
-- (void)OrderListTabCellMacth:(NSInteger)index {
+- (void)OrderListTabCellMacth:(NSInteger)index orderType:(NSString *)type{
 	
-	[_alertView show];
+    OrderModel *model = self.data[index];
+    BuyViewController *vc = [[BuyViewController alloc] initWithNibName:@"BuyViewController" bundle:nil];
+    vc.model = model;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+	//[_alertView show];
+    
 	
 //	BOOL flag = [SPUtil boolForKey:k_app_security];
 //	if (flag) {
@@ -328,6 +404,8 @@ static NSString *Identifier = @"cell";
 
 -(void)PasswordAlertViewDidClickForgetButton{
     NSLog(@"点击了忘记密码按钮");
+    SetAQPwdNumViewController *vc = [[SetAQPwdNumViewController alloc] initWithNibName:@"SetAQPwdNumViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
