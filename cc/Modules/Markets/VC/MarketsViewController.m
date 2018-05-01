@@ -43,6 +43,7 @@ static NSString *Identifier = @"cell";
     _QUERY_ID = @"0";
     _type = @"1";
     [self.data removeAllObjects];
+    [self.tableView reloadData];
     [self requestData];
     
 	//TODO: 页面appear 禁用

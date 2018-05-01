@@ -164,6 +164,7 @@
     
     UIView *newBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
     UIImageView *newsImgView  = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    newsImgView.userInteractionEnabled = YES;
     newsImgView.image = [UIImage imageNamed:@"xinfeng"];
     [newBgView addSubview:newsImgView];
     UIBarButtonItem *rightAnotherButton = [[UIBarButtonItem alloc] initWithCustomView:newBgView];
