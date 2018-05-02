@@ -30,17 +30,13 @@
 	<key>NSCameraUsageDescription</key>
 	<string>需要在上传头像时使用您的相机权限</string>
 	<key>NSHealthShareUsageDescription</key>
-	<string>some string value stating the reason</string>
+	<string>$(PRODUCT_NAME)需要访问您的健康分享</string>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string>some string value stating the reason</string>
+	<string>$(PRODUCT_NAME)需要访问您的健康更新</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>是否允许SHC访问您的相册？</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>是否允许SHC访问您的相册？</string>
-	<key>NSHealthShareUsageDescription</key>
-	<string>$(PRODUCT_NAME)需要访问您的健康分享</string>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>$(PRODUCT_NAME)需要访问您的健康更新</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
