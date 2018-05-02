@@ -69,7 +69,7 @@
                     // 获取到验证码后开始倒计时
                     [weakSelf.countDownButton startCountDown];
                 } failureBlock:^(NSError *error) {
-                    [SVProgressHUD showErrorWithStatus:@"网络异常"];
+                    [SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];
                     weakSelf.countDownButton.enabled = YES;
                 }];
         }
@@ -134,7 +134,7 @@
         [self.navigationController popViewControllerAnimated:YES];
         
     } failureBlock:^(NSError *error) {
-        [SVProgressHUD showErrorWithStatus:@"网络异常"];
+        [SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];
     }];
     
    

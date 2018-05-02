@@ -106,7 +106,7 @@ static NSString *Identifier = @"cell";
     } failureBlock:^(NSError *error) {
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
-        [SVProgressHUD showErrorWithStatus:@"网络异常"];
+        [SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];
     }];
 }
 
@@ -142,7 +142,7 @@ static NSString *Identifier = @"cell";
     } failureBlock:^(NSError *error) {
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
-        [SVProgressHUD showErrorWithStatus:@"网络异常"];
+        [SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];
     }];
 }
 
@@ -167,7 +167,7 @@ static NSString *Identifier = @"cell";
         [self.tableView reloadData];
         
     } failureBlock:^(NSError *error) {
-        [SVProgressHUD showErrorWithStatus:@"网络异常"];
+        [SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];
     }];
 }
 
@@ -185,7 +185,7 @@ static NSString *Identifier = @"cell";
         self.currentModel.STATUS = @"5";
         [self.tableView reloadData];
     } failureBlock:^(NSError *error) {
-        [SVProgressHUD showErrorWithStatus:@"网络异常"];
+        [SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];
     }];
 }
 

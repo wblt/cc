@@ -50,7 +50,7 @@
 		}
 		
 	} failureBlock:^(NSError *error) {
-		[SVProgressHUD showErrorWithStatus:@"网络异常"];
+		[SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];
 	}];
 }
 
@@ -113,7 +113,7 @@
 //		});
 		
 	} failureBlock:^(NSError *error) {
-		[SVProgressHUD showErrorWithStatus:@"网络异常"];
+		[SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];
 	}];
 	
 	

@@ -69,7 +69,7 @@ static NSString *Identifier = @"cell";
 	} failureBlock:^(NSError *error) {
 		[self.tableView.mj_header endRefreshing];
 		[self.tableView.mj_footer endRefreshing];
-		[SVProgressHUD showErrorWithStatus:@"网络异常"];
+		[SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];
 	}];
 }
 

@@ -47,7 +47,7 @@
         self.appUrl = data[@"pd"][@"APP_URL"];
 		[_shareImgView sd_setImageWithURL:[NSURL URLWithString:self.appUrl] placeholderImage:[UIImage imageNamed:@"logo"]];
     } failureBlock:^(NSError *error) {
-        [SVProgressHUD showErrorWithStatus:@"网络异常"];
+        [SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];
     }];
 }
 

@@ -77,7 +77,7 @@
 		_powerNumLab.text = [NSString stringWithFormat:@"%@",dic[@"W_ENERGY"]];
 		
 	} failureBlock:^(NSError *error) {
-		[SVProgressHUD showErrorWithStatus:@"网络异常"];
+		[SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];
 	}];
 }
 
@@ -143,7 +143,7 @@
 				[self requestData];
 			});
 		} failureBlock:^(NSError *error) {
-			[SVProgressHUD showErrorWithStatus:@"网络异常"];
+			[SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];
 		}];
 		
 	});

@@ -52,7 +52,7 @@
         tipsLab.text = [NSString stringWithFormat:@"本次可挂卖最多%@个",pd[@"D_CURRENCY"]];
         power = [NSString stringWithFormat:@"%@",pd[@"D_CURRENCY"]];
     } failureBlock:^(NSError *error) {
-        [SVProgressHUD showErrorWithStatus:@"网络异常"];
+        [SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];
     }];
 }
 
@@ -372,7 +372,7 @@
                 [self.navigationController popViewControllerAnimated:YES];
             });
         } failureBlock:^(NSError *error) {
-            [SVProgressHUD showErrorWithStatus:@"网络异常"];
+            [SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];
         }];
         
 		
