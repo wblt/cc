@@ -78,8 +78,8 @@
 	
     self.tabBar.backgroundColor = [UIColor darkGrayColor]; //UIColorFromHex(0x303030);
     // 按钮的非循环中状态图片数组
-    NSArray *normalImgArray = @[@"circle_unselected", @"market_unselected", @"mine_unselected"];
-    NSArray *selectedImgArray = @[@"circle_selected", @"market_selected", @"mine_selected"];
+    NSArray *normalImgArray = @[@"deliver_icon", @"market_unselected", @"mine_unselected"];
+    NSArray *selectedImgArray = @[@"deliver_icon_selector", @"market_selected", @"mine_selected"];
     // 按钮的标题数组
     NSArray *titleArray = @[@"释放", @"市场",@"我的"];
     UIColor *normalTitleColor =  [UIColor whiteColor]; //UIColorFromHex(0x808080);
