@@ -7,7 +7,7 @@
 //
 
 #import "ReceiveAddressViewController.h"
-#import <SGQRCode.h>
+#import "SGQRCode.h"
 @interface ReceiveAddressViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLab;
 @property (weak, nonatomic) IBOutlet UIImageView *headImgView;

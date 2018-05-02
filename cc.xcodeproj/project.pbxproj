@@ -90,6 +90,13 @@
 		F80568922089F0590073B30C /* MyFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80568902089F0590073B30C /* MyFriendsViewController.xib */; };
 		F80568962089F12F0073B30C /* NewsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F80568942089F12F0073B30C /* NewsDetailsViewController.m */; };
 		F80568972089F12F0073B30C /* NewsDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80568952089F12F0073B30C /* NewsDetailsViewController.xib */; };
+		F8210FC6209948B0009E082E /* UIImage+SGImageSize.m in Sources */ = {isa = PBXBuildFile; fileRef = F8210FB9209948B0009E082E /* UIImage+SGImageSize.m */; };
+		F8210FC7209948B0009E082E /* SGQRCode.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8210FBA209948B0009E082E /* SGQRCode.bundle */; };
+		F8210FC8209948B0009E082E /* SGQRCodeAlbumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F8210FBD209948B0009E082E /* SGQRCodeAlbumManager.m */; };
+		F8210FC9209948B0009E082E /* SGQRCodeGenerateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F8210FBF209948B0009E082E /* SGQRCodeGenerateManager.m */; };
+		F8210FCA209948B0009E082E /* SGQRCodeHelperTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F8210FC1209948B0009E082E /* SGQRCodeHelperTool.m */; };
+		F8210FCB209948B0009E082E /* SGQRCodeScanManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F8210FC3209948B0009E082E /* SGQRCodeScanManager.m */; };
+		F8210FCC209948B0009E082E /* SGQRCodeScanningView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8210FC5209948B0009E082E /* SGQRCodeScanningView.m */; };
 		F847AC1A2094527500487899 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F847AC192094526D00487899 /* Foundation.framework */; };
 		F847AC1C2094528200487899 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F847AC1B2094527D00487899 /* UIKit.framework */; };
 		F847AC1E2094529400487899 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F847AC1D2094528C00487899 /* CoreGraphics.framework */; };
@@ -368,6 +375,20 @@
 		F80568932089F12F0073B30C /* NewsDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsDetailsViewController.h; sourceTree = "<group>"; };
 		F80568942089F12F0073B30C /* NewsDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsDetailsViewController.m; sourceTree = "<group>"; };
 		F80568952089F12F0073B30C /* NewsDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailsViewController.xib; sourceTree = "<group>"; };
+		F8210FB8209948B0009E082E /* UIImage+SGImageSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SGImageSize.h"; sourceTree = "<group>"; };
+		F8210FB9209948B0009E082E /* UIImage+SGImageSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SGImageSize.m"; sourceTree = "<group>"; };
+		F8210FBA209948B0009E082E /* SGQRCode.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SGQRCode.bundle; sourceTree = "<group>"; };
+		F8210FBB209948B0009E082E /* SGQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGQRCode.h; sourceTree = "<group>"; };
+		F8210FBC209948B0009E082E /* SGQRCodeAlbumManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGQRCodeAlbumManager.h; sourceTree = "<group>"; };
+		F8210FBD209948B0009E082E /* SGQRCodeAlbumManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeAlbumManager.m; sourceTree = "<group>"; };
+		F8210FBE209948B0009E082E /* SGQRCodeGenerateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGQRCodeGenerateManager.h; sourceTree = "<group>"; };
+		F8210FBF209948B0009E082E /* SGQRCodeGenerateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeGenerateManager.m; sourceTree = "<group>"; };
+		F8210FC0209948B0009E082E /* SGQRCodeHelperTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGQRCodeHelperTool.h; sourceTree = "<group>"; };
+		F8210FC1209948B0009E082E /* SGQRCodeHelperTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeHelperTool.m; sourceTree = "<group>"; };
+		F8210FC2209948B0009E082E /* SGQRCodeScanManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGQRCodeScanManager.h; sourceTree = "<group>"; };
+		F8210FC3209948B0009E082E /* SGQRCodeScanManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeScanManager.m; sourceTree = "<group>"; };
+		F8210FC4209948B0009E082E /* SGQRCodeScanningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGQRCodeScanningView.h; sourceTree = "<group>"; };
+		F8210FC5209948B0009E082E /* SGQRCodeScanningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeScanningView.m; sourceTree = "<group>"; };
 		F847AC192094526D00487899 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F847AC1B2094527D00487899 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F847AC1D2094528C00487899 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -963,6 +984,35 @@
 			path = FSActionSheet;
 			sourceTree = "<group>";
 		};
+		F8210FB6209948B0009E082E /* SGQRCode */ = {
+			isa = PBXGroup;
+			children = (
+				F8210FB7209948B0009E082E /* Category */,
+				F8210FBA209948B0009E082E /* SGQRCode.bundle */,
+				F8210FBB209948B0009E082E /* SGQRCode.h */,
+				F8210FBC209948B0009E082E /* SGQRCodeAlbumManager.h */,
+				F8210FBD209948B0009E082E /* SGQRCodeAlbumManager.m */,
+				F8210FBE209948B0009E082E /* SGQRCodeGenerateManager.h */,
+				F8210FBF209948B0009E082E /* SGQRCodeGenerateManager.m */,
+				F8210FC0209948B0009E082E /* SGQRCodeHelperTool.h */,
+				F8210FC1209948B0009E082E /* SGQRCodeHelperTool.m */,
+				F8210FC2209948B0009E082E /* SGQRCodeScanManager.h */,
+				F8210FC3209948B0009E082E /* SGQRCodeScanManager.m */,
+				F8210FC4209948B0009E082E /* SGQRCodeScanningView.h */,
+				F8210FC5209948B0009E082E /* SGQRCodeScanningView.m */,
+			);
+			path = SGQRCode;
+			sourceTree = "<group>";
+		};
+		F8210FB7209948B0009E082E /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				F8210FB8209948B0009E082E /* UIImage+SGImageSize.h */,
+				F8210FB9209948B0009E082E /* UIImage+SGImageSize.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		F847AC492094749F00487899 /* PNChart */ = {
 			isa = PBXGroup;
 			children = (
@@ -1332,6 +1382,7 @@
 		F8ED396F207DB31A006F4D2A /* ThridParty */ = {
 			isa = PBXGroup;
 			children = (
+				F8210FB6209948B0009E082E /* SGQRCode */,
 				F847AC81209480B700487899 /* AAChartKitLib */,
 				F847AC492094749F00487899 /* PNChart */,
 				36EF25D3209007B100E6A0F4 /* QCloudUpload */,
@@ -1530,6 +1581,7 @@
 				F8ED3951207DACDB006F4D2A /* README.md in Resources */,
 				F8F82C0420907DE000A9A81A /* app_loading1.png in Resources */,
 				CF71652F2082249E0092692F /* OrderListTabCell.xib in Resources */,
+				F8210FC7209948B0009E082E /* SGQRCode.bundle in Resources */,
 				CF7165452083ADC30092692F /* SettingViewController.xib in Resources */,
 				F8ED3953207DACDB006F4D2A /* back_icon@2x.png in Resources */,
 				CFF1AF93209854300008898A /* OrderDetailsViewController.xib in Resources */,
@@ -1612,7 +1664,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E2183B97011C2D7154C4294C /* [CP] Embed Pods Frameworks */ = {
@@ -1655,6 +1707,7 @@
 				F847ACDA209480B800487899 /* AALine.m in Sources */,
 				F84E5B5D207D961200949AF1 /* ViewController.m in Sources */,
 				F8ED396D207DB311006F4D2A /* BaseViewController.m in Sources */,
+				F8210FC8209948B0009E082E /* SGQRCodeAlbumManager.m in Sources */,
 				F84E5B68207D961200949AF1 /* main.m in Sources */,
 				CFF1AF6A2095A6870008898A /* ReceiveAddressViewController.m in Sources */,
 				CF82FE03208C607C006EF9B6 /* NoticeModel.m in Sources */,
@@ -1701,6 +1754,7 @@
 				CF82FE12208CF8C2006EF9B6 /* ReleaseRecordViewController.m in Sources */,
 				F847ACD2209480B800487899 /* AABar.m in Sources */,
 				F847AC7E2094749F00487899 /* PNScatterChartData.m in Sources */,
+				F8210FC9209948B0009E082E /* SGQRCodeGenerateManager.m in Sources */,
 				F847AC7F2094749F00487899 /* PNScatterChartDataItem.m in Sources */,
 				CFF1AF7E2095B6C40008898A /* WCQRCodeScanningVC.m in Sources */,
 				F847AC772094749F00487899 /* PNLineChartData.m in Sources */,
@@ -1720,6 +1774,7 @@
 				CF82FDE420863E2D006EF9B6 /* NewsVC.m in Sources */,
 				F80212A1208D82DA00792465 /* AllRecodeTabCell.m in Sources */,
 				F847ACC9209480B700487899 /* AASeriesElement.m in Sources */,
+				F8210FCB209948B0009E082E /* SGQRCodeScanManager.m in Sources */,
 				CFF1AF852096129E0008898A /* PayInfoViewController.m in Sources */,
 				F847ACE5209480B800487899 /* AATooltip.m in Sources */,
 				F805687D2089C9A50073B30C /* CompoundSettingViewController.m in Sources */,
@@ -1739,6 +1794,7 @@
 				F8C3C9CE208F3070009E201F /* ReceiveRecordVC.m in Sources */,
 				F80568742089BDA20073B30C /* XLZoomingScrollView.m in Sources */,
 				F847ACD4209480B800487899 /* AAColumn.m in Sources */,
+				F8210FCC209948B0009E082E /* SGQRCodeScanningView.m in Sources */,
 				F847ACD9209480B800487899 /* AALegend.m in Sources */,
 				F8ED3988207DB8B0006F4D2A /* RegistViewController.m in Sources */,
 				CF82FE0A208CB761006EF9B6 /* FriendListTabCell.m in Sources */,
@@ -1752,6 +1808,7 @@
 				CF716533208394E80092692F /* MQVerCodeImageView.m in Sources */,
 				CF82FDF320864DE3006EF9B6 /* InvitionFriendVC.m in Sources */,
 				F8ED3949207DACDB006F4D2A /* UIView+Extend.m in Sources */,
+				F8210FC6209948B0009E082E /* UIImage+SGImageSize.m in Sources */,
 				F847ACC6209480B700487899 /* AAChartModel.m in Sources */,
 				CF82FE0E208CB982006EF9B6 /* ErrorView.m in Sources */,
 				F847AC712094749F00487899 /* PNBarChart.m in Sources */,
@@ -1784,6 +1841,7 @@
 				F8ED395E207DACDB006F4D2A /* Util.m in Sources */,
 				CFF1AF92209854300008898A /* OrderDetailsViewController.m in Sources */,
 				F847ACE7209480B800487899 /* AAYAxis.m in Sources */,
+				F8210FCA209948B0009E082E /* SGQRCodeHelperTool.m in Sources */,
 				F8C3C9C2208EDEFE009E201F /* CGPwdNumViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
