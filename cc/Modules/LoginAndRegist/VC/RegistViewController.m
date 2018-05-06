@@ -158,7 +158,11 @@
         //保存用户信息
         [SPUtil setObject:_userNameTextField.text forKey:k_app_userNumber];
         // 回到登录界面、 或者直接进入
-        [self.navigationController popViewControllerAnimated:YES];
+        [SVProgressHUD showSuccessWithStatus:@"注册成功"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+             [self.navigationController popViewControllerAnimated:YES];
+        });
+       
         
     } failureBlock:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];

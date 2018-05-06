@@ -27,6 +27,8 @@
 		CF71653C20839EA10092692F /* CQCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71653A20839EA00092692F /* CQCountDownButton.m */; };
 		CF7165442083ADC30092692F /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7165422083ADC30092692F /* SettingViewController.m */; };
 		CF7165452083ADC30092692F /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF7165432083ADC30092692F /* SettingViewController.xib */; };
+		CF73CD50209ED09500C15F4F /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF73CD4E209ED09500C15F4F /* WelcomeViewController.m */; };
+		CF73CD51209ED09500C15F4F /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF73CD4F209ED09500C15F4F /* WelcomeViewController.xib */; };
 		CF82FDDF20862CDD006EF9B6 /* HashrateShifToWalletVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CF82FDDD20862CDD006EF9B6 /* HashrateShifToWalletVC.m */; };
 		CF82FDE020862CDD006EF9B6 /* HashrateShifToWalletVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF82FDDE20862CDD006EF9B6 /* HashrateShifToWalletVC.xib */; };
 		CF82FDE420863E2D006EF9B6 /* NewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CF82FDE220863E2D006EF9B6 /* NewsVC.m */; };
@@ -270,6 +272,9 @@
 		CF7165412083ADC30092692F /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		CF7165422083ADC30092692F /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		CF7165432083ADC30092692F /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		CF73CD4D209ED09500C15F4F /* WelcomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		CF73CD4E209ED09500C15F4F /* WelcomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		CF73CD4F209ED09500C15F4F /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		CF82FDDC20862CDD006EF9B6 /* HashrateShifToWalletVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashrateShifToWalletVC.h; sourceTree = "<group>"; };
 		CF82FDDD20862CDD006EF9B6 /* HashrateShifToWalletVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HashrateShifToWalletVC.m; sourceTree = "<group>"; };
 		CF82FDDE20862CDD006EF9B6 /* HashrateShifToWalletVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HashrateShifToWalletVC.xib; sourceTree = "<group>"; };
@@ -1430,6 +1435,9 @@
 				CF716534208399C60092692F /* ForgetPwdViewController.h */,
 				CF716535208399C60092692F /* ForgetPwdViewController.m */,
 				CF716536208399C60092692F /* ForgetPwdViewController.xib */,
+				CF73CD4D209ED09500C15F4F /* WelcomeViewController.h */,
+				CF73CD4E209ED09500C15F4F /* WelcomeViewController.m */,
+				CF73CD4F209ED09500C15F4F /* WelcomeViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -1568,6 +1576,7 @@
 			files = (
 				F80568972089F12F0073B30C /* NewsDetailsViewController.xib in Resources */,
 				F8ED3945207DACDB006F4D2A /* README.md in Resources */,
+				CF73CD51209ED09500C15F4F /* WelcomeViewController.xib in Resources */,
 				F8F82C1F2090871C00A9A81A /* ReceiveRecordTabCell.xib in Resources */,
 				F80212A7208D8D3B00792465 /* MineVC.xib in Resources */,
 				F802129D208D787500792465 /* ZeroWalletVC.xib in Resources */,
@@ -1664,7 +1673,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E2183B97011C2D7154C4294C /* [CP] Embed Pods Frameworks */ = {
@@ -1709,6 +1718,7 @@
 				F8ED396D207DB311006F4D2A /* BaseViewController.m in Sources */,
 				F8210FC8209948B0009E082E /* SGQRCodeAlbumManager.m in Sources */,
 				F84E5B68207D961200949AF1 /* main.m in Sources */,
+				CF73CD50209ED09500C15F4F /* WelcomeViewController.m in Sources */,
 				CFF1AF6A2095A6870008898A /* ReceiveAddressViewController.m in Sources */,
 				CF82FE03208C607C006EF9B6 /* NoticeModel.m in Sources */,
 				CF71653C20839EA10092692F /* CQCountDownButton.m in Sources */,
