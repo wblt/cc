@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *addresslab;
 @property (weak, nonatomic) IBOutlet UILabel *numLab;
 @property (weak, nonatomic) IBOutlet UILabel *timeLab;
+@property (weak, nonatomic) IBOutlet UILabel *typeLab;
 
 @property(nonatomic,strong)RecordModel *recceiveModel;
 @property(nonatomic,strong)RecordModel *sendModel;

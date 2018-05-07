@@ -17,13 +17,20 @@
 #import "UserInfoModel.h"
 #import "HGBStepTool.h"
 @interface ReleaseViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *shiftToHashrateBtn;
-@property (weak, nonatomic) IBOutlet UIButton *inviteBtn;
+@property (weak, nonatomic) IBOutlet UIView *turnView;
+@property (weak, nonatomic) IBOutlet UIView *inviteView;
+
 @property (weak, nonatomic) IBOutlet UIView *hashrateView;
-@property (weak, nonatomic) IBOutlet UIView *ZeroView;
+
 @property (weak, nonatomic) IBOutlet UIView *centerBgView;
 @property (weak, nonatomic) IBOutlet UILabel *sNumLab;
 @property (weak, nonatomic) IBOutlet UILabel *dNumLab;
+@property (weak, nonatomic) IBOutlet UILabel *quNumLab;
+@property (weak, nonatomic) IBOutlet UIView *sBgView;
+@property (weak, nonatomic) IBOutlet UIView *qBgView;
+@property (weak, nonatomic) IBOutlet UIView *lingBgView;
+
+
 
 @property (nonatomic, strong) UIImageView *headImage;
 @property (nonatomic, strong) UILabel *nameLab;
@@ -75,8 +82,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.edgesForExtendedLayout = UIRectEdgeTop;
-    _shiftToHashrateBtn.adjustsImageWhenHighlighted = NO;
-    _inviteBtn.adjustsImageWhenHighlighted = NO;
+    
+    
     [self addNavView];
 	[self addheadthView];
     [self addtapView];
@@ -100,7 +107,8 @@
 		UserInfoModel *model = [UserInfoModel mj_objectWithKeyValues:dic];
 		[[BeanManager shareInstace] setBean:model path:UserModelPath];
 		[_headImage sd_setImageWithURL:[NSURL URLWithString:model.HEAD_URL] placeholderImage:[UIImage imageNamed:@"logo"]];
-		_sNumLab.text = model.S_CURRENCY;
+		_sNumLab.text = [NSString stringWithFormat:@"算力钱包 %@",model.S_CURRENCY];
+        _quNumLab.text = [NSString stringWithFormat:@"区块SHC %@",model.QK_CURRENCY];
 		_dNumLab.text = model.D_CURRENCY;
 		
     } failureBlock:^(NSError *error) {
@@ -149,6 +157,10 @@
 	friendsLab.textColor = [UIColor whiteColor];
 	friendsLab.font = Font_12;
 	friendsLab.text = @"点击查看我的朋友";
+    NSDictionary *attribtDic3 = @{NSUnderlineStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
+    NSMutableAttributedString *attribtStr3 = [[NSMutableAttributedString alloc]initWithString:friendsLab.text attributes:attribtDic3];
+    friendsLab.attributedText = attribtStr3;
+    
 	[bgView addSubview:friendsLab];
 	
 	UITapGestureRecognizer *friendTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(lookClick)];
@@ -173,10 +185,12 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(newsClick)];
     [newsImgView addGestureRecognizer:tap];
     
-    ViewBorderRadius(_shiftToHashrateBtn, 6, 0.6, UIColorFromHex(0x4B5461));
-    ViewBorderRadius(_inviteBtn, 6, 0.6, UIColorFromHex(0x4B5461));
+    ViewBorderRadius(_inviteView, 6, 0.6, UIColorFromHex(0x4B5461));
+    ViewBorderRadius(_turnView, 6, 0.6, UIColorFromHex(0x4B5461));
+    ViewBorderRadius(_sBgView, 6, 0.6, UIColorFromHex(0x4B5461));
+    ViewBorderRadius(_qBgView, 6, 0.6, UIColorFromHex(0x4B5461));
     ViewBorderRadius(_hashrateView, 10, 0.6,  UIColorFromHex(0x4B5461));
-    ViewBorderRadius(_ZeroView, 10, 0.6,  UIColorFromHex(0x4B5461));
+    
 }
 
 - (void)addheadthView {
@@ -204,13 +218,24 @@
 }
 
 - (void)addtapView {
+    
     UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hashrateTapAction)];
     _hashrateView.userInteractionEnabled = YES;
     [_hashrateView addGestureRecognizer:tap1];
     
+    
     UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(zeroTapAction)];
-    _ZeroView.userInteractionEnabled = YES;
-    [_ZeroView addGestureRecognizer:tap2];
+    _lingBgView.userInteractionEnabled = YES;
+    [_lingBgView addGestureRecognizer:tap2];
+    
+    UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(shiftToWalletAction)];
+    _turnView.userInteractionEnabled = YES;
+    [_turnView addGestureRecognizer:tap3];
+    
+    UITapGestureRecognizer *tap4 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(inviteFriendsAction)];
+    _inviteView.userInteractionEnabled = YES;
+    [_inviteView addGestureRecognizer:tap4];
+    
 }
 
 - (void)hashrateTapAction {
@@ -232,12 +257,12 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (IBAction)shiftToWalletAction:(id)sender {
+- (void)shiftToWalletAction {
     HashrateShifToWalletVC *vc = [[HashrateShifToWalletVC alloc] initWithNibName:@"HashrateShifToWalletVC" bundle:nil];
     
     [self.navigationController pushViewController:vc animated:YES];
 }
-- (IBAction)inviteFriendsAction:(id)sender {
+- (void)inviteFriendsAction {
     InvitionFriendVC *vc = [[InvitionFriendVC alloc] initWithNibName:@"InvitionFriendVC" bundle:nil];
     
     [self.navigationController pushViewController:vc animated:YES];

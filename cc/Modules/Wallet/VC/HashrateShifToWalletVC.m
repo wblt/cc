@@ -33,7 +33,7 @@
 
 - (void)setup {
 	UserInfoModel *model = [[BeanManager shareInstace] getBeanfromPath:UserModelPath];
-	_hashrateLab.text = model.S_CURRENCY;
+	_hashrateLab.text = model.QK_CURRENCY;
 	_zeroLab.text = model.D_CURRENCY;
 	_numTextField.placeholder = [NSString stringWithFormat:@"最多可转余额为%d",model.D_CURRENCY.intValue];
 	_tipsLab.text = [NSString stringWithFormat:@"本次最多可转入%d算力钱包",model.D_CURRENCY.intValue];

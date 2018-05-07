@@ -13,7 +13,7 @@
 @property(nonatomic,copy)NSString *CREATE_TIME;
 @property(nonatomic,copy)NSNumber *ID;
 @property(nonatomic,copy)NSString *W_ADDRESS;
-
+@property(nonatomic,copy)NSString *CURRENCY_TYPE;
 //接收记录
 @property(nonatomic,copy)NSString *RECEIVE_MONEY;
 //发送记录

@@ -20,6 +20,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *powerNumLab;
 @property (weak, nonatomic) IBOutlet UILabel *inUseNumLab;
 @property (nonatomic,strong) PasswordAlertView *alertView;
+@property (weak, nonatomic) IBOutlet UIView *typeBgView;
+@property (weak, nonatomic) IBOutlet UILabel *typeLab;
+
+@property (nonatomic,copy)NSString *type; // 0 零钱  1 区块SHC
 
 @end
 
@@ -45,8 +49,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	self.navigationItem.title = @"财务转账";
+    
+    _type = @"0";
+    
 	[self setup];
+    [self addTapView];
 	[self requestData];
+   
 }
 
 - (void)requestData {
@@ -73,7 +82,7 @@
 //		}
 		NSDictionary *dic = data[@"pd"];
 		_shcNumLab.text =  [NSString stringWithFormat:@"%@",dic[@"D_CURRENCY"]];
-		_inUseNumLab.text = [NSString stringWithFormat:@"%@",dic[@"T_MONEY"]];
+		_inUseNumLab.text = [NSString stringWithFormat:@"%@",dic[@"QK_CURRENCY"]];
 		_powerNumLab.text = [NSString stringWithFormat:@"%@",dic[@"W_ENERGY"]];
 		
 	} failureBlock:^(NSError *error) {
@@ -89,6 +98,28 @@
 	_alertView.titleLable.text = @"请输入安全密码";
 	_alertView.tipsLalbe.text = @"您输入的密码不正确！";
 	
+}
+
+- (void)addTapView {
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(chooseTypeAction)];
+    [_typeBgView addGestureRecognizer:tap];
+}
+
+- (void)chooseTypeAction {
+    ////这里是摄像头可以使用的处理逻辑
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"发送至零钱", @"发送区块SHC", nil];
+    [actionSheet showInView:self.view];
+}
+
+#pragma mark - UIActionSheet delegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {/**发送至零钱*/
+        _typeLab.text = @"发送零钱";
+        _type = @"0";
+    }else if (buttonIndex == 1){/**发送区块SHC*/
+        _typeLab.text = @"发送区块SHC";
+        _type = @"1";
+    }
 }
 
 - (IBAction)sumbitAction:(id)sender {
@@ -131,6 +162,7 @@
 		[params addParameter:@"W_ADDRESS" value:_addressTextField.text];
 		[params addParameter:@"S_MONEY" value:_numTextField.text];
 		[params addParameter:@"PASSW" value:password];
+        [params addParameter:@"CURRENCY_TYPE" value:_type];
 		
 		[[NetworkSingleton shareInstace] httpPost:params withTitle:@"发送SHC" successBlock:^(id data) {
 			NSString *code = data[@"code"];
@@ -140,7 +172,8 @@
 			}
 			[SVProgressHUD showSuccessWithStatus:@"转账成功"];
 			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-				[self requestData];
+				//[self requestData];
+                [self.navigationController popViewControllerAnimated:YES];
 			});
 		} failureBlock:^(NSError *error) {
 			[SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];

@@ -82,10 +82,10 @@
         return;
     }
 	
-	if (_pwdTextField.text.length <6) {
-		[SVProgressHUD showInfoWithStatus:@"请输入6位以上密码"];
-		return;
-	}
+    if (_pwdTextField.text.length <6) {
+        [SVProgressHUD showInfoWithStatus:@"请输入6位以上密码"];
+        return;
+    }
 	
 	if (_codeTextField.text.length == 0) {
 		[SVProgressHUD showErrorWithStatus:@"请输入验证码"];

@@ -159,6 +159,7 @@ static NSString *Identifier = @"cell";
         .yAxisMinSet(@0)
         .yAxisLabelsFontColorSet(@"#FFFFFF")
         .xAxisLabelsFontColorSet(@"#FFFFFF")
+        .legendEnabledSet(NO)
         .seriesSet(@[
                      AAObject(AASeriesElement)
                      .nameSet(@"走势图")
@@ -285,7 +286,7 @@ static NSString *Identifier = @"cell";
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         // 进入刷新状态后会自动调用这个block
         _QUERY_ID = @"0";
-        _TYPE = @"1";
+        _type = @"1";
         
         [weakSelf.data removeAllObjects];
         [weakSelf.tableView reloadData];
@@ -294,7 +295,7 @@ static NSString *Identifier = @"cell";
     
     self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         // 进入刷新状态后会自动调用这个 block
-        _TYPE = @"2";
+        _type = @"2";
         [weakSelf requestData];
     }];
     

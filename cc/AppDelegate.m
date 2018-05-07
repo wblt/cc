@@ -44,24 +44,9 @@
 	//[[PgyManager sharedPgyManager] startManagerWithAppId:@"PGY_APP_ID"];
 	//启动更新检查SDK
 	//[[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"PGY_APP_ID"];
-    BOOL first = [SPUtil boolForKey:k_app_first];
-    // 第一次进入 是false
-    if (!first) {
-        WelcomeViewController *vc = [[WelcomeViewController alloc] initWithNibName:@"WelcomeViewController" bundle:nil];
-        self.window.rootViewController = vc;
-    }else {
-        BOOL flag = [SPUtil boolForKey:k_app_autologin];
-        if (flag) {
-            MainTabBarController *mainTabbar = [[MainTabBarController alloc] init];
-            mainTabbar.selectIndex = 0;
-            self.window.rootViewController = mainTabbar;
-        }else {
-            LoginVC *vc = [[LoginVC alloc] initWithNibName:@"LoginVC" bundle:nil];
-            
-            BaseNavViewController *nav = [[BaseNavViewController alloc] initWithRootViewController:vc];
-            self.window.rootViewController = nav;
-        }
-    }
+    
+    WelcomeViewController *vc = [[WelcomeViewController alloc] initWithNibName:@"WelcomeViewController" bundle:nil];
+    self.window.rootViewController = vc;
 	// 进入主控制器，需要判断是否登录
 	
 	
