@@ -55,10 +55,10 @@
     
     
     UIButton *hidenBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    ViewBorderRadius(hidenBtn, 10, 0.6, [UIColor whiteColor]);
-    hidenBtn.frame = CGRectMake(KScreenWidth-70, 30, 60, 30);
+   // ViewBorderRadius(hidenBtn, 10, 0.6, [UIColor whiteColor]);
+    hidenBtn.frame = CGRectMake(KScreenWidth-80, 30, 70, 30);
     hidenBtn.titleLabel.font = Font_14;
-    [hidenBtn setTitle:@"跳过" forState:UIControlStateNormal];
+    [hidenBtn setTitle:@"跳过 >>" forState:UIControlStateNormal];
     [hidenBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.scrollView addSubview:hidenBtn];
     

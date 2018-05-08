@@ -24,7 +24,6 @@
     self.numLab.text = [NSString stringWithFormat:@"%@",order.BUSINESS_COUNT];
     self.priceLab.text = [NSString stringWithFormat:@"%@",order.BUSINESS_PRICE];
     self.totalLab.text = [NSString stringWithFormat:@"%@", order.TOTAL_MONEY];
-    self.matchBtn.hidden = NO;
     if ([order.STATUS isEqualToString:@"0"]) {
         self.statesLab.text = @"待审核";
     }else if ([order.STATUS isEqualToString:@"1"]) {
@@ -33,36 +32,23 @@
          self.statesLab.text = @"部分成交";
     }else if ([order.STATUS isEqualToString:@"3"]) {
          self.statesLab.text = @"待付款";
-      //  [self.matchBtn setTitle:@"确认付款" forState:UIControlStateNormal];
-        if ([_ordertype isEqualToString:@"1"]) {
-            [self.matchBtn setTitle:@"查看详情" forState:UIControlStateNormal];
-        }else {
-             self.matchBtn.hidden = YES;
-        }
     }else if ([order.STATUS isEqualToString:@"4"]) {
          self.statesLab.text = @"已付款";
-        if ([_ordertype isEqualToString:@"1"]) {
-            [self.matchBtn setTitle:@"查看详情" forState:UIControlStateNormal];
-        }else {
-            //self.matchBtn.hidden = YES;
-              [self.matchBtn setTitle:@"确认收款" forState:UIControlStateNormal];
-        }
     }else if ([order.STATUS isEqualToString:@"5"]) {
          self.statesLab.text = @"已成交";
-        if ([_ordertype isEqualToString:@"1"]) {
-            [self.matchBtn setTitle:@"查看详情" forState:UIControlStateNormal];
-        }else {
-            self.matchBtn.hidden = YES;
-        }
     }else if ([order.STATUS isEqualToString:@"6"]) {
          self.statesLab.text = @"已取消";
-        if ([_ordertype isEqualToString:@"1"]) {
-            [self.matchBtn setTitle:@"查看详情" forState:UIControlStateNormal];
-        }else {
-            self.matchBtn.hidden = YES;
-        }
     }
-    
+    [self.matchBtn setTitle:@"查看详情" forState:UIControlStateNormal];
+}
+
+- (void)setMarketOrder:(OrderModel *)marketOrder{
+    _marketOrder = marketOrder;
+    self.nameLab.text = marketOrder.USER_NAME;
+    self.timeLab.text = marketOrder.CREATE_TIME;
+    self.numLab.text = [NSString stringWithFormat:@"%@",marketOrder.BUSINESS_COUNT];
+    self.priceLab.text = [NSString stringWithFormat:@"%@",marketOrder.BUSINESS_PRICE];
+    self.totalLab.text = [NSString stringWithFormat:@"%@", marketOrder.TOTAL_MONEY];
 }
 
 - (IBAction)mactchAction:(id)sender {

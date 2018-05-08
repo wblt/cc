@@ -9,7 +9,7 @@
 #import "BaseViewController.h"
 #import "OrderModel.h"
 @interface OrderDetailsViewController : BaseViewController
-
+@property(nonatomic,copy)NSString *type; // 0 买单进入， 1卖单进入
 @property(nonatomic,strong)OrderModel *model;
 
 @end

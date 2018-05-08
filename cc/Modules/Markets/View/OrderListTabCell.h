@@ -38,4 +38,7 @@
 @property (nonatomic,strong)OrderModel *order;
 @property (nonatomic,strong)NSString *ordertype;
 
+
+@property (nonatomic,strong)OrderModel *marketOrder;
+
 @end

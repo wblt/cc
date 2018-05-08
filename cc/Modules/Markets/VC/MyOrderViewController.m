@@ -37,6 +37,15 @@ static NSString *Identifier = @"cell";
     //TODO: 页面appear 禁用
     [[IQKeyboardManager sharedManager] setEnable:NO];
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = NO; // 控制点击背景是否收起键盘
+    _QUERY_ID = @"0";
+    _TYPE = @"1";
+    [self.data removeAllObjects];
+    [self.tableView reloadData];
+    if ([_orderType isEqualToString:@"1"]) {
+        [self requetBuyData];
+    }else {
+        [self requetSellData];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -319,28 +328,34 @@ static NSString *Identifier = @"cell";
 }
 
 - (void)OrderListTabCellMacth:(NSInteger)index orderType:(NSString *)type{
-	
-	
-    
-    UserInfoModel *model = [[BeanManager shareInstace] getBeanfromPath:UserModelPath];
-    
-    if ([type isEqualToString:@"2"]) { // 卖单   取消订单
-        if ([model.IFPAS isEqualToString:@"1"]) {
-            [_alertView show];
-            self.currentModel = self.data[index];
-        }else {
-            [SVProgressHUD showInfoWithStatus:@"未设置资金密码"];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                SetAQPwdNumViewController *vc = [[SetAQPwdNumViewController alloc] initWithNibName:@"SetAQPwdNumViewController" bundle:nil];
-                [self.navigationController pushViewController:vc animated:YES];
-            });
-        }
-    }else { // 买单查看 订单详情
-        OrderDetailsViewController *vc = [[OrderDetailsViewController alloc] initWithNibName:@"OrderDetailsViewController" bundle:nil];
-        vc.model = self.data[index];
-        [self.navigationController pushViewController:vc animated:YES];
-        
+    OrderDetailsViewController *vc = [[OrderDetailsViewController alloc] initWithNibName:@"OrderDetailsViewController" bundle:nil];
+    vc.model = self.data[index];
+    if ([type isEqualToString:@"2"]) {
+        vc.type = @"1";//卖单进入
+    }else {
+        vc.type = @"0"; //买单进入
     }
+    [self.navigationController pushViewController:vc animated:YES];
+	
+//    UserInfoModel *model = [[BeanManager shareInstace] getBeanfromPath:UserModelPath];
+//
+//    if ([type isEqualToString:@"2"]) { // 卖单   取消订单
+//        if ([model.IFPAS isEqualToString:@"1"]) {
+//            [_alertView show];
+//            self.currentModel = self.data[index];
+//        }else {
+//            [SVProgressHUD showInfoWithStatus:@"未设置资金密码"];
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                SetAQPwdNumViewController *vc = [[SetAQPwdNumViewController alloc] initWithNibName:@"SetAQPwdNumViewController" bundle:nil];
+//                [self.navigationController pushViewController:vc animated:YES];
+//            });
+//        }
+//    }else { // 买单查看 订单详情
+//        OrderDetailsViewController *vc = [[OrderDetailsViewController alloc] initWithNibName:@"OrderDetailsViewController" bundle:nil];
+//        vc.model = self.data[index];
+//        [self.navigationController pushViewController:vc animated:YES];
+//
+//    }
    
 }
 

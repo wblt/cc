@@ -345,7 +345,7 @@ static NSString *Identifier = @"cell";
 	cell.delegate = self;
 	[cell.matchBtn setTitle:@"可匹配" forState:UIControlStateNormal];
     cell.statesLab.hidden = YES;
-    cell.order = self.data[indexPath.row];
+    cell.marketOrder = self.data[indexPath.row];
     
     return cell;
 }
