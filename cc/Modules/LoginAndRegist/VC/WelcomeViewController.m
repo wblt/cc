@@ -12,7 +12,7 @@
 #import "BaseNavViewController.h"
 #import "MainTabBarController.h"
 @interface WelcomeViewController ()
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) UIScrollView *scrollView;
 
 @end
 
@@ -25,10 +25,18 @@
 }
 
 - (void)setup {
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight)];
+    self.scrollView.contentSize = CGSizeMake(KScreenWidth*2, KScreenHeight);
+    self.scrollView.pagingEnabled = YES;
+    self.scrollView.showsVerticalScrollIndicator = NO;
+    self.scrollView.showsHorizontalScrollIndicator = NO;
+    [self.view addSubview:self.scrollView];
+    
+    NSArray *imgAry = @[@"uoko_guide_background_1",@"uoko_guide_background_2"];
     MJWeakSelf
     for (NSInteger i = 0; i<2; i++) {
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(KScreenWidth*i, 0, KScreenWidth, KScreenHeight)];
-        imgView.image = [UIImage imageNamed:@""];
+        imgView.image = [UIImage imageNamed:imgAry[i]];
         imgView.contentMode = UIViewContentModeScaleAspectFit;
         imgView.autoresizesSubviews = YES;
         imgView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin |  UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleRightMargin;
@@ -60,16 +68,13 @@
     hidenBtn.titleLabel.font = Font_14;
     [hidenBtn setTitle:@"跳过 >>" forState:UIControlStateNormal];
     [hidenBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.scrollView addSubview:hidenBtn];
+    [self.view addSubview:hidenBtn];
     
     [hidenBtn addTapBlock:^(UIButton *btn) {
           [weakSelf enter];
     }];
     
-    self.scrollView.contentSize = CGSizeMake(KScreenWidth*2, KScreenHeight);
-    self.scrollView.pagingEnabled = YES;
-    self.scrollView.showsVerticalScrollIndicator = NO;
-    self.scrollView.showsHorizontalScrollIndicator = NO;
+    
 }
 
 

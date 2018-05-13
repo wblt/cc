@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController">
             <connections>
-                <outlet property="scrollView" destination="vMh-f6-l3M" id="3Ba-Wh-kxN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,18 +18,7 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vMh-f6-l3M">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                </scrollView>
-            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="vMh-f6-l3M" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Dl7-7R-3KN"/>
-                <constraint firstAttribute="trailing" secondItem="vMh-f6-l3M" secondAttribute="trailing" id="Zfu-gv-Eue"/>
-                <constraint firstAttribute="bottom" secondItem="vMh-f6-l3M" secondAttribute="bottom" id="ceC-Ml-3yO"/>
-                <constraint firstItem="vMh-f6-l3M" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gxz-hG-MM4"/>
-            </constraints>
         </view>
     </objects>
 </document>
