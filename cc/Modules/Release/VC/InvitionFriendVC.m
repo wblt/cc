@@ -96,11 +96,10 @@
          */
         self.leftLab.text = [NSString stringWithFormat:@"左区业绩:%@",data[@"pd"][@"L_TOTAL"]];
         self.rightLab.text = [NSString stringWithFormat:@"右区业绩:%@",data[@"pd"][@"R_TOTAL"]];
-        
+        self.appUrl = data[@"pd"][@"APP_URL"];
         self.leftUrlLab.text = data[@"pd"][@"LEFT_URL"];
         self.rightUrlLab.text = data[@"pd"][@"RIGHT_URL"];
         self.httpUrlLab.text = data[@"pd"][@"APP_URL"];
-        
         // 下划线
         NSDictionary *attribtDic1 = @{NSUnderlineStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
         NSMutableAttributedString *attribtStr1 = [[NSMutableAttributedString alloc]initWithString:self.leftUrlLab.text attributes:attribtDic1];
@@ -113,8 +112,6 @@
         NSDictionary *attribtDic3 = @{NSUnderlineStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
         NSMutableAttributedString *attribtStr3 = [[NSMutableAttributedString alloc]initWithString:self.httpUrlLab.text attributes:attribtDic3];
         self.httpUrlLab.attributedText = attribtStr3;
-        
-        
         
 		[_shareImgView sd_setImageWithURL:[NSURL URLWithString:self.appUrl] placeholderImage:[UIImage imageNamed:@"logo"]];
     } failureBlock:^(NSError *error) {

@@ -13,13 +13,13 @@
 
 - (void)setModel:(ReleaseModel *)model {
 	_model = model;
-	self.calcuLateLab.text = model.CALCULATE_MONEY;
-	self.bigLab.text = model.BIG_CURRENCY;
-	self.smallLab.text = model.SMALL_CURRENCY;
-	self.staticLab.text = model.STATIC_CURRENCY;
-	self.stepLab.text = model.STEP_CURRENCY;
-	self.timeLab.text = model.CREATE_TIME;
-	self.jdLab.text = model.JD_CURRENCY;
+	self.calcuLateLab.text =  [NSString stringWithFormat:@"%.02f", [model.CALCULATE_MONEY floatValue]];
+	self.bigLab.text = [NSString stringWithFormat:@"%.02f", [model.BIG_CURRENCY floatValue]];
+	self.smallLab.text = [NSString stringWithFormat:@"%.02f", [model.SMALL_CURRENCY floatValue]];
+	self.staticLab.text = [NSString stringWithFormat:@"%.02f", [model.STATIC_CURRENCY floatValue]];
+    self.stepLab.text =  [NSString stringWithFormat:@"%.02f", [model.STEP_CURRENCY floatValue]];
+    self.timeLab.text = model.CREATE_TIME;
+	self.jdLab.text = [NSString stringWithFormat:@"%.02f",[model.JD_CURRENCY floatValue]];
 }
 
 // 在cell 的视线文件中重写该方法

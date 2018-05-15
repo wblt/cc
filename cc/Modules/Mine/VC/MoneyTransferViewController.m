@@ -84,7 +84,8 @@
 		_shcNumLab.text =  [NSString stringWithFormat:@"%@",dic[@"D_CURRENCY"]];
 		_inUseNumLab.text = [NSString stringWithFormat:@"%@",dic[@"QK_CURRENCY"]];
 		_powerNumLab.text = [NSString stringWithFormat:@"%@",dic[@"W_ENERGY"]];
-		
+        _addressTextField.text = self.address;
+        
 	} failureBlock:^(NSError *error) {
 		[SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];
 	}];

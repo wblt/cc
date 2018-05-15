@@ -154,8 +154,8 @@ static NSString *Identifier = @"cell";
         .categoriesSet(self.xArray)//图表横轴的内容
         .yAxisTitleSet(@"")//设置图表 y 轴的单位
         .dataLabelEnabledSet(YES)
-        .yAxisTickPositionsSet(@[@(0),@(0.2),@(0.4),@(0.6),@(0.8),@(1.0)])
-        .yAxisMaxSet(@1.0)
+        .yAxisTickPositionsSet(@[@(0),@(2),@(4),@(6),@(8),@(10)])
+        .yAxisMaxSet(@10)
         .yAxisMinSet(@0)
         .yAxisLabelsFontColorSet(@"#FFFFFF")
         .xAxisLabelsFontColorSet(@"#FFFFFF")
@@ -213,7 +213,7 @@ static NSString *Identifier = @"cell";
                  .nameSet(@"走势图")
                  .colorSet(@"#51B24D")
                  .negativeColorSet(@"#AFAg01")
-                 .dataSet(@[@1.0, @3.9, @2.5, @9, @4, @8, @2])
+                 //.dataSet(@[@1.0, @3.9, @2.5, @9, @4, @8, @2])
                  .markerSet(marker),
                  ])
     

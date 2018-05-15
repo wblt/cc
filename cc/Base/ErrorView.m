@@ -15,12 +15,15 @@
    
     if (self == [super initWithFrame:frame]) {
         
-        UIView *tempView = [[UIView alloc] initWithFrame:CGRectMake(25, (SCREEN_HEIGHT-280)/2-100, SCREEN_WIDTH-50, 280)];
+        UIView *tempView = [[UIView alloc] initWithFrame:CGRectMake(25, (SCREEN_HEIGHT-150)/2-140, SCREEN_WIDTH-50, 150)];
         tempView.userInteractionEnabled = YES;
         tempView.tag = 1000;
         [self addSubview:tempView];
         
-        self.backgroudImageView = [[UIImageView alloc] initWithFrame:CGRectMake(25, 0, tempView.frame.size.width-50, tempView.frame.size.height-50)];
+//        self.backgroudImageView = [[UIImageView alloc] initWithFrame:CGRectMake(25, 0, tempView.frame.size.width-50, tempView.frame.size.height-50)];
+//
+        self.backgroudImageView = [[UIImageView alloc] initWithFrame:CGRectMake(tempView.frame.size.width/2-45, tempView.frame.size.height-40-70, 90, 60)];
+        
         self.backgroudImageView.userInteractionEnabled = YES;
         self.backgroudImageView.contentMode = UIViewContentModeScaleAspectFit;
         [tempView addSubview:self.backgroudImageView];

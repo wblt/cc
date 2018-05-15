@@ -55,7 +55,7 @@
 		 */
 		NSDictionary *dic = data[@"pd"];
 		self.todayReleaseLab.text = dic[@"CALCULATE_MONEY"];
-		self.bigLab.text = dic[@"CALCULATE_MONEY"];
+		self.bigLab.text = dic[@"BIG_CURRENCY"];
 		self.smallLab.text = dic[@"SMALL_CURRENCY"];
 		self.intelligentLab.text = dic[@"STATIC_CURRENCY"];
 		self.sportPointLab.text = dic[@"STEP_CURRENCY"];

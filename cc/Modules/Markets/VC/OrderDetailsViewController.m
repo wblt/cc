@@ -72,8 +72,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"订单详情";
-    
+    if ([self.type isEqualToString:@"0"]) {
+         self.navigationItem.title = @"买单详情";
+    }else {
+         self.navigationItem.title = @"卖单详情";
+    }
     [self requestData];
     [self setup];
 }

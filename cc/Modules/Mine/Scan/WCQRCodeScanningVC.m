@@ -8,6 +8,7 @@
 
 #import "WCQRCodeScanningVC.h"
 #import "SGQRCode.h"
+#import "MoneyTransferViewController.h"
 
 @interface WCQRCodeScanningVC () <SGQRCodeScanManagerDelegate, SGQRCodeAlbumManagerDelegate>
 @property (nonatomic, strong) SGQRCodeScanManager *manager;
@@ -128,11 +129,15 @@
         [scanManager videoPreviewLayerRemoveFromSuperlayer];
         
         AVMetadataMachineReadableCodeObject *obj = metadataObjects[0];
-        [SVProgressHUD showSuccessWithStatus:[obj stringValue]];
+       // [SVProgressHUD showSuccessWithStatus:[obj stringValue]];
 //        ScanSuccessJumpVC *jumpVC = [[ScanSuccessJumpVC alloc] init];
 //        jumpVC.comeFromVC = ScanSuccessJumpComeFromWC;
 //        jumpVC.jump_URL = [obj stringValue];
 //        [self.navigationController pushViewController:jumpVC animated:YES];
+         MoneyTransferViewController *vc = [[MoneyTransferViewController alloc] init];
+         vc.address = [obj stringValue];
+         [self.navigationController pushViewController:vc animated:YES];
+        
     } else {
           [SVProgressHUD showErrorWithStatus:@"暂未识别出二维码"];
     }

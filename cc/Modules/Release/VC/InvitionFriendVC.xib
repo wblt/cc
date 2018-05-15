@@ -26,10 +26,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Cci-cr-vEu">
-                    <rect key="frame" x="112" y="60" width="150" height="150"/>
+                    <rect key="frame" x="97" y="40" width="180" height="180"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="150" id="48I-xt-ke3"/>
-                        <constraint firstAttribute="height" constant="150" id="slE-GT-ly3"/>
+                        <constraint firstAttribute="width" constant="180" id="48I-xt-ke3"/>
+                        <constraint firstAttribute="height" constant="180" id="slE-GT-ly3"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2.右区邀请地址，点击链接即可复制" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="055-2H-gdu">
@@ -39,7 +39,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XjN-TU-bv9">
-                    <rect key="frame" x="187" y="226" width="1" height="20"/>
+                    <rect key="frame" x="187" y="236" width="1" height="20"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="abh-eu-QZS"/>
@@ -47,19 +47,19 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRq-Tz-xLc">
-                    <rect key="frame" x="144.5" y="227" width="37.5" height="18"/>
+                    <rect key="frame" x="144.5" y="237" width="37.5" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92y-MC-O25">
-                    <rect key="frame" x="193" y="227" width="37.5" height="18"/>
+                    <rect key="frame" x="193" y="237" width="37.5" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.左区邀请地址，点击链接即可复制" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAl-WI-EKv">
-                    <rect key="frame" x="83" y="260" width="208.5" height="16"/>
+                    <rect key="frame" x="83" y="270" width="208.5" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="bWd-a6-a6h"/>
                     </constraints>
@@ -68,7 +68,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Hg-C3-tEV">
-                    <rect key="frame" x="187.5" y="276" width="0.0" height="16"/>
+                    <rect key="frame" x="187.5" y="286" width="0.0" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="wPJ-5e-vu3"/>
                     </constraints>
@@ -77,7 +77,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfw-qJ-kyA">
-                    <rect key="frame" x="188.5" y="326" width="0.0" height="16"/>
+                    <rect key="frame" x="188.5" y="336" width="0.0" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="wDG-cJ-zdf"/>
                     </constraints>
@@ -86,7 +86,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.右区邀请地址，点击链接即可复制" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGH-7j-dLx">
-                    <rect key="frame" x="83.5" y="352" width="210.5" height="21"/>
+                    <rect key="frame" x="83.5" y="362" width="210.5" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="Gcl-rV-yhr"/>
                     </constraints>
@@ -95,7 +95,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uY8-Nb-1EV">
-                    <rect key="frame" x="189" y="373" width="0.0" height="16"/>
+                    <rect key="frame" x="189" y="383" width="0.0" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="dAP-R5-9z0"/>
                     </constraints>
@@ -111,7 +111,7 @@
                 <constraint firstItem="92y-MC-O25" firstAttribute="centerY" secondItem="XjN-TU-bv9" secondAttribute="centerY" id="4Tk-rg-rMN"/>
                 <constraint firstItem="055-2H-gdu" firstAttribute="height" secondItem="WAl-WI-EKv" secondAttribute="height" constant="8" id="59N-7r-56T"/>
                 <constraint firstItem="XjN-TU-bv9" firstAttribute="leading" secondItem="CRq-Tz-xLc" secondAttribute="trailing" constant="5" id="76V-mg-yP2"/>
-                <constraint firstItem="Cci-cr-vEu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="7qy-hr-JGi"/>
+                <constraint firstItem="Cci-cr-vEu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="7qy-hr-JGi"/>
                 <constraint firstItem="XjN-TU-bv9" firstAttribute="top" secondItem="Cci-cr-vEu" secondAttribute="bottom" constant="16" id="8KV-qg-6lx"/>
                 <constraint firstItem="WAl-WI-EKv" firstAttribute="top" secondItem="CRq-Tz-xLc" secondAttribute="bottom" constant="15" id="A0J-m3-8R9"/>
                 <constraint firstItem="8Hg-C3-tEV" firstAttribute="centerX" secondItem="WAl-WI-EKv" secondAttribute="centerX" id="Flj-y3-shG"/>

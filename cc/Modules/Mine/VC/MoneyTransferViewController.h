@@ -10,4 +10,8 @@
 
 @interface MoneyTransferViewController : BaseViewController
 
+//区块地址
+@property(nonatomic,copy)NSString *address;
+
+
 @end
