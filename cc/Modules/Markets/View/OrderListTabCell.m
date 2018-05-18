@@ -48,7 +48,7 @@
     self.timeLab.text = marketOrder.CREATE_TIME;
     self.numLab.text = [NSString stringWithFormat:@"%@",marketOrder.BUSINESS_COUNT];
     self.priceLab.text = [NSString stringWithFormat:@"%@",marketOrder.BUSINESS_PRICE];
-    self.totalLab.text = [NSString stringWithFormat:@"%@", marketOrder.TOTAL_MONEY];
+    self.totalLab.text = [NSString stringWithFormat:@"%.02f", [marketOrder.TOTAL_MONEY floatValue]];
 }
 
 - (IBAction)mactchAction:(id)sender {
