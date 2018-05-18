@@ -2012,7 +2012,7 @@
 			baseConfigurationReference = A0E310A8802745272B1EE1D7 /* Pods-cc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = HR6HGC9SU2;
 				ENABLE_BITCODE = NO;
@@ -2026,8 +2026,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tianmeng.cc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "54ec61b9-8fb2-4225-bf7e-bd250f1e82e9";
-				PROVISIONING_PROFILE_SPECIFIER = cc_dev;
+				PROVISIONING_PROFILE = "9f959d9b-41c4-4f62-9b7a-a7974e58f6ce";
+				PROVISIONING_PROFILE_SPECIFIER = cc_dis;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

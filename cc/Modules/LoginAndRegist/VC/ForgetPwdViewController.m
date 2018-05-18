@@ -57,7 +57,7 @@
             RequestParams *params = [[RequestParams alloc] initWithParams:API_FGPWD_CODE];
             [params addParameter:@"USER_NAME" value:_userNameTextField.text];
             [params addParameter:@"ACCOUNT" value:_phoneTextField.text];
-            [params addParameter:@"digestStr" value:[NSString stringWithFormat:@"%@shc",_userNameTextField.text].MD5Hash];
+            [params addParameter:@"digestStr" value:[NSString stringWithFormat:@"%@shc",_phoneTextField.text].MD5Hash];
             
                 [[NetworkSingleton shareInstace] httpPost:params withTitle:@"获取忘记密码短信验证码" successBlock:^(id data) {
                     NSString *code = data[@"code"];
