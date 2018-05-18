@@ -49,7 +49,7 @@
 	
 	[btn addTapBlock:^(UIButton *btn) {
 		// 修改个人信息
-		if (_nickTextField.text == 0) {
+		if (_nickTextField.text.length == 0) {
 			[SVProgressHUD showInfoWithStatus:@"请输入昵称"];
 			return ;
 		}
