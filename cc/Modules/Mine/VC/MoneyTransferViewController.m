@@ -125,7 +125,7 @@
 
 - (IBAction)sumbitAction:(id)sender {
 	
-	if (_numTextField.text ==0 ) {
+	if (_numTextField.text.length ==0 ) {
 		[SVProgressHUD showInfoWithStatus:@"请输入数量"];
 		return;
 	}
