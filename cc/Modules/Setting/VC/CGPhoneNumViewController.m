@@ -49,25 +49,25 @@
 			weakSelf.countDownButton.enabled = YES;
 			return ;
 		}
-//		[SVProgressHUD showWithStatus:@"正在获取验证码..."];
-//		RequestParams *params = [[RequestParams alloc] initWithParams:API_REGIST_CODE];
-//		[params addParameter:@"ACCOUNT" value:_phoneTextField.text];
-//		[params addParameter:@"digestStr" value:[NSString stringWithFormat:@"%@shc",_phoneTextField.text].MD5Hash];
-//
-//		[[NetworkSingleton shareInstace] httpPost:params withTitle:@"获取注册短信验证码" successBlock:^(id data) {
-//			NSString *code = data[@"code"];
-//			if (![code isEqualToString:@"1000"]) {
-//				[SVProgressHUD showErrorWithStatus:data[@"message"]];
-//				weakSelf.countDownButton.enabled = YES;
-//				return ;
-//			}
-//			[SVProgressHUD showSuccessWithStatus:@"验证码已发送"];
-//			// 获取到验证码后开始倒计时
-//			[weakSelf.countDownButton startCountDown];
-//		} failureBlock:^(NSError *error) {
-//			[SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];
-//			weakSelf.countDownButton.enabled = YES;
-//		}];
+        [SVProgressHUD showWithStatus:@"正在获取验证码..."];
+        RequestParams *params = [[RequestParams alloc] initWithParams:API_REGIST_CODE];
+        [params addParameter:@"ACCOUNT" value:_phoneTextField.text];
+        [params addParameter:@"digestStr" value:[NSString stringWithFormat:@"%@shc",_phoneTextField.text].MD5Hash];
+
+        [[NetworkSingleton shareInstace] httpPost:params withTitle:@"获取注册短信验证码" successBlock:^(id data) {
+            NSString *code = data[@"code"];
+            if (![code isEqualToString:@"1000"]) {
+                [SVProgressHUD showErrorWithStatus:data[@"message"]];
+                weakSelf.countDownButton.enabled = YES;
+                return ;
+            }
+            [SVProgressHUD showSuccessWithStatus:@"验证码已发送"];
+            // 获取到验证码后开始倒计时
+            [weakSelf.countDownButton startCountDown];
+        } failureBlock:^(NSError *error) {
+            [SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];
+            weakSelf.countDownButton.enabled = YES;
+        }];
 	} countDownStart:^{
 		//------- 倒计时开始 -------//
 		NSLog(@"倒计时开始");
@@ -92,8 +92,51 @@
 }
 
 - (IBAction)submitAction:(id)sender {
-	
+    if (_userTextField.text.length == 0) {
+        [SVProgressHUD showInfoWithStatus:@"请输入用户名"];
+        return;
+    }
+    
+    if (_phoneTextField.text.length == 0) {
+        [SVProgressHUD showInfoWithStatus:@"请输入手机号"];
+        return;
+    }
+    
+    if (_codeTextField.text.length == 0) {
+        [SVProgressHUD showInfoWithStatus:@"请输入验证码"];
+        return;
+    }
+    if (![Util valiMobile:_phoneTextField.text]) {
+        [SVProgressHUD showErrorWithStatus:@"请输入正确的手机号"];
+        return;
+    }
+    
+    // 提交
+    RequestParams *params = [[RequestParams alloc] initWithParams:API_PHONECG];
+    [params addParameter:@"USER_NAME" value:_userTextField.text];
+    [params addParameter:@"TEL" value:_phoneTextField.text];
+    [params addParameter:@"SJYZM" value:_codeTextField.text];
+    
+    
+    [[NetworkSingleton shareInstace] httpPost:params withTitle:@"" successBlock:^(id data) {
+        NSString *code = data[@"code"];
+        if (![code isEqualToString:@"1000"]) {
+            [SVProgressHUD showErrorWithStatus:data[@"message"]];
+            return ;
+        }
+        
+        [SVProgressHUD showSuccessWithStatus:@"修改成功"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.navigationController popViewControllerAnimated:YES];
+        });
+        
+    } failureBlock:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"网络异常"];
+    }];
+    
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

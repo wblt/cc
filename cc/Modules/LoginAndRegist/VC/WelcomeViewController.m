@@ -11,8 +11,9 @@
 #import "AppDelegate.h"
 #import "BaseNavViewController.h"
 #import "MainTabBarController.h"
-@interface WelcomeViewController ()
+@interface WelcomeViewController ()<UIScrollViewDelegate>
 @property (strong, nonatomic) UIScrollView *scrollView;
+@property (strong, nonatomic) UIPageControl *pageControl;
 
 @end
 
@@ -26,15 +27,16 @@
 
 - (void)setup {
     self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight)];
-    self.scrollView.contentSize = CGSizeMake(KScreenWidth*2, KScreenHeight);
+    self.scrollView.contentSize = CGSizeMake(KScreenWidth*3, KScreenHeight);
+    self.scrollView.delegate = self;
     self.scrollView.pagingEnabled = YES;
-    self.scrollView.showsVerticalScrollIndicator = NO;
+    self.scrollView.bounces = NO; self.scrollView.showsVerticalScrollIndicator = NO;
     self.scrollView.showsHorizontalScrollIndicator = NO;
     [self.view addSubview:self.scrollView];
     
-    NSArray *imgAry = @[@"uoko_guide_background_1",@"uoko_guide_background_2"];
+    NSArray *imgAry = @[@"yindao1.jpg",@"yindao2.jpg",@"yindao3.jpg"];
     MJWeakSelf
-    for (NSInteger i = 0; i<2; i++) {
+    for (NSInteger i = 0; i<imgAry.count; i++) {
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(KScreenWidth*i, 0, KScreenWidth, KScreenHeight)];
         imgView.image = [UIImage imageNamed:imgAry[i]];
         imgView.contentMode = UIViewContentModeScaleAspectFit;
@@ -42,7 +44,7 @@
         imgView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin |  UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleRightMargin;
         [self.scrollView addSubview:imgView];
         
-        if (i == 1) {
+        if (i == 2) {
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
             ViewBorderRadius(btn, 10, 0.6, [UIColor whiteColor]);
             btn.frame = CGRectMake(KScreenWidth/2-50, KScreenHeight-80, 100, 40);
@@ -74,7 +76,13 @@
           [weakSelf enter];
     }];
     
+    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(KScreenWidth/2, KScreenHeight-80, 100, 50)];
+    [self.pageControl setCurrentPage:0];
+    self.pageControl.numberOfPages = 3;
+    self.pageControl.pageIndicatorTintColor = [UIColor blackColor];//未选中的颜色
+    self.pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];//选中时的颜色
     
+    [self.view addSubview:self.pageControl];
 }
 
 
@@ -91,6 +99,18 @@
         [UIApplication sharedApplication].keyWindow.rootViewController = nav;
     }
 }
+#pragma mark - scrollView的代理方法
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    //计算pagecontroll相应地页(滚动视图可以滚动的总宽度/单个滚动视图的宽度=滚动视图的页数)
+    NSInteger currentPage = (int)(scrollView.contentOffset.x) / (int)(self.view.frame.size.width);
+    self.pageControl.currentPage = currentPage;//将上述的滚动视图页数重新赋给当前视图页数,进行分页
+    if (currentPage == 2) {
+        self.pageControl.hidden = YES;
+    }else {
+        self.pageControl.hidden = NO;
+    }
+ }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

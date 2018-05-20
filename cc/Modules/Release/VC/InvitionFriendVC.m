@@ -7,6 +7,7 @@
 //
 
 #import "InvitionFriendVC.h"
+#import "SGQRCode.h"
 
 @interface InvitionFriendVC ()
 @property (weak, nonatomic) IBOutlet UIImageView *shareImgView;
@@ -97,23 +98,26 @@
         self.leftLab.text = [NSString stringWithFormat:@"左区业绩:%@",data[@"pd"][@"L_TOTAL"]];
         self.rightLab.text = [NSString stringWithFormat:@"右区业绩:%@",data[@"pd"][@"R_TOTAL"]];
         self.appUrl = data[@"pd"][@"APP_URL"];
+        
         self.leftUrlLab.text = data[@"pd"][@"LEFT_URL"];
+        self.leftUrlLab.text = [NSString stringWithFormat:@"1.左区邀请码：%@",[self.leftUrlLab.text stringByReplacingOccurrencesOfString:@"http://shcunion.vip/ala/reg.htm?code=" withString:@""]];
+        
         self.rightUrlLab.text = data[@"pd"][@"RIGHT_URL"];
+        self.rightUrlLab.text = [NSString stringWithFormat:@"2.右区邀请码：%@",[self.rightUrlLab.text stringByReplacingOccurrencesOfString:@"http://shcunion.vip/ala/reg.htm?code=" withString:@""]];
+        
         self.httpUrlLab.text = data[@"pd"][@"APP_URL"];
         // 下划线
-        NSDictionary *attribtDic1 = @{NSUnderlineStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
-        NSMutableAttributedString *attribtStr1 = [[NSMutableAttributedString alloc]initWithString:self.leftUrlLab.text attributes:attribtDic1];
-        self.leftUrlLab.attributedText = attribtStr1;
-        
-        NSDictionary *attribtDic2 = @{NSUnderlineStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
-        NSMutableAttributedString *attribtStr2 = [[NSMutableAttributedString alloc]initWithString:self.rightUrlLab.text attributes:attribtDic2];
-        self.rightUrlLab.attributedText = attribtStr2;
         
         NSDictionary *attribtDic3 = @{NSUnderlineStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
         NSMutableAttributedString *attribtStr3 = [[NSMutableAttributedString alloc]initWithString:self.httpUrlLab.text attributes:attribtDic3];
         self.httpUrlLab.attributedText = attribtStr3;
         
 		[_shareImgView sd_setImageWithURL:[NSURL URLWithString:self.appUrl] placeholderImage:[UIImage imageNamed:@"logo"]];
+        
+       //  _shareImgView.image = [SGQRCodeGenerateManager generateWithDefaultQRCodeData:self.appUrl imageViewWidth:200];
+        _shareImgView.image = [SGQRCodeGenerateManager generateWithLogoQRCodeData:self.appUrl logoImageName:@"logo" logoScaleToSuperView:0.3];
+        
+        
     } failureBlock:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];
     }];

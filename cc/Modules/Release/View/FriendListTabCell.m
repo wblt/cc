@@ -14,7 +14,11 @@
 - (void)setModel:(FriendInfoModel *)model {
     _model = model;
     self.telLab.text = [NSString stringWithFormat:@"tel:%@",model.TEL];
-    self.nameLab.text = model.USER_NAME;
+    if (model.NICK_NAME.length > 0) {
+        self.nameLab.text = model.NICK_NAME;
+    }else {
+        self.nameLab.text = model.USER_NAME;
+    }
     [self.headImgView sd_setImageWithURL:[NSURL URLWithString:model.HEAD_URL] placeholderImage:[UIImage imageNamed:@"logo"]];
     
 }

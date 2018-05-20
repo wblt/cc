@@ -18,7 +18,6 @@
 		CF7165202081ECC30092692F /* MineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF71651E2081ECC30092692F /* MineViewController.xib */; };
 		CF7165272081ED4E0092692F /* MarketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7165252081ED4E0092692F /* MarketsViewController.m */; };
 		CF7165282081ED4E0092692F /* MarketsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF7165262081ED4E0092692F /* MarketsViewController.xib */; };
-		CF71652A2081F6530092692F /* kxian.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF7165292081F6530092692F /* kxian.jpg */; };
 		CF71652E2082249E0092692F /* OrderListTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71652C2082249E0092692F /* OrderListTabCell.m */; };
 		CF71652F2082249E0092692F /* OrderListTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF71652D2082249E0092692F /* OrderListTabCell.xib */; };
 		CF716533208394E80092692F /* MQVerCodeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF716531208394E80092692F /* MQVerCodeImageView.m */; };
@@ -49,6 +48,11 @@
 		CF82FE0E208CB982006EF9B6 /* ErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF82FE0D208CB982006EF9B6 /* ErrorView.m */; };
 		CF82FE12208CF8C2006EF9B6 /* ReleaseRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF82FE10208CF8C2006EF9B6 /* ReleaseRecordViewController.m */; };
 		CF82FE13208CF8C2006EF9B6 /* ReleaseRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF82FE11208CF8C2006EF9B6 /* ReleaseRecordViewController.xib */; };
+		CFACD17F20B1553900AB2756 /* yindao3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CFACD17C20B1553800AB2756 /* yindao3.jpg */; };
+		CFACD18020B1553900AB2756 /* yindao1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CFACD17D20B1553900AB2756 /* yindao1.jpg */; };
+		CFACD18120B1553900AB2756 /* yindao2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CFACD17E20B1553900AB2756 /* yindao2.jpg */; };
+		CFACD18420B1598B00AB2756 /* app_loading1.png in Resources */ = {isa = PBXBuildFile; fileRef = CFACD18220B1598B00AB2756 /* app_loading1.png */; };
+		CFACD18520B1598B00AB2756 /* app_loading0.png in Resources */ = {isa = PBXBuildFile; fileRef = CFACD18320B1598B00AB2756 /* app_loading0.png */; };
 		CFF1AF6A2095A6870008898A /* ReceiveAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1AF682095A6870008898A /* ReceiveAddressViewController.m */; };
 		CFF1AF6B2095A6870008898A /* ReceiveAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFF1AF692095A6870008898A /* ReceiveAddressViewController.xib */; };
 		CFF1AF7E2095B6C40008898A /* WCQRCodeScanningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1AF7D2095B6C40008898A /* WCQRCodeScanningVC.m */; };
@@ -225,8 +229,6 @@
 		F8F82BF7209059FD00A9A81A /* ReleaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F82BF6209059FD00A9A81A /* ReleaseModel.m */; };
 		F8F82BFB20906C2F00A9A81A /* SportRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F82BF920906C2F00A9A81A /* SportRecordViewController.m */; };
 		F8F82BFC20906C2F00A9A81A /* SportRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F82BFA20906C2F00A9A81A /* SportRecordViewController.xib */; };
-		F8F82C0420907DE000A9A81A /* app_loading1.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F82C0220907DDF00A9A81A /* app_loading1.png */; };
-		F8F82C0520907DE000A9A81A /* app_loading0.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F82C0320907DDF00A9A81A /* app_loading0.png */; };
 		F8F82C16209086D500A9A81A /* SportRecordTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F82C13209086D500A9A81A /* SportRecordTabCell.m */; };
 		F8F82C17209086D500A9A81A /* SportRecordTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F82C14209086D500A9A81A /* SportRecordTabCell.xib */; };
 		F8F82C1A209086E500A9A81A /* RecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F82C19209086E500A9A81A /* RecordModel.m */; };
@@ -258,7 +260,6 @@
 		CF7165242081ED4E0092692F /* MarketsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketsViewController.h; sourceTree = "<group>"; };
 		CF7165252081ED4E0092692F /* MarketsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketsViewController.m; sourceTree = "<group>"; };
 		CF7165262081ED4E0092692F /* MarketsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarketsViewController.xib; sourceTree = "<group>"; };
-		CF7165292081F6530092692F /* kxian.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kxian.jpg; sourceTree = "<group>"; };
 		CF71652B2082249E0092692F /* OrderListTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderListTabCell.h; sourceTree = "<group>"; };
 		CF71652C2082249E0092692F /* OrderListTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderListTabCell.m; sourceTree = "<group>"; };
 		CF71652D2082249E0092692F /* OrderListTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderListTabCell.xib; sourceTree = "<group>"; };
@@ -306,6 +307,11 @@
 		CF82FE0F208CF8C2006EF9B6 /* ReleaseRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReleaseRecordViewController.h; sourceTree = "<group>"; };
 		CF82FE10208CF8C2006EF9B6 /* ReleaseRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReleaseRecordViewController.m; sourceTree = "<group>"; };
 		CF82FE11208CF8C2006EF9B6 /* ReleaseRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReleaseRecordViewController.xib; sourceTree = "<group>"; };
+		CFACD17C20B1553800AB2756 /* yindao3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yindao3.jpg; sourceTree = "<group>"; };
+		CFACD17D20B1553900AB2756 /* yindao1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yindao1.jpg; sourceTree = "<group>"; };
+		CFACD17E20B1553900AB2756 /* yindao2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yindao2.jpg; sourceTree = "<group>"; };
+		CFACD18220B1598B00AB2756 /* app_loading1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_loading1.png; sourceTree = "<group>"; };
+		CFACD18320B1598B00AB2756 /* app_loading0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_loading0.png; sourceTree = "<group>"; };
 		CFF1AF672095A6870008898A /* ReceiveAddressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReceiveAddressViewController.h; sourceTree = "<group>"; };
 		CFF1AF682095A6870008898A /* ReceiveAddressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReceiveAddressViewController.m; sourceTree = "<group>"; };
 		CFF1AF692095A6870008898A /* ReceiveAddressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiveAddressViewController.xib; sourceTree = "<group>"; };
@@ -613,8 +619,6 @@
 		F8F82BF820906C2F00A9A81A /* SportRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SportRecordViewController.h; sourceTree = "<group>"; };
 		F8F82BF920906C2F00A9A81A /* SportRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SportRecordViewController.m; sourceTree = "<group>"; };
 		F8F82BFA20906C2F00A9A81A /* SportRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportRecordViewController.xib; sourceTree = "<group>"; };
-		F8F82C0220907DDF00A9A81A /* app_loading1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_loading1.png; sourceTree = "<group>"; };
-		F8F82C0320907DDF00A9A81A /* app_loading0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_loading0.png; sourceTree = "<group>"; };
 		F8F82C13209086D500A9A81A /* SportRecordTabCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportRecordTabCell.m; sourceTree = "<group>"; };
 		F8F82C14209086D500A9A81A /* SportRecordTabCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SportRecordTabCell.xib; sourceTree = "<group>"; };
 		F8F82C15209086D500A9A81A /* SportRecordTabCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportRecordTabCell.h; sourceTree = "<group>"; };
@@ -1190,9 +1194,11 @@
 				F84E5B59207D961200949AF1 /* AppDelegate.m */,
 				F84E5B5B207D961200949AF1 /* ViewController.h */,
 				F84E5B5C207D961200949AF1 /* ViewController.m */,
-				CF7165292081F6530092692F /* kxian.jpg */,
-				F8F82C0320907DDF00A9A81A /* app_loading0.png */,
-				F8F82C0220907DDF00A9A81A /* app_loading1.png */,
+				CFACD17D20B1553900AB2756 /* yindao1.jpg */,
+				CFACD17E20B1553900AB2756 /* yindao2.jpg */,
+				CFACD17C20B1553800AB2756 /* yindao3.jpg */,
+				CFACD18320B1598B00AB2756 /* app_loading0.png */,
+				CFACD18220B1598B00AB2756 /* app_loading1.png */,
 				F84E5B5E207D961200949AF1 /* Main.storyboard */,
 				F84E5B61207D961200949AF1 /* Assets.xcassets */,
 				F84E5B63207D961200949AF1 /* LaunchScreen.storyboard */,
@@ -1588,8 +1594,8 @@
 				CF82FDFA208662BA006EF9B6 /* xxx@2x.png in Resources */,
 				F8ED396E207DB311006F4D2A /* README.md in Resources */,
 				F8ED3951207DACDB006F4D2A /* README.md in Resources */,
-				F8F82C0420907DE000A9A81A /* app_loading1.png in Resources */,
 				CF71652F2082249E0092692F /* OrderListTabCell.xib in Resources */,
+				CFACD18020B1553900AB2756 /* yindao1.jpg in Resources */,
 				F8210FC7209948B0009E082E /* SGQRCode.bundle in Resources */,
 				CF7165452083ADC30092692F /* SettingViewController.xib in Resources */,
 				F8ED3953207DACDB006F4D2A /* back_icon@2x.png in Resources */,
@@ -1598,6 +1604,7 @@
 				F847ACCD209480B700487899 /* AAHighchartsLib.js in Resources */,
 				F8F82C242090878700A9A81A /* README.md in Resources */,
 				F8C3C9CF208F3070009E201F /* ReceiveRecordVC.xib in Resources */,
+				CFACD18420B1598B00AB2756 /* app_loading1.png in Resources */,
 				F80568792089C1E00073B30C /* MyOrderViewController.xib in Resources */,
 				F8C3C9C3208EDEFE009E201F /* CGPwdNumViewController.xib in Resources */,
 				F8ED3980207DB877006F4D2A /* LoginVC.xib in Resources */,
@@ -1613,8 +1620,8 @@
 				F84E5B62207D961200949AF1 /* Assets.xcassets in Resources */,
 				F8ED3989207DB8B0006F4D2A /* RegistViewController.xib in Resources */,
 				CF82FE0B208CB761006EF9B6 /* FriendListTabCell.xib in Resources */,
-				CF71652A2081F6530092692F /* kxian.jpg in Resources */,
 				F80568922089F0590073B30C /* MyFriendsViewController.xib in Resources */,
+				CFACD18120B1553900AB2756 /* yindao2.jpg in Resources */,
 				F8ED394D207DACDB006F4D2A /* README.md in Resources */,
 				F8ED3959207DACDB006F4D2A /* sure_placeholder_error@3x.png in Resources */,
 				F8ED3944207DACDB006F4D2A /* README.md in Resources */,
@@ -1632,7 +1639,7 @@
 				F8C3C9B4208ED4E0009E201F /* MoneyTransferViewController.xib in Resources */,
 				CFF1AF8E209848A10008898A /* BuyViewController.xib in Resources */,
 				CF7165282081ED4E0092692F /* MarketsViewController.xib in Resources */,
-				F8F82C0520907DE000A9A81A /* app_loading0.png in Resources */,
+				CFACD17F20B1553900AB2756 /* yindao3.jpg in Resources */,
 				CF7165202081ECC30092692F /* MineViewController.xib in Resources */,
 				F8F82BFC20906C2F00A9A81A /* SportRecordViewController.xib in Resources */,
 				CF82FDFB208662BA006EF9B6 /* passwordIcon.png in Resources */,
@@ -1642,6 +1649,7 @@
 				F805687E2089C9A50073B30C /* CompoundSettingViewController.xib in Resources */,
 				F84E5B60207D961200949AF1 /* Main.storyboard in Resources */,
 				F80568882089EC4D0073B30C /* WalletExchangeViewController.xib in Resources */,
+				CFACD18520B1598B00AB2756 /* app_loading0.png in Resources */,
 				F8F82C17209086D500A9A81A /* SportRecordTabCell.xib in Resources */,
 				F847ACCC209480B700487899 /* AAHighcharts-3d.js in Resources */,
 				F8ED3957207DACDB006F4D2A /* README.md in Resources */,
