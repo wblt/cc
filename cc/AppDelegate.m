@@ -34,9 +34,7 @@
 	keyboardManager.enable = YES; // 控制整个功能是否启用
 	keyboardManager.shouldResignOnTouchOutside = YES; // 控制点击背景是否收起键盘
 	keyboardManager.keyboardDistanceFromTextField = 10.0f; // 输入框距离键盘的距离
-	
 	[SVProgressHUD setMaximumDismissTimeInterval:2.0];
-	
 	[Bugly startWithAppId:@"10dcef5d13"];
 	
 	//还未去 蒲公英注册appid
@@ -48,11 +46,8 @@
     WelcomeViewController *vc = [[WelcomeViewController alloc] initWithNibName:@"WelcomeViewController" bundle:nil];
     self.window.rootViewController = vc;
 	// 进入主控制器，需要判断是否登录
-	
-	
 	return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
 	// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
