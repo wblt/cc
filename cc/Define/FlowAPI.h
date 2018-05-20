@@ -12,7 +12,7 @@
 
 
 // 主服务器地址
-#define SERVER_IP         @"http://139.196.225.206:8082"
+#define SERVER_IP         @"http://shcapp.top"
 
 // USER
 // 登录
