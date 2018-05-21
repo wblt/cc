@@ -177,7 +177,7 @@
     [sellView addSubview:sumbitBtn];
     [sumbitBtn addTapBlock:^(UIButton *btn) {
         if (sellNumTextField.text.length == 0) {
-            [SVProgressHUD showInfoWithStatus:@"请输入单价"];
+            [SVProgressHUD showInfoWithStatus:@"请输入购买数量"];
             return;
         }
         
