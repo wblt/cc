@@ -156,7 +156,7 @@
 	//定时器模式  事件源
 	_timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, quene);
 	//NSEC_PER_SEC是秒，＊1是每秒
-	dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), NSEC_PER_SEC * (self.animationDuration/(_progress * 10000)), 0);
+	dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), NSEC_PER_SEC * (self.animationDuration/(_progress * 30000)), 0);
 	//设置响应dispatch源事件的block，在dispatch源指定的队列上运行
 	dispatch_source_set_event_handler(_timer, ^{
 		//回调主线程，在主线程中操作UI

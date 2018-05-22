@@ -49,7 +49,7 @@
         }
         NSDictionary *pd = data[@"pd"];
         guideLab.text = [NSString stringWithFormat:@"%@",pd[@"BUSINESS_PRICE"]];
-        tipsLab.text = [NSString stringWithFormat:@"本次可挂卖最多%@个",pd[@"D_CURRENCY"]];
+        tipsLab.text = [NSString stringWithFormat:@"当前可发送SHC为%@个",pd[@"D_CURRENCY"]];
         power = [NSString stringWithFormat:@"%@",pd[@"D_CURRENCY"]];
     } failureBlock:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];
@@ -358,7 +358,7 @@
         RequestParams *params = [[RequestParams alloc] initWithParams:API_sell];
         [params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
         [params addParameter:@"PRICE" value:sellPriceTextField.text];
-         [params addParameter:@"D_CURRENCY" value:sellNumTextField.text];
+		[params addParameter:@"D_CURRENCY" value:sellNumTextField.text];
         
         
         [[NetworkSingleton shareInstace] httpPost:params withTitle:@"" successBlock:^(id data) {
@@ -382,7 +382,7 @@
 	tipsLab.textColor =  [UIColor whiteColor];
 	tipsLab.font = Font_13;
 	tipsLab.textAlignment = NSTextAlignmentCenter;
-	tipsLab.attributedText = [Util setAllText:@"本次可挂卖最多5000个" andSpcifiStr:@"5000" withColor:UIColorFromHex(0xFFFFFF) specifiStrFont:Font_13];
+	tipsLab.attributedText = [Util setAllText:@"当前可发送SHC为0个" andSpcifiStr:@"0" withColor:UIColorFromHex(0xFFFFFF) specifiStrFont:Font_13];
 	[sellView addSubview:tipsLab];
 	
 	[self.view addSubview:sellView];
