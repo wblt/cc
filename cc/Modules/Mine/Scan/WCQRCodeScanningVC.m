@@ -113,7 +113,14 @@
     [self.view addSubview:self.scanningView];
 }
 - (void)QRCodeAlbumManager:(SGQRCodeAlbumManager *)albumManager didFinishPickingMediaWithResult:(NSString *)result {
-    [SVProgressHUD showSuccessWithStatus:result];
+    if (result.length == 64 ) {
+        MoneyTransferViewController *vc = [[MoneyTransferViewController alloc] init];
+        vc.address = result;
+        [self.navigationController pushViewController:vc animated:YES];
+    }else {
+        [SVProgressHUD showErrorWithStatus:@"暂未识别出二维码"];
+    }
+    //  [SVProgressHUD showSuccessWithStatus:result];
 }
 
 - (void)QRCodeAlbumManagerDidReadQRCodeFailure:(SGQRCodeAlbumManager *)albumManager {
