@@ -69,7 +69,7 @@
 		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 			_progressView.stepNum = [returnMessage[@"numberOfSteps"] integerValue];
 			//最大步数量
-			_progressView.progress = (float)_progressView.stepNum/10000;
+			_progressView.progress = (float)_progressView.stepNum/30000;
 			//上传到服务器
 			[weakSelf updataDayStep:[NSString stringWithFormat:@"%ld",_progressView.stepNum]];
 		});
