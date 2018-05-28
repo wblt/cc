@@ -14,7 +14,7 @@
     UILabel *sellPriceLab;
     UITextField *sellNumTextField;
     UILabel *sellTotalPriceLab;
-    
+	UIButton *sumbitBtn;
     NSString *power;
 }
 @property (nonatomic,strong) PasswordAlertView *alertView;
@@ -84,12 +84,14 @@
                 [SVProgressHUD showErrorWithStatus:data[@"message"]];
                 return ;
             }
+			sumbitBtn.selected = YES;
             [SVProgressHUD showSuccessWithStatus:@"购买成功"];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self.navigationController popViewControllerAnimated:YES];
             });
             
         } failureBlock:^(NSError *error) {
+			sumbitBtn.selected = YES;
             [SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];
         }];
     });
@@ -97,11 +99,13 @@
 
 -(void)PasswordAlertViewDidClickCancleButton{
     NSLog(@"点击了取消按钮");
+	sumbitBtn.selected = YES;
 }
 
 
 -(void)PasswordAlertViewDidClickForgetButton{
     NSLog(@"点击了忘记密码按钮");
+	sumbitBtn.selected = YES;
     SetAQPwdNumViewController *vc = [[SetAQPwdNumViewController alloc] initWithNibName:@"SetAQPwdNumViewController" bundle:nil];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -170,11 +174,12 @@
     sellTotalPriceLab.textColor = [UIColor whiteColor];
     [sellView addSubview:sellTotalPriceLab];
     
-    UIButton *sumbitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    sumbitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     ViewBorderRadius(sumbitBtn, 10, 0.6, UIColorFromHex(0x4B5461));
     [sumbitBtn setTitle:@"提交" forState:UIControlStateNormal];
     sumbitBtn.titleLabel.font = Font_14;
     [sellView addSubview:sumbitBtn];
+	MJWeakSelf
     [sumbitBtn addTapBlock:^(UIButton *btn) {
         if (sellNumTextField.text.length == 0) {
             [SVProgressHUD showInfoWithStatus:@"请输入购买数量"];
@@ -185,16 +190,17 @@
             [SVProgressHUD showErrorWithStatus:@"超过可买数量"];
             return ;
         }
-        
+		btn.selected = NO;
         UserInfoModel *model = [[BeanManager shareInstace] getBeanfromPath:UserModelPath];
         
         if ([model.IFPAS isEqualToString:@"1"]) {
-            [_alertView show];
+            [weakSelf.alertView show];
         }else {
             [SVProgressHUD showInfoWithStatus:@"未设置资金密码"];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+				btn.selected = YES;
                 SetAQPwdNumViewController *vc = [[SetAQPwdNumViewController alloc] initWithNibName:@"SetAQPwdNumViewController" bundle:nil];
-                [self.navigationController pushViewController:vc animated:YES];
+                [weakSelf.navigationController pushViewController:vc animated:YES];
             });
             
         }

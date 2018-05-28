@@ -14,7 +14,8 @@
     UILabel *sellTotalPriceLab;
     UILabel *chargeLab;
     UILabel *tipsLab;
-    
+	
+	UIButton *sumbitBtn;
     NSString *power;
 }
 
@@ -335,7 +336,7 @@
 	chargeLab.textAlignment = NSTextAlignmentRight;
 	[sellView addSubview:chargeLab];
 	
-	UIButton *sumbitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+	sumbitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
 	ViewBorderRadius(sumbitBtn, 10, 0.6, UIColorFromHex(0x4B5461));
 	[sumbitBtn setTitle:@"提交" forState:UIControlStateNormal];
 	sumbitBtn.titleLabel.font = Font_14;
@@ -354,7 +355,8 @@
 			[SVProgressHUD showErrorWithStatus:@"超过可卖数量"];
 			return ;
 		}
-        
+		
+		btn.enabled = NO;
         RequestParams *params = [[RequestParams alloc] initWithParams:API_sell];
         [params addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
         [params addParameter:@"PRICE" value:sellPriceTextField.text];
@@ -367,11 +369,13 @@
                 [SVProgressHUD showErrorWithStatus:data[@"message"]];
                 return ;
             }
+			btn.enabled = YES;
             [SVProgressHUD showSuccessWithStatus:@"挂单成功"];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self.navigationController popViewControllerAnimated:YES];
             });
         } failureBlock:^(NSError *error) {
+			btn.enabled = YES;
             [SVProgressHUD showErrorWithStatus:@"服务器异常，请联系管理员"];
         }];
         
