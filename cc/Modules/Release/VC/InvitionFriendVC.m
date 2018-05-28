@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+	self.navigationItem.title = @"邀请好友";
     [self requestData];
     [self addTapView];
 }
