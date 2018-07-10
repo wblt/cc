@@ -21,6 +21,8 @@
 #import "SportRecordViewController.h"
 #import "ReceiveAddressViewController.h"
 #import "WCQRCodeScanningVC.h"
+#import "TibiViewController.h"
+
 @interface MineVC ()
 @property (weak, nonatomic) IBOutlet UIView *bgView1;
 @property (weak, nonatomic) IBOutlet UIView *bgView2;
@@ -220,7 +222,8 @@
 			break;
         case 108:
         {
-            [SVProgressHUD showInfoWithStatus:@"正在开发中"];
+			TibiViewController *vc = [[TibiViewController alloc] initWithNibName:@"TibiViewController" bundle:nil];
+			[self.navigationController pushViewController:vc animated:YES];
         }
             break;
 			

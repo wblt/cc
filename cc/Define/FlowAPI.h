@@ -107,6 +107,14 @@
 //运动记录
 #define API_STEPDETAIL   SERVER_IP@"/app/my/stepDetail"
 
+//提币申请
+#define API_tequila   SERVER_IP@"/app/my/tequila"
+
+//提币记录
+#define API_tequilaDetail   SERVER_IP@"/app/my/tequilaDetail"
+//提币取消
+#define API_tequilaCancle   SERVER_IP@"/app/my/tequilaCancle"
+
 // 获取签名
 #define API_SIGN SERVER_IP@"/upload/signCreate"
 

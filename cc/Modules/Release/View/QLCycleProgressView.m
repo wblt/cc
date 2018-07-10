@@ -79,7 +79,7 @@
 	
 	self.titleLab = [[UILabel alloc]init];
 	self.titleLab.textColor = [UIColor whiteColor];
-	self.titleLab.font = [UIFont systemFontOfSize:25];
+	self.titleLab.font = [UIFont systemFontOfSize:23];
 	self.titleLab.textAlignment = NSTextAlignmentCenter;
 	self.titleLab.text = @"步数";
 	[self addSubview:self.titleLab];
